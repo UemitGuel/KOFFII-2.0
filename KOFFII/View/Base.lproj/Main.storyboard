@@ -36,6 +36,9 @@
                                         <state key="normal" title="Create an account">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="eU6-Bl-aSh" kind="show" identifier="toRegistrationViewSegue" id="g4s-Do-4XM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-ds-v7I">
                                         <rect key="frame" x="0.0" y="60" width="350" height="44"/>
@@ -85,6 +88,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="126.35869565217392"/>
+        </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="otz-f1-kus">
+            <objects>
+                <viewController id="eU6-Bl-aSh" customClass="RegistrationViewController" customModule="KOFFII" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MOs-ZG-pMk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EMAIL" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RMC-Hf-9T4">
+                                <rect key="frame" x="32" y="350" width="350" height="36"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NAME" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OjB-u2-xRo">
+                                <rect key="frame" x="32" y="282" width="350" height="36"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PASSWORD" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-i4-tT8">
+                                <rect key="frame" x="32" y="418" width="350" height="36"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TFC-i4-tT8" firstAttribute="top" secondItem="RMC-Hf-9T4" secondAttribute="bottom" constant="32" id="EFB-9N-dFn"/>
+                            <constraint firstItem="EFj-Wz-wAj" firstAttribute="trailing" secondItem="RMC-Hf-9T4" secondAttribute="trailing" constant="32" id="eud-E5-VSK"/>
+                            <constraint firstItem="RMC-Hf-9T4" firstAttribute="centerY" secondItem="MOs-ZG-pMk" secondAttribute="centerY" id="g8x-FI-OVI"/>
+                            <constraint firstItem="RMC-Hf-9T4" firstAttribute="top" secondItem="OjB-u2-xRo" secondAttribute="bottom" constant="32" id="k1x-H4-8Hi"/>
+                            <constraint firstItem="EFj-Wz-wAj" firstAttribute="trailing" secondItem="TFC-i4-tT8" secondAttribute="trailing" constant="32" id="kCH-M7-XfI"/>
+                            <constraint firstItem="EFj-Wz-wAj" firstAttribute="trailing" secondItem="OjB-u2-xRo" secondAttribute="trailing" constant="32" id="v25-iV-lEb"/>
+                            <constraint firstItem="OjB-u2-xRo" firstAttribute="leading" secondItem="EFj-Wz-wAj" secondAttribute="leading" constant="32" id="xm3-Ng-oaX"/>
+                            <constraint firstItem="RMC-Hf-9T4" firstAttribute="leading" secondItem="EFj-Wz-wAj" secondAttribute="leading" constant="32" id="xrh-PV-APk"/>
+                            <constraint firstItem="TFC-i4-tT8" firstAttribute="leading" secondItem="EFj-Wz-wAj" secondAttribute="leading" constant="32" id="zU4-w3-iDT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EFj-Wz-wAj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ixj-tv-rzG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KIW-Nt-LNa">
+                            <color key="tintColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addButtonTapped:" destination="eU6-Bl-aSh" id="l26-6l-dNr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOt-m2-COv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1909" y="-168"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tZn-g3-hQb">

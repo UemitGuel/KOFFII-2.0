@@ -16,6 +16,7 @@
 		B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5E22C4F38C005848DA /* Assets.xcassets */; };
 		B3AA7E6222C4F38C005848DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6022C4F38C005848DA /* LaunchScreen.storyboard */; };
 		B3AA7E6A22C4F877005848DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */; };
+		B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B3AA7E6122C4F38C005848DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3AA7E6322C4F38C005848DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		B44913B6DE03803C9391F609 /* Pods-KOFFII.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.release.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.release.xcconfig"; sourceTree = "<group>"; };
 		E0285450D2D979851A99E479 /* Pods_KOFFII.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KOFFII.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AA7E5922C4F38B005848DA /* WelcomeView.swift */,
+				B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */,
 				B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
 			);
