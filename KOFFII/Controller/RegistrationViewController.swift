@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Firebase
 import FirebaseAuth
 import SVProgressHUD
+import RealmSwift
 
 class RegistrationViewController: UIViewController {
 
@@ -17,6 +17,8 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let realm = try! Realm()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,17 @@ class RegistrationViewController: UIViewController {
         } else {
             print("Success")
         }
-            
+        do {
+            try self.realm.write {
+                let newUser = User()
+                newUser.name = self.nameTextField.text
+                newUser.email = self.emailTextField.text
+                self.realm.add(newUser)
+            }
+        } catch {
+            print("Error saving category \(error)")
+        }
+        
         SVProgressHUD.dismiss()
             
         self.performSegue(withIdentifier: "fromRegtoHomeSegue", sender: self)
