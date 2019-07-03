@@ -8,8 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 import SVProgressHUD
-import RealmSwift
 
 class RegistrationViewController: UIViewController {
 
@@ -17,12 +18,22 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let realm = try! Realm()
-
+    var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupFirebase()
 
+    }
+    
+    func setupFirebase() {
+        // [START setup]
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
     }
     
 
@@ -36,17 +47,20 @@ class RegistrationViewController: UIViewController {
         } else {
             print("Success")
         }
-        do {
-            try self.realm.write {
-                let newUser = User()
-                newUser.name = self.nameTextField.text
-                newUser.email = self.emailTextField.text
-                self.realm.add(newUser)
-            }
-        } catch {
-            print("Error saving category \(error)")
-        }
         
+        var ref: DocumentReference? = nil
+        ref = self.db.collection("User").addDocument(data: [
+            "name": self.nameTextField.text!,
+            "email": self.emailTextField.text!,
+            "favCafes": []
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+                
         SVProgressHUD.dismiss()
             
         self.performSegue(withIdentifier: "fromRegtoHomeSegue", sender: self)

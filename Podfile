@@ -9,5 +9,7 @@ target 'KOFFII' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'SVProgressHUD'
-    pod 'RealmSwift'
+    pod 'Firebase/Core'
+    pod 'Firebase/Firestore'
+    
 end
