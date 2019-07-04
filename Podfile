@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'KOFFII' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -9,7 +9,7 @@ target 'KOFFII' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'SVProgressHUD'
-    pod 'Firebase/Core'
     pod 'Firebase/Firestore'
+    pod 'CBFlashyTabBarController'
     
 end

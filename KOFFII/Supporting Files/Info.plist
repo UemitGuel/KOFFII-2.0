@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Staatliches-Regular.ttf</string>
 		<string>Quicksand-Regular.ttf</string>
 		<string>Quicksand-Bold.ttf</string>
 	</array>

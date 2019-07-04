@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8A4204AD85B4D3AC3588B652 /* Pods_KOFFII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0285450D2D979851A99E479 /* Pods_KOFFII.framework */; };
+		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
 		B34335C922C50509006CDBC1 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */; };
+		B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36572C522CD36AF00C618BD /* InformationViewController.swift */; };
+		B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */; };
+		B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8C22CE0EAC003C5EDD /* User.swift */; };
+		B399DB8F22CE0FFA003C5EDD /* Information_Brewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information_Brewing.swift */; };
 		B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5722C4F38B005848DA /* AppDelegate.swift */; };
 		B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5922C4F38B005848DA /* WelcomeView.swift */; };
 		B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5B22C4F38B005848DA /* Main.storyboard */; };
@@ -22,8 +27,13 @@
 
 /* Begin PBXFileReference section */
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
+		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		B36572C522CD36AF00C618BD /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
+		B399DB8C22CE0EAC003C5EDD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "KOFFII/Supporting Files/User.swift"; sourceTree = SOURCE_ROOT; };
+		B399DB8E22CE0FFA003C5EDD /* Information_Brewing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information_Brewing.swift; path = "KOFFII/Supporting Files/Information_Brewing.swift"; sourceTree = SOURCE_ROOT; };
 		B3AA7E5422C4F38B005848DA /* KOFFII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KOFFII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AA7E5722C4F38B005848DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3AA7E5922C4F38B005848DA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -59,11 +69,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B3404A1722CD080800062B01 /* StartViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3AA7E5922C4F38B005848DA /* WelcomeView.swift */,
+				B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */,
+				B3EDF44D22CB82A8006F704B /* LogInViewController.swift */,
+			);
+			path = StartViewControllers;
+			sourceTree = "<group>";
+		};
 		B34335C522C504ED006CDBC1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */,
 				B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */,
+				B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -71,6 +92,8 @@
 		B385DA5D22C4FDD600BD8C88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B399DB8C22CE0EAC003C5EDD /* User.swift */,
+				B399DB8E22CE0FFA003C5EDD /* Information_Brewing.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -87,9 +110,8 @@
 		B385DA5F22C4FDE700BD8C88 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B3AA7E5922C4F38B005848DA /* WelcomeView.swift */,
-				B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */,
-				B3EDF44D22CB82A8006F704B /* LogInViewController.swift */,
+				B3404A1722CD080800062B01 /* StartViewControllers */,
+				B399DB8B22CE081B003C5EDD /* Information */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +126,15 @@
 				B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B399DB8B22CE081B003C5EDD /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				B36572C522CD36AF00C618BD /* InformationViewController.swift */,
+				B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */,
+			);
+			path = Information;
 			sourceTree = "<group>";
 		};
 		B3AA7E4B22C4F38B005848DA = {
@@ -206,6 +237,7 @@
 				B3AA7E6A22C4F877005848DA /* GoogleService-Info.plist in Resources */,
 				B34335C922C50509006CDBC1 /* Quicksand-Bold.ttf in Resources */,
 				B3AA7E6222C4F38C005848DA /* LaunchScreen.storyboard in Resources */,
+				B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */,
 				B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */,
 				B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */,
 				B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */,
@@ -261,10 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */,
 				B3EDF44E22CB82A8006F704B /* LogInViewController.swift in Sources */,
 				B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */,
 				B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
+				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
+				B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */,
+				B399DB8F22CE0FFA003C5EDD /* Information_Brewing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,6 +5,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - CBFlashyTabBarController (0.8.3)
   - Firebase/Auth (6.3.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.1.2)
@@ -112,6 +113,7 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - CBFlashyTabBarController
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -121,6 +123,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BoringSSL-GRPC
+    - CBFlashyTabBarController
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -141,6 +144,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  CBFlashyTabBarController: bc6b11dd4cbc9b54785c8944156e2f4d4f03b088
   Firebase: 8432d732974498afd5987e9001a05f90f1a3d625
   FirebaseAnalytics: 470ddab7253b21ad5a40bebd4a9903d7ae19386a
   FirebaseAuth: 7fa2cc010b93770831a4e7a60651b52c3b8d111a
@@ -159,6 +163,6 @@ SPEC CHECKSUMS:
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: d2b35fe1694ba3f4f628119afdebedf79f32c28e
+PODFILE CHECKSUM: 020f3410d8fef7727918996b533373ec6acffe96
 
 COCOAPODS: 1.7.2
