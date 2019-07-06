@@ -23,6 +23,10 @@
 		B3AA7E6A22C4F877005848DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */; };
 		B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */; };
 		B3EDF44E22CB82A8006F704B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDF44D22CB82A8006F704B /* LogInViewController.swift */; };
+		B3F62ECB22D0C371002DF68C /* InformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ECA22D0C371002DF68C /* InformationDetailViewController.swift */; };
+		B3F62ED322D0C8FF002DF68C /* InformationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ED222D0C8FF002DF68C /* InformationDetailTableViewCell.swift */; };
+		B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ED522D0CB37002DF68C /* HeaderView.swift */; };
+		B3F62ED822D0CB37002DF68C /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F62ED622D0CB37002DF68C /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		B3EDF44D22CB82A8006F704B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		B3F62ECA22D0C371002DF68C /* InformationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailViewController.swift; sourceTree = "<group>"; };
+		B3F62ED222D0C8FF002DF68C /* InformationDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailTableViewCell.swift; sourceTree = "<group>"; };
+		B3F62ED522D0CB37002DF68C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B3F62ED622D0CB37002DF68C /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		B44913B6DE03803C9391F609 /* Pods-KOFFII.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.release.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.release.xcconfig"; sourceTree = "<group>"; };
 		E0285450D2D979851A99E479 /* Pods_KOFFII.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KOFFII.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +141,7 @@
 			children = (
 				B36572C522CD36AF00C618BD /* InformationViewController.swift */,
 				B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */,
+				B3F62ED422D0CADB002DF68C /* InformationDetail */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -164,6 +173,17 @@
 				B385DA6022C4FE1B00BD8C88 /* Supporting Files */,
 			);
 			path = KOFFII;
+			sourceTree = "<group>";
+		};
+		B3F62ED422D0CADB002DF68C /* InformationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B3F62ECA22D0C371002DF68C /* InformationDetailViewController.swift */,
+				B3F62ED222D0C8FF002DF68C /* InformationDetailTableViewCell.swift */,
+				B3F62ED522D0CB37002DF68C /* HeaderView.swift */,
+				B3F62ED622D0CB37002DF68C /* HeaderView.xib */,
+			);
+			path = InformationDetail;
 			sourceTree = "<group>";
 		};
 		BAD448F2EC118B531A034562 /* Frameworks */ = {
@@ -237,6 +257,7 @@
 				B3AA7E6A22C4F877005848DA /* GoogleService-Info.plist in Resources */,
 				B34335C922C50509006CDBC1 /* Quicksand-Bold.ttf in Resources */,
 				B3AA7E6222C4F38C005848DA /* LaunchScreen.storyboard in Resources */,
+				B3F62ED822D0CB37002DF68C /* HeaderView.xib in Resources */,
 				B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */,
 				B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */,
 				B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */,
@@ -298,6 +319,9 @@
 				B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */,
 				B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
+				B3F62ED322D0C8FF002DF68C /* InformationDetailTableViewCell.swift in Sources */,
+				B3F62ECB22D0C371002DF68C /* InformationDetailViewController.swift in Sources */,
+				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
 				B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information_Brewing.swift in Sources */,
