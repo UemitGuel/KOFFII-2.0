@@ -98,4 +98,18 @@ class InformationViewController: UITableViewController {
         return 220
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromInfoToDetailSegue" {
+            let detailVC = segue.destination as! InformationDetailViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                detailVC.passedInformationBrewing = information_brewing[indexPath.row]
+
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "fromInfoToDetailSegue", sender: self)
+    }
 }

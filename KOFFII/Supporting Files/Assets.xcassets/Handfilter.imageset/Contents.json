@@ -2,16 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Bildschirmfoto 2019-06-17 um 15.20.47.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Bildschirmfoto 2019-06-17 um 15.20.47.png"
     }
   ],
   "info" : {
