@@ -20,8 +20,8 @@ class InformationViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupFirebase()
+        
         
         loadAllObjects(fromCollection: "Information_Brewing") {
             self.tableView.reloadData()
@@ -37,6 +37,7 @@ class InformationViewController: UITableViewController {
         // [END setup]
         db = Firestore.firestore()
     }
+    
 
     func loadAllObjects(fromCollection: String, completionHandler: @escaping () -> Void) {
         getAllDocumentIDs(fromCollection: fromCollection) { ids in

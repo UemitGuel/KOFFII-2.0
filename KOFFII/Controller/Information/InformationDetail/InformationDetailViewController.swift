@@ -22,8 +22,9 @@ class InformationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tabBarController?.tabBar.isHidden = true
+        
         
         tableView.dataSource = self
         tableView.delegate = self
