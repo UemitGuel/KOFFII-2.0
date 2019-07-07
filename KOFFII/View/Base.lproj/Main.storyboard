@@ -311,37 +311,21 @@
         <scene sceneID="KSS-fJ-kaw">
             <objects>
                 <tableViewController id="6Wg-QL-hFp" customClass="InformationViewController" customModule="KOFFII" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xjr-LA-2n8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xjr-LA-2n8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="MZA-ix-f5c">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HRK-IR-AaH">
-                                    <rect key="frame" x="16" y="36" width="382" height="34"/>
-                                    <segments>
-                                        <segment title="BREWING"/>
-                                        <segment title="KNOWLEDGE"/>
-                                    </segments>
-                                    <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </segmentedControl>
-                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="trailingMargin" secondItem="HRK-IR-AaH" secondAttribute="trailing" constant="8" id="42f-jO-Vbb"/>
-                                <constraint firstItem="HRK-IR-AaH" firstAttribute="leading" secondItem="MZA-ix-f5c" secondAttribute="leadingMargin" constant="8" id="YBG-RB-fhg"/>
-                                <constraint firstItem="HRK-IR-AaH" firstAttribute="top" secondItem="MZA-ix-f5c" secondAttribute="topMargin" constant="8" id="ZdZ-DX-3rr"/>
-                                <constraint firstAttribute="bottomMargin" secondItem="HRK-IR-AaH" secondAttribute="bottom" constant="8" id="wq0-WB-Mfb"/>
-                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="informationCell" rowHeight="220" id="dV7-vi-HmX" customClass="InformationTableViewCell" customModule="KOFFII" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="32" width="414" height="220"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dV7-vi-HmX" id="CED-75-hQu">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="219.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="259-Z2-seh">
@@ -351,7 +335,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTp-Zt-MPB">
-                                            <rect key="frame" x="28" y="18.999999999999996" width="358" height="46.666666666666657"/>
+                                            <rect key="frame" x="28" y="19" width="358" height="50"/>
                                             <fontDescription key="fontDescription" name="Staatliches-Regular" family="Staatliches" pointSize="40"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -374,15 +358,14 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="6Wg-QL-hFp" id="e7e-3p-c2T"/>
-                            <outlet property="delegate" destination="6Wg-QL-hFp" id="PjH-tS-sIl"/>
+                            <outlet property="dataSource" destination="6Wg-QL-hFp" id="1Hp-em-sYf"/>
+                            <outlet property="delegate" destination="6Wg-QL-hFp" id="XEh-3S-45E"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="nKu-vc-R9T">
                         <barButtonItem key="backBarButtonItem" title=" " id="gfI-3n-car"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="segmentedControl" destination="HRK-IR-AaH" id="C1A-np-SH9"/>
                         <segue destination="cYw-2b-ecy" kind="show" identifier="fromInfoToDetailSegue" id="IvE-6N-Wl8"/>
                     </connections>
                 </tableViewController>
@@ -398,7 +381,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="euN-X5-tWQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="euN-X5-tWQ">
                                 <rect key="frame" x="0.0" y="64" width="414" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blob1" id="wrK-IO-10p">
@@ -410,7 +393,7 @@
                                         <rect key="frame" x="0.0" y="264" width="414" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RJy-R2-5Ee" id="3gu-BH-2bA">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="141.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nia-cB-8H9">

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class InformationViewController: UITableViewController {
 
@@ -15,17 +16,29 @@ class InformationViewController: UITableViewController {
     
     var db: Firestore!
     var docIDs = Array<String>()
-    var information_brewing = Array<Information_Brewing>()
+    var informationBrew = Array<Information>()
+    var informationKnow = Array<Information>()
+    let sections = ["Brewing","Knowledge"]
+    var items = [Array<Information>]()
+    
+    let myGroup = DispatchGroup()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
         
-        
-        loadAllObjects(fromCollection: "Information_Brewing") {
-            self.tableView.reloadData()
+        //MARK: Loading Content from FireStore
+        SVProgressHUD.show()
+        loadAllObjects(fromCollection: "Information_Brewing") { array in
+            self.items.append(array)
+            self.loadAllObjects(fromCollection: "Information_Knowledge") { array in
+                self.items.append(array)
+                self.tableView.reloadData()
+                SVProgressHUD.dismiss()
+            }
         }
+        
 
     }
     
@@ -39,15 +52,22 @@ class InformationViewController: UITableViewController {
     }
     
 
-    func loadAllObjects(fromCollection: String, completionHandler: @escaping () -> Void) {
+    func loadAllObjects(fromCollection: String, completionHandler: @escaping (Array<Information>) -> Void) {
+        var tempInformation = Array<Information>()
         getAllDocumentIDs(fromCollection: fromCollection) { ids in
             self.docIDs = ids
             for id in ids {
+                self.myGroup.enter()
                 self.useDocumentIDToRetrieveObject(fromCollection: fromCollection, id: id, completionHandler: { object in
-                    self.information_brewing.append(object)
-                    completionHandler()
+                    tempInformation.append(object)
+                    self.myGroup.leave()
                 })
             }
+            self.myGroup.notify(queue: .main) {
+                print("Finished all requests.")
+                completionHandler(tempInformation)
+            }
+            
         }
     }
     
@@ -67,13 +87,13 @@ class InformationViewController: UITableViewController {
         }
     }
     
-    func useDocumentIDToRetrieveObject(fromCollection: String, id: String, completionHandler: @escaping (Information_Brewing) -> Void ) {
+    func useDocumentIDToRetrieveObject(fromCollection: String, id: String, completionHandler: @escaping (Information) -> Void ) {
         let docRef = db.collection(fromCollection).document(id)
         
         docRef.getDocument { (document, error) in
             if let information = document.flatMap({
                 $0.data().flatMap({ (data) in
-                    return Information_Brewing(dictionary: data)
+                    return Information(dictionary: data)
                 })
             }) {
                 print("mmmmmmmmmm: \(information)")
@@ -84,14 +104,11 @@ class InformationViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return information_brewing.count
-    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell", for: indexPath) as! InformationTableViewCell
-        cell.nameLabel?.text = information_brewing[indexPath.row].name
-        cell.infoImageView?.image = UIImage(named: information_brewing[indexPath.row].imageName ?? "")
+        cell.nameLabel?.text = items[indexPath.section][indexPath.row].name
+        cell.infoImageView?.image = UIImage(named: items[indexPath.section][indexPath.row].imageName ?? "")
         return cell
     }
     
@@ -99,18 +116,59 @@ class InformationViewController: UITableViewController {
         return 220
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromInfoToDetailSegue" {
-            let detailVC = segue.destination as! InformationDetailViewController
-            
-            if let indexPath = tableView.indexPathForSelectedRow {
-                detailVC.passedInformationBrewing = information_brewing[indexPath.row]
-
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "fromInfoToDetailSegue" {
+//            let detailVC = segue.destination as! InformationDetailViewController
+//
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                detailVC.passedInformationBrewing = information_brewing[indexPath.row]
+//
+//            }
+//        }
+//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "fromInfoToDetailSegue", sender: self)
+    }
+
+
+//MARK: Sections for TableView
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if items.count != 0 {
+            print("items full")
+            return items[section].count
+        } else {
+            print("items empty")
+            return 0
+
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = .white
+        
+        let header = view as! UITableViewHeaderFooterView
+        guard let customFont = UIFont(name: "Staatliches-Regular", size: 40) else {
+            fatalError("""
+        Failed to load the "CustomFont-Light" font.
+        Make sure the font file is included in the project and the font name is spelled correctly.
+        """
+            )
+        }
+        header.textLabel?.font = UIFontMetrics.default.scaledFont(for: customFont)
+        header.backgroundColor = .white
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
     }
 }

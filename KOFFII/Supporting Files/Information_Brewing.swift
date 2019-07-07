@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Information_Brewing {
+struct Information {
     let name: String
     let imageName: String?
     let quan: String?

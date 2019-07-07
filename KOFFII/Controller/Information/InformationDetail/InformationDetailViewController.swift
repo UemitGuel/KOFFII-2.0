@@ -15,7 +15,7 @@ class InformationDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var passedInformationBrewing: Information_Brewing? {
+    var passedInformationBrewing: Information? {
         didSet{
         }
     }

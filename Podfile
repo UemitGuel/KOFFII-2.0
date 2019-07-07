@@ -11,5 +11,6 @@ target 'KOFFII' do
     pod 'SVProgressHUD'
     pod 'Firebase/Firestore'
     pod 'CBFlashyTabBarController'
+    pod 'SDWebImage'
     
 end
