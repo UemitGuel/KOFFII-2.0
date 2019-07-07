@@ -109,6 +109,7 @@ class InformationViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell", for: indexPath) as! InformationTableViewCell
         cell.nameLabel?.text = items[indexPath.section][indexPath.row].name
         cell.infoImageView?.image = UIImage(named: items[indexPath.section][indexPath.row].imageName ?? "")
+
         return cell
     }
     
@@ -116,16 +117,16 @@ class InformationViewController: UITableViewController {
         return 220
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "fromInfoToDetailSegue" {
-//            let detailVC = segue.destination as! InformationDetailViewController
-//
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                detailVC.passedInformationBrewing = information_brewing[indexPath.row]
-//
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromInfoToDetailSegue" {
+            let detailVC = segue.destination as! InformationDetailViewController
+
+            if let indexPath = tableView.indexPathForSelectedRow {
+                detailVC.passedInformationBrewing = items[indexPath.section][indexPath.row]
+
+            }
+        }
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "fromInfoToDetailSegue", sender: self)

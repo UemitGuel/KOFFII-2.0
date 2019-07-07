@@ -61,7 +61,11 @@ extension InformationDetailViewController: UITableViewDataSource {
 extension InformationDetailViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        if passedInformationBrewing?.quan != nil {
+            return 100
+        } else {
+            return 0
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,11 +73,16 @@ extension InformationDetailViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
-        
-        headerView.quanLabel.text = passedInformationBrewing?.quan ?? ""
-        headerView.tempLabel.text = passedInformationBrewing?.temp ?? ""
-        headerView.timeLabel.text = passedInformationBrewing?.time ?? ""
-        return headerView
+        if passedInformationBrewing?.quan != nil {
+            let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
+            
+            headerView.quanLabel.text = passedInformationBrewing?.quan ?? ""
+            headerView.tempLabel.text = passedInformationBrewing?.temp ?? ""
+            headerView.timeLabel.text = passedInformationBrewing?.time ?? ""
+            return headerView
+        } else {
+            let view = UIView(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
+            return view
+    }
     }
 }
