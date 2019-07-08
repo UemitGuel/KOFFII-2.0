@@ -27,6 +27,8 @@ class InformationViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
+        setupNavBar()
+        
         
         //MARK: Loading Content from FireStore
         SVProgressHUD.show()
@@ -49,6 +51,12 @@ class InformationViewController: UITableViewController {
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
+    }
+    
+    func setupNavBar() {
+        // eliminate 1pt line
+//        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+
     }
     
 
