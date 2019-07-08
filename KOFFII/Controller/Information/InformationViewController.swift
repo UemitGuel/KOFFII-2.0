@@ -10,9 +10,10 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class InformationViewController: UITableViewController {
+class InformationViewController: UIViewController {
 
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var db: Firestore!
     var docIDs = Array<String>()
@@ -54,9 +55,19 @@ class InformationViewController: UITableViewController {
     }
     
     func setupNavBar() {
-        // eliminate 1pt line
-//        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        self.navigationController?.isNavigationBarHidden = false
 
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
 
@@ -111,17 +122,19 @@ class InformationViewController: UITableViewController {
             }
         }
     }
+}
+
+extension InformationViewController: UITableViewDataSource, UITableViewDelegate {
     
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell", for: indexPath) as! InformationTableViewCell
         cell.nameLabel?.text = items[indexPath.section][indexPath.row].name
         cell.infoImageView?.image = UIImage(named: items[indexPath.section][indexPath.row].imageName ?? "")
-
+        cell.selectionStyle = .none
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 220
     }
     
@@ -136,18 +149,18 @@ class InformationViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "fromInfoToDetailSegue", sender: self)
     }
 
 
 //MARK: Sections for TableView
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if items.count != 0 {
             print("items full")
             return items[section].count
@@ -158,11 +171,11 @@ class InformationViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
     
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = .white
         
         let header = view as! UITableViewHeaderFooterView
@@ -177,7 +190,7 @@ class InformationViewController: UITableViewController {
         header.backgroundColor = .white
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60
     }
 }

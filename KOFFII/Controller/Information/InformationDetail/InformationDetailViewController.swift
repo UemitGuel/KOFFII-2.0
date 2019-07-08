@@ -24,6 +24,8 @@ class InformationDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.tabBarController?.tabBar.isHidden = true
+
+        title = passedInformationBrewing?.name
         
         
         tableView.dataSource = self
@@ -33,6 +35,7 @@ class InformationDetailViewController: UIViewController {
         headerImageView.image = UIImage(named: imageName)
         
     }
+    
 
 }
 
