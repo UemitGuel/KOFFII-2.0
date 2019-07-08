@@ -383,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nn9-tL-bRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5379.7101449275369" y="1263.5869565217392"/>
+            <point key="canvasLocation" x="5332" y="646"/>
         </scene>
         <!--Information Detail View Controller-->
         <scene sceneID="Pi2-7d-tfr">
@@ -409,18 +409,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nia-cB-8H9">
-                                                    <rect key="frame" x="28" y="61" width="15" height="20"/>
+                                                    <rect key="frame" x="28" y="61" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="EuA-sw-szb"/>
-                                                        <constraint firstAttribute="width" constant="15" id="Hmk-a1-emT"/>
+                                                        <constraint firstAttribute="width" constant="20" id="Hmk-a1-emT"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMk-R4-g6r">
-                                                    <rect key="frame" x="51" y="19" width="335" height="104"/>
-                                                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="16"/>
+                                                    <rect key="frame" x="56" y="19" width="330" height="104"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -451,6 +451,9 @@
                                         <state key="normal" title="left complain">
                                             <color key="titleColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="complainButtonTapped:" destination="cYw-2b-ecy" eventType="touchUpInside" id="vHt-m1-A3n"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhr-Kx-Xyb">
                                         <rect key="frame" x="197.66666666666666" y="0.0" width="3" height="50"/>
@@ -464,12 +467,15 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvi-fS-3NB">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvi-fS-3NB">
                                         <rect key="frame" x="200.66666666666663" y="0.0" width="197.33333333333337" height="50"/>
                                         <fontDescription key="fontDescription" name="Staatliches-Regular" family="Staatliches" pointSize="20"/>
                                         <state key="normal" title="right complain">
                                             <color key="titleColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="complainButtonTapped:" destination="cYw-2b-ecy" eventType="touchUpInside" id="5FX-4D-Ihb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -508,12 +514,108 @@
                     </view>
                     <connections>
                         <outlet property="headerImageView" destination="wrK-IO-10p" id="xxn-iC-dTi"/>
+                        <outlet property="leftButton" destination="e1A-gl-GFq" id="wt5-1W-7RG"/>
+                        <outlet property="rightButton" destination="uvi-fS-3NB" id="bY0-Jr-zeC"/>
                         <outlet property="tableView" destination="euN-X5-tWQ" id="WAn-SX-LLA"/>
+                        <segue destination="joA-mQ-Bkq" kind="show" identifier="fromDetailToComplainSegue" id="g5e-oq-sKb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-Wf-CQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6369.5652173913049" y="526.63043478260875"/>
+            <point key="canvasLocation" x="6199" y="646"/>
+        </scene>
+        <!--Complain View Controller-->
+        <scene sceneID="UxG-Bm-8Yw">
+            <objects>
+                <viewController id="joA-mQ-Bkq" customClass="ComplainViewController" customModule="KOFFII" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b5L-rK-05u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZLX-MY-auM">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="HDW-wr-w9p">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cab-DX-tl4">
+                                            <rect key="frame" x="24" y="33" width="366" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="CgN-RC-7cX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Staatliches-Regular" family="Staatliches" pointSize="40"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Cab-DX-tl4" firstAttribute="centerX" secondItem="HDW-wr-w9p" secondAttribute="centerX" id="1sk-aS-Dzu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Cab-DX-tl4" secondAttribute="trailing" constant="16" id="4uY-ZE-4VA"/>
+                                        <constraint firstItem="Cab-DX-tl4" firstAttribute="centerY" secondItem="HDW-wr-w9p" secondAttribute="centerY" id="C7H-Ge-zcG"/>
+                                        <constraint firstItem="Cab-DX-tl4" firstAttribute="leading" secondItem="HDW-wr-w9p" secondAttribute="leadingMargin" constant="16" id="Xlv-W2-p8D"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="complainCell" rowHeight="90" id="Adw-a4-6eN" customClass="ComplainTableViewCell" customModule="KOFFII" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="144" width="414" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Adw-a4-6eN" id="YvC-OU-opU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDu-Gq-EEd">
+                                                    <rect key="frame" x="60" y="19" width="318" height="52"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Complain" translatesAutoresizingMaskIntoConstraints="NO" id="aT5-hS-W3g">
+                                                    <rect key="frame" x="28" y="33" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="3VU-Mq-w6m"/>
+                                                        <constraint firstAttribute="height" constant="24" id="CP3-ev-j95"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CDu-Gq-EEd" secondAttribute="bottom" constant="8" id="2vH-xv-aIy"/>
+                                                <constraint firstItem="CDu-Gq-EEd" firstAttribute="leading" secondItem="aT5-hS-W3g" secondAttribute="trailing" constant="8" id="SeB-CJ-8dZ"/>
+                                                <constraint firstItem="aT5-hS-W3g" firstAttribute="centerY" secondItem="YvC-OU-opU" secondAttribute="centerY" id="fDe-qK-KEw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CDu-Gq-EEd" secondAttribute="trailing" constant="16" id="m8G-gM-phU"/>
+                                                <constraint firstItem="CDu-Gq-EEd" firstAttribute="top" secondItem="YvC-OU-opU" secondAttribute="topMargin" constant="8" id="ql2-Xr-i8l"/>
+                                                <constraint firstItem="aT5-hS-W3g" firstAttribute="leading" secondItem="YvC-OU-opU" secondAttribute="leadingMargin" constant="8" id="sr5-Lp-thg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="complainLabel" destination="CDu-Gq-EEd" id="t02-QD-XRF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="joA-mQ-Bkq" id="kA4-0N-Lyd"/>
+                                    <outlet property="delegate" destination="joA-mQ-Bkq" id="4Qp-rY-p5w"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="haq-WC-X0Q" firstAttribute="trailing" secondItem="ZLX-MY-auM" secondAttribute="trailing" id="6ic-A3-xil"/>
+                            <constraint firstItem="haq-WC-X0Q" firstAttribute="bottom" secondItem="ZLX-MY-auM" secondAttribute="bottom" id="V5D-eH-Wzo"/>
+                            <constraint firstItem="ZLX-MY-auM" firstAttribute="leading" secondItem="haq-WC-X0Q" secondAttribute="leading" id="Xpg-Ap-mb8"/>
+                            <constraint firstItem="ZLX-MY-auM" firstAttribute="top" secondItem="haq-WC-X0Q" secondAttribute="top" id="tSj-Tq-aJN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="haq-WC-X0Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="complainLabel" destination="Cab-DX-tl4" id="YYY-Hc-cDA"/>
+                        <outlet property="tableView" destination="ZLX-MY-auM" id="poC-JR-GPf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKU-ts-QHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7163.7681159420299" y="645.6521739130435"/>
         </scene>
         <!--Info-->
         <scene sceneID="biK-PU-2Gu">
@@ -537,11 +639,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZT-7q-RF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4471" y="1264"/>
+            <point key="canvasLocation" x="4471" y="646"/>
         </scene>
     </scenes>
     <resources>
         <image name="Blob1" width="418" height="428"/>
+        <image name="Complain" width="36" height="36"/>
         <image name="WIFI" width="22" height="16"/>
         <image name="infoIcon" width="22" height="21"/>
     </resources>

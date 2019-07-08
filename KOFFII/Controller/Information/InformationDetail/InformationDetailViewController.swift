@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 class InformationDetailViewController: UIViewController {
 
     @IBOutlet weak var headerImageView: UIImageView!
     
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+    
+    var db: Firestore!
+    var downloadedComplainObject : Complain?
+    let myGroup = DispatchGroup()
+    let myGrouptwo = DispatchGroup()
+
+    
+
     
     var passedInformationBrewing: Information? {
         didSet{
@@ -22,11 +33,39 @@ class InformationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupFirebase()
         self.tabBarController?.tabBar.isHidden = true
 
         title = passedInformationBrewing?.name
         
+        
+        if let passedCategory = passedInformationBrewing?.complainCatgory {
+            if passedCategory == "Coffee" {
+                db.collection("Complain").whereField("coffee", arrayContains: true)
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            var docIDs = Array<String>()
+                            self.myGroup.enter()
+                            for document in querySnapshot!.documents {
+                                self.myGroup.enter()
+                                print("\(document.documentID) => \(document.data())")
+                                docIDs.append(document.documentID)
+                                }
+                            print(",d,d,d,d,dd, \(docIDs)")
+                            }
+                }
+                self.rightButton.setTitle("coffee too sour?", for: .normal)
+                self.leftButton.setTitle("coffee too bitter?", for: .normal)
+            } else {
+                self.rightButton.setTitle("espresso too sour?", for: .normal)
+                self.leftButton.setTitle("espresso to bitter?", for: .normal)
+            }
+        } else {
+            self.rightButton.setTitle("", for: .normal)
+            self.leftButton.setTitle("", for: .normal)
+        }
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -36,7 +75,98 @@ class InformationDetailViewController: UIViewController {
         
     }
     
+    func setupFirebase() {
+        // [START setup]
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+    }
+    
+    @IBAction func complainButtonTapped(_ sender: UIButton) {
+    
+        guard let complainCategory = passedInformationBrewing?.complainCatgory else { return }
+        downloadComplainObject(senderTag: sender.tag, complainCategory: complainCategory) { complain in
+            self.downloadedComplainObject = complain
+            print("msmmsmsmsmsm \(String(describing: self.downloadedComplainObject))")
+            self.performSegue(withIdentifier: "fromDetailToComplainSegue", sender: self)
+            }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromDetailToComplainSegue" {
+            let complainVC = segue.destination as! ComplainViewController
+            complainVC.passedComplainObject = downloadedComplainObject
+            }
+        }
+    
+    func downloadComplainObject(senderTag: Int, complainCategory: String, completionHandler: @escaping (Complain) -> Void) {
+        var tempComplainObject : Complain?
+        let collectionRef = db.collection("Complain")
+        if complainCategory == "Coffee" && senderTag == 0 {
+            
+            collectionRef.document("coffee too bitter?").getDocument { (document, error) in
+                if let complain = document.flatMap({
+                    $0.data().flatMap({ (data) in
+                        return Complain(dictionary: data)
+                    })
+                }) {
+                    print("Complain: \(complain)")
+                    tempComplainObject = complain
+                    completionHandler(tempComplainObject!)
 
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        } else if complainCategory == "Coffee" && senderTag == 1 {
+            collectionRef.document("coffee too sour?").getDocument { (document, error) in
+                if let complain = document.flatMap({
+                    $0.data().flatMap({ (data) in
+                        return Complain(dictionary: data)
+                    })
+                }) {
+                    print("Complain: \(complain)")
+                    tempComplainObject = complain
+                    completionHandler(tempComplainObject!)
+                    
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        } else if complainCategory == "Espresso" && senderTag == 0 {
+            collectionRef.document("espresso too bitter?").getDocument { (document, error) in
+                if let complain = document.flatMap({
+                    $0.data().flatMap({ (data) in
+                        return Complain(dictionary: data)
+                    })
+                }) {
+                    print("Complain: \(complain)")
+                    tempComplainObject = complain
+                    completionHandler(tempComplainObject!)
+                    
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        } else if complainCategory == "Espresso" && senderTag == 1 {
+            collectionRef.document("espresso too sour?").getDocument { (document, error) in
+                if let complain = document.flatMap({
+                    $0.data().flatMap({ (data) in
+                        return Complain(dictionary: data)
+                    })
+                }) {
+                    print("Complain: \(complain)")
+                    tempComplainObject = complain
+                    completionHandler(tempComplainObject!)
+                    
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        }
+    }
 }
 
 extension InformationDetailViewController: UITableViewDataSource {

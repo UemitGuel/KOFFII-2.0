@@ -15,6 +15,7 @@ struct Information {
     let temp: String?
     let time: String?
     let tips: Array<String>?
+    let complainCatgory: String?
     
     init?(dictionary: [String: Any]) {
         guard let name = dictionary["name"] as? String else { return nil }
@@ -25,5 +26,6 @@ struct Information {
         self.temp = dictionary["temp"] as? String
         self.time = dictionary["time"] as? String
         self.tips = dictionary["tips"] as? Array<String>
+        self.complainCatgory = dictionary["complainCategory"] as? String
     }
 }
