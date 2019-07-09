@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class InformationDetailViewController: UIViewController {
+class BrewingDetailViewController: UIViewController {
 
     @IBOutlet weak var headerImageView: UIImageView!
     
@@ -169,7 +169,7 @@ class InformationDetailViewController: UIViewController {
     }
 }
 
-extension InformationDetailViewController: UITableViewDataSource {
+extension BrewingDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = passedInformationBrewing?.tips?.count else { return 0 }
         return count
@@ -191,7 +191,7 @@ extension InformationDetailViewController: UITableViewDataSource {
     
 }
 
-extension InformationDetailViewController: UITableViewDelegate {
+extension BrewingDetailViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if passedInformationBrewing?.quan != nil {

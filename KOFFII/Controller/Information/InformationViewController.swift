@@ -55,7 +55,7 @@ class InformationViewController: UIViewController {
     }
     
     func setupNavBar() {
-        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationController?.isNavigationBarHidden = false
 
 
     }
@@ -63,6 +63,7 @@ class InformationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -139,18 +140,28 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromInfoToDetailSegue" {
-            let detailVC = segue.destination as! InformationDetailViewController
+        if segue.identifier == "fromInfoToDetailBrewSegue" {
+            let detailVC = segue.destination as! BrewingDetailViewController
 
             if let indexPath = tableView.indexPathForSelectedRow {
                 detailVC.passedInformationBrewing = items[indexPath.section][indexPath.row]
 
             }
+        } else if segue.identifier == "fromInfoToDetailKnowSegue" {
+            let detailVC = segue.destination as! KnowledgeDetailViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                detailVC.passedInformationKnowledge = items[indexPath.section][indexPath.row]
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "fromInfoToDetailSegue", sender: self)
+        if indexPath.section == 0 {
+            performSegue(withIdentifier: "fromInfoToDetailBrewSegue", sender: self)
+        } else if indexPath.section == 1 {
+            performSegue(withIdentifier: "fromInfoToDetailKnowSegue", sender: self)
+        }
     }
 
 
