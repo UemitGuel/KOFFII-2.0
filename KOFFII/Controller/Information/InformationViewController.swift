@@ -10,17 +10,17 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
+
 class InformationViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    
     var db: Firestore!
-    var docIDs = Array<String>()
     var informationBrew = Array<Information>()
     var informationKnow = Array<Information>()
     let sections = ["Brewing","Knowledge"]
     var items = [Array<Information>]()
+    
     
     let myGroup = DispatchGroup()
 
@@ -28,7 +28,6 @@ class InformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
-        setupNavBar()
         
         
         //MARK: Loading Content from FireStore
@@ -48,18 +47,12 @@ class InformationViewController: UIViewController {
     func setupFirebase() {
         // [START setup]
         let settings = FirestoreSettings()
-        
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
     }
     
-    func setupNavBar() {
-//        self.navigationController?.isNavigationBarHidden = false
-
-
-    }
-    
+    //MARK: - Handling the appearence and disappearnce of the Navigation and Tabbar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -72,10 +65,10 @@ class InformationViewController: UIViewController {
     }
     
 
+    //MARK: - Neccessary Functions for Downloading the Objects from the Firestore Server. First we downloading all the DocIDs from a collection. Then we use the IDs to download the data for every Document and put it in the right DataModel
     func loadAllObjects(fromCollection: String, completionHandler: @escaping (Array<Information>) -> Void) {
         var tempInformation = Array<Information>()
         getAllDocumentIDs(fromCollection: fromCollection) { ids in
-            self.docIDs = ids
             for id in ids {
                 self.myGroup.enter()
                 self.useDocumentIDToRetrieveObject(fromCollection: fromCollection, id: id, completionHandler: { object in
@@ -124,6 +117,8 @@ class InformationViewController: UIViewController {
         }
     }
 }
+
+//MARK: - DataSource, Delegate
 
 extension InformationViewController: UITableViewDataSource, UITableViewDelegate {
     
