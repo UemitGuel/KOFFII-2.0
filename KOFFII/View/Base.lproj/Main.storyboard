@@ -251,21 +251,289 @@
             </objects>
             <point key="canvasLocation" x="2036" y="-174"/>
         </scene>
-        <!--Oter-->
+        <!--Location View Controller-->
         <scene sceneID="XUU-8I-Nle">
             <objects>
-                <viewController id="Yyk-eK-Sni" sceneMemberID="viewController">
+                <viewController id="Yyk-eK-Sni" customClass="LocationViewController" customModule="KOFFII" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="brH-qT-lDg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0u4-37-132">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationTableViewCell" rowHeight="220" id="xnh-6f-D1M" customClass="LocationTableViewCell" customModule="KOFFII" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="220"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xnh-6f-D1M" id="xLS-fv-PZA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sBF-xp-pdX">
+                                                    <rect key="frame" x="20" y="8" width="374" height="204"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="204" id="lgv-Zx-w7E"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oat-nS-vsB">
+                                                    <rect key="frame" x="28" y="19" width="358" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="YWM-86-xXA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Staatliches-Regular" family="Staatliches" pointSize="40"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sBF-xp-pdX" firstAttribute="leading" secondItem="xLS-fv-PZA" secondAttribute="leadingMargin" id="2XP-nD-R6k"/>
+                                                <constraint firstItem="sBF-xp-pdX" firstAttribute="centerY" secondItem="xLS-fv-PZA" secondAttribute="centerY" id="5Sw-RP-UV6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sBF-xp-pdX" secondAttribute="trailing" id="9HP-em-3Ni"/>
+                                                <constraint firstItem="sBF-xp-pdX" firstAttribute="centerX" secondItem="xLS-fv-PZA" secondAttribute="centerX" id="BXV-ZD-dxl"/>
+                                                <constraint firstItem="Oat-nS-vsB" firstAttribute="top" secondItem="xLS-fv-PZA" secondAttribute="topMargin" constant="8" id="JZN-pA-A0R"/>
+                                                <constraint firstItem="Oat-nS-vsB" firstAttribute="leading" secondItem="xLS-fv-PZA" secondAttribute="leadingMargin" constant="8" id="L9Q-gq-BpH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Oat-nS-vsB" secondAttribute="trailing" constant="8" id="tiz-fs-NcO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="Oat-nS-vsB" id="L4X-1i-jbQ"/>
+                                            <outlet property="locationImageView" destination="sBF-xp-pdX" id="fRN-dD-mrj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yyk-eK-Sni" id="Efp-MV-5hB"/>
+                                    <outlet property="delegate" destination="Yyk-eK-Sni" id="H78-3u-oE4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0u4-37-132" firstAttribute="top" secondItem="PzP-1U-2fd" secondAttribute="top" id="AOP-hT-pkE"/>
+                            <constraint firstItem="PzP-1U-2fd" firstAttribute="trailing" secondItem="0u4-37-132" secondAttribute="trailing" id="LNy-zu-QJc"/>
+                            <constraint firstItem="0u4-37-132" firstAttribute="leading" secondItem="PzP-1U-2fd" secondAttribute="leading" id="fUy-u4-gyX"/>
+                            <constraint firstItem="PzP-1U-2fd" firstAttribute="bottom" secondItem="0u4-37-132" secondAttribute="bottom" id="w8S-dk-mg1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PzP-1U-2fd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Oter" image="infoIcon" id="yVV-Xa-2ds"/>
+                    <navigationItem key="navigationItem" id="Lqy-ZX-yna">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ajq-sj-DYC"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="0u4-37-132" id="eZT-hL-ax2"/>
+                        <segue destination="8hJ-sQ-lT1" kind="show" identifier="fromLoctoCitySegue" id="315-zs-eSw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZj-Bl-6JK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4472" y="-213"/>
+            <point key="canvasLocation" x="5339.130434782609" y="-332.60869565217394"/>
+        </scene>
+        <!--City View Controller-->
+        <scene sceneID="oNo-sl-nRU">
+            <objects>
+                <viewController id="8hJ-sQ-lT1" customClass="CityViewController" customModule="KOFFII" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2q0-YO-HkS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fmc-Ip-b7d">
+                                <rect key="frame" x="0.0" y="163" width="414" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qP4-rX-Bly">
+                                    <size key="itemSize" width="170" height="160"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cafeCell" id="arF-il-XdX" customClass="CityCollectionViewCell" customModule="KOFFII" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AAm-QX-Zya">
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="160"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQn-7M-Hdk">
+                                                    <rect key="frame" x="16" y="36" width="138" height="38"/>
+                                                    <fontDescription key="fontDescription" name="Staatliches-Regular" family="Staatliches" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="GQn-7M-Hdk" firstAttribute="top" secondItem="arF-il-XdX" secondAttribute="topMargin" constant="8" id="1T8-cD-Cts"/>
+                                            <constraint firstItem="AAm-QX-Zya" firstAttribute="top" secondItem="arF-il-XdX" secondAttribute="top" id="6tY-yk-awU"/>
+                                            <constraint firstAttribute="bottom" secondItem="AAm-QX-Zya" secondAttribute="bottom" id="ObE-qI-uwX"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="GQn-7M-Hdk" secondAttribute="trailing" constant="8" id="XVH-xJ-7He"/>
+                                            <constraint firstAttribute="trailing" secondItem="AAm-QX-Zya" secondAttribute="trailing" id="Z3S-Fl-6bi"/>
+                                            <constraint firstItem="GQn-7M-Hdk" firstAttribute="leading" secondItem="arF-il-XdX" secondAttribute="leadingMargin" constant="8" id="e4K-RK-n92"/>
+                                            <constraint firstItem="AAm-QX-Zya" firstAttribute="leading" secondItem="arF-il-XdX" secondAttribute="leading" id="j6W-6m-YiE"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cafeNameLabel" destination="GQn-7M-Hdk" id="2TZ-nP-MKf"/>
+                                            <outlet property="cityCellImageView" destination="AAm-QX-Zya" id="ot1-5A-Lek"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="8hJ-sQ-lT1" id="ask-d0-8Nr"/>
+                                    <outlet property="delegate" destination="8hJ-sQ-lT1" id="S0R-E7-PR7"/>
+                                </connections>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-jf-HtW">
+                                <rect key="frame" x="8" y="72" width="398" height="83"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="95r-Al-j97">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="66.666666666666671"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-bb-GXI" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="66.666666666666671"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tb9-bb-GXI" secondAttribute="height" multiplier="1:1" id="L64-dd-wrG"/>
+                                                </constraints>
+                                                <state key="normal" image="WIFI"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGT-oj-GcI" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                <rect key="frame" x="82.666666666666671" y="0.0" width="67.000000000000014" height="66.666666666666671"/>
+                                                <state key="normal" image="FOOD"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfw-YV-uQy" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                <rect key="frame" x="165.66666666666666" y="0.0" width="66.666666666666657" height="66.666666666666671"/>
+                                                <state key="normal" image="VEGAN"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdk-sF-0UX" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                <rect key="frame" x="248.33333333333331" y="0.0" width="67" height="66.666666666666671"/>
+                                                <state key="normal" image="CAKE"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af3-ef-nbw" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                <rect key="frame" x="331.33333333333331" y="0.0" width="66.666666666666686" height="66.666666666666671"/>
+                                                <state key="normal" image="PLUG"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tb9-bb-GXI" firstAttribute="width" secondItem="uGT-oj-GcI" secondAttribute="width" id="VRJ-18-dTP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-Ha-20X">
+                                        <rect key="frame" x="0.0" y="67.666666666666657" width="398" height="15.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-Ln-w3a">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="15.333333333333334"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbQ-6d-qV5">
+                                                <rect key="frame" x="82.666666666666671" y="0.0" width="67.000000000000014" height="15.333333333333334"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-9M-kc8">
+                                                <rect key="frame" x="165.66666666666666" y="0.0" width="66.666666666666657" height="15.333333333333334"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtz-Za-ccM">
+                                                <rect key="frame" x="248.33333333333331" y="0.0" width="67" height="15.333333333333334"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsj-sj-GGu">
+                                                <rect key="frame" x="331.33333333333331" y="0.0" width="66.666666666666686" height="15.333333333333334"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="iQ6-kx-1Ti"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fmc-Ip-b7d" firstAttribute="top" secondItem="eAN-jf-HtW" secondAttribute="bottom" constant="8" id="1Em-B5-eRm"/>
+                            <constraint firstItem="fmc-Ip-b7d" firstAttribute="bottom" secondItem="WUx-bx-ZPg" secondAttribute="bottom" id="7P9-7o-0du"/>
+                            <constraint firstItem="fmc-Ip-b7d" firstAttribute="trailing" secondItem="WUx-bx-ZPg" secondAttribute="trailing" id="Qtf-aj-qkl"/>
+                            <constraint firstItem="WUx-bx-ZPg" firstAttribute="trailing" secondItem="eAN-jf-HtW" secondAttribute="trailing" constant="8" id="b7u-9N-gQv"/>
+                            <constraint firstItem="eAN-jf-HtW" firstAttribute="top" secondItem="WUx-bx-ZPg" secondAttribute="top" constant="8" id="iU6-k2-txc"/>
+                            <constraint firstItem="eAN-jf-HtW" firstAttribute="leading" secondItem="WUx-bx-ZPg" secondAttribute="leading" constant="8" id="oRA-Qs-qEU"/>
+                            <constraint firstItem="fmc-Ip-b7d" firstAttribute="leading" secondItem="WUx-bx-ZPg" secondAttribute="leading" id="s8b-d4-6Mc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WUx-bx-ZPg"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="fmc-Ip-b7d" id="5JM-43-5mk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xv-2a-RWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6286.9565217391309" y="-333.42391304347831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tZn-g3-hQb">
@@ -299,13 +567,13 @@
                         <color key="selectedImageTintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Yyk-eK-Sni" kind="relationship" relationship="viewControllers" id="20g-PN-CI3"/>
+                        <segue destination="0nZ-ST-f1z" kind="relationship" relationship="viewControllers" id="20g-PN-CI3"/>
                         <segue destination="edd-uV-2Uq" kind="relationship" relationship="viewControllers" id="2K5-1I-UtA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3L-LS-sOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3286" y="488"/>
+            <point key="canvasLocation" x="3246" y="170"/>
         </scene>
         <!--Information View Controller-->
         <scene sceneID="fWB-x8-2yQ">
@@ -384,7 +652,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nn9-tL-bRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5191" y="875"/>
+            <point key="canvasLocation" x="5194" y="990"/>
         </scene>
         <!--Brewing Detail View Controller-->
         <scene sceneID="Pi2-7d-tfr">
@@ -647,7 +915,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZT-7q-RF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4368" y="875"/>
+            <point key="canvasLocation" x="4345" y="990"/>
         </scene>
         <!--Knowledge Detail View Controller-->
         <scene sceneID="GGp-zf-gKg">
@@ -729,15 +997,40 @@
             </objects>
             <point key="canvasLocation" x="6198.5507246376819" y="1377.717391304348"/>
         </scene>
+        <!--Oter-->
+        <scene sceneID="c5R-vW-btM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0nZ-ST-f1z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Oter" image="infoIcon" id="yVV-Xa-2ds"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MYo-ey-jdl">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yyk-eK-Sni" kind="relationship" relationship="rootViewController" id="BEf-uK-FpM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVq-6G-CbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4431.884057971015" y="-332.60869565217394"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Blob1" width="418" height="428"/>
+        <image name="CAKE" width="18" height="22"/>
         <image name="Complain" width="36" height="36"/>
+        <image name="FOOD" width="20" height="18"/>
         <image name="InfoIcon" width="16" height="20"/>
+        <image name="PLUG" width="18" height="18"/>
+        <image name="VEGAN" width="18" height="21"/>
+        <image name="WIFI" width="22" height="16"/>
         <image name="infoIcon" width="22" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tf0-hN-EcQ"/>
+        <segue reference="U8K-E5-7Sy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

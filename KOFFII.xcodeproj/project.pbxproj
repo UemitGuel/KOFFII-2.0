@@ -18,6 +18,11 @@
 		B367D58222D3A7250069F4D0 /* Complain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58122D3A7250069F4D0 /* Complain.swift */; };
 		B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */; };
 		B367D58622D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58522D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift */; };
+		B367D58A22D4F2FA0069F4D0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58922D4F2FA0069F4D0 /* LocationViewController.swift */; };
+		B367D58C22D4F3630069F4D0 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */; };
+		B367D58E22D502CD0069F4D0 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58D22D502CD0069F4D0 /* CityViewController.swift */; };
+		B367D59022D502FB0069F4D0 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58F22D502FB0069F4D0 /* CityCollectionViewCell.swift */; };
+		B367D59222D504090069F4D0 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D59122D504090069F4D0 /* RoundButton.swift */; };
 		B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8C22CE0EAC003C5EDD /* User.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
 		B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5722C4F38B005848DA /* AppDelegate.swift */; };
@@ -47,6 +52,11 @@
 		B367D58122D3A7250069F4D0 /* Complain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complain.swift; sourceTree = "<group>"; };
 		B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
 		B367D58522D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		B367D58922D4F2FA0069F4D0 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		B367D58D22D502CD0069F4D0 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		B367D58F22D502FB0069F4D0 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		B367D59122D504090069F4D0 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		B399DB8C22CE0EAC003C5EDD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "KOFFII/Supporting Files/User.swift"; sourceTree = SOURCE_ROOT; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
 		B3AA7E5422C4F38B005848DA /* KOFFII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KOFFII.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +129,18 @@
 			path = KnowledgeDetail;
 			sourceTree = "<group>";
 		};
+		B367D58822D4F2D10069F4D0 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				B367D58922D4F2FA0069F4D0 /* LocationViewController.swift */,
+				B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */,
+				B367D58D22D502CD0069F4D0 /* CityViewController.swift */,
+				B367D58F22D502FB0069F4D0 /* CityCollectionViewCell.swift */,
+				B367D59122D504090069F4D0 /* RoundButton.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		B385DA5D22C4FDD600BD8C88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				B3404A1722CD080800062B01 /* StartViewControllers */,
+				B367D58822D4F2D10069F4D0 /* Location */,
 				B399DB8B22CE081B003C5EDD /* Information */,
 			);
 			path = Controller;
@@ -344,18 +367,23 @@
 				B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */,
 				B3EDF44E22CB82A8006F704B /* LogInViewController.swift in Sources */,
 				B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */,
+				B367D59022D502FB0069F4D0 /* CityCollectionViewCell.swift in Sources */,
 				B367D58022D39C810069F4D0 /* ComplainTableViewCell.swift in Sources */,
+				B367D58A22D4F2FA0069F4D0 /* LocationViewController.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
 				B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
+				B367D59222D504090069F4D0 /* RoundButton.swift in Sources */,
 				B367D58222D3A7250069F4D0 /* Complain.swift in Sources */,
 				B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */,
 				B3F62ED322D0C8FF002DF68C /* InformationDetailTableViewCell.swift in Sources */,
 				B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */,
+				B367D58C22D4F3630069F4D0 /* LocationTableViewCell.swift in Sources */,
 				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
 				B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,
+				B367D58E22D502CD0069F4D0 /* CityViewController.swift in Sources */,
 				B367D58622D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
