@@ -21,7 +21,6 @@ class InformationViewController: UIViewController {
     let sections = ["Brewing","Knowledge"]
     var items = [Array<Information>]()
     
-    
     let myGroup = DispatchGroup()
 
     

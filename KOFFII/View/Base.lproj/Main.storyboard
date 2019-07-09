@@ -33,10 +33,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1SX-ZT-ygb">
-                                <rect key="frame" x="32" y="316" width="350" height="104"/>
+                                <rect key="frame" x="32" y="318" width="350" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhW-aN-gKv">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="42"/>
                                         <color key="backgroundColor" red="0.71764705882352942" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                         <state key="normal" title="Create an account">
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-ds-v7I">
-                                        <rect key="frame" x="0.0" y="60" width="350" height="44"/>
+                                        <rect key="frame" x="0.0" y="58" width="350" height="42"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                         <state key="normal" title="Sign in">
@@ -60,7 +60,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Oj-Tz-RUD">
-                                <rect key="frame" x="32" y="192" width="350" height="44"/>
+                                <rect key="frame" x="32" y="194" width="350" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="yZY-Ic-MoV"/>
                                 </constraints>
@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you wanna do?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGT-gS-17V">
-                                <rect key="frame" x="32" y="236" width="350" height="48"/>
+                                <rect key="frame" x="32" y="238" width="350" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="k7f-9T-10z"/>
                                 </constraints>
@@ -107,19 +107,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EMAIL" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6LK-dO-5p3">
-                                <rect key="frame" x="32" y="282" width="350" height="36"/>
+                                <rect key="frame" x="32" y="285" width="350" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PASSWORD" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DHb-0K-7Fw">
-                                <rect key="frame" x="32" y="350" width="350" height="36"/>
+                                <rect key="frame" x="32" y="351" width="350" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwE-5D-IUJ">
-                                <rect key="frame" x="32" y="418" width="350" height="44"/>
+                                <rect key="frame" x="32" y="417" width="350" height="44"/>
                                 <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9Ia-Tt-wTa"/>
@@ -133,7 +133,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your information" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbs-KR-GMB">
-                                <rect key="frame" x="32" y="167" width="350" height="83"/>
+                                <rect key="frame" x="32" y="170" width="350" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="83" id="bf6-eU-X5I"/>
                                 </constraints>
@@ -178,25 +178,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EMAIL" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RMC-Hf-9T4">
-                                <rect key="frame" x="32" y="350" width="350" height="36"/>
+                                <rect key="frame" x="32" y="351" width="350" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NAME" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OjB-u2-xRo">
-                                <rect key="frame" x="32" y="282" width="350" height="36"/>
+                                <rect key="frame" x="32" y="285" width="350" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PASSWORD" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-i4-tT8">
-                                <rect key="frame" x="32" y="418" width="350" height="36"/>
+                                <rect key="frame" x="32" y="417" width="350" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFZ-0k-eLV">
-                                <rect key="frame" x="32" y="486" width="350" height="44"/>
+                                <rect key="frame" x="32" y="483" width="350" height="44"/>
                                 <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Iib-g9-EQG"/>
@@ -210,7 +210,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your information" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogb-Bw-OEf">
-                                <rect key="frame" x="32" y="164" width="350" height="86"/>
+                                <rect key="frame" x="32" y="167" width="350" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="86" id="wFt-Ux-DR7"/>
                                 </constraints>
@@ -441,6 +441,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cYw-2b-ecy" id="Upz-0i-3Vr"/>
+                                    <outlet property="delegate" destination="cYw-2b-ecy" id="9rD-qm-AYb"/>
+                                </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTt-yZ-8lH">
                                 <rect key="frame" x="8" y="629" width="398" height="50"/>
@@ -622,7 +626,7 @@
         <scene sceneID="biK-PU-2Gu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="edd-uV-2Uq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" image="WIFI" id="Cgl-vu-7Xl"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="InfoIcon" id="Cgl-vu-7Xl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tqz-W2-gGM">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -700,6 +704,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Ty-ze-2xx" id="z51-GU-Oh9"/>
+                                    <outlet property="delegate" destination="3Ty-ze-2xx" id="wEI-3e-phb"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -725,7 +733,7 @@
     <resources>
         <image name="Blob1" width="418" height="428"/>
         <image name="Complain" width="36" height="36"/>
-        <image name="WIFI" width="22" height="16"/>
+        <image name="InfoIcon" width="16" height="20"/>
         <image name="infoIcon" width="22" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>

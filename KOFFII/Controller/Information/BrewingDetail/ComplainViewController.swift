@@ -18,9 +18,12 @@ class ComplainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewController()
 
         complainLabel.text = passedComplainObject?.name
-        
+    }
+    
+    func setupViewController() {
         // eliminate 1pt line
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }

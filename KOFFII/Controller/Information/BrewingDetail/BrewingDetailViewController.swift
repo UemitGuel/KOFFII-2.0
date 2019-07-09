@@ -23,22 +23,37 @@ class BrewingDetailViewController: UIViewController {
     let myGroup = DispatchGroup()
     let myGrouptwo = DispatchGroup()
 
-    
-
-    
-    var passedInformationBrewing: Information? {
-        didSet{
-        }
-    }
+    var passedInformationBrewing: Information?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
+        setupViewController()
+        setupTableViewHeader()
+        setupComplainButton()
+    }
+    
+    //MARK: - Setup Firebase/ViewController/TableViewHeader
+    func setupFirebase() {
+        // [START setup]
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+    }
+    
+    func setupViewController() {
         self.tabBarController?.tabBar.isHidden = true
-
         title = passedInformationBrewing?.name
-        
-        
+    }
+    
+    func setupTableViewHeader() {
+        guard let imageName = passedInformationBrewing?.imageName else { return }
+        headerImageView.image = UIImage(named: imageName)
+    }
+    
+    //MARK: - Setup Complain Buttons. After, downloading the right Complain-Model Object by checking which button is tapped(via tag) and which complainCategory("Coffee" or "Espresso") is choosen, and then the right document from Firestore is downloaded ( Collecton: Complain )
+    func setupComplainButton() {
         if let passedCategory = passedInformationBrewing?.complainCatgory {
             if passedCategory == "Coffee" {
                 db.collection("Complain").whereField("coffee", arrayContains: true)
@@ -50,11 +65,9 @@ class BrewingDetailViewController: UIViewController {
                             self.myGroup.enter()
                             for document in querySnapshot!.documents {
                                 self.myGroup.enter()
-                                print("\(document.documentID) => \(document.data())")
                                 docIDs.append(document.documentID)
-                                }
-                            print(",d,d,d,d,dd, \(docIDs)")
                             }
+                        }
                 }
                 self.rightButton.setTitle("coffee too sour?", for: .normal)
                 self.leftButton.setTitle("coffee too bitter?", for: .normal)
@@ -66,30 +79,14 @@ class BrewingDetailViewController: UIViewController {
             self.rightButton.setTitle("", for: .normal)
             self.leftButton.setTitle("", for: .normal)
         }
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-
-        guard let imageName = passedInformationBrewing?.imageName else { return }
-        headerImageView.image = UIImage(named: imageName)
-        
     }
     
-    func setupFirebase() {
-        // [START setup]
-        let settings = FirestoreSettings()
-        
-        Firestore.firestore().settings = settings
-        // [END setup]
-        db = Firestore.firestore()
-    }
     
     @IBAction func complainButtonTapped(_ sender: UIButton) {
     
         guard let complainCategory = passedInformationBrewing?.complainCatgory else { return }
         downloadComplainObject(senderTag: sender.tag, complainCategory: complainCategory) { complain in
             self.downloadedComplainObject = complain
-            print("msmmsmsmsmsm \(String(describing: self.downloadedComplainObject))")
             self.performSegue(withIdentifier: "fromDetailToComplainSegue", sender: self)
             }
     }

@@ -1,28 +1,28 @@
 //
-//  InformationDetailTableViewCell.swift
+//  KnowledgeDetailTableViewCell.swift
 //  KOFFII
 //
-//  Created by Ümit Gül on 06.07.19.
+//  Created by Ümit Gül on 09.07.19.
 //  Copyright © 2019 Ümit Gül. All rights reserved.
 //
 
 import UIKit
 
-class InformationDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var countLabel: UILabel!
+
+class KnowledgeDetailTableViewCell: UITableViewCell {
+
     @IBOutlet weak var longTextLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }
