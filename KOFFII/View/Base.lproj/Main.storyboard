@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9pq-QZ-Vjb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NHI-7U-5fT">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -360,6 +360,9 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="wifiButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="11E-e7-q8T"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGT-oj-GcI" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
                                                 <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="63.666666666666664"/>
@@ -375,6 +378,9 @@
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="foodButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="z2g-ds-rGA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfw-YV-uQy" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
                                                 <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="63.666666666666664"/>
@@ -390,6 +396,9 @@
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="veganButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="c8m-4B-KzF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdk-sF-0UX" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
                                                 <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="63.666666666666664"/>
@@ -405,6 +414,9 @@
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cakeButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="Ljo-Yw-cHQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af3-ef-nbw" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
                                                 <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="63.666666666666664"/>
@@ -420,6 +432,9 @@
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="plugButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="eO5-aE-Eu9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -527,12 +542,198 @@
                         <viewLayoutGuide key="safeArea" id="WUx-bx-ZPg"/>
                     </view>
                     <connections>
+                        <outlet property="cakeButton" destination="bdk-sF-0UX" id="gKa-lr-vZr"/>
+                        <outlet property="cakeLabel" destination="rtz-Za-ccM" id="Y93-bN-s6p"/>
+                        <outlet property="foodButton" destination="uGT-oj-GcI" id="oN4-kn-sIH"/>
+                        <outlet property="foodLabel" destination="dbQ-6d-qV5" id="Umf-7A-v1D"/>
+                        <outlet property="plugButton" destination="af3-ef-nbw" id="tHx-15-xRb"/>
+                        <outlet property="plugLabel" destination="nsj-sj-GGu" id="q8o-oE-H1c"/>
                         <outlet property="tableView" destination="qsS-jK-kIv" id="Aks-A3-yFw"/>
+                        <outlet property="veganButton" destination="Yfw-YV-uQy" id="Uv1-4D-OZj"/>
+                        <outlet property="veganLabel" destination="xc3-9M-kc8" id="sUm-L9-nCD"/>
+                        <outlet property="wifiButton" destination="tb9-bb-GXI" id="Rne-qC-J7q"/>
+                        <outlet property="wifiLabel" destination="Ohb-Ln-w3a" id="bQY-rJ-Bjj"/>
+                        <segue destination="ZMK-a5-n10" kind="show" id="OQn-CR-hMN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xv-2a-RWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6286.9565217391309" y="-333.42391304347831"/>
+        </scene>
+        <!--Cafe Detail View Controller-->
+        <scene sceneID="LY7-zn-5Mi">
+            <objects>
+                <viewController id="ZMK-a5-n10" customClass="CafeDetailViewController" customModule="KOFFII" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X2H-nH-f6h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UIu-cn-qwQ">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="YOP-I9-RhW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="378"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-r0-Otc">
+                                            <rect key="frame" x="16" y="279" width="382" height="83"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-9b-bfF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="63.666666666666664"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4W-zt-HNu" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="63.666666666666664"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="J4W-zt-HNu" secondAttribute="height" multiplier="1:1" id="w20-Dx-hzi"/>
+                                                            </constraints>
+                                                            <state key="normal" image="WIFI"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-1L-tnV" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                            <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="63.666666666666664"/>
+                                                            <state key="normal" image="FOOD"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ips-Qk-zbg" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                            <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="63.666666666666664"/>
+                                                            <state key="normal" image="VEGAN"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-0z-zU5" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                            <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="63.666666666666664"/>
+                                                            <state key="normal" image="CAKE"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdB-hq-9yi" customClass="RoundButton" customModule="KOFFII" customModuleProvider="target">
+                                                            <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="63.666666666666664"/>
+                                                            <state key="normal" image="PLUG"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="J4W-zt-HNu" firstAttribute="width" secondItem="Fc3-1L-tnV" secondAttribute="width" id="Bh2-q7-ZzB"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-at-Xaz">
+                                                    <rect key="frame" x="0.0" y="64.666666666666686" width="382" height="18.333333333333329"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8E-gZ-4Q6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="18.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rO-aK-5uW">
+                                                            <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="18.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP3-8Y-ZVu">
+                                                            <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="18.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWJ-cQ-qWK">
+                                                            <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="18.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-VL-70x">
+                                                            <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="18.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="83" id="Iul-OB-yoB"/>
+                                            </constraints>
+                                        </stackView>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-01-jye">
+                                            <rect key="frame" x="0.0" y="36" width="414" height="235"/>
+                                        </mapView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6uH-r0-Otc" secondAttribute="trailing" constant="8" id="5cE-ib-Gtb"/>
+                                        <constraint firstItem="6uH-r0-Otc" firstAttribute="top" secondItem="bM6-01-jye" secondAttribute="bottom" constant="8" id="6Kd-dK-cRB"/>
+                                        <constraint firstItem="bM6-01-jye" firstAttribute="top" secondItem="YOP-I9-RhW" secondAttribute="topMargin" constant="8" id="8BQ-5H-qJy"/>
+                                        <constraint firstItem="6uH-r0-Otc" firstAttribute="leading" secondItem="YOP-I9-RhW" secondAttribute="leadingMargin" constant="8" id="K9H-aq-SbW"/>
+                                        <constraint firstItem="bM6-01-jye" firstAttribute="leading" secondItem="YOP-I9-RhW" secondAttribute="leading" id="NdE-yf-MUi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6uH-r0-Otc" secondAttribute="bottom" constant="8" id="YW1-ic-zu5"/>
+                                        <constraint firstAttribute="trailing" secondItem="bM6-01-jye" secondAttribute="trailing" id="YYc-Ku-QJk"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="top" secondItem="CY6-Vq-zU7" secondAttribute="top" id="5Kb-21-kDB"/>
+                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="trailing" secondItem="CY6-Vq-zU7" secondAttribute="trailing" id="KUT-0U-ZKD"/>
+                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="k2y-Nz-Ywr"/>
+                            <constraint firstItem="CY6-Vq-zU7" firstAttribute="bottom" secondItem="UIu-cn-qwQ" secondAttribute="bottom" id="sXn-6f-J3w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CY6-Vq-zU7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LsL-bI-y6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7360.8695652173919" y="-333.42391304347831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tZn-g3-hQb">
