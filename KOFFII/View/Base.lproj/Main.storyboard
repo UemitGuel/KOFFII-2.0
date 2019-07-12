@@ -351,7 +351,7 @@
                                                 <state key="normal" image="WIFI"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
+                                                        <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -372,7 +372,7 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
+                                                        <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -390,7 +390,7 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
+                                                        <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -408,7 +408,7 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
+                                                        <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -426,7 +426,7 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
+                                                        <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -553,7 +553,7 @@
                         <outlet property="veganLabel" destination="xc3-9M-kc8" id="sUm-L9-nCD"/>
                         <outlet property="wifiButton" destination="tb9-bb-GXI" id="Rne-qC-J7q"/>
                         <outlet property="wifiLabel" destination="Ohb-Ln-w3a" id="bQY-rJ-Bjj"/>
-                        <segue destination="ZMK-a5-n10" kind="show" id="OQn-CR-hMN"/>
+                        <segue destination="ZMK-a5-n10" kind="show" identifier="fromCitytoDetailSegue" id="OQn-CR-hMN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xv-2a-RWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -569,7 +569,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UIu-cn-qwQ">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="622"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="YOP-I9-RhW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="378"/>
@@ -707,29 +707,120 @@
                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-01-jye">
                                             <rect key="frame" x="0.0" y="36" width="414" height="235"/>
                                         </mapView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2D-8u-aeR">
+                                            <rect key="frame" x="0.0" y="36" width="414" height="235"/>
+                                            <connections>
+                                                <action selector="toLocationButtonTapped:" destination="ZMK-a5-n10" eventType="touchUpInside" id="a2u-5f-1JD"/>
+                                            </connections>
+                                        </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cafe_map_icon" translatesAutoresizingMaskIntoConstraints="NO" id="NfX-Ot-MU0">
+                                            <rect key="frame" x="199" y="133.66666666666666" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="lys-PZ-eWP"/>
+                                                <constraint firstAttribute="height" constant="20" id="pca-EX-oM8"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="6uH-r0-Otc" secondAttribute="trailing" constant="8" id="5cE-ib-Gtb"/>
                                         <constraint firstItem="6uH-r0-Otc" firstAttribute="top" secondItem="bM6-01-jye" secondAttribute="bottom" constant="8" id="6Kd-dK-cRB"/>
                                         <constraint firstItem="bM6-01-jye" firstAttribute="top" secondItem="YOP-I9-RhW" secondAttribute="topMargin" constant="8" id="8BQ-5H-qJy"/>
+                                        <constraint firstItem="W2D-8u-aeR" firstAttribute="leading" secondItem="YOP-I9-RhW" secondAttribute="leading" id="Dfg-a0-wCU"/>
                                         <constraint firstItem="6uH-r0-Otc" firstAttribute="leading" secondItem="YOP-I9-RhW" secondAttribute="leadingMargin" constant="8" id="K9H-aq-SbW"/>
+                                        <constraint firstItem="6uH-r0-Otc" firstAttribute="top" secondItem="W2D-8u-aeR" secondAttribute="bottom" constant="8" id="KBb-5d-0Ma"/>
                                         <constraint firstItem="bM6-01-jye" firstAttribute="leading" secondItem="YOP-I9-RhW" secondAttribute="leading" id="NdE-yf-MUi"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="6uH-r0-Otc" secondAttribute="bottom" constant="8" id="YW1-ic-zu5"/>
                                         <constraint firstAttribute="trailing" secondItem="bM6-01-jye" secondAttribute="trailing" id="YYc-Ku-QJk"/>
+                                        <constraint firstItem="NfX-Ot-MU0" firstAttribute="centerY" secondItem="W2D-8u-aeR" secondAttribute="centerY" constant="-9.8333333333333428" id="mYy-w9-x1P"/>
+                                        <constraint firstItem="W2D-8u-aeR" firstAttribute="top" secondItem="YOP-I9-RhW" secondAttribute="topMargin" constant="8" id="tCz-zQ-CS9"/>
+                                        <constraint firstItem="NfX-Ot-MU0" firstAttribute="centerX" secondItem="W2D-8u-aeR" secondAttribute="centerX" constant="2" id="yFu-Z3-EQd"/>
+                                        <constraint firstAttribute="trailing" secondItem="W2D-8u-aeR" secondAttribute="trailing" id="yXC-iX-g51"/>
                                     </constraints>
                                 </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customMessageCell" id="uht-fI-1So">
+                                        <rect key="frame" x="0.0" y="406" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uht-fI-1So" id="0pP-aG-tmb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZMK-a5-n10" id="FQ6-PM-UTu"/>
+                                    <outlet property="delegate" destination="ZMK-a5-n10" id="fWS-YI-ZEI"/>
+                                </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aC-Qv-AAN" userLabel="Compose View">
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Message" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tr-Dk-T0b">
+                                        <rect key="frame" x="8" y="10" width="344" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZMK-a5-n10" id="TNq-vY-kwm"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbs-od-JZC">
+                                        <rect key="frame" x="360" y="10" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="19p-wI-QZ1"/>
+                                            <constraint firstAttribute="height" constant="30" id="SU5-sq-2kt"/>
+                                        </constraints>
+                                        <state key="normal" title="Send">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="ZMK-a5-n10" eventType="touchUpInside" id="mqp-v3-EWi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1tr-Dk-T0b" firstAttribute="top" secondItem="8aC-Qv-AAN" secondAttribute="top" constant="10" id="RdT-tD-RHT"/>
+                                    <constraint firstItem="1tr-Dk-T0b" firstAttribute="leading" secondItem="8aC-Qv-AAN" secondAttribute="leading" constant="8" id="UA1-bi-wdt"/>
+                                    <constraint firstAttribute="height" constant="50" id="WPC-Fy-lCA"/>
+                                    <constraint firstAttribute="trailing" secondItem="nbs-od-JZC" secondAttribute="trailing" constant="8" id="f5K-Sb-LzZ"/>
+                                    <constraint firstItem="nbs-od-JZC" firstAttribute="centerY" secondItem="8aC-Qv-AAN" secondAttribute="centerY" id="shp-JT-4vW"/>
+                                    <constraint firstItem="nbs-od-JZC" firstAttribute="leading" secondItem="1tr-Dk-T0b" secondAttribute="trailing" constant="8" id="yL1-4V-6QF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="top" secondItem="CY6-Vq-zU7" secondAttribute="top" id="5Kb-21-kDB"/>
-                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="trailing" secondItem="CY6-Vq-zU7" secondAttribute="trailing" id="KUT-0U-ZKD"/>
-                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="k2y-Nz-Ywr"/>
-                            <constraint firstItem="CY6-Vq-zU7" firstAttribute="bottom" secondItem="UIu-cn-qwQ" secondAttribute="bottom" id="sXn-6f-J3w"/>
+                            <constraint firstItem="CY6-Vq-zU7" firstAttribute="trailing" secondItem="8aC-Qv-AAN" secondAttribute="trailing" id="Th7-xZ-2vX"/>
+                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="cQD-fZ-zai"/>
+                            <constraint firstItem="8aC-Qv-AAN" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="jUe-J2-jhZ"/>
+                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="top" secondItem="CY6-Vq-zU7" secondAttribute="top" id="jYh-8m-xf8"/>
+                            <constraint firstItem="8aC-Qv-AAN" firstAttribute="bottom" secondItem="CY6-Vq-zU7" secondAttribute="bottom" id="npg-L0-Hcn"/>
+                            <constraint firstItem="8aC-Qv-AAN" firstAttribute="top" secondItem="UIu-cn-qwQ" secondAttribute="bottom" id="sej-ur-ss4"/>
+                            <constraint firstItem="8aC-Qv-AAN" firstAttribute="top" secondItem="UIu-cn-qwQ" secondAttribute="bottom" id="tt7-QS-GgD"/>
+                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="trailing" secondItem="CY6-Vq-zU7" secondAttribute="trailing" id="xSl-WS-K95"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CY6-Vq-zU7"/>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cakeButton" destination="LhJ-0z-zU5" id="Jwi-W2-RQX"/>
+                        <outlet property="cakeLabel" destination="kWJ-cQ-qWK" id="DPO-8n-6fQ"/>
+                        <outlet property="foodButton" destination="Fc3-1L-tnV" id="thr-xm-itG"/>
+                        <outlet property="foodLabel" destination="2rO-aK-5uW" id="rkU-id-Awu"/>
+                        <outlet property="heightConstraint" destination="WPC-Fy-lCA" id="UiS-2h-pXu"/>
+                        <outlet property="map" destination="bM6-01-jye" id="McD-fw-zDM"/>
+                        <outlet property="messageTextField" destination="1tr-Dk-T0b" id="v93-ov-SOO"/>
+                        <outlet property="plugButton" destination="RdB-hq-9yi" id="j3Z-rd-6f8"/>
+                        <outlet property="plugLabel" destination="MhJ-VL-70x" id="djS-OZ-t9j"/>
+                        <outlet property="sendButton" destination="nbs-od-JZC" id="NWV-1o-GIb"/>
+                        <outlet property="tableView" destination="UIu-cn-qwQ" id="wx4-2h-aYr"/>
+                        <outlet property="toLocationButton" destination="W2D-8u-aeR" id="5uc-O0-RXq"/>
+                        <outlet property="veganButton" destination="ips-Qk-zbg" id="KGK-QG-hCF"/>
+                        <outlet property="veganLabel" destination="eP3-8Y-ZVu" id="EuW-rV-g1V"/>
+                        <outlet property="wifiButton" destination="J4W-zt-HNu" id="55m-Kk-dcM"/>
+                        <outlet property="wifiLabel" destination="x8E-gZ-4Q6" id="ifH-MA-Tyg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsL-bI-y6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1221,6 +1312,7 @@
     <resources>
         <image name="Blob1" width="418" height="428"/>
         <image name="CAKE" width="18" height="22"/>
+        <image name="Cafe_map_icon" width="26" height="35"/>
         <image name="Complain" width="36" height="36"/>
         <image name="FOOD" width="20" height="18"/>
         <image name="InfoIcon" width="16" height="20"/>
@@ -1230,7 +1322,7 @@
         <image name="infoIcon" width="22" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U8K-E5-7Sy"/>
+        <segue reference="tf0-hN-EcQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

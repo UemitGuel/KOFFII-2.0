@@ -32,6 +32,8 @@
 		B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5E22C4F38C005848DA /* Assets.xcassets */; };
 		B3AA7E6222C4F38C005848DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6022C4F38C005848DA /* LaunchScreen.storyboard */; };
 		B3AA7E6A22C4F877005848DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */; };
+		B3BCACDA22D8D7B800A4FEDF /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */; };
+		B3BCACDB22D8D7B800A4FEDF /* CustomMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */; };
 		B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */; };
 		B3C589E922D553C5002C03A8 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C589E822D553C5002C03A8 /* Cafe.swift */; };
 		B3EDF44E22CB82A8006F704B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDF44D22CB82A8006F704B /* LogInViewController.swift */; };
@@ -44,7 +46,7 @@
 
 /* Begin PBXFileReference section */
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
-		B309008122D796CC00DE7662 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailViewController.swift; sourceTree = "<group>"; };
+		B309008122D796CC00DE7662 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = ../CafeDetailViewController.swift; sourceTree = "<group>"; };
 		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		B3AA7E6122C4F38C005848DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3AA7E6322C4F38C005848DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
+		B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMessageCell.xib; sourceTree = "<group>"; };
 		B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		B3C589E822D553C5002C03A8 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		B3EDF44D22CB82A8006F704B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +152,7 @@
 				B367D58922D4F2FA0069F4D0 /* LocationViewController.swift */,
 				B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */,
 				B309008022D796A500DE7662 /* City_Cafes */,
-				B309008122D796CC00DE7662 /* CafeDetailViewController.swift */,
+				B3BCACD722D8D3F000A4FEDF /* New Group */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -234,6 +238,16 @@
 				B385DA6022C4FE1B00BD8C88 /* Supporting Files */,
 			);
 			path = KOFFII;
+			sourceTree = "<group>";
+		};
+		B3BCACD722D8D3F000A4FEDF /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				B309008122D796CC00DE7662 /* CafeDetailViewController.swift */,
+				B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */,
+				B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		B3F62ED422D0CADB002DF68C /* BrewingDetail */ = {
@@ -325,6 +339,7 @@
 				B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */,
 				B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */,
 				B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */,
+				B3BCACDB22D8D7B800A4FEDF /* CustomMessageCell.xib in Resources */,
 				B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +411,7 @@
 				B390EFC222D60F7300A931E9 /* City_CafeTableViewCell.swift in Sources */,
 				B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */,
 				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,
+				B3BCACDA22D8D7B800A4FEDF /* CustomMessageCell.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
 				B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,

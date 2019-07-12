@@ -93,6 +93,8 @@ class CityViewController: UIViewController {
     
     func setupViewController() {
         // eliminate 1pt line
+        self.tabBarController?.tabBar.isHidden = true
+        title = passedCityName
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
     
@@ -130,8 +132,8 @@ class CityViewController: UIViewController {
         if !requestedFeatures.contains(.Wifi) {
             requestedFeatures.append(.Wifi)
             
-            wifiButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
-            wifiButton.borderWidth = 2
+            wifiButton.customBGColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+            wifiButton.borderWidth = 3
             wifiLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
             
             filtering()
@@ -152,8 +154,8 @@ class CityViewController: UIViewController {
         if !requestedFeatures.contains(.Food) {
             requestedFeatures.append(.Food)
             
-            foodButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
-            foodButton.borderWidth = 2
+            foodButton.customBGColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+            foodButton.borderWidth = 3
             foodLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
             
             filtering()
@@ -175,8 +177,8 @@ class CityViewController: UIViewController {
         if !requestedFeatures.contains(.Vegan) {
             requestedFeatures.append(.Vegan)
             
-            veganButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
-            veganButton.borderWidth = 2
+            veganButton.customBGColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+            veganButton.borderWidth = 3
             veganLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
             
             filtering()
@@ -197,8 +199,8 @@ class CityViewController: UIViewController {
         if !requestedFeatures.contains(.Cake) {
             requestedFeatures.append(.Cake)
             
-            cakeButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
-            cakeButton.borderWidth = 2
+            cakeButton.customBGColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+            cakeButton.borderWidth = 3
             cakeLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
             
             filtering()
@@ -219,8 +221,8 @@ class CityViewController: UIViewController {
         if !requestedFeatures.contains(.Plug) {
             requestedFeatures.append(.Plug)
             
-            plugButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
-            plugButton.borderWidth = 2
+            plugButton.customBGColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+            plugButton.borderWidth = 3
             plugLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
             
             filtering()
@@ -236,7 +238,6 @@ class CityViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
     
     func isFiltering() -> Bool {
         return !requestedFeatures.isEmpty
@@ -364,6 +365,8 @@ extension CityViewController: UITableViewDataSource {
     
     @objc func handleButtonTapped(sender: UIButton) {
         SVProgressHUD.show()
+        self.view.isUserInteractionEnabled = false
+
         
         let selectedIndex = IndexPath(row: sender.tag, section: 0)
         
@@ -400,6 +403,8 @@ extension CityViewController: UITableViewDataSource {
                         self.tableView.reloadData()
                         SVProgressHUD.dismiss()
                         self.updateFavCafesCollectionForCurrentUser(sender: sender, newFavStatus: newFavStatus)
+                        self.view.isUserInteractionEnabled = true
+
                     }
                 }
                 }
@@ -412,5 +417,25 @@ extension CityViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 93
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "fromCitytoDetailSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromCitytoDetailSegue" {
+            let cityDetailVC = segue.destination as! CafeDetailViewController
+                
+            if let indexPath = tableView.indexPathForSelectedRow {
+                if isFiltering() {
+                    cityDetailVC.passedCafeObject = filteredCafeObjects[indexPath.row]
+                    cityDetailVC.passedCityName = passedCityName
+                } else {
+                    cityDetailVC.passedCafeObject = cafeObjects[indexPath.row]
+                    cityDetailVC.passedCityName = passedCityName
 
+                }
+            }
+        }
+    }
 }
