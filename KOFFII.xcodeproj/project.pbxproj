@@ -23,6 +23,7 @@
 		B367D58C22D4F3630069F4D0 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */; };
 		B367D58E22D502CD0069F4D0 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58D22D502CD0069F4D0 /* CityViewController.swift */; };
 		B367D59222D504090069F4D0 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D59122D504090069F4D0 /* RoundButton.swift */; };
+		B370A06D22D93200009C4CFA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370A06C22D93200009C4CFA /* Message.swift */; };
 		B390EFC222D60F7300A931E9 /* City_CafeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390EFC122D60F7300A931E9 /* City_CafeTableViewCell.swift */; };
 		B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8C22CE0EAC003C5EDD /* User.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
@@ -61,6 +62,7 @@
 		B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		B367D58D22D502CD0069F4D0 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		B367D59122D504090069F4D0 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundButton.swift; path = Fonts/RoundButton.swift; sourceTree = "<group>"; };
+		B370A06C22D93200009C4CFA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B390EFC122D60F7300A931E9 /* City_CafeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_CafeTableViewCell.swift; sourceTree = "<group>"; };
 		B399DB8C22CE0EAC003C5EDD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "KOFFII/Supporting Files/User.swift"; sourceTree = SOURCE_ROOT; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
@@ -164,6 +166,7 @@
 				B399DB8E22CE0FFA003C5EDD /* Information.swift */,
 				B367D58122D3A7250069F4D0 /* Complain.swift */,
 				B3C589E822D553C5002C03A8 /* Cafe.swift */,
+				B370A06C22D93200009C4CFA /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				B367D58A22D4F2FA0069F4D0 /* LocationViewController.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
 				B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */,
+				B370A06D22D93200009C4CFA /* Message.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
 				B367D59222D504090069F4D0 /* RoundButton.swift in Sources */,
 				B367D58222D3A7250069F4D0 /* Complain.swift in Sources */,

@@ -46,26 +46,27 @@ class RegistrationViewController: UIViewController {
             print(error!)
         } else {
             print("Success")
-        }
-        
-        var ref: DocumentReference? = nil
-        ref = self.db.collection("User").addDocument(data: [
-            "name": self.nameTextField.text!,
-            "email": self.emailTextField.text!,
-            "favCafes": []
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
+            self.db.collection("User").document(Auth.auth().currentUser!.uid).setData([
+                "name": self.nameTextField.text!,
+                "email": self.emailTextField.text!,
+                "favCafes": []
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
             }
-        }
-                
-        SVProgressHUD.dismiss()
+            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+            changeRequest?.displayName = self.nameTextField.text
+            changeRequest?.commitChanges { (error) in
+                print(error)
+            }
             
-        self.performSegue(withIdentifier: "fromRegtoHomeSegue", sender: self)
+            SVProgressHUD.dismiss()
             
+            self.performSegue(withIdentifier: "fromRegtoHomeSegue", sender: self)
         }
-        
     }
+}
 }

@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import MapKit
 import CoreLocation
+import SVProgressHUD
 
 class CafeDetailViewController: UIViewController {
 
@@ -39,7 +40,9 @@ class CafeDetailViewController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     
     var db: Firestore!
+    let myGroup = DispatchGroup()
     
+    var messages: [Message] = [Message]()
     var passedCityName: String?
     var passedCafeObject: Cafe?
     let regionRadius: CLLocationDistance = 1000
@@ -62,6 +65,8 @@ class CafeDetailViewController: UIViewController {
         // Adding TapGesture for Textfield
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         tableView.addGestureRecognizer(tapGesture)
+        
+        retrieveMessages()
     }
     
     func setupFirebase() {
@@ -70,6 +75,7 @@ class CafeDetailViewController: UIViewController {
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
+
     }
     
     @objc func tableViewTapped() {
@@ -156,47 +162,90 @@ class CafeDetailViewController: UIViewController {
         
     }
     
+    func retrieveMessages() {
+        messages.removeAll()
+        SVProgressHUD.show()
+        let ref = db.collection("City").document(passedCityName!).collection("Cafes").document(passedCafeObject!.name).collection("Messages")
+        
+        //Before downloading the messages, let´s order them for creation date
+        // HERE: The Order Function doesnt work!
+        ref.order(by: "created", descending: true).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.myGroup.enter()
+                    print("\(document.documentID) => \(document.data())")
+                    ref.document(document.documentID).getDocument{ (document, error) in
+                        if let messageObject = document.flatMap({
+                            $0.data().flatMap({ (data) in
+                                return Message(dictionary: data)
+                            })
+                        }) {
+                            print("Message Object: \(messageObject)")
+                            self.messages.append(messageObject)
+                            self.myGroup.leave()
+                        } else {
+                            print("Document does not exist")
+                        }
+                    }
+                }
+                self.myGroup.notify(queue: .main) {
+                    print("Finished all requests.")
+                    self.messages = self.messages.sorted(by: { $1.timeStamp!.dateValue() > $0.timeStamp!.dateValue()})
+                    print("adkmskmakd \(self.messages)")
+                    self.configureTableView()
+                    self.tableView.reloadData()
+                    SVProgressHUD.dismiss()
+                }
+            }
+        }
+    }
+    
     @IBAction func sendPressed(_ sender: UIButton) {
+        SVProgressHUD.show()
+        
         messageTextField.endEditing(true)
         messageTextField.isEnabled = false
         sendButton.isEnabled = false
         
-        let currentUserName = String()
-//        db.collection("User").document(Auth.auth().currentUser!.uid).get()
+        let date = Date()
+        let calendar = Calendar.current
         
+        let sentDate = "\(calendar.component(.day, from: date)).\(calendar.component(.month, from: date)), \(calendar.component(.year, from: date))"
         
-        
-        
-        let ref = db.collection("City").document(passedCityName!).collection("Cafes")
-        
-        
-        
-        ref.document(passedCafeObject!.name).setData([
-            "author": Auth.auth().currentUser?.uid,
-            "state": "CA",
-            "country": "USA"
+    db.collection("City").document(passedCityName!).collection("Cafes").document(passedCafeObject!.name).collection("Messages").document().setData([
+        "author": Auth.auth().currentUser?.displayName ?? "",
+            "date": sentDate,
+            "message": messageTextField.text ?? "",
+            "created": FieldValue.serverTimestamp()
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
+                SVProgressHUD.dismiss()
             } else {
                 print("Document successfully written!")
+                SVProgressHUD.dismiss()
+                self.messageTextField.isEnabled = true
+                self.sendButton.isEnabled = true
+                self.messageTextField.text = ""
+                self.retrieveMessages()
             }
         }
-        
+
     }
-    
-    
 }
 
 extension CafeDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
-        let messages = ["Message 1","mddmemdemidmeimdiemdiemdimeidmeimdiemmdemdimeidmemdei", "sdksdmk"]
-        cell.commentLabel?.text = messages[indexPath.row]
+        cell.nameLabel.text = messages[indexPath.row].author
+        cell.dateLabel.text = messages[indexPath.row].date
+        cell.commentLabel?.text = messages[indexPath.row].message
         return cell
     }
     
