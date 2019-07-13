@@ -18,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        //UISegmentedControl
-        let attr = NSDictionary(object: UIFont(name: "Staatliches-Regular", size: 25.0)!, forKey: NSAttributedString.Key.font as NSCopying)
-        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] as [NSObject : AnyObject] as? [NSAttributedString.Key : Any] , for: .normal)
         
         // Tabbar
         CBFlashyTabBar.appearance().tintColor = #colorLiteral(red: 0.7176470588, green: 0.1098039216, blue: 0.1098039216, alpha: 1)

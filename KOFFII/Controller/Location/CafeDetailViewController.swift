@@ -66,6 +66,7 @@ class CafeDetailViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         tableView.addGestureRecognizer(tapGesture)
         
+        title = passedCafeObject?.name
         retrieveMessages()
     }
     
@@ -94,27 +95,27 @@ class CafeDetailViewController: UIViewController {
     
     func activateButtons() {
         if passedCafeObject?.features!["wifi"] == true {
-            wifiButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
+            wifiButton.customBGColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
             wifiButton.borderWidth = 2
             wifiLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
         }
         if passedCafeObject?.features!["food"] == true {
-            foodButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
+            foodButton.customBGColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
             foodButton.borderWidth = 2
             foodLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
         }
         if passedCafeObject?.features!["vegan"] == true {
-            veganButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
+            veganButton.customBGColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
             veganButton.borderWidth = 2
             veganLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
         }
         if passedCafeObject?.features!["cake"] == true {
-            cakeButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
+            cakeButton.customBGColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
             cakeButton.borderWidth = 2
             cakeLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
         }
         if passedCafeObject?.features!["plugin"] == true {
-            plugButton.customBGColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
+            plugButton.customBGColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
             plugButton.borderWidth = 2
             plugLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
         }
@@ -243,20 +244,27 @@ extension CafeDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
+        cell.selectionStyle = .none
         cell.nameLabel.text = messages[indexPath.row].author
         cell.dateLabel.text = messages[indexPath.row].date
         cell.commentLabel?.text = messages[indexPath.row].message
+        
+        if messages[indexPath.row].author == Auth.auth().currentUser?.displayName {
+            cell.messageBackgroundView.backgroundColor = UIColor(red: 220/255, green: 248/255, blue: 198/255, alpha: 1)
+            cell.leftSideContraint.constant = 24
+            cell.rightSideConstraint.constant = 8
+        } else {
+            cell.messageBackgroundView.backgroundColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
+            cell.leftSideContraint.constant = 8
+            cell.rightSideConstraint.constant = 24
+        }
         return cell
     }
     
     func configureTableView() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 120.0
-        
-        
     }
-    
-    
 }
 
 extension CafeDetailViewController: UITableViewDelegate {
@@ -266,8 +274,8 @@ extension CafeDetailViewController: UITableViewDelegate {
 extension CafeDetailViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        UIView.animate(withDuration: 1.0) {
-            self.heightConstraint.constant = 308
+        UIView.animate(withDuration: 0.5) {
+            self.heightConstraint.constant = 316
             self.view.layoutIfNeeded()
             let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
             self.tableView.setContentOffset(scrollPoint, animated: false)

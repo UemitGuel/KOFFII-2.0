@@ -72,8 +72,9 @@ extension LocationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableViewCell", for: indexPath) as! LocationTableViewCell
-        cell.cityLabel.text = cityNames[indexPath.row]
+        cell.selectionStyle = .none
         
+        cell.cityLabel.text = cityNames[indexPath.row]
         //MARK: name and ImageName have to be the same so this works
         cell.locationImageView.image = UIImage(named: cityNames[indexPath.row])
         return cell
