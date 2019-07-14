@@ -27,6 +27,7 @@
 		B390EFC222D60F7300A931E9 /* City_CafeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390EFC122D60F7300A931E9 /* City_CafeTableViewCell.swift */; };
 		B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8C22CE0EAC003C5EDD /* User.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
+		B3A3C04522DB59C10081A86F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3C04422DB59C10081A86F /* ProfileViewController.swift */; };
 		B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5722C4F38B005848DA /* AppDelegate.swift */; };
 		B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5922C4F38B005848DA /* WelcomeView.swift */; };
 		B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5B22C4F38B005848DA /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		B390EFC122D60F7300A931E9 /* City_CafeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_CafeTableViewCell.swift; sourceTree = "<group>"; };
 		B399DB8C22CE0EAC003C5EDD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "KOFFII/Supporting Files/User.swift"; sourceTree = SOURCE_ROOT; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
+		B3A3C04422DB59C10081A86F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B3AA7E5422C4F38B005848DA /* KOFFII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KOFFII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AA7E5722C4F38B005848DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3AA7E5922C4F38B005848DA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -154,7 +156,7 @@
 				B367D58922D4F2FA0069F4D0 /* LocationViewController.swift */,
 				B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */,
 				B309008022D796A500DE7662 /* City_Cafes */,
-				B3BCACD722D8D3F000A4FEDF /* New Group */,
+				B3BCACD722D8D3F000A4FEDF /* CafeDetail */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -186,6 +188,7 @@
 				B3404A1722CD080800062B01 /* StartViewControllers */,
 				B367D58822D4F2D10069F4D0 /* Location */,
 				B399DB8B22CE081B003C5EDD /* Information */,
+				B3A3C04422DB59C10081A86F /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,14 +246,14 @@
 			path = KOFFII;
 			sourceTree = "<group>";
 		};
-		B3BCACD722D8D3F000A4FEDF /* New Group */ = {
+		B3BCACD722D8D3F000A4FEDF /* CafeDetail */ = {
 			isa = PBXGroup;
 			children = (
 				B309008122D796CC00DE7662 /* CafeDetailViewController.swift */,
 				B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */,
 				B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */,
 			);
-			path = "New Group";
+			path = CafeDetail;
 			sourceTree = "<group>";
 		};
 		B3F62ED422D0CADB002DF68C /* BrewingDetail */ = {
@@ -406,6 +409,7 @@
 				B370A06D22D93200009C4CFA /* Message.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
 				B367D59222D504090069F4D0 /* RoundButton.swift in Sources */,
+				B3A3C04522DB59C10081A86F /* ProfileViewController.swift in Sources */,
 				B367D58222D3A7250069F4D0 /* Complain.swift in Sources */,
 				B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */,
 				B3C589E922D553C5002C03A8 /* Cafe.swift in Sources */,

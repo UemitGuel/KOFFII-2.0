@@ -48,6 +48,7 @@ class LocationViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    //Loading all CityName. Just querriny the names, so we don´t use to much data at this point.
     func loadCityNames(completionHandler: @escaping (Array<String>) -> Void) {
         var tempCityNames = Array<String>()
         db.collection("City").getDocuments() { (querySnapshot, err) in

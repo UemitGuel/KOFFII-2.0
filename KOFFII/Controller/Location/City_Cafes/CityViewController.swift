@@ -11,6 +11,7 @@ import Firebase
 import SDWebImage
 import SVProgressHUD
 
+// Needed to compare requested Features, so what the users clicked, and the actual value inside the data
 enum Features {
     case Wifi
     case Food
@@ -22,7 +23,6 @@ enum Features {
 class CityViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     
     @IBOutlet weak var wifiButton: RoundButton!
     @IBOutlet weak var wifiLabel: UILabel!
@@ -41,14 +41,11 @@ class CityViewController: UIViewController {
     
 
     var db: Firestore!
-    
     let myGroup = DispatchGroup()
 
     var cafeObjects = Array<Cafe>()
     var filteredCafeObjects = Array<Cafe>()
-
     var requestedFeatures : [Features] = []
-    
     var passedCityName = String()
     
     override func viewDidLoad() {
@@ -128,6 +125,7 @@ class CityViewController: UIViewController {
         }
     }
     
+    // Handling what happens when Feature Buttons get clicked
     @IBAction func wifiButtonTapped(_ sender: UIButton) {
         if !requestedFeatures.contains(.Wifi) {
             requestedFeatures.append(.Wifi)
@@ -239,6 +237,8 @@ class CityViewController: UIViewController {
         }
     }
     
+    
+    // Active Filtering, if feature buttons are clicked
     func isFiltering() -> Bool {
         return !requestedFeatures.isEmpty
     }
@@ -293,7 +293,7 @@ extension CityViewController: UITableViewDataSource {
             cell.cafeNameLabel.text = cafeObjects[indexPath.row].name
         }
         
-        // first create UIImageView
+        // Creates the fav button
         let button   = UIButton(type: UIButton.ButtonType.custom) as UIButton
         button.frame = CGRect(x: 20, y: 20, width: 30, height: 30)
         if cafeObjects[indexPath.row].fav == true {
@@ -364,24 +364,16 @@ extension CityViewController: UITableViewDataSource {
         }
     }
     
+    // Handels what happens when the Fav Button is clicked.
     @objc func handleButtonTapped(sender: UIButton) {
         SVProgressHUD.show()
         self.view.isUserInteractionEnabled = false
-
-        
         let selectedIndex = IndexPath(row: sender.tag, section: 0)
-        
-        // And finally do whatever you need using this index :
-        
         tableView.selectRow(at: selectedIndex, animated: true, scrollPosition: .none)
-        
-        // Now if you need to access the selected cell instead of just the index path, you could easily do so by using the table view's cellForRow method
-        
+
         let newFavStatus = !cafeObjects[selectedIndex.row].fav!
-        
         let ref = db.collection("City").document(passedCityName).collection("Cafes").document(cafeObjects[selectedIndex.row].name)
         
-        // Set the "capital" field of the city 'DC'
         ref.updateData([
             "fav": newFavStatus
         ]) { err in

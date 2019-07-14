@@ -10,6 +10,8 @@ import UIKit
 
 class WelcomeView: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        

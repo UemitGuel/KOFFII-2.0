@@ -79,6 +79,7 @@ class CafeDetailViewController: UIViewController {
 
     }
     
+    // So the keyboard disappears when there is a click outside the textfield
     @objc func tableViewTapped() {
         messageTextField.endEditing(true)
     }
@@ -93,6 +94,7 @@ class CafeDetailViewController: UIViewController {
         
     }
     
+    // which buttons have to be highlighted (depending on the data in firestore)
     func activateButtons() {
         if passedCafeObject?.features!["wifi"] == true {
             wifiButton.customBGColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
@@ -121,6 +123,7 @@ class CafeDetailViewController: UIViewController {
         }
     }
     
+    //Showing and handeling location
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
