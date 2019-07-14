@@ -15,7 +15,7 @@ struct Cafe {
     let longitude: Double?
     let locationURL: String?
     let features: [String: Bool]?
-    let fav: Bool?
+//    let fav: Bool?
     
     init?(dictionary: [String: Any]) {
         guard let name = dictionary["name"] as? String else { return nil }
@@ -26,6 +26,6 @@ struct Cafe {
         self.longitude = dictionary["longitude"] as? Double
         self.locationURL = dictionary["locationURL"] as? String
         self.features = dictionary["features"] as? [String: Bool]
-        self.fav = dictionary["fav"] as? Bool
+//        self.fav = dictionary["fav"] as? Bool
     }
 }

@@ -14,6 +14,9 @@ import SVProgressHUD
 
 class RegistrationViewController: UIViewController {
 
+    @IBOutlet weak var createButton: UIButton!
+    
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,8 +25,12 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+
+
         setupFirebase()
+        createButton.layer.cornerRadius = 8
 
     }
     

@@ -15,10 +15,16 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var signInButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
 
+
+        signInButton.layer.cornerRadius = 8
     }
   
     
