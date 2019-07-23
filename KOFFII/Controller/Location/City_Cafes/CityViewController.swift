@@ -42,6 +42,8 @@ class CityViewController: UIViewController {
 
     var db: Firestore!
     let myGroup = DispatchGroup()
+    
+    var user: User?
 
     var cafeObjects = Array<Cafe>()
     var filteredCafeObjects = Array<Cafe>()
@@ -53,6 +55,9 @@ class CityViewController: UIViewController {
         setupFirebase()
         setupButtons()
         setupViewController()
+        fetchUserData(completionHandler: {
+            self.tableView.reloadData()
+        })
         
         downloadAllCafeIDsForTheCity(city: passedCityName) { ids in
             for id in ids {
@@ -64,10 +69,30 @@ class CityViewController: UIViewController {
             }
             self.myGroup.notify(queue: .main) {
                 print("Finished all requests.")
+                self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name})
+                self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name})
                 self.tableView.reloadData()
             }
         }
-
+    }
+    
+    func fetchUserData(completionHandler: @escaping () -> Void) {
+        let docRef = db.collection("User").document(Auth.auth().currentUser!.uid)
+        
+        docRef.getDocument { (document, error) in
+            if let downloadedUser = document.flatMap({
+                $0.data().flatMap({ (data) in
+                    return User(dictionary: data)
+                })
+            }) {
+                print("User: \(downloadedUser )")
+                self.user = downloadedUser
+                completionHandler()
+            } else {
+                print("Document does not exist")
+                completionHandler()
+            }
+        }
     }
     
     func setupFirebase() {
@@ -262,10 +287,7 @@ class CityViewController: UIViewController {
         }
     }
     
-    
 }
-    
-
 
 extension CityViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -297,144 +319,54 @@ extension CityViewController: UITableViewDataSource {
         let button   = UIButton(type: UIButton.ButtonType.custom) as UIButton
         button.frame = CGRect(x: 20, y: 20, width: 30, height: 30)
         
-        // This is to check if the star button should be fill or unfilled
-        checkIfDocumentForThisUserExists { bool in
-            if bool == true {
-                self.db.collection("FavCafes").document(Auth.auth().currentUser!.uid).getDocument { (document, error) in
-                    if let favCafe = document.flatMap({
-                        $0.data().flatMap({ (data) in
-                            return FavCafes(dictionary: data)
-                        })
-                    }) {
-                        print("FavCafe: \(favCafe)")
-                        for cafe in favCafe.favCafes! {
-                            if cafe == self.cafeObjects[indexPath.row].name {
-                                button.setBackgroundImage(UIImage(named:"star_filled"), for: .normal)
-                            } else {
-                                button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
-                            }
-                        }
-                    } else {
-                        print("Document does not exist")
-                    }
+        // Fill or Unfill Star as Background
+        if (user?.favCafes!.isEmpty)! {
+            button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
+        } else {
+            for cafe in (user?.favCafes)! {
+                if cafe == cafeObjects[indexPath.row].name {
+                    print(cafe)
+                    print(cafeObjects[indexPath.row].name)
+                    button.setBackgroundImage(UIImage(named:"star_filled"), for: .normal)
+                    break
+                } else {
+                    button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
                 }
-            } else if bool == false {
-                button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
             }
         }
         
         button.addTarget(self, action: #selector(handleButtonTapped(sender:)), for:.touchUpInside)
         button.tag = indexPath.row
         cell.accessoryView = button
-
+        
         return cell
     }
     
-    // Checking if the document already exists. Important for updateFavCafesCollectionForCurrentUser()
-    func checkIfDocumentForThisUserExists(completionHandler: @escaping (Bool) -> Void) {
-        var currentUserAlreadyHasDocument = false
-        let currentUser = Auth.auth().currentUser?.uid
-        let newDocRef = db.collection("FavCafes").document(currentUser!)
-        newDocRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                currentUserAlreadyHasDocument = true
-                completionHandler(currentUserAlreadyHasDocument)
-
-            } else {
-                currentUserAlreadyHasDocument = false
-                completionHandler(currentUserAlreadyHasDocument)
-            }
-        }
-    }
-    
-    func updateFavCafesCollectionForCurrentUser(sender: UIButton, newFavStatus: Bool) {
-        
-        let selectedIndex = IndexPath(row: sender.tag, section: 0)
-        tableView.selectRow(at: selectedIndex, animated: true, scrollPosition: .none)
-        let currentUser = Auth.auth().currentUser?.uid
-        let newDocRef = db.collection("FavCafes").document(currentUser!)
-        var userAlreadyHasDocument : Bool?
-        
-        checkIfDocumentForThisUserExists { bool in
-            userAlreadyHasDocument = bool
-            if bool == true && newFavStatus == true {
-                self.db.collection("FavCafes").document(Auth.auth().currentUser!.uid).getDocument { (document, error) in
-                    if let favCafe = document.flatMap({
-                        $0.data().flatMap({ (data) in
-                            return FavCafes(dictionary: data)
-                        })
-                    }) {
-                        print("FavCafe: \(favCafe)")
-                        for cafe in favCafe.favCafes! {
-                            if cafe == self.cafeObjects[selectedIndex.row].name {
-                                newDocRef.updateData([
-                                    "favCafes": FieldValue.arrayUnion([self.cafeObjects[selectedIndex.row].name])
-                                    ])
-                            } else if newFavStatus == false {
-                                newDocRef.updateData([
-                                    "favCafes": FieldValue.arrayRemove([self.cafeObjects[selectedIndex.row].name])
-                                    ])
-                            }
-                            }
-                    }
-                }
-                } else if bool == false && newFavStatus == true {
-                    newDocRef.setData([
-                        "favCafes": [self.cafeObjects[selectedIndex.row].name]
-                    ]) { err in
-                        if let err = err {
-                            print("Error writing document: \(err)")
-                        } else {
-                            print("Document successfully written!")
-                        }
-                    }
-//            if newFavStatus == true && userAlreadyHasDocument == false {
-//                
-//                newDocRef.setData([
-//                    "favCafes": [self.cafeObjects[selectedIndex.row].name]
-//                ]) { err in
-//                    if let err = err {
-//                        print("Error writing document: \(err)")
-//                    } else {
-//                        print("Document successfully written!")
-//                    }
-//                }
-//            } else if newFavStatus == true && userAlreadyHasDocument == true {
-//                
-//                
-////                newDocRef.updateData([
-//                    "favCafes": FieldValue.arrayUnion([self.cafeObjects[selectedIndex.row].name])
-//                    ])
-//            } else if newFavStatus == false {
-//                newDocRef.updateData([
-//                    "favCafes": FieldValue.arrayRemove([self.cafeObjects[selectedIndex.row].name])
-//                    ])
-            }
-        }
-    }
-    
-    // Handels what happens when the Fav Button is clicked.
     @objc func handleButtonTapped(sender: UIButton) {
         SVProgressHUD.show()
+        let userRef = db.collection("User").document(Auth.auth().currentUser!.uid)
+
         self.view.isUserInteractionEnabled = false
         let selectedIndex = IndexPath(row: sender.tag, section: 0)
         tableView.selectRow(at: selectedIndex, animated: true, scrollPosition: .none)
-
-        print(sender.tag)
         
-        if sender.tag == 0 {
-            updateFavCafesCollectionForCurrentUser(sender: sender, newFavStatus: true)
-            sender.tag = 1
-        } else if sender.tag == 1{
-            updateFavCafesCollectionForCurrentUser(sender: sender, newFavStatus: false)
-            sender.tag = 0
+        if sender.currentBackgroundImage == UIImage(named:"star_unfilled") {
+            userRef.updateData([
+                "favCafes": FieldValue.arrayUnion([cafeObjects[selectedIndex.row].name])
+                ])
         }
-        print(sender.tag)
-
-        self.tableView.reloadData()
-        SVProgressHUD.dismiss()
-        self.view.isUserInteractionEnabled = true
+        if sender.currentBackgroundImage == UIImage(named:"star_filled") {
+            userRef.updateData([
+                "favCafes": FieldValue.arrayRemove([cafeObjects[selectedIndex.row].name])
+                ])
         }
+        
+        fetchUserData(completionHandler: {
+            self.tableView.reloadData()
+            SVProgressHUD.dismiss()
+            self.view.isUserInteractionEnabled = true
+        })
+    }
 }
 
 extension CityViewController: UITableViewDelegate {

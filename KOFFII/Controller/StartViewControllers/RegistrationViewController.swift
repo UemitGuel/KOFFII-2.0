@@ -67,7 +67,7 @@ class RegistrationViewController: UIViewController {
             let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
             changeRequest?.displayName = self.nameTextField.text
             changeRequest?.commitChanges { (error) in
-                print(error)
+                print(error ?? "")
             }
             
             SVProgressHUD.dismiss()
