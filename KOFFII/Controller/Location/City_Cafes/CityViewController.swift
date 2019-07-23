@@ -324,13 +324,20 @@ extension CityViewController: UITableViewDataSource {
             button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
         } else {
             for cafe in (user?.favCafes)! {
-                if cafe == cafeObjects[indexPath.row].name {
-                    print(cafe)
-                    print(cafeObjects[indexPath.row].name)
-                    button.setBackgroundImage(UIImage(named:"star_filled"), for: .normal)
-                    break
+                if isFiltering() {
+                    if cafe == filteredCafeObjects[indexPath.row].name {
+                        button.setBackgroundImage(UIImage(named:"star_filled"), for: .normal)
+                        break
+                    } else {
+                        button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
+                    }
                 } else {
-                    button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
+                    if cafe == cafeObjects[indexPath.row].name {
+                        button.setBackgroundImage(UIImage(named:"star_filled"), for: .normal)
+                        break
+                    } else {
+                        button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
+                    }
                 }
             }
         }
