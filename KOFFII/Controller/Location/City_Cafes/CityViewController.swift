@@ -42,8 +42,6 @@ class CityViewController: UIViewController {
 
     var db: Firestore!
     let myGroup = DispatchGroup()
-    
-    var user: User?
 
     var cafeObjects = Array<Cafe>()
     var filteredCafeObjects = Array<Cafe>()
@@ -55,11 +53,9 @@ class CityViewController: UIViewController {
         setupFirebase()
         setupButtons()
         setupViewController()
-        fetchUserData(completionHandler: {
-            self.tableView.reloadData()
-        })
         
         downloadAllCafeIDsForTheCity(city: passedCityName) { ids in
+            SVProgressHUD.show()
             for id in ids {
                 self.myGroup.enter()
                 self.useCafeIDToDownloadObject(id: id, city: self.passedCityName, completionHandler: { cafe in
@@ -72,28 +68,11 @@ class CityViewController: UIViewController {
                 self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name})
                 self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name})
                 self.tableView.reloadData()
+                SVProgressHUD.dismiss()
             }
         }
     }
     
-    func fetchUserData(completionHandler: @escaping () -> Void) {
-        let docRef = db.collection("User").document(Auth.auth().currentUser!.uid)
-        
-        docRef.getDocument { (document, error) in
-            if let downloadedUser = document.flatMap({
-                $0.data().flatMap({ (data) in
-                    return User(dictionary: data)
-                })
-            }) {
-                print("User: \(downloadedUser )")
-                self.user = downloadedUser
-                completionHandler()
-            } else {
-                print("Document does not exist")
-                completionHandler()
-            }
-        }
-    }
     
     func setupFirebase() {
         // [START setup]
@@ -315,65 +294,10 @@ extension CityViewController: UITableViewDataSource {
             cell.cafeNameLabel.text = cafeObjects[indexPath.row].name
         }
         
-        // Creates the fav button
-        let button   = UIButton(type: UIButton.ButtonType.custom) as UIButton
-        button.frame = CGRect(x: 20, y: 20, width: 30, height: 30)
-        
-        // Fill or Unfill Star as Background
-        if (user?.favCafes!.isEmpty)! {
-            button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
-        } else {
-            for cafe in (user?.favCafes)! {
-                if isFiltering() {
-                    if cafe == filteredCafeObjects[indexPath.row].name {
-                        button.setBackgroundImage(UIImage(named:"star_filled"), for: .normal)
-                        break
-                    } else {
-                        button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
-                    }
-                } else {
-                    if cafe == cafeObjects[indexPath.row].name {
-                        button.setBackgroundImage(UIImage(named:"star_filled"), for: .normal)
-                        break
-                    } else {
-                        button.setBackgroundImage(UIImage(named:"star_unfilled"), for: .normal)
-                    }
-                }
-            }
-        }
-        
-        button.addTarget(self, action: #selector(handleButtonTapped(sender:)), for:.touchUpInside)
-        button.tag = indexPath.row
-        cell.accessoryView = button
-        
         return cell
     }
     
-    @objc func handleButtonTapped(sender: UIButton) {
-        SVProgressHUD.show()
-        let userRef = db.collection("User").document(Auth.auth().currentUser!.uid)
 
-        self.view.isUserInteractionEnabled = false
-        let selectedIndex = IndexPath(row: sender.tag, section: 0)
-        tableView.selectRow(at: selectedIndex, animated: true, scrollPosition: .none)
-        
-        if sender.currentBackgroundImage == UIImage(named:"star_unfilled") {
-            userRef.updateData([
-                "favCafes": FieldValue.arrayUnion([cafeObjects[selectedIndex.row].name])
-                ])
-        }
-        if sender.currentBackgroundImage == UIImage(named:"star_filled") {
-            userRef.updateData([
-                "favCafes": FieldValue.arrayRemove([cafeObjects[selectedIndex.row].name])
-                ])
-        }
-        
-        fetchUserData(completionHandler: {
-            self.tableView.reloadData()
-            SVProgressHUD.dismiss()
-            self.view.isUserInteractionEnabled = true
-        })
-    }
 }
 
 extension CityViewController: UITableViewDelegate {

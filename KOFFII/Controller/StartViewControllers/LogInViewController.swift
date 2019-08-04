@@ -23,8 +23,24 @@ class LogInViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
 
-
         signInButton.layer.cornerRadius = 8
+        
+        automaticSingIn(onSuccess: {
+            self.performSegue(withIdentifier: "fromLogtoHomeSegue", sender: nil)
+            SVProgressHUD.dismiss()
+        })
+    }
+    
+    //MARK: -  Automatiches Einloggen
+    func automaticSingIn(onSuccess: @escaping () -> Void) {
+        if Auth.auth().currentUser != nil {
+            SVProgressHUD.show()
+            DispatchQueue.main.async {
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { (timer) in
+                    onSuccess()
+                })
+            }
+        }
     }
   
     

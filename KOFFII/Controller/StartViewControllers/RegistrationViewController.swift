@@ -51,6 +51,7 @@ class RegistrationViewController: UIViewController {
     Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
         if error != nil {
             print(error!)
+            SVProgressHUD.showError(withStatus: "User konnte nicht erstellt werden")
         } else {
             print("Success")
             self.db.collection("User").document(Auth.auth().currentUser!.uid).setData([

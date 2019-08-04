@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WelcomeView: UIViewController {
 
@@ -21,6 +22,7 @@ class WelcomeView: UIViewController {
        
         createButton.layer.cornerRadius = 8
         signInButton.layer.cornerRadius = 8
+        
     }
 
     //MARK: - Handling the appearence and disappearnce of the Navigation

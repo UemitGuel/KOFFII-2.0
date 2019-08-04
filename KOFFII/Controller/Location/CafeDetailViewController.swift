@@ -42,6 +42,7 @@ class CafeDetailViewController: UIViewController {
     var db: Firestore!
     let myGroup = DispatchGroup()
     
+    var user: User?
     var messages: [Message] = [Message]()
     var passedCityName: String?
     var passedCafeObject: Cafe?
@@ -52,7 +53,11 @@ class CafeDetailViewController: UIViewController {
         super.viewDidLoad()
         setupFirebase()
         setupButtons()
+        fetchUserData {
+            self.setupFavButton()
+        }
         activateButtons()
+        
         
         //Register MessagingCell
         tableView.register(UINib(nibName: "CustomMessageCell", bundle: nil) , forCellReuseIdentifier: "customMessageCell")
@@ -69,6 +74,8 @@ class CafeDetailViewController: UIViewController {
         title = passedCafeObject?.name
         retrieveMessages()
     }
+    
+    
     
     func setupFirebase() {
         // [START setup]
@@ -92,6 +99,67 @@ class CafeDetailViewController: UIViewController {
         cakeButton.layer.cornerRadius = 8
         plugButton.layer.cornerRadius = 8
         
+    }
+    
+    func setupFavButton() {
+        print("hihi")
+        if user?.favCafes?.count == 0 {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"star_unfilled"), style: .plain, target: self, action: #selector(favButtonTapped))
+        }
+        
+        for cafe in user?.favCafes ?? [""] {
+            if cafe == passedCafeObject?.name {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"star_filled"), style: .plain, target: self, action: #selector(favButtonTapped))
+                break
+            } else {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"star_unfilled"), style: .plain, target: self, action: #selector(favButtonTapped))
+            }
+        }
+    }
+    
+    @objc func favButtonTapped() {
+        SVProgressHUD.show()
+        let userRef = db.collection("User").document(Auth.auth().currentUser!.uid)
+        
+        self.view.isUserInteractionEnabled = false
+        
+
+        if navigationItem.rightBarButtonItem?.image == UIImage(named:"star_unfilled") {
+            userRef.updateData([
+                "favCafes": FieldValue.arrayUnion([passedCafeObject?.name ?? ""])
+                ])
+        }
+        if navigationItem.rightBarButtonItem?.image == UIImage(named:"star_filled") {
+            userRef.updateData([
+                "favCafes": FieldValue.arrayRemove([passedCafeObject?.name ?? ""])
+                ])
+        }
+        
+        fetchUserData(completionHandler: {
+            self.tableView.reloadData()
+            self.setupFavButton()
+            SVProgressHUD.dismiss()
+            self.view.isUserInteractionEnabled = true
+        })
+    }
+    
+    func fetchUserData(completionHandler: @escaping () -> Void) {
+        let docRef = db.collection("User").document(Auth.auth().currentUser!.uid)
+        
+        docRef.getDocument { (document, error) in
+            if let downloadedUser = document.flatMap({
+                $0.data().flatMap({ (data) in
+                    return User(dictionary: data)
+                })
+            }) {
+                print("User: \(downloadedUser )")
+                self.user = downloadedUser
+                completionHandler()
+            } else {
+                print("Document does not exist")
+                completionHandler()
+            }
+        }
     }
     
     // which buttons have to be highlighted (depending on the data in firestore)
@@ -138,13 +206,14 @@ class CafeDetailViewController: UIViewController {
         //Google Maps
         let actionGoogleMaps = UIAlertAction(title: "Google Maps", style: .default) { UIAlertAction in
             
-            if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps-x-callback://")!)) {
+            if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
                 
-                UIApplication.shared.open((URL(string: self.passedCafeObject?.locationURL ?? "")!) , options: [:] , completionHandler: nil)
+                UIApplication.shared.openURL(URL(string: (self.passedCafeObject?.locationURL)!)!)
             } else {
                 print("Can't use comgooglemaps://");
             }
         }
+        
         
         //Apple Maps
         let actionAppleMaps = UIAlertAction(title: "Apple Maps", style: .default) { UIAlertAction in
