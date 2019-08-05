@@ -51,13 +51,16 @@ class CafeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_noti:) ), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_noti:) ), name: UIResponder.keyboardWillHideNotification , object: nil)
+
+        
         setupFirebase()
         setupButtons()
         fetchUserData {
             self.setupFavButton()
         }
         activateButtons()
-        
         
         //Register MessagingCell
         tableView.register(UINib(nibName: "CustomMessageCell", bundle: nil) , forCellReuseIdentifier: "customMessageCell")
@@ -73,6 +76,41 @@ class CafeDetailViewController: UIViewController {
         
         title = passedCafeObject?.name
         retrieveMessages()
+    }
+    
+    // Both objc functions are handling the kayboard when typing in a message.
+    @objc func keyboardWillShow(_noti:NSNotification) {
+        let keyBoard = _noti.userInfo
+        let keyBoardValue = keyBoard![UIResponder.keyboardFrameEndUserInfoKey]
+        let fram = keyBoardValue as? CGRect // this is frame
+        
+        // Identify Iphone X Familiy because of different keyboard heights..
+        var hasTopNotch: Bool {
+            if #available(iOS 11.0, tvOS 11.0, *) {
+                return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
+            }
+            return false
+        }
+        
+        UIView.animate(withDuration: 0.5) {
+            if hasTopNotch {
+                self.heightConstraint.constant = fram!.height + 16
+            } else {
+                self.heightConstraint.constant = fram!.height + 50
+            }
+            self.view.layoutIfNeeded()
+            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
+            self.tableView.setContentOffset(scrollPoint, animated: false)
+        }
+    }
+    
+    @objc func keyboardWillHide(_noti:NSNotification) {
+        UIView.animate(withDuration: 0.5) {
+            self.heightConstraint.constant = 50
+            self.view.layoutIfNeeded()
+            self.tableView.setContentOffset(.zero, animated: false)
+        }
+        
     }
     
     
@@ -102,7 +140,6 @@ class CafeDetailViewController: UIViewController {
     }
     
     func setupFavButton() {
-        print("hihi")
         if user?.favCafes?.count == 0 {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"star_unfilled"), style: .plain, target: self, action: #selector(favButtonTapped))
         }
@@ -142,6 +179,7 @@ class CafeDetailViewController: UIViewController {
             self.view.isUserInteractionEnabled = true
         })
     }
+    
     
     func fetchUserData(completionHandler: @escaping () -> Void) {
         let docRef = db.collection("User").document(Auth.auth().currentUser!.uid)
@@ -208,7 +246,7 @@ class CafeDetailViewController: UIViewController {
             
             if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
                 
-                UIApplication.shared.openURL(URL(string: (self.passedCafeObject?.locationURL)!)!)
+                UIApplication.shared.open((URL(string: (self.passedCafeObject?.locationURL)!)!) , options: [:] , completionHandler: nil)
             } else {
                 print("Can't use comgooglemaps://");
             }
@@ -343,22 +381,25 @@ extension CafeDetailViewController: UITableViewDelegate {
     
 }
 
-extension CafeDetailViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        UIView.animate(withDuration: 0.5) {
-            self.heightConstraint.constant = 316
-            self.view.layoutIfNeeded()
-            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
-            self.tableView.setContentOffset(scrollPoint, animated: false)
-        }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.5) {
-            self.heightConstraint.constant = 50
-            self.view.layoutIfNeeded()
-            self.tableView.setContentOffset(.zero, animated: false)
-        }
-    }
-}
+//extension CafeDetailViewController: UITextFieldDelegate {
+//
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//
+//        print(customKeyboardHeight)
+//        UIView.animate(withDuration: 0.5) {
+//            self.heightConstraint.constant = self.customKeyboardHeight ?? 400
+//            self.view.layoutIfNeeded()
+//            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
+//            self.tableView.setContentOffset(scrollPoint, animated: false)
+//        }
+//    }
+//
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//
+//        UIView.animate(withDuration: 0.5) {
+//            self.heightConstraint.constant = 50
+//            self.view.layoutIfNeeded()
+//            self.tableView.setContentOffset(.zero, animated: false)
+//        }
+//    }
+//}

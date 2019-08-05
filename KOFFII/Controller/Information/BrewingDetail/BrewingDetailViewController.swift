@@ -180,7 +180,7 @@ extension BrewingDetailViewController: UITableViewDataSource {
         guard let tips = information.tips else {
             return cell
         }
-        cell.countLabel.text = String(indexPath.row)
+        cell.countLabel.text = String(indexPath.row + 1)
         cell.longTextLabel.text = tips[indexPath.row]
         return cell
     }

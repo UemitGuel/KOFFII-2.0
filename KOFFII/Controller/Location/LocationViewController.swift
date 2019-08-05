@@ -10,9 +10,13 @@ import UIKit
 import Firebase
 import SDWebImage
 import SVProgressHUD
+import MessageUI
 
 class LocationViewController: UIViewController {
 
+    @IBOutlet weak var recommendButton: UIButton!
+    
+    
     @IBOutlet weak var tableView: UITableView!
     var db: Firestore!
     var cityNames = Array<String>()
@@ -24,7 +28,10 @@ class LocationViewController: UIViewController {
         loadCityNames() { tempCityNames in
             self.cityNames = tempCityNames
             self.tableView.reloadData()
+            SVProgressHUD.dismiss()
         }
+        
+        recommendButton.layer.cornerRadius = 8
 
     }
     
@@ -50,6 +57,7 @@ class LocationViewController: UIViewController {
     
     //Loading all CityName. Just querriny the names, so we don´t use to much data at this point.
     func loadCityNames(completionHandler: @escaping (Array<String>) -> Void) {
+        SVProgressHUD.show()
         var tempCityNames = Array<String>()
         db.collection("City").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -63,6 +71,27 @@ class LocationViewController: UIViewController {
             }
         }
     }
+    
+    func showMailComposer() {
+        
+        guard MFMailComposeViewController.canSendMail() else {
+            //Show alert informing the user
+            return
+        }
+        
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients(["uemitgul@gmail.com"])
+        composer.setSubject("You forgot this amazing coffee place!")
+        composer.setMessageBody("Hi Ümit,\nCool app, but you should add XY Cafe in YZ to the list. They have...(wifi, food, vegan options, cake, plug?)\n\nAnd for the app, I would recommend you to ...", isHTML: false)
+        
+        present(composer, animated: true)
+    }
+    
+    @IBAction func recommendButtonTapped(_ sender: UIButton) {
+        showMailComposer()
+    }
+    
 
 }
 
@@ -132,4 +161,31 @@ extension LocationViewController: UITableViewDelegate {
         performSegue(withIdentifier: "fromLoctoCitySegue", sender: self)
     }
     
+}
+
+extension LocationViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if let _ = error {
+            //Show error alert
+            controller.dismiss(animated: true)
+            return
+        }
+        
+        switch result {
+        case .cancelled:
+            print("Cancelled")
+        case .failed:
+            print("Failed to send")
+        case .saved:
+            print("Saved")
+        case .sent:
+            print("Email Sent")
+        @unknown default:
+            fatalError()
+        }
+        
+        controller.dismiss(animated: true)
+    }
 }

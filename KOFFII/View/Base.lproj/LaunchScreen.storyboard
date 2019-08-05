@@ -19,27 +19,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8b-aR-NIC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="916"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QUECHUP" translatesAutoresizingMaskIntoConstraints="NO" id="vYq-mt-3UI">
-                                        <rect key="frame" x="131.5" y="408" width="151" height="46"/>
+                                        <rect key="frame" x="131.5" y="435" width="151" height="46"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QUECHUP_digital_nomad_brand" translatesAutoresizingMaskIntoConstraints="NO" id="HXD-1V-iEF">
+                                        <rect key="frame" x="8" y="481" width="398" height="44"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="vYq-mt-3UI" firstAttribute="centerX" secondItem="u8b-aR-NIC" secondAttribute="centerX" id="NzQ-nk-Uxr"/>
-                                    <constraint firstItem="vYq-mt-3UI" firstAttribute="centerY" secondItem="u8b-aR-NIC" secondAttribute="centerY" id="Pgs-gH-RdF"/>
-                                    <constraint firstItem="vYq-mt-3UI" firstAttribute="centerX" secondItem="u8b-aR-NIC" secondAttribute="centerX" id="fL0-Uk-7Ol"/>
-                                    <constraint firstItem="vYq-mt-3UI" firstAttribute="centerY" secondItem="u8b-aR-NIC" secondAttribute="centerY" id="msw-lF-a4X"/>
+                                    <constraint firstItem="HXD-1V-iEF" firstAttribute="leading" secondItem="u8b-aR-NIC" secondAttribute="leading" constant="8" id="0jh-sX-aUl"/>
+                                    <constraint firstItem="HXD-1V-iEF" firstAttribute="top" secondItem="vYq-mt-3UI" secondAttribute="bottom" id="WFJ-c7-Wkd"/>
+                                    <constraint firstAttribute="trailing" secondItem="HXD-1V-iEF" secondAttribute="trailing" constant="8" id="YAv-Nr-IKe"/>
+                                    <constraint firstItem="vYq-mt-3UI" firstAttribute="centerY" secondItem="u8b-aR-NIC" secondAttribute="centerY" id="gq2-c8-kGh"/>
+                                    <constraint firstItem="HXD-1V-iEF" firstAttribute="centerX" secondItem="u8b-aR-NIC" secondAttribute="centerX" id="pTm-l4-tHQ"/>
+                                    <constraint firstItem="vYq-mt-3UI" firstAttribute="centerX" secondItem="u8b-aR-NIC" secondAttribute="centerX" id="yvd-va-1kn"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u8b-aR-NIC" secondAttribute="trailing" id="39F-Lo-ckO"/>
-                            <constraint firstItem="u8b-aR-NIC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="S0f-Ku-d1Q"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u8b-aR-NIC" secondAttribute="bottom" id="lOC-UO-hej"/>
-                            <constraint firstItem="u8b-aR-NIC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qfy-xt-J9b"/>
+                            <constraint firstItem="u8b-aR-NIC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="FLq-IK-Q72"/>
+                            <constraint firstItem="u8b-aR-NIC" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" constant="20" symbolic="YES" id="GJf-2X-HTx"/>
+                            <constraint firstItem="u8b-aR-NIC" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="Hn6-cf-0II"/>
+                            <constraint firstItem="u8b-aR-NIC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="PmW-Qh-OXL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -51,5 +56,6 @@
     </scenes>
     <resources>
         <image name="QUECHUP" width="151" height="46"/>
+        <image name="QUECHUP_digital_nomad_brand" width="170" height="44"/>
     </resources>
 </document>

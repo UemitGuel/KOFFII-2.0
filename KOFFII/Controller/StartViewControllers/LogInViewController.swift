@@ -51,10 +51,9 @@ class LogInViewController: UIViewController {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
                 print(error!)
+                SVProgressHUD.showError(withStatus: "You couldn´t sign in. Check your E-Mail or password")
             } else {
                 print("Login Success!")
-                
-                
                 SVProgressHUD.dismiss()
                 
                 self.performSegue(withIdentifier: "fromLogtoHomeSegue", sender: self)
