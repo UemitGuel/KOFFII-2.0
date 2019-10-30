@@ -249,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xv-2a-RWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5710" y="-333"/>
+            <point key="canvasLocation" x="5397" y="-333"/>
         </scene>
         <!--Cafe Detail View Controller-->
         <scene sceneID="LY7-zn-5Mi">
@@ -533,9 +533,9 @@
                         <color key="selectedImageTintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="fCN-KW-eNA" kind="relationship" relationship="viewControllers" id="Cmi-vn-MuU"/>
                         <segue destination="edd-uV-2Uq" kind="relationship" relationship="viewControllers" id="2K5-1I-UtA"/>
                         <segue destination="UUj-Du-fI0" kind="relationship" relationship="viewControllers" id="1N1-bp-tqi"/>
-                        <segue destination="fCN-KW-eNA" kind="relationship" relationship="viewControllers" id="Cmi-vn-MuU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3L-LS-sOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -752,6 +752,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AX8-kn-Acu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Eno-Jv-Sjv"/>
                     <connections>
                         <outlet property="headerImageView" destination="wrK-IO-10p" id="xxn-iC-dTi"/>
                         <outlet property="leftButton" destination="e1A-gl-GFq" id="wt5-1W-7RG"/>
@@ -847,6 +848,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="haq-WC-X0Q"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dnJ-Wz-dPX"/>
                     <connections>
                         <outlet property="complainLabel" destination="Cab-DX-tl4" id="YYY-Hc-cDA"/>
                         <outlet property="tableView" destination="ZLX-MY-auM" id="poC-JR-GPf"/>
@@ -954,6 +956,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8gj-3V-obh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="j5l-qO-Koz"/>
                     <connections>
                         <outlet property="headerImageView" destination="Yrg-rr-ALe" id="Ta9-z6-BSn"/>
                         <outlet property="tableView" destination="xjJ-oF-b0v" id="k7f-17-jDb"/>
@@ -1119,11 +1122,11 @@
             </objects>
             <point key="canvasLocation" x="4386.9565217391309" y="-1231.7934782608697"/>
         </scene>
-        <!--Item-->
+        <!--places-->
         <scene sceneID="Ina-Sk-iRA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fCN-KW-eNA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="GPg-WA-BMY"/>
+                    <tabBarItem key="tabBarItem" title="places" image="coffee_icon" id="GPg-WA-BMY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JlH-FP-gCC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1153,7 +1156,7 @@
         <image name="coffee_icon" width="29" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OQn-CR-hMN"/>
+        <segue reference="CEu-g3-mnd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

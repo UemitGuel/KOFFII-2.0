@@ -84,8 +84,6 @@ class CityViewController: UIViewController {
     
     func setupViewController() {
         // eliminate 1pt line
-        self.tabBarController?.tabBar.isHidden = true
-        title = passedCityName
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
     
