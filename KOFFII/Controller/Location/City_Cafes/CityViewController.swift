@@ -1,11 +1,3 @@
-//
-//  CityViewController.swift
-//  KOFFII
-//
-//  Created by Ümit Gül on 09.07.19.
-//  Copyright © 2019 Ümit Gül. All rights reserved.
-//
-
 import UIKit
 import Firebase
 import FirebaseFirestore
