@@ -42,7 +42,6 @@ class CafeDetailViewController: UIViewController {
     var db: Firestore!
     let myGroup = DispatchGroup()
     
-    var user: User?
     var messages: [Message] = [Message]()
     var cityName = "Cologne"
     var passedCafeObject: Cafe?
@@ -53,7 +52,6 @@ class CafeDetailViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_noti:) ), name: UIResponder.keyboardWillShowNotification , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_noti:) ), name: UIResponder.keyboardWillHideNotification , object: nil)
-
         
         setupFirebase()
         setupButtons()

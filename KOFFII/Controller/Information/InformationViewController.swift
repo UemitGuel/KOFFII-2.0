@@ -91,7 +91,7 @@ class InformationViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+//                    print("\(document.documentID) => \(document.data())")
                     tempDocIDs.append(document.documentID)
                 }
                 completionHandler(tempDocIDs)
@@ -108,7 +108,6 @@ class InformationViewController: UIViewController {
                     return Information(dictionary: data)
                 })
             }) {
-                print("mmmmmmmmmm: \(information)")
                 completionHandler(information)
             } else {
                 print("Document does not exist")
@@ -167,10 +166,8 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if items.count != 0 {
-            print("items full")
             return items[section].count
         } else {
-            print("items empty")
             return 0
 
         }

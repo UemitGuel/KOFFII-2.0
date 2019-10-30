@@ -23,6 +23,8 @@ enum Features {
 
 class CityViewController: UIViewController {
     
+    @IBOutlet weak var usernameOutlet: UIBarButtonItem!
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var wifiButton: RoundButton!
@@ -85,6 +87,10 @@ class CityViewController: UIViewController {
     func setupViewController() {
         // eliminate 1pt line
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        let username = UserDefaults.standard.string(forKey: "username") ?? ""
+        usernameOutlet.title = username
+        usernameOutlet.tintColor = #colorLiteral(red: 0.7176470588, green: 0.1098039216, blue: 0.1098039216, alpha: 1)
+        
     }
     
     func downloadCafes(completionHandler: @escaping (Array<Cafe>) -> Void) {
@@ -244,6 +250,13 @@ class CityViewController: UIViewController {
             filteredCafeObjects = filteredCafeObjects.filter({return $0.features!["plugin"] == true})
         }
     }
+    
+    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func addPlaceButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
     
 }
 
