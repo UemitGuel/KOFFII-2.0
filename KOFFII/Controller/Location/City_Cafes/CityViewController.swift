@@ -89,7 +89,6 @@ class CityViewController: UIViewController {
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         let username = UserDefaults.standard.string(forKey: "username") ?? ""
         usernameOutlet.title = username
-        usernameOutlet.tintColor = #colorLiteral(red: 0.7176470588, green: 0.1098039216, blue: 0.1098039216, alpha: 1)
         
     }
     
@@ -252,6 +251,26 @@ class CityViewController: UIViewController {
     }
     
     @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Change Username", message: "enter your new username", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        let username = UserDefaults.standard.string(forKey: "username") ?? ""
+        alert.addTextField { (textField) in
+            textField.text = username
+        }
+
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            print("Text field: \(textField?.text ?? "")")
+            UserDefaults.standard.set(textField?.text, forKey: "username")
+            let username = UserDefaults.standard.string(forKey: "username") ?? ""
+            self.usernameOutlet.title = username
+        }))
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addPlaceButtonTapped(_ sender: UIBarButtonItem) {

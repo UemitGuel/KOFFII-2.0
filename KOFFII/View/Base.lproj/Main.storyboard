@@ -233,7 +233,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5W2-QD-Jbg">
                         <leftBarButtonItems>
-                            <barButtonItem enabled="NO" title="username" style="done" id="9Iq-A2-A2l">
+                            <barButtonItem title="username" style="done" id="9Iq-A2-A2l">
                                 <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </barButtonItem>
                             <barButtonItem systemItem="edit" id="Hrv-iW-dPJ">
