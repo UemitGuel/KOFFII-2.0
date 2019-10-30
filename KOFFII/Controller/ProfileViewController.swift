@@ -244,7 +244,6 @@ extension ProfileViewController: UITableViewDelegate {
             
             if let indexPath = tableView.indexPathForSelectedRow {
                 cityDetailVC.passedCafeObject = items[indexPath.section][indexPath.row]
-                cityDetailVC.passedCityName = sections_cityNames[indexPath.section]
             }
         }
     }

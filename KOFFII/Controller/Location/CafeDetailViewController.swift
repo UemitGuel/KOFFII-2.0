@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseFirestore
 import MapKit
 import CoreLocation
 import SVProgressHUD
@@ -44,7 +44,7 @@ class CafeDetailViewController: UIViewController {
     
     var user: User?
     var messages: [Message] = [Message]()
-    var passedCityName: String?
+    var passedCityName = "Cologne"
     var passedCafeObject: Cafe?
     let regionRadius: CLLocationDistance = 1000
 
@@ -57,9 +57,6 @@ class CafeDetailViewController: UIViewController {
         
         setupFirebase()
         setupButtons()
-        fetchUserData {
-            self.setupFavButton()
-        }
         activateButtons()
         
         //Register MessagingCell
@@ -139,67 +136,6 @@ class CafeDetailViewController: UIViewController {
         
     }
     
-    func setupFavButton() {
-        if user?.favCafes?.count == 0 {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"star_unfilled"), style: .plain, target: self, action: #selector(favButtonTapped))
-        }
-        
-        for cafe in user?.favCafes ?? [""] {
-            if cafe == passedCafeObject?.name {
-                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"star_filled"), style: .plain, target: self, action: #selector(favButtonTapped))
-                break
-            } else {
-                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"star_unfilled"), style: .plain, target: self, action: #selector(favButtonTapped))
-            }
-        }
-    }
-    
-    @objc func favButtonTapped() {
-        SVProgressHUD.show()
-        let userRef = db.collection("User").document(Auth.auth().currentUser!.uid)
-        
-        self.view.isUserInteractionEnabled = false
-        
-
-        if navigationItem.rightBarButtonItem?.image == UIImage(named:"star_unfilled") {
-            userRef.updateData([
-                "favCafes": FieldValue.arrayUnion([passedCafeObject?.name ?? ""])
-                ])
-        }
-        if navigationItem.rightBarButtonItem?.image == UIImage(named:"star_filled") {
-            userRef.updateData([
-                "favCafes": FieldValue.arrayRemove([passedCafeObject?.name ?? ""])
-                ])
-        }
-        
-        fetchUserData(completionHandler: {
-            self.tableView.reloadData()
-            self.setupFavButton()
-            SVProgressHUD.dismiss()
-            self.view.isUserInteractionEnabled = true
-        })
-    }
-    
-    
-    func fetchUserData(completionHandler: @escaping () -> Void) {
-        let docRef = db.collection("User").document(Auth.auth().currentUser!.uid)
-        
-        docRef.getDocument { (document, error) in
-            if let downloadedUser = document.flatMap({
-                $0.data().flatMap({ (data) in
-                    return User(dictionary: data)
-                })
-            }) {
-                print("User: \(downloadedUser )")
-                self.user = downloadedUser
-                completionHandler()
-            } else {
-                print("Document does not exist")
-                completionHandler()
-            }
-        }
-    }
-    
     // which buttons have to be highlighted (depending on the data in firestore)
     func activateButtons() {
         if passedCafeObject?.features!["wifi"] == true {
@@ -276,7 +212,7 @@ class CafeDetailViewController: UIViewController {
     func retrieveMessages() {
         messages.removeAll()
         SVProgressHUD.show()
-        let ref = db.collection("City").document(passedCityName!).collection("Cafes").document(passedCafeObject!.name).collection("Messages")
+        let ref = db.collection("City").document(passedCityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages")
         
         //Before downloading the messages, let´s order them for creation date
         // HERE: The Order Function doesnt work!
@@ -325,8 +261,8 @@ class CafeDetailViewController: UIViewController {
         
         let sentDate = "\(calendar.component(.day, from: date)).\(calendar.component(.month, from: date)), \(calendar.component(.year, from: date))"
         
-    db.collection("City").document(passedCityName!).collection("Cafes").document(passedCafeObject!.name).collection("Messages").document().setData([
-        "author": Auth.auth().currentUser?.displayName ?? "",
+    db.collection("City").document(passedCityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages").document().setData([
+        "author": "User",
             "date": sentDate,
             "message": messageTextField.text ?? "",
             "created": FieldValue.serverTimestamp()
@@ -359,15 +295,15 @@ extension CafeDetailViewController: UITableViewDataSource {
         cell.dateLabel.text = messages[indexPath.row].date
         cell.commentLabel?.text = messages[indexPath.row].message
         
-        if messages[indexPath.row].author == Auth.auth().currentUser?.displayName {
-            cell.messageBackgroundView.backgroundColor = UIColor(red: 220/255, green: 248/255, blue: 198/255, alpha: 1)
-            cell.leftSideContraint.constant = 24
-            cell.rightSideConstraint.constant = 8
-        } else {
-            cell.messageBackgroundView.backgroundColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
-            cell.leftSideContraint.constant = 8
-            cell.rightSideConstraint.constant = 24
-        }
+//        if messages[indexPath.row].author == Auth.auth().currentUser?.displayName {
+//            cell.messageBackgroundView.backgroundColor = UIColor(red: 220/255, green: 248/255, blue: 198/255, alpha: 1)
+//            cell.leftSideContraint.constant = 24
+//            cell.rightSideConstraint.constant = 8
+//        } else {
+//            cell.messageBackgroundView.backgroundColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
+//            cell.leftSideContraint.constant = 8
+//            cell.rightSideConstraint.constant = 24
+//        }
         return cell
     }
     

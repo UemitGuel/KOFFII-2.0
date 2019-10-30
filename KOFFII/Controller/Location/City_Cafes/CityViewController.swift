@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import SDWebImage
 import SVProgressHUD
 
@@ -54,22 +55,11 @@ class CityViewController: UIViewController {
         setupButtons()
         setupViewController()
         
-        downloadAllCafeIDsForTheCity(city: passedCityName) { ids in
-            SVProgressHUD.show()
-            for id in ids {
-                self.myGroup.enter()
-                self.useCafeIDToDownloadObject(id: id, city: self.passedCityName, completionHandler: { cafe in
-                    self.cafeObjects.append(cafe)
-                    self.myGroup.leave()
-                })
-            }
-            self.myGroup.notify(queue: .main) {
-                print("Finished all requests.")
-                self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name})
-                self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name})
-                self.tableView.reloadData()
-                SVProgressHUD.dismiss()
-            }
+        downloadAllCafeIDsForTheCity() { cafeArray in
+            self.cafeObjects = cafeArray
+            self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name})
+            self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name})
+            self.tableView.reloadData()
         }
     }
     
@@ -99,32 +89,20 @@ class CityViewController: UIViewController {
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
     
-    func downloadAllCafeIDsForTheCity(city: String, completionHandler: @escaping (Array<String>) -> Void) {
-        var tempCafeNames = Array<String>()
-        db.collection("City").document(city).collection("Cafes").getDocuments() { (querySnapshot, err) in
+    func downloadAllCafeIDsForTheCity(completionHandler: @escaping (Array<Cafe>) -> Void) {
+        var cafeArray : Array<Cafe> = []
+        db.collection("City").document("Cologne").collection("Cafes").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    tempCafeNames.append(document.documentID)
+                    let d = document.data()
+                    guard let cafe = Cafe(dictionary: d) else { return }
+                    print("add cafe \(cafe)")
+                    cafeArray.append(cafe)
                 }
-                completionHandler(tempCafeNames)
-            }
-        }
-    }
-    
-    func useCafeIDToDownloadObject(id: String, city: String, completionHandler: @escaping (Cafe) -> Void) {
-        let docRef = db.collection("City").document(city).collection("Cafes").document(id)
-        
-        docRef.getDocument { (document, error) in
-            if let cafe = document.flatMap({
-                $0.data().flatMap({ (data) in
-                    return Cafe(dictionary: data)
-                })
-            }) {
-                completionHandler(cafe)
-            } else {
-                print("Document does not exist")
+                completionHandler(cafeArray)
+
             }
         }
     }
@@ -317,10 +295,8 @@ extension CityViewController: UITableViewDelegate {
             if let indexPath = tableView.indexPathForSelectedRow {
                 if isFiltering() {
                     cityDetailVC.passedCafeObject = filteredCafeObjects[indexPath.row]
-                    cityDetailVC.passedCityName = passedCityName
                 } else {
                     cityDetailVC.passedCafeObject = cafeObjects[indexPath.row]
-                    cityDetailVC.passedCityName = passedCityName
 
                 }
             }
