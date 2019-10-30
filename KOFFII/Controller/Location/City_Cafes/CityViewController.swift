@@ -263,18 +263,10 @@ extension CityViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         
         if isFiltering() {
-            let url = URL(string: filteredCafeObjects[indexPath.row].imageName!)
-            cell.cafeImageView.sd_setImage(with: url) { (_, _, _, _) in
-            }
             cell.cafeNameLabel.text = filteredCafeObjects[indexPath.row].name
-            
         } else {
-            let url = URL(string: cafeObjects[indexPath.row].imageName!)
-            cell.cafeImageView.sd_setImage(with: url) { (_, _, _, _) in
-            }
             cell.cafeNameLabel.text = cafeObjects[indexPath.row].name
         }
-        
         return cell
     }
     
