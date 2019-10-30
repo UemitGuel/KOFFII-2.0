@@ -10,6 +10,9 @@
 		8A4204AD85B4D3AC3588B652 /* Pods_KOFFII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0285450D2D979851A99E479 /* Pods_KOFFII.framework */; };
 		B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309008122D796CC00DE7662 /* CafeDetailViewController.swift */; };
 		B310BF982369BBC30065318C /* AddCoffeePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF972369BBC30065318C /* AddCoffeePlaceViewController.swift */; };
+		B310BF9A2369D02B0065318C /* RoasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF992369D02B0065318C /* RoasterViewController.swift */; };
+		B310BF9C2369D1A20065318C /* Roastery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9B2369D1A20065318C /* Roastery.swift */; };
+		B310BF9E2369D49A0065318C /* RoasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9D2369D49A0065318C /* RoasterTableViewCell.swift */; };
 		B316F619236984FA00D6BADF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F618236984FA00D6BADF /* RoundButton.swift */; };
 		B316F61B236998BE00D6BADF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F61A236998BE00D6BADF /* LoginViewController.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
@@ -47,6 +50,9 @@
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
 		B309008122D796CC00DE7662 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = ../CafeDetailViewController.swift; sourceTree = "<group>"; };
 		B310BF972369BBC30065318C /* AddCoffeePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeePlaceViewController.swift; sourceTree = "<group>"; };
+		B310BF992369D02B0065318C /* RoasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterViewController.swift; sourceTree = "<group>"; };
+		B310BF9B2369D1A20065318C /* Roastery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roastery.swift; sourceTree = "<group>"; };
+		B310BF9D2369D49A0065318C /* RoasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterTableViewCell.swift; sourceTree = "<group>"; };
 		B316F618236984FA00D6BADF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		B316F61A236998BE00D6BADF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 				B3C589E822D553C5002C03A8 /* Cafe.swift */,
 				B370A06C22D93200009C4CFA /* Message.swift */,
 				B3417F1C22DB9A0200E98C95 /* FavCafes.swift */,
+				B310BF9B2369D1A20065318C /* Roastery.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +179,8 @@
 				B316F61A236998BE00D6BADF /* LoginViewController.swift */,
 				B367D58822D4F2D10069F4D0 /* Location */,
 				B399DB8B22CE081B003C5EDD /* Information */,
+				B310BF992369D02B0065318C /* RoasterViewController.swift */,
+				B310BF9D2369D49A0065318C /* RoasterTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -393,13 +402,16 @@
 				B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */,
 				B3C589E922D553C5002C03A8 /* Cafe.swift in Sources */,
 				B3F62ED322D0C8FF002DF68C /* InformationDetailTableViewCell.swift in Sources */,
+				B310BF9C2369D1A20065318C /* Roastery.swift in Sources */,
 				B3417F1D22DB9A0200E98C95 /* FavCafes.swift in Sources */,
 				B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */,
+				B310BF9A2369D02B0065318C /* RoasterViewController.swift in Sources */,
 				B390EFC222D60F7300A931E9 /* City_CafeTableViewCell.swift in Sources */,
 				B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */,
 				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,
 				B3BCACDA22D8D7B800A4FEDF /* CustomMessageCell.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
+				B310BF9E2369D49A0065318C /* RoasterTableViewCell.swift in Sources */,
 				B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */,
 				B310BF982369BBC30065318C /* AddCoffeePlaceViewController.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,

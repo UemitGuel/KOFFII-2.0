@@ -167,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8k-jM-m4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5158" y="-1065"/>
+            <point key="canvasLocation" x="7197" y="-715"/>
         </scene>
         <!--City View Controller-->
         <scene sceneID="oNo-sl-nRU">
@@ -392,7 +392,7 @@
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Xs-RH-tzF">
+                        <barButtonItem key="rightBarButtonItem" title="Add Coffee Place" id="6Xs-RH-tzF">
                             <connections>
                                 <action selector="addPlaceButtonTapped:" destination="8hJ-sQ-lT1" id="wiE-6i-GXU"/>
                                 <segue destination="oBQ-xO-hm5" kind="showDetail" id="Eds-XP-GW4"/>
@@ -417,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xv-2a-RWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5158" y="-342"/>
+            <point key="canvasLocation" x="5268" y="-342"/>
         </scene>
         <!--Cafe Detail View Controller-->
         <scene sceneID="LY7-zn-5Mi">
@@ -685,7 +685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsL-bI-y6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5896" y="-333"/>
+            <point key="canvasLocation" x="6033" y="-342"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="e4I-tl-Ccs">
@@ -763,6 +763,98 @@
             </objects>
             <point key="canvasLocation" x="2609" y="-342"/>
         </scene>
+        <!--Roaster View Controller-->
+        <scene sceneID="Fzb-qa-ea8">
+            <objects>
+                <viewController id="6Qx-ma-4pk" customClass="RoasterViewController" customModule="KOFFII" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zxn-0z-Uc5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rjd-EJ-my9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="ris-Tj-6Kf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where to buy beans" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-Pv-t0l">
+                                            <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                            <fontDescription key="fontDescription" name="Staatliches-Regular" family="Staatliches" pointSize="40"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="tzw-Pv-t0l" firstAttribute="top" secondItem="ris-Tj-6Kf" secondAttribute="top" id="13G-Cb-nbJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="tzw-Pv-t0l" secondAttribute="trailing" constant="16" id="GOG-As-M4T"/>
+                                        <constraint firstAttribute="bottom" secondItem="tzw-Pv-t0l" secondAttribute="bottom" id="fSM-2J-utx"/>
+                                        <constraint firstItem="tzw-Pv-t0l" firstAttribute="leading" secondItem="ris-Tj-6Kf" secondAttribute="leading" constant="16" id="mgU-23-nSH"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="roasteryCell" rowHeight="93" id="oGk-AZ-St5" customClass="RoasterTableViewCell" customModule="KOFFII" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="78" width="414" height="93"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oGk-AZ-St5" id="B9J-wR-f1T">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYQ-gB-vii">
+                                                    <rect key="frame" x="74" y="16.666666666666671" width="312" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="Km4-td-GqP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roaster_icon" translatesAutoresizingMaskIntoConstraints="NO" id="BCZ-f9-B7h">
+                                                    <rect key="frame" x="28" y="31.666666666666671" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="3UR-dz-J3z"/>
+                                                        <constraint firstAttribute="height" constant="30" id="8lh-tR-SMz"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZYQ-gB-vii" secondAttribute="trailing" constant="8" id="82J-fT-KIo"/>
+                                                <constraint firstItem="BCZ-f9-B7h" firstAttribute="leading" secondItem="B9J-wR-f1T" secondAttribute="leadingMargin" constant="8" id="Kz3-LD-kNX"/>
+                                                <constraint firstItem="BCZ-f9-B7h" firstAttribute="centerY" secondItem="B9J-wR-f1T" secondAttribute="centerY" id="aqI-df-h19"/>
+                                                <constraint firstItem="ZYQ-gB-vii" firstAttribute="leading" secondItem="BCZ-f9-B7h" secondAttribute="trailing" constant="16" id="cTS-dV-N8a"/>
+                                                <constraint firstItem="ZYQ-gB-vii" firstAttribute="centerY" secondItem="B9J-wR-f1T" secondAttribute="centerY" id="uxD-D8-YOj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="roasterLabel" destination="ZYQ-gB-vii" id="LUS-23-d92"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Qx-ma-4pk" id="hUO-bv-GGW"/>
+                                    <outlet property="delegate" destination="6Qx-ma-4pk" id="8GN-fT-9iF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZDr-Cw-9Pe" firstAttribute="trailing" secondItem="rjd-EJ-my9" secondAttribute="trailing" id="TGR-H2-EBY"/>
+                            <constraint firstItem="ZDr-Cw-9Pe" firstAttribute="bottom" secondItem="rjd-EJ-my9" secondAttribute="bottom" id="lOd-OL-pCA"/>
+                            <constraint firstItem="rjd-EJ-my9" firstAttribute="top" secondItem="ZDr-Cw-9Pe" secondAttribute="top" id="roO-Ap-KcK"/>
+                            <constraint firstItem="rjd-EJ-my9" firstAttribute="leading" secondItem="ZDr-Cw-9Pe" secondAttribute="leading" id="zh8-DD-jMB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZDr-Cw-9Pe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gR5-Gf-z5W"/>
+                    <connections>
+                        <outlet property="roasterTableView" destination="rjd-EJ-my9" id="Vht-kz-nmA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ea7-N4-YD3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5268.115942028986" y="-1042.663043478261"/>
+        </scene>
         <!--Flashy Tab Bar Controller-->
         <scene sceneID="qOs-tT-nbc">
             <objects>
@@ -779,12 +871,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="fCN-KW-eNA" kind="relationship" relationship="viewControllers" id="Cmi-vn-MuU"/>
+                        <segue destination="6nu-nx-eVI" kind="relationship" relationship="viewControllers" id="wKZ-v9-NtV"/>
                         <segue destination="edd-uV-2Uq" kind="relationship" relationship="viewControllers" id="2K5-1I-UtA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3L-LS-sOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3478" y="-341"/>
+            <point key="canvasLocation" x="3422" y="-342"/>
         </scene>
         <!--Information View Controller-->
         <scene sceneID="fWB-x8-2yQ">
@@ -1219,6 +1312,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JlH-FP-gCC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1228,6 +1322,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZX0-am-U9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4361" y="-342"/>
+        </scene>
+        <!--Roasteries-->
+        <scene sceneID="qk4-13-UhN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6nu-nx-eVI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Roasteries" image="roaster_icon" id="kNi-FI-VSX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KxO-6F-pwE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Qx-ma-4pk" kind="relationship" relationship="rootViewController" id="fMH-XH-7uH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3v2-om-Y1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4361" y="-1043"/>
         </scene>
     </scenes>
     <resources>
@@ -1241,6 +1355,7 @@
         <image name="WIFI" width="22" height="16"/>
         <image name="coffee_icon" width="29" height="27"/>
         <image name="info_icon" width="29" height="29"/>
+        <image name="roaster_icon" width="29" height="29"/>
     </resources>
     <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
