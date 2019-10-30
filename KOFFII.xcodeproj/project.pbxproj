@@ -10,6 +10,7 @@
 		8A4204AD85B4D3AC3588B652 /* Pods_KOFFII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0285450D2D979851A99E479 /* Pods_KOFFII.framework */; };
 		B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309008122D796CC00DE7662 /* CafeDetailViewController.swift */; };
 		B316F619236984FA00D6BADF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F618236984FA00D6BADF /* RoundButton.swift */; };
+		B316F61B236998BE00D6BADF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F61A236998BE00D6BADF /* LoginViewController.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
 		B3417F1D22DB9A0200E98C95 /* FavCafes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3417F1C22DB9A0200E98C95 /* FavCafes.swift */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
@@ -46,6 +47,7 @@
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
 		B309008122D796CC00DE7662 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = ../CafeDetailViewController.swift; sourceTree = "<group>"; };
 		B316F618236984FA00D6BADF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		B316F61A236998BE00D6BADF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
 		B3417F1C22DB9A0200E98C95 /* FavCafes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCafes.swift; sourceTree = "<group>"; };
 		B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		B385DA5F22C4FDE700BD8C88 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B316F61A236998BE00D6BADF /* LoginViewController.swift */,
 				B367D58822D4F2D10069F4D0 /* Location */,
 				B399DB8B22CE081B003C5EDD /* Information */,
 				B3A3C04422DB59C10081A86F /* ProfileViewController.swift */,
@@ -382,6 +385,7 @@
 				B316F619236984FA00D6BADF /* RoundButton.swift in Sources */,
 				B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */,
 				B367D58022D39C810069F4D0 /* ComplainTableViewCell.swift in Sources */,
+				B316F61B236998BE00D6BADF /* LoginViewController.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
 				B370A06D22D93200009C4CFA /* Message.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,

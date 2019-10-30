@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NHI-7U-5fT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KdP-IE-fI2">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -519,11 +519,88 @@
             </objects>
             <point key="canvasLocation" x="6794" y="-333"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="e4I-tl-Ccs">
+            <objects>
+                <viewController id="KdP-IE-fI2" customClass="LoginViewController" customModule="KOFFII" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b3C-2i-4ZE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hon-fd-a8m">
+                                <rect key="frame" x="32" y="125.33333333333331" width="350" height="117.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHL-dh-coJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="71.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ag-VH-45b">
+                                        <rect key="frame" x="0.0" y="79.666666666666671" width="350" height="27"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-yn-ZHj">
+                                        <rect key="frame" x="0.0" y="114.66666666666667" width="350" height="3"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="smB-Gn-tHd"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozp-20-ON7">
+                                <rect key="frame" x="182" y="259" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="P2v-JO-cPE"/>
+                                    <constraint firstAttribute="width" constant="200" id="a5z-AC-BHS"/>
+                                </constraints>
+                                <state key="normal" title="Enter the App">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="enterAppButtonTapped:" destination="KdP-IE-fI2" eventType="touchUpInside" id="FeT-az-ZWc"/>
+                                    <segue destination="NHI-7U-5fT" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="T4P-L0-x2U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vlB-oP-gKV" firstAttribute="trailing" secondItem="Ozp-20-ON7" secondAttribute="trailing" constant="32" id="2ct-uV-LHc"/>
+                            <constraint firstItem="hon-fd-a8m" firstAttribute="centerX" secondItem="b3C-2i-4ZE" secondAttribute="centerX" id="CKD-LF-x0p"/>
+                            <constraint firstItem="vlB-oP-gKV" firstAttribute="trailing" secondItem="hon-fd-a8m" secondAttribute="trailing" constant="32" id="ik2-nc-qFK"/>
+                            <constraint firstItem="hon-fd-a8m" firstAttribute="centerY" secondItem="b3C-2i-4ZE" secondAttribute="centerY" multiplier="0.5" id="ksX-Ff-8Qg"/>
+                            <constraint firstItem="Ozp-20-ON7" firstAttribute="top" secondItem="hon-fd-a8m" secondAttribute="bottom" constant="16" id="lSY-IH-JK1"/>
+                            <constraint firstItem="hon-fd-a8m" firstAttribute="leading" secondItem="vlB-oP-gKV" secondAttribute="leading" constant="32" id="sBR-kt-ZAh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vlB-oP-gKV"/>
+                    </view>
+                    <connections>
+                        <outlet property="usernameTextField" destination="6Ag-VH-45b" id="BhC-Ff-F3c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ico-B1-RqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2003" y="-340"/>
+        </scene>
         <!--Flashy Tab Bar Controller-->
         <scene sceneID="qOs-tT-nbc">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NHI-7U-5fT" customClass="CBFlashyTabBarController" customModule="CBFlashyTabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="9ey-OR-3Os"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BeB-5E-AiE">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -540,7 +617,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3L-LS-sOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="-346"/>
+            <point key="canvasLocation" x="2997" y="-341"/>
         </scene>
         <!--Information View Controller-->
         <scene sceneID="fWB-x8-2yQ">

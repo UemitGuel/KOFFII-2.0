@@ -260,9 +260,9 @@ class CafeDetailViewController: UIViewController {
         let calendar = Calendar.current
         
         let sentDate = "\(calendar.component(.day, from: date)).\(calendar.component(.month, from: date)), \(calendar.component(.year, from: date))"
-        
+        let username = UserDefaults.standard.string(forKey: "username") ?? ""
     db.collection("City").document(cityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages").document().setData([
-        "author": "User",
+            "author": username,
             "date": sentDate,
             "message": messageTextField.text ?? "",
             "created": FieldValue.serverTimestamp()
@@ -295,15 +295,16 @@ extension CafeDetailViewController: UITableViewDataSource {
         cell.dateLabel.text = messages[indexPath.row].date
         cell.commentLabel?.text = messages[indexPath.row].message
         
-//        if messages[indexPath.row].author == Auth.auth().currentUser?.displayName {
-//            cell.messageBackgroundView.backgroundColor = UIColor(red: 220/255, green: 248/255, blue: 198/255, alpha: 1)
-//            cell.leftSideContraint.constant = 24
-//            cell.rightSideConstraint.constant = 8
-//        } else {
-//            cell.messageBackgroundView.backgroundColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
-//            cell.leftSideContraint.constant = 8
-//            cell.rightSideConstraint.constant = 24
-//        }
+        let username = UserDefaults.standard.string(forKey: "username") ?? ""
+        if messages[indexPath.row].author == username {
+            cell.messageBackgroundView.backgroundColor = UIColor(red: 220/255, green: 248/255, blue: 198/255, alpha: 1)
+            cell.leftSideContraint.constant = 24
+            cell.rightSideConstraint.constant = 8
+        } else {
+            cell.messageBackgroundView.backgroundColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
+            cell.leftSideContraint.constant = 8
+            cell.rightSideConstraint.constant = 24
+        }
         return cell
     }
     
