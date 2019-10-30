@@ -23,14 +23,11 @@
 
 #include "Firestore/core/src/firebase/firestore/api/snapshot_metadata.h"
 #include "Firestore/core/src/firebase/firestore/core/event_listener.h"
+#include "Firestore/core/src/firebase/firestore/model/document.h"
 #include "Firestore/core/src/firebase/firestore/model/document_key.h"
 #include "Firestore/core/src/firebase/firestore/model/field_path.h"
-#include "Firestore/core/src/firebase/firestore/objc/objc_class.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-OBJC_CLASS(FSTDocument);
-OBJC_CLASS(FSTObjectValue);
+#include "Firestore/core/src/firebase/firestore/model/field_value.h"
+#include "absl/types/optional.h"
 
 namespace firebase {
 namespace firestore {
@@ -47,19 +44,19 @@ class DocumentSnapshot {
 
   DocumentSnapshot(std::shared_ptr<Firestore> firestore,
                    model::DocumentKey document_key,
-                   FSTDocument* _Nullable document,
+                   absl::optional<model::Document> document,
                    SnapshotMetadata metadata);
 
   DocumentSnapshot(std::shared_ptr<Firestore> firestore,
                    model::DocumentKey document_key,
-                   FSTDocument* _Nullable document,
+                   absl::optional<model::Document> document,
                    bool from_cache,
                    bool has_pending_writes);
 
   size_t Hash() const;
 
   bool exists() const;
-  FSTDocument* internal_document() const;
+  const absl::optional<model::Document>& internal_document() const;
   const std::string& document_id() const;
 
   const SnapshotMetadata& metadata() const {
@@ -68,8 +65,9 @@ class DocumentSnapshot {
 
   DocumentReference CreateReference() const;
 
-  FSTObjectValue* _Nullable GetData() const;
-  id _Nullable GetValue(const model::FieldPath& field_path) const;
+  absl::optional<model::ObjectValue> GetData() const;
+  absl::optional<model::FieldValue> GetValue(
+      const model::FieldPath& field_path) const;
 
   const std::shared_ptr<Firestore>& firestore() const {
     return firestore_;
@@ -81,7 +79,7 @@ class DocumentSnapshot {
  private:
   std::shared_ptr<Firestore> firestore_;
   model::DocumentKey internal_key_;
-  objc::Handle<FSTDocument> internal_document_;
+  absl::optional<model::Document> internal_document_;
   SnapshotMetadata metadata_;
 };
 
@@ -93,7 +91,5 @@ inline bool operator!=(const DocumentSnapshot& lhs,
 }  // namespace api
 }  // namespace firestore
 }  // namespace firebase
-
-NS_ASSUME_NONNULL_END
 
 #endif  // FIRESTORE_CORE_SRC_FIREBASE_FIRESTORE_API_DOCUMENT_SNAPSHOT_H_

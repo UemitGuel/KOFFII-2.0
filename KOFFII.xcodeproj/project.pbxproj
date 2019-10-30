@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A4204AD85B4D3AC3588B652 /* Pods_KOFFII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0285450D2D979851A99E479 /* Pods_KOFFII.framework */; };
 		B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309008122D796CC00DE7662 /* CafeDetailViewController.swift */; };
+		B316F619236984FA00D6BADF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F618236984FA00D6BADF /* RoundButton.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
 		B3417F1D22DB9A0200E98C95 /* FavCafes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3417F1C22DB9A0200E98C95 /* FavCafes.swift */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
@@ -23,23 +24,19 @@
 		B367D58A22D4F2FA0069F4D0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58922D4F2FA0069F4D0 /* LocationViewController.swift */; };
 		B367D58C22D4F3630069F4D0 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */; };
 		B367D58E22D502CD0069F4D0 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58D22D502CD0069F4D0 /* CityViewController.swift */; };
-		B367D59222D504090069F4D0 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D59122D504090069F4D0 /* RoundButton.swift */; };
 		B370A06D22D93200009C4CFA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370A06C22D93200009C4CFA /* Message.swift */; };
 		B390EFC222D60F7300A931E9 /* City_CafeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390EFC122D60F7300A931E9 /* City_CafeTableViewCell.swift */; };
 		B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8C22CE0EAC003C5EDD /* User.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
 		B3A3C04522DB59C10081A86F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3C04422DB59C10081A86F /* ProfileViewController.swift */; };
 		B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5722C4F38B005848DA /* AppDelegate.swift */; };
-		B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5922C4F38B005848DA /* WelcomeView.swift */; };
 		B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5B22C4F38B005848DA /* Main.storyboard */; };
 		B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5E22C4F38C005848DA /* Assets.xcassets */; };
 		B3AA7E6222C4F38C005848DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6022C4F38C005848DA /* LaunchScreen.storyboard */; };
 		B3AA7E6A22C4F877005848DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */; };
 		B3BCACDA22D8D7B800A4FEDF /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */; };
 		B3BCACDB22D8D7B800A4FEDF /* CustomMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */; };
-		B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */; };
 		B3C589E922D553C5002C03A8 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C589E822D553C5002C03A8 /* Cafe.swift */; };
-		B3EDF44E22CB82A8006F704B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDF44D22CB82A8006F704B /* LogInViewController.swift */; };
 		B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ECA22D0C371002DF68C /* BrewingDetailViewController.swift */; };
 		B3F62ED322D0C8FF002DF68C /* InformationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ED222D0C8FF002DF68C /* InformationDetailTableViewCell.swift */; };
 		B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ED522D0CB37002DF68C /* HeaderView.swift */; };
@@ -50,6 +47,7 @@
 /* Begin PBXFileReference section */
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
 		B309008122D796CC00DE7662 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = ../CafeDetailViewController.swift; sourceTree = "<group>"; };
+		B316F618236984FA00D6BADF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
 		B3417F1C22DB9A0200E98C95 /* FavCafes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCafes.swift; sourceTree = "<group>"; };
 		B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 		B367D58922D4F2FA0069F4D0 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		B367D58B22D4F3630069F4D0 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		B367D58D22D502CD0069F4D0 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
-		B367D59122D504090069F4D0 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundButton.swift; path = Fonts/RoundButton.swift; sourceTree = "<group>"; };
 		B370A06C22D93200009C4CFA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B390EFC122D60F7300A931E9 /* City_CafeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_CafeTableViewCell.swift; sourceTree = "<group>"; };
 		B399DB8C22CE0EAC003C5EDD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "KOFFII/Supporting Files/User.swift"; sourceTree = SOURCE_ROOT; };
@@ -72,7 +69,6 @@
 		B3A3C04422DB59C10081A86F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B3AA7E5422C4F38B005848DA /* KOFFII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KOFFII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AA7E5722C4F38B005848DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3AA7E5922C4F38B005848DA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B3AA7E5C22C4F38B005848DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3AA7E5E22C4F38C005848DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3AA7E6122C4F38C005848DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,9 +76,7 @@
 		B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
 		B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMessageCell.xib; sourceTree = "<group>"; };
-		B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		B3C589E822D553C5002C03A8 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
-		B3EDF44D22CB82A8006F704B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		B3F62ECA22D0C371002DF68C /* BrewingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingDetailViewController.swift; sourceTree = "<group>"; };
 		B3F62ED222D0C8FF002DF68C /* InformationDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailTableViewCell.swift; sourceTree = "<group>"; };
 		B3F62ED522D0CB37002DF68C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -120,16 +114,6 @@
 				B390EFC122D60F7300A931E9 /* City_CafeTableViewCell.swift */,
 			);
 			path = City_Cafes;
-			sourceTree = "<group>";
-		};
-		B3404A1722CD080800062B01 /* StartViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				B3AA7E5922C4F38B005848DA /* WelcomeView.swift */,
-				B3C0A26422C53A9900B8059B /* RegistrationViewController.swift */,
-				B3EDF44D22CB82A8006F704B /* LogInViewController.swift */,
-			);
-			path = StartViewControllers;
 			sourceTree = "<group>";
 		};
 		B34335C522C504ED006CDBC1 /* Fonts */ = {
@@ -188,7 +172,6 @@
 		B385DA5F22C4FDE700BD8C88 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B3404A1722CD080800062B01 /* StartViewControllers */,
 				B367D58822D4F2D10069F4D0 /* Location */,
 				B399DB8B22CE081B003C5EDD /* Information */,
 				B3A3C04422DB59C10081A86F /* ProfileViewController.swift */,
@@ -201,7 +184,7 @@
 			children = (
 				B34335C522C504ED006CDBC1 /* Fonts */,
 				B3AA7E5722C4F38B005848DA /* AppDelegate.swift */,
-				B367D59122D504090069F4D0 /* RoundButton.swift */,
+				B316F618236984FA00D6BADF /* RoundButton.swift */,
 				B3AA7E5E22C4F38C005848DA /* Assets.xcassets */,
 				B3AA7E6322C4F38C005848DA /* Info.plist */,
 				B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */,
@@ -402,16 +385,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B316F619236984FA00D6BADF /* RoundButton.swift in Sources */,
 				B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */,
-				B3EDF44E22CB82A8006F704B /* LogInViewController.swift in Sources */,
-				B3C0A26522C53A9900B8059B /* RegistrationViewController.swift in Sources */,
 				B367D58022D39C810069F4D0 /* ComplainTableViewCell.swift in Sources */,
 				B367D58A22D4F2FA0069F4D0 /* LocationViewController.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
-				B3AA7E5A22C4F38B005848DA /* WelcomeView.swift in Sources */,
 				B370A06D22D93200009C4CFA /* Message.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
-				B367D59222D504090069F4D0 /* RoundButton.swift in Sources */,
 				B3A3C04522DB59C10081A86F /* ProfileViewController.swift in Sources */,
 				B367D58222D3A7250069F4D0 /* Complain.swift in Sources */,
 				B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */,

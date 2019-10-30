@@ -33,7 +33,7 @@
 #include "Firestore/core/src/firebase/firestore/nanopb/reader.h"
 #include "Firestore/core/src/firebase/firestore/nanopb/writer.h"
 #include "Firestore/core/src/firebase/firestore/remote/serializer.h"
-#include "Firestore/core/src/firebase/firestore/util/status.h"
+#include "Firestore/core/src/firebase/firestore/util/status_fwd.h"
 
 namespace firebase {
 namespace firestore {
@@ -82,7 +82,7 @@ class LocalSerializer {
    * @brief Decodes nanopb proto representing a MaybeDocument proto to the
    * equivalent model.
    */
-  std::unique_ptr<model::MaybeDocument> DecodeMaybeDocument(
+  model::MaybeDocument DecodeMaybeDocument(
       nanopb::Reader* reader,
       const firestore_client_MaybeDocument& proto) const;
 
@@ -124,12 +124,12 @@ class LocalSerializer {
   firestore_client_NoDocument EncodeNoDocument(
       const model::NoDocument& no_doc) const;
 
-  std::unique_ptr<model::NoDocument> DecodeNoDocument(
+  model::NoDocument DecodeNoDocument(
       nanopb::Reader* reader, const firestore_client_NoDocument& proto) const;
 
   firestore_client_UnknownDocument EncodeUnknownDocument(
       const model::UnknownDocument& unknown_doc) const;
-  std::unique_ptr<model::UnknownDocument> DecodeUnknownDocument(
+  model::UnknownDocument DecodeUnknownDocument(
       nanopb::Reader* reader,
       const firestore_client_UnknownDocument& proto) const;
 

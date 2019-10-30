@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#include <utility>
+
 #include "Firestore/core/src/firebase/firestore/remote/write_stream.h"
 
 #include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
@@ -28,26 +30,29 @@ namespace remote {
 
 using auth::CredentialsProvider;
 using auth::Token;
+using model::Mutation;
+using nanopb::ByteString;
 using util::AsyncQueue;
 using util::TimerId;
 using util::Status;
 
-WriteStream::WriteStream(const std::shared_ptr<AsyncQueue>& async_queue,
-                         CredentialsProvider* credentials_provider,
-                         FSTSerializerBeta* serializer,
-                         GrpcConnection* grpc_connection,
-                         WriteStreamCallback* callback)
-    : Stream{async_queue, credentials_provider, grpc_connection,
+WriteStream::WriteStream(
+    const std::shared_ptr<AsyncQueue>& async_queue,
+    std::shared_ptr<CredentialsProvider> credentials_provider,
+    FSTSerializerBeta* serializer,
+    GrpcConnection* grpc_connection,
+    WriteStreamCallback* callback)
+    : Stream{async_queue, std::move(credentials_provider), grpc_connection,
              TimerId::WriteStreamConnectionBackoff, TimerId::WriteStreamIdle},
       serializer_bridge_{serializer},
       callback_{NOT_NULL(callback)} {
 }
 
-void WriteStream::SetLastStreamToken(NSData* token) {
+void WriteStream::SetLastStreamToken(const ByteString& token) {
   serializer_bridge_.SetLastStreamToken(token);
 }
 
-NSData* WriteStream::GetLastStreamToken() const {
+ByteString WriteStream::GetLastStreamToken() const {
   return serializer_bridge_.GetLastStreamToken();
 }
 
@@ -65,7 +70,7 @@ void WriteStream::WriteHandshake() {
   // stream token on the handshake, ignoring any stream token we might have.
 }
 
-void WriteStream::WriteMutations(const std::vector<FSTMutation*>& mutations) {
+void WriteStream::WriteMutations(const std::vector<Mutation>& mutations) {
   EnsureOnQueue();
   HARD_ASSERT(IsOpen(), "Writing mutations requires an opened stream");
   HARD_ASSERT(handshake_complete(),

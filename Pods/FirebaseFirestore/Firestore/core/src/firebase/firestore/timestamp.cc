@@ -31,11 +31,7 @@ namespace firebase {
 
 namespace {
 
-// We pass it by value without std::move.
-static_assert(std::is_trivially_copyable<Timestamp>::value,
-              "Timestamp must be trivially copyable");
-
-constexpr int32_t kNanosPerSecond = 1E9;
+constexpr int32_t kNanosPerSecond = 1000 * 1000 * 1000;
 
 /**
  * Creates a `Timestamp` from the given non-normalized inputs.
@@ -64,7 +60,7 @@ Timestamp MakeNormalizedTimestamp(int64_t seconds, int64_t nanos) {
 
 }  // namespace
 
-Timestamp::Timestamp(const int64_t seconds, const int32_t nanoseconds)
+Timestamp::Timestamp(int64_t seconds, int32_t nanoseconds)
     : seconds_(seconds), nanoseconds_(nanoseconds) {
   ValidateBounds();
 }
@@ -142,13 +138,3 @@ void Timestamp::ValidateBounds() const {
 }
 
 }  // namespace firebase
-
-namespace std {
-size_t hash<firebase::Timestamp>::operator()(
-    const firebase::Timestamp& timestamp) const {
-  // Note: if sizeof(size_t) == 4, this discards high-order bits of seconds.
-  return 37 * static_cast<size_t>(timestamp.seconds()) +
-         static_cast<size_t>(timestamp.nanoseconds());
-}
-
-}  // namespace std

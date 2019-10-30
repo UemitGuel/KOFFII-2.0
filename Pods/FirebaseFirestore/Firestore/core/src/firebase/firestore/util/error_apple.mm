@@ -18,6 +18,7 @@
 
 #include "Firestore/core/include/firebase/firestore/firestore_errors.h"
 #include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
+#include "Firestore/core/src/firebase/firestore/util/status.h"
 #include "Firestore/core/src/firebase/firestore/util/string_apple.h"
 
 // NB: This is also declared in Firestore/Source/Public/FIRFirestoreErrors.h
@@ -30,16 +31,16 @@ namespace firestore {
 namespace util {
 
 // Translates a set of error_code and error_msg to an NSError.
-NSError* MakeNSError(const int64_t error_code,
-                     const absl::string_view error_msg,
+NSError* MakeNSError(int64_t error_code,
+                     absl::string_view error_msg,
                      NSError* cause) {
-  if (error_code == FirestoreErrorCode::Ok) {
+  if (error_code == Error::Ok) {
     return nil;
   }
 
   NSMutableDictionary<NSString*, id>* user_info =
       [NSMutableDictionary dictionary];
-  user_info[NSLocalizedDescriptionKey] = WrapNSString(error_msg);
+  user_info[NSLocalizedDescriptionKey] = MakeNSString(error_msg);
   if (cause) {
     user_info[NSUnderlyingErrorKey] = cause;
   }
@@ -47,6 +48,10 @@ NSError* MakeNSError(const int64_t error_code,
   return [NSError errorWithDomain:FIRFirestoreErrorDomain
                              code:static_cast<NSInteger>(error_code)
                          userInfo:user_info];
+}
+
+NSError* MakeNSError(const util::Status& status) {
+  return status.ToNSError();
 }
 
 util::StatusCallback MakeCallback(VoidErrorBlock _Nullable block) {

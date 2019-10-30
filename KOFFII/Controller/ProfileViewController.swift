@@ -162,7 +162,7 @@ class ProfileViewController: UIViewController {
             user?.delete { error in
                 print("delete account trigger")
                 if error != nil {
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription ?? "")
                 } else {
                     // Account deleted.
                 }

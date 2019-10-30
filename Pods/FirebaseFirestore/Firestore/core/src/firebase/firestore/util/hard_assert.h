@@ -21,12 +21,24 @@
 #include <utility>
 
 #include "Firestore/core/src/firebase/firestore/util/string_format.h"
+#include "absl/base/optimization.h"
 
 #if defined(_MSC_VER)
 #define FIRESTORE_FUNCTION_NAME __FUNCSIG__
 #else
 #define FIRESTORE_FUNCTION_NAME __PRETTY_FUNCTION__
 #endif
+
+/**
+ * Invokes the internal Fail function below with all the required contextual
+ * information and passes additional arguments.
+ *
+ * @param message The failure message.
+ * @param condition The string form of the expression that failed (optional)
+ */
+#define INVOKE_INTERNAL_FAIL(...)                                              \
+  firebase::firestore::util::internal::Fail(__FILE__, FIRESTORE_FUNCTION_NAME, \
+                                            __LINE__, __VA_ARGS__)
 
 /**
  * Fails the current function if the given condition is false.
@@ -37,14 +49,13 @@
  * @param format (optional) A format string suitable for util::StringFormat.
  * @param ... format arguments to pass to util::StringFormat.
  */
-#define HARD_ASSERT(condition, ...)                                           \
-  do {                                                                        \
-    if (!(condition)) {                                                       \
-      std::string _message =                                                  \
-          firebase::firestore::util::StringFormat(__VA_ARGS__);               \
-      firebase::firestore::util::internal::Fail(                              \
-          __FILE__, FIRESTORE_FUNCTION_NAME, __LINE__, _message, #condition); \
-    }                                                                         \
+#define HARD_ASSERT(condition, ...)                             \
+  do {                                                          \
+    if (!ABSL_PREDICT_TRUE(condition)) {                        \
+      std::string _message =                                    \
+          firebase::firestore::util::StringFormat(__VA_ARGS__); \
+      INVOKE_INTERNAL_FAIL(_message, #condition);               \
+    }                                                           \
   } while (0)
 
 /**
@@ -55,12 +66,11 @@
  * @param format A format string suitable for util::StringFormat.
  * @param ... format arguments to pass to util::StringFormat.
  */
-#define HARD_FAIL(...)                                          \
-  do {                                                          \
-    std::string _failure =                                      \
-        firebase::firestore::util::StringFormat(__VA_ARGS__);   \
-    firebase::firestore::util::internal::Fail(                  \
-        __FILE__, FIRESTORE_FUNCTION_NAME, __LINE__, _failure); \
+#define HARD_FAIL(...)                                        \
+  do {                                                        \
+    std::string _failure =                                    \
+        firebase::firestore::util::StringFormat(__VA_ARGS__); \
+    INVOKE_INTERNAL_FAIL(_failure);                           \
   } while (0)
 
 /**
@@ -82,14 +92,44 @@
  *
  * @param ptr The pointer to check and return. Can be a smart pointer.
  */
-#define NOT_NULL(ptr)                                                         \
-  firebase::firestore::util::internal::NotNull(                               \
-      __FILE__, FIRESTORE_FUNCTION_NAME, __LINE__, "Expected non-null " #ptr, \
-      ptr)
+#define NOT_NULL(ptr)                                                      \
+  (static_cast<void>(ABSL_PREDICT_FALSE((ptr) == nullptr)                  \
+                         ? INVOKE_INTERNAL_FAIL("Expected non-null " #ptr) \
+                         : static_cast<void>(0)),                          \
+   (ptr))  // NOLINT(whitespace/indent)
 
 namespace firebase {
 namespace firestore {
 namespace util {
+
+using FailureHandler = void (*)(const char* file,
+                                const char* func,
+                                const int line,
+                                const std::string& failure_message);
+
+/**
+ * Overrides the default failure handler.
+ *
+ * The default essentially just calls std::terminate. While reasonable for C++,
+ * this isn't optimal for platforms that merely use the C++ core as their
+ * implementation and would otherwise be expected to throw a platform specific
+ * exception.
+ *
+ * @param callback A function that will handle the failure. This function is
+ *     not expected to return. (If it does, std::terminate() will be called
+ *     immediately after it does so.)
+ * @return A pointer to the previous failure handler.
+ */
+FailureHandler SetFailureHandler(FailureHandler callback);
+
+/**
+ * Default failure handler. This should typically not be called directly.
+ */
+ABSL_ATTRIBUTE_NORETURN void DefaultFailureHandler(const char* file,
+                                                   const char* func,
+                                                   const int line,
+                                                   const std::string& message);
+
 namespace internal {
 
 // A no-return helper function. To raise an assertion, use Macro instead.
@@ -103,18 +143,6 @@ ABSL_ATTRIBUTE_NORETURN void Fail(const char* file,
                                   int line,
                                   const std::string& message,
                                   const char* condition);
-
-template <typename T>
-T NotNull(const char* file,
-          const char* func,
-          int line,
-          const std::string& message,
-          T&& ptr) {
-  if (ptr == nullptr) {
-    Fail(file, func, line, message);
-  }
-  return std::forward<T>(ptr);
-}
 
 }  // namespace internal
 }  // namespace util

@@ -22,7 +22,6 @@
 #import "Firestore/Source/API/FIRFirestore+Internal.h"
 #import "Firestore/Source/API/FIRQuery+Internal.h"
 #import "Firestore/Source/API/FSTUserDataConverter.h"
-#import "Firestore/Source/Core/FSTQuery.h"
 
 #include "Firestore/core/src/firebase/firestore/api/collection_reference.h"
 #include "Firestore/core/src/firebase/firestore/api/input_validation.h"
@@ -84,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)collectionID {
-  return util::WrapNSString(self.reference.collection_id());
+  return util::MakeNSString(self.reference.collection_id());
 }
 
 - (FIRDocumentReference *_Nullable)parent {
@@ -96,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)path {
-  return util::WrapNSString(self.reference.path());
+  return util::MakeNSString(self.reference.path());
 }
 
 - (FIRDocumentReference *)documentWithPath:(NSString *)documentPath {

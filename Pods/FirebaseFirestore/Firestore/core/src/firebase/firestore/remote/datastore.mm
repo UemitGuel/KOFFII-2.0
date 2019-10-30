@@ -35,7 +35,7 @@
 #include "Firestore/core/src/firebase/firestore/remote/grpc_unary_call.h"
 #include "Firestore/core/src/firebase/firestore/util/async_queue.h"
 #include "Firestore/core/src/firebase/firestore/util/error_apple.h"
-#include "Firestore/core/src/firebase/firestore/util/executor_libdispatch.h"
+#include "Firestore/core/src/firebase/firestore/util/executor.h"
 #include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
 #include "Firestore/core/src/firebase/firestore/util/log.h"
 #include "Firestore/core/src/firebase/firestore/util/statusor.h"
@@ -45,26 +45,24 @@
 namespace firebase {
 namespace firestore {
 namespace remote {
+namespace {
 
 using auth::CredentialsProvider;
 using auth::Token;
 using core::DatabaseInfo;
 using model::DocumentKey;
+using model::MaybeDocument;
+using model::Mutation;
 using util::AsyncQueue;
 using util::Status;
 using util::StatusOr;
 using util::Executor;
-using util::ExecutorLibdispatch;
-
-namespace {
 
 const auto kRpcNameCommit = "/google.firestore.v1.Firestore/Commit";
 const auto kRpcNameLookup = "/google.firestore.v1.Firestore/BatchGetDocuments";
 
 std::unique_ptr<Executor> CreateExecutor() {
-  auto queue = dispatch_queue_create("com.google.firebase.firestore.rpc",
-                                     DISPATCH_QUEUE_SERIAL);
-  return absl::make_unique<ExecutorLibdispatch>(queue);
+  return Executor::CreateSerial("com.google.firebase.firestore.rpc");
 }
 
 std::string MakeString(grpc::string_ref grpc_str) {
@@ -91,17 +89,17 @@ void LogGrpcCallFinished(absl::string_view rpc_name,
 
 Datastore::Datastore(const DatabaseInfo& database_info,
                      const std::shared_ptr<AsyncQueue>& worker_queue,
-                     CredentialsProvider* credentials)
+                     std::shared_ptr<CredentialsProvider> credentials)
     : Datastore{database_info, worker_queue, credentials,
                 ConnectivityMonitor::Create(worker_queue)} {
 }
 
 Datastore::Datastore(const DatabaseInfo& database_info,
                      const std::shared_ptr<AsyncQueue>& worker_queue,
-                     CredentialsProvider* credentials,
+                     std::shared_ptr<CredentialsProvider> credentials,
                      std::unique_ptr<ConnectivityMonitor> connectivity_monitor)
     : worker_queue_{NOT_NULL(worker_queue)},
-      credentials_{credentials},
+      credentials_{std::move(credentials)},
       rpc_executor_{CreateExecutor()},
       connectivity_monitor_{std::move(connectivity_monitor)},
       grpc_connection_{database_info, worker_queue, &grpc_queue_,
@@ -164,7 +162,7 @@ std::shared_ptr<WriteStream> Datastore::CreateWriteStream(
                                        &grpc_connection_, callback);
 }
 
-void Datastore::CommitMutations(const std::vector<FSTMutation*>& mutations,
+void Datastore::CommitMutations(const std::vector<Mutation>& mutations,
                                 CommitCallback&& callback) {
   ResumeRpcWithCredentials(
       // TODO(c++14): move into lambda.
@@ -181,7 +179,7 @@ void Datastore::CommitMutations(const std::vector<FSTMutation*>& mutations,
 
 void Datastore::CommitMutationsWithCredentials(
     const Token& token,
-    const std::vector<FSTMutation*>& mutations,
+    const std::vector<Mutation>& mutations,
     CommitCallback&& callback) {
   grpc::ByteBuffer message = serializer_bridge_.ToByteBuffer(
       serializer_bridge_.CreateCommitRequest(mutations));
@@ -253,7 +251,7 @@ void Datastore::OnLookupDocumentsResponse(
 
   Status parse_status;
   std::vector<grpc::ByteBuffer> responses = std::move(result).ValueOrDie();
-  std::vector<FSTMaybeDocument*> docs =
+  std::vector<MaybeDocument> docs =
       serializer_bridge_.MergeLookupResponses(responses, &parse_status);
   callback(docs, parse_status);
 }
@@ -287,7 +285,7 @@ void Datastore::ResumeRpcWithCredentials(const OnCredentials& on_credentials) {
 }
 
 void Datastore::HandleCallStatus(const Status& status) {
-  if (status.code() == FirestoreErrorCode::Unauthenticated) {
+  if (status.code() == Error::Unauthenticated) {
     credentials_->InvalidateToken();
   }
 }
@@ -302,35 +300,35 @@ void Datastore::RemoveGrpcCall(GrpcCall* to_remove) {
 }
 
 bool Datastore::IsAbortedError(const Status& error) {
-  return error.code() == FirestoreErrorCode::Aborted;
+  return error.code() == Error::Aborted;
 }
 
 bool Datastore::IsPermanentError(const Status& error) {
   switch (error.code()) {
-    case FirestoreErrorCode::Ok:
+    case Error::Ok:
       HARD_FAIL("Treated status OK as error");
-    case FirestoreErrorCode::Cancelled:
-    case FirestoreErrorCode::Unknown:
-    case FirestoreErrorCode::DeadlineExceeded:
-    case FirestoreErrorCode::ResourceExhausted:
-    case FirestoreErrorCode::Internal:
-    case FirestoreErrorCode::Unavailable:
+    case Error::Cancelled:
+    case Error::Unknown:
+    case Error::DeadlineExceeded:
+    case Error::ResourceExhausted:
+    case Error::Internal:
+    case Error::Unavailable:
       // Unauthenticated means something went wrong with our token and we need
       // to retry with new credentials which will happen automatically.
-    case FirestoreErrorCode::Unauthenticated:
+    case Error::Unauthenticated:
       return false;
-    case FirestoreErrorCode::InvalidArgument:
-    case FirestoreErrorCode::NotFound:
-    case FirestoreErrorCode::AlreadyExists:
-    case FirestoreErrorCode::PermissionDenied:
-    case FirestoreErrorCode::FailedPrecondition:
-    case FirestoreErrorCode::Aborted:
+    case Error::InvalidArgument:
+    case Error::NotFound:
+    case Error::AlreadyExists:
+    case Error::PermissionDenied:
+    case Error::FailedPrecondition:
+    case Error::Aborted:
       // Aborted might be retried in some scenarios, but that is dependant on
       // the context and should handled individually by the calling code.
       // See https://cloud.google.com/apis/design/errors
-    case FirestoreErrorCode::OutOfRange:
-    case FirestoreErrorCode::Unimplemented:
-    case FirestoreErrorCode::DataLoss:
+    case Error::OutOfRange:
+    case Error::Unimplemented:
+    case Error::DataLoss:
       return true;
   }
 

@@ -20,22 +20,16 @@
 #include <functional>
 #include <memory>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 #include "Firestore/core/src/firebase/firestore/model/document_key.h"
+#include "Firestore/core/src/firebase/firestore/model/mutation.h"
 #include "Firestore/core/src/firebase/firestore/model/precondition.h"
 #include "Firestore/core/src/firebase/firestore/model/snapshot_version.h"
-#include "Firestore/core/src/firebase/firestore/objc/objc_class.h"
 #include "Firestore/core/src/firebase/firestore/util/status.h"
-#include "Firestore/core/src/firebase/firestore/util/statusor.h"
-#include "Firestore/core/src/firebase/firestore/util/statusor_callback.h"
 #include "absl/types/any.h"
 #include "absl/types/optional.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-OBJC_CLASS(FSTMaybeDocument);
-OBJC_CLASS(FSTMutation);
 
 namespace firebase {
 namespace firestore {
@@ -52,10 +46,9 @@ class ParsedUpdateData;
 
 class Transaction {
  public:
-  // TODO(varconst): once `FSTMaybeDocument` is replaced with a C++ equivalent,
-  // this function could take a single `StatusOr` parameter.
+  // TODO(varconst): change this to take a single `StatusOr` parameter.
   using LookupCallback = std::function<void(
-      const std::vector<FSTMaybeDocument*>&, const util::Status&)>;
+      const std::vector<model::MaybeDocument>&, const util::Status&)>;
 
   Transaction() = default;
   explicit Transaction(remote::Datastore* transaction);
@@ -92,6 +85,17 @@ class Transaction {
    */
   void Commit(util::StatusCallback&& callback);
 
+  /**
+   * Marks the transaction as permanently failed, so the transaction will not
+   * retry.
+   */
+  void MarkPermanentlyFailed();
+
+  /**
+   * Checks if the transaction is permanently failed.
+   */
+  bool IsPermanentlyFailed() const;
+
  private:
   /**
    * Every time a document is read, this should be called to record its version.
@@ -99,10 +103,10 @@ class Transaction {
    * error. When the transaction is committed, the versions recorded will be set
    * as preconditions on the writes sent to the backend.
    */
-  util::Status RecordVersion(FSTMaybeDocument* doc);
+  util::Status RecordVersion(const model::MaybeDocument& doc);
 
   /** Stores mutations to be written when `Commit` is called. */
-  void WriteMutations(std::vector<FSTMutation*>&& mutations);
+  void WriteMutations(std::vector<model::Mutation>&& mutations);
 
   /**
    * Returns version of this doc when it was read in this transaction as a
@@ -124,14 +128,23 @@ class Transaction {
 
   remote::Datastore* datastore_ = nullptr;
 
-  std::vector<FSTMutation*> mutations_;
+  std::vector<model::Mutation> mutations_;
   bool committed_ = false;
+  bool permanentError_ = false;
 
   /**
-   * An error that may have occurred as a consequence of a write. If set, needs
-   * to be raised in the callback instead of trying to commit.
+   * A deferred usage error that occurred previously in this transaction that
+   * will cause the transaction to fail once it actually commits.
    */
   util::Status last_write_error_;
+
+  /**
+   * Set of documents that have been written in the transaction.
+   *
+   * When there's more than one write to the same key in a transaction, any
+   * writes after the first are handled differently.
+   */
+  std::unordered_set<model::DocumentKey, model::DocumentKeyHash> written_docs_;
 
   std::unordered_map<model::DocumentKey,
                      model::SnapshotVersion,
@@ -156,7 +169,5 @@ using TransactionUpdateCallback = std::function<void(
 }  // namespace core
 }  // namespace firestore
 }  // namespace firebase
-
-NS_ASSUME_NONNULL_END
 
 #endif  // FIRESTORE_CORE_SRC_FIREBASE_FIRESTORE_CORE_TRANSACTION_H_

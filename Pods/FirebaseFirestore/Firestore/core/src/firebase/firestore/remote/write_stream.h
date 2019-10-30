@@ -31,15 +31,11 @@
 #include "Firestore/core/src/firebase/firestore/remote/remote_objc_bridge.h"
 #include "Firestore/core/src/firebase/firestore/remote/stream.h"
 #include "Firestore/core/src/firebase/firestore/util/async_queue.h"
-#include "Firestore/core/src/firebase/firestore/util/status.h"
+#include "Firestore/core/src/firebase/firestore/util/status_fwd.h"
 #include "absl/strings/string_view.h"
 #include "grpcpp/support/byte_buffer.h"
 
-#import "Firestore/Source/Core/FSTTypes.h"
-#import "Firestore/Source/Model/FSTMutation.h"
 #import "Firestore/Source/Remote/FSTSerializerBeta.h"
-
-@class FSTMutationResult;
 
 namespace firebase {
 namespace firestore {
@@ -65,7 +61,7 @@ class WriteStreamCallback {
    */
   virtual void OnWriteStreamMutationResult(
       model::SnapshotVersion commit_version,
-      std::vector<FSTMutationResult*> results) = 0;
+      std::vector<model::MutationResult> results) = 0;
 
   /**
    * Called when the `WriteStream`'s underlying RPC is interrupted for whatever
@@ -100,12 +96,12 @@ class WriteStreamCallback {
 class WriteStream : public Stream {
  public:
   WriteStream(const std::shared_ptr<util::AsyncQueue>& async_queue,
-              auth::CredentialsProvider* credentials_provider,
+              std::shared_ptr<auth::CredentialsProvider> credentials_provider,
               FSTSerializerBeta* serializer,
               GrpcConnection* grpc_connection,
               WriteStreamCallback* callback);
 
-  void SetLastStreamToken(NSData* token);
+  void SetLastStreamToken(const nanopb::ByteString& token);
   /**
    * The last received stream token from the server, used to acknowledge which
    * responses the client has processed. Stream tokens are opaque checkpoint
@@ -114,7 +110,7 @@ class WriteStream : public Stream {
    * `WriteStream` manages propagating this value from responses to the
    * next request.
    */
-  NSData* GetLastStreamToken() const;
+  nanopb::ByteString GetLastStreamToken() const;
 
   /**
    * Tracks whether or not a handshake has been successfully exchanged and
@@ -131,7 +127,7 @@ class WriteStream : public Stream {
   virtual void WriteHandshake();
 
   /** Sends a group of mutations to the Firestore backend to apply. */
-  virtual void WriteMutations(const std::vector<FSTMutation*>& mutations);
+  virtual void WriteMutations(const std::vector<model::Mutation>& mutations);
 
  protected:
   // For tests only
