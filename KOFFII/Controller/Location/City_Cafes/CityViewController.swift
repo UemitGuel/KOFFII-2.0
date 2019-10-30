@@ -55,7 +55,7 @@ class CityViewController: UIViewController {
         setupButtons()
         setupViewController()
         
-        downloadAllCafeIDsForTheCity() { cafeArray in
+        downloadCafes() { cafeArray in
             self.cafeObjects = cafeArray
             self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name})
             self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name})
@@ -89,9 +89,12 @@ class CityViewController: UIViewController {
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
     
-    func downloadAllCafeIDsForTheCity(completionHandler: @escaping (Array<Cafe>) -> Void) {
+    func downloadCafes(completionHandler: @escaping (Array<Cafe>) -> Void) {
         var cafeArray : Array<Cafe> = []
-        db.collection("City").document("Cologne").collection("Cafes").getDocuments() { (querySnapshot, err) in
+        db.collection("City")
+            .document("Cologne")
+            .collection("Cafes")
+            .getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

@@ -44,7 +44,7 @@ class CafeDetailViewController: UIViewController {
     
     var user: User?
     var messages: [Message] = [Message]()
-    var passedCityName = "Cologne"
+    var cityName = "Cologne"
     var passedCafeObject: Cafe?
     let regionRadius: CLLocationDistance = 1000
 
@@ -212,7 +212,7 @@ class CafeDetailViewController: UIViewController {
     func retrieveMessages() {
         messages.removeAll()
         SVProgressHUD.show()
-        let ref = db.collection("City").document(passedCityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages")
+        let ref = db.collection("City").document(cityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages")
         
         //Before downloading the messages, let´s order them for creation date
         // HERE: The Order Function doesnt work!
@@ -261,7 +261,7 @@ class CafeDetailViewController: UIViewController {
         
         let sentDate = "\(calendar.component(.day, from: date)).\(calendar.component(.month, from: date)), \(calendar.component(.year, from: date))"
         
-    db.collection("City").document(passedCityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages").document().setData([
+    db.collection("City").document(cityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages").document().setData([
         "author": "User",
             "date": sentDate,
             "message": messageTextField.text ?? "",
