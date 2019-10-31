@@ -221,7 +221,7 @@ class CafeDetailViewController: UIViewController {
     func retrieveMessages() {
         messages.removeAll()
         SVProgressHUD.show()
-        let ref = db.collection("Roastery").document(passedCafeObject!.name).collection("Messages")
+        let ref = db.collection("City").document(cityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages")
         
         //Before downloading the messages, let´s order them for creation date
         // HERE: The Order Function doesnt work!
