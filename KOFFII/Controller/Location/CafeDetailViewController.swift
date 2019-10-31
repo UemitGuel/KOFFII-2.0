@@ -188,12 +188,11 @@ class CafeDetailViewController: UIViewController {
         let longitude = String(format: "%.6f", (passedCafeObject?.longitude)!)
 
         // Google Maps
-        let modeGM = "directionsmode=driving"
         let actionGoogleMaps = UIAlertAction(title: "Google Maps", style: .default) { _ in
 
             if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
                 // ?q=Pizza&center=37.759748,-122.427135
-                let url = URL(string: "comgooglemaps://?daddr=\(nameJoined)&center=\(latitude),\(longitude)&\(modeGM)")!
+                let url = URL(string: "comgooglemaps://?daddr=\(nameJoined)&center=\(latitude),\(longitude)")!
                 print(url)
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
@@ -201,13 +200,12 @@ class CafeDetailViewController: UIViewController {
             }
         }
         // Apple Maps
-        let modeAM = "dirflg=c" // c=car
         let actionAppleMaps = UIAlertAction(title: "Apple Maps", style: .default) { _ in
             let coreUrl = "http://maps.apple.com/?"
             guard let url = URL(string: coreUrl +
                 "q=\(nameJoined)&sll=" +
-                longitude + "," + latitude +
-                "&\(modeAM)&t=s")
+                latitude + "," + longitude +
+                "&t=s")
             else {
                 return print("error")
             }

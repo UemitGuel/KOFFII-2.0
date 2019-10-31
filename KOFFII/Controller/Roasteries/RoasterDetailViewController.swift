@@ -175,7 +175,7 @@ class RoasterDetailViewController: UIViewController {
             let coreUrl = "http://maps.apple.com/?"
             guard let url = URL(string: coreUrl +
                 "q=\(nameJoined)&sll=" +
-                longitude + "," + latitude +
+                latitude + "," + longitude +
                 "&\(modeAM)&t=s")
             else {
                 return print("error")
