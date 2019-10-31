@@ -171,39 +171,52 @@ class CafeDetailViewController: UIViewController {
     }
     
     @IBAction func toLocationButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "", message: "Choose your Map App", preferredStyle: .actionSheet)
-        
+        let actionSheet = UIAlertController(title: "Open Location",
+                                            message: "How you want to open?",
+                                            preferredStyle: .actionSheet)
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        //Google Maps
-        let actionGoogleMaps = UIAlertAction(title: "Google Maps", style: .default) { UIAlertAction in
-            
-            if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-                
-                UIApplication.shared.open((URL(string: (self.passedCafeObject?.locationURL)!)!) , options: [:] , completionHandler: nil)
+
+        let splitetStringName = passedCafeObject?.name.components(separatedBy: " ")
+        guard let nameJoined = splitetStringName!
+            .joined(separator: "+")
+            .addingPercentEncoding(withAllowedCharacters:
+                .urlHostAllowed)
+        else {
+            fatalError("Hotelname not found")
+        }
+        let latitude = String(format: "%.6f", (passedCafeObject?.latitude)!)
+        let longitude = String(format: "%.6f", (passedCafeObject?.longitude)!)
+
+        // Google Maps
+        let modeGM = "directionsmode=driving"
+        let actionGoogleMaps = UIAlertAction(title: "Google Maps", style: .default) { _ in
+
+            if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
+                // ?q=Pizza&center=37.759748,-122.427135
+                let url = URL(string: "comgooglemaps://?daddr=\(nameJoined)&center=\(latitude),\(longitude)&\(modeGM)")!
+                print(url)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
-                print("Can't use comgooglemaps://");
+                print("Can't use comgooglemaps://")
             }
         }
-        
-        
-        //Apple Maps
-        let actionAppleMaps = UIAlertAction(title: "Apple Maps", style: .default) { UIAlertAction in
-            let longitude = String(format: "%.6f", self.passedCafeObject?.longitude ?? 0)
-            let latitude = String(format: "%.6f", self.passedCafeObject?.latitude ?? 0)
-            let splitetStringName = self.passedCafeObject!.name.components(separatedBy: " ")
-            let cafeName = splitetStringName.joined(separator: "+")
-            print(cafeName)
-            guard let url = URL(string: "http://maps.apple.com/?q=\(cafeName)&sll=" + longitude + "," + latitude + "&t=s") else { return print("errror") }
+        // Apple Maps
+        let modeAM = "dirflg=c" // c=car
+        let actionAppleMaps = UIAlertAction(title: "Apple Maps", style: .default) { _ in
+            let coreUrl = "http://maps.apple.com/?"
+            guard let url = URL(string: coreUrl +
+                "q=\(nameJoined)&sll=" +
+                longitude + "," + latitude +
+                "&\(modeAM)&t=s")
+            else {
+                return print("error")
+            }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-
         }
-        
-        alert.addAction(actionGoogleMaps)
-        alert.addAction(actionAppleMaps)
-        alert.addAction(actionCancel)
-        
-        present(alert, animated: true)
+        actionSheet.addAction(actionGoogleMaps)
+        actionSheet.addAction(actionAppleMaps)
+        actionSheet.addAction(actionCancel)
+        present(actionSheet, animated: true, completion: nil)
         
     }
     
