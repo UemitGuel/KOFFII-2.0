@@ -10,22 +10,16 @@ import Foundation
 
 struct Roastery {
     let name: String
-//    let imageName: String?
-//    let latitude: Double?
-//    let longitude: Double?
-//    let locationURL: String?
-//    let features: [String: Bool]?
-//    let fav: Bool?
+    let latitude: Double?
+    let longitude: Double?
+    let locationURL: String?
     
     init?(dictionary: [String: Any]) {
         guard let name = dictionary["name"] as? String else { return nil }
         self.name = name
         
-//        self.imageName = dictionary["imageName"] as? String
-//        self.latitude = dictionary["latitude"] as? Double
-//        self.longitude = dictionary["longitude"] as? Double
-//        self.locationURL = dictionary["locationURL"] as? String
-//        self.features = dictionary["features"] as? [String: Bool]
-//        self.fav = dictionary["fav"] as? Bool
+        self.latitude = dictionary["latitude"] as? Double
+        self.longitude = dictionary["longitude"] as? Double
+        self.locationURL = dictionary["locationURL"] as? String
     }
 }

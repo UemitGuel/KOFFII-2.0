@@ -10,7 +10,6 @@ import Foundation
 
 struct Cafe {
     let name: String
-    let imageName: String?
     let latitude: Double?
     let longitude: Double?
     let locationURL: String?
@@ -21,7 +20,6 @@ struct Cafe {
         guard let name = dictionary["name"] as? String else { return nil }
         self.name = name
         
-        self.imageName = dictionary["imageName"] as? String
         self.latitude = dictionary["latitude"] as? Double
         self.longitude = dictionary["longitude"] as? Double
         self.locationURL = dictionary["locationURL"] as? String
