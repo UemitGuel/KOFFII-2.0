@@ -51,7 +51,7 @@ class InformationViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
-    // MARK: - Neccessary Functions for Downloading the Objects from the Firestore Server. First we downloading all the DocIDs from a collection. Then we use the IDs to download the data for every Document and put it in the right DataModel
+    /* MARK: - Neccessary Functions for Downloading the Objects from the Firestore Server. First we downloading all the DocIDs from a collection. Then we use the IDs to download the data for every Document and put it in the right DataModel */
 
     func loadAllObjects(fromCollection: String, completionHandler: @escaping ([Information]) -> Void) {
         var tempInformation = [Information]()
@@ -107,7 +107,8 @@ class InformationViewController: UIViewController {
 
 extension InformationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell", for: indexPath) as! InformationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell",
+                                                 for: indexPath) as! InformationTableViewCell
         cell.nameLabel?.text = items[indexPath.section][indexPath.row].name
         cell.infoImageView?.image = UIImage(named: items[indexPath.section][indexPath.row].imageName ?? "")
         cell.selectionStyle = .none
@@ -120,13 +121,13 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == "fromInfoToDetailBrewSegue" {
-            let detailVC = segue.destination as! BrewingDetailViewController
+            guard let detailVC = segue.destination as? BrewingDetailViewController else { return }
 
             if let indexPath = tableView.indexPathForSelectedRow {
                 detailVC.passedInformationBrewing = items[indexPath.section][indexPath.row]
             }
         } else if segue.identifier == "fromInfoToDetailKnowSegue" {
-            let detailVC = segue.destination as! KnowledgeDetailViewController
+            guard let detailVC = segue.destination as? KnowledgeDetailViewController else { return }
 
             if let indexPath = tableView.indexPathForSelectedRow {
                 detailVC.passedInformationKnowledge = items[indexPath.section][indexPath.row]

@@ -32,7 +32,8 @@ extension KnowledgeDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "KnowledgeDetailTableViewCell", for: indexPath) as! KnowledgeDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "KnowledgeDetailTableViewCell",
+                                                 for: indexPath) as! KnowledgeDetailTableViewCell
         guard let information = passedInformationKnowledge else {
             return cell
         }

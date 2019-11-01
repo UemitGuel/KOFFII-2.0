@@ -24,11 +24,17 @@ class RoasterDetailViewController: UIViewController {
         setupFirebase()
         title = passedRoastery?.name
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(_noti:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(_noti:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
 
         // Register MessagingCell
-        roasterCommentsTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
+        roasterCommentsTableView.register(UINib(nibName: "CustomMessageCell",
+                                                bundle: nil),
+                                          forCellReuseIdentifier: "customMessageCell")
         configureTableView()
 
         // Adding TapGesture for Textfield
@@ -233,11 +239,17 @@ extension RoasterDetailViewController: UITableViewDataSource {
 
         let username = UserDefaults.standard.string(forKey: "username") ?? ""
         if messages[indexPath.row].author == username {
-            cell.messageBackgroundView.backgroundColor = UIColor(red: 220 / 255, green: 248 / 255, blue: 198 / 255, alpha: 1)
+            cell.messageBackgroundView.backgroundColor = UIColor(red: 220 / 255,
+                                                                 green: 248 / 255,
+                                                                 blue: 198 / 255,
+                                                                 alpha: 1)
             cell.leftSideContraint.constant = 24
             cell.rightSideConstraint.constant = 8
         } else {
-            cell.messageBackgroundView.backgroundColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
+            cell.messageBackgroundView.backgroundColor = UIColor(red: 236 / 255,
+                                                                 green: 240 / 255,
+                                                                 blue: 241 / 255,
+                                                                 alpha: 1)
             cell.leftSideContraint.constant = 8
             cell.rightSideConstraint.constant = 24
         }

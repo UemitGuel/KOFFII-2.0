@@ -60,7 +60,8 @@ extension RoasterViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "roasteryCell", for: indexPath) as! RoasterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "roasteryCell",
+                                                 for: indexPath) as! RoasterTableViewCell
         cell.selectionStyle = .none
         cell.roasterLabel.text = roasteries[indexPath.row].name
         return cell

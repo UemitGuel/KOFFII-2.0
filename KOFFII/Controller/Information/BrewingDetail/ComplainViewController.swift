@@ -25,7 +25,8 @@ extension ComplainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "complainCell", for: indexPath) as? ComplainTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "complainCell",
+                                                 for: indexPath) as? ComplainTableViewCell
         cell?.complainLabel.text = passedComplainObject?.improvements?[indexPath.row]
         return cell!
     }

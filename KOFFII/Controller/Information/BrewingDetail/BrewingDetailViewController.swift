@@ -163,7 +163,8 @@ extension BrewingDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InformationDetailTableViewCell", for: indexPath) as! InformationDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InformationDetailTableViewCell",
+                                                 for: indexPath) as! InformationDetailTableViewCell
         guard let information = passedInformationBrewing else {
             return cell
         }
