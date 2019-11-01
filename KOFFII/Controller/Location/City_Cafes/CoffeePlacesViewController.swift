@@ -45,7 +45,6 @@ class CoffeePlacesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
-        setupButtons()
         setupViewController()
         
         downloadCafes() { cafeArray in
@@ -63,16 +62,6 @@ class CoffeePlacesViewController: UIViewController {
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
-    }
-    
-    func setupButtons() {
-        
-        wifiButton.layer.cornerRadius = 8
-        foodButton.layer.cornerRadius = 8
-        veganButton.layer.cornerRadius = 8
-        cakeButton.layer.cornerRadius = 8
-        plugButton.layer.cornerRadius = 8
-        
     }
     
     func setupViewController() {
@@ -280,7 +269,7 @@ extension CoffeePlacesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "City_CafeTableViewCell", for: indexPath) as! City_CafeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CoffeePLacesTableViewCell", for: indexPath) as! CoffeePlacesTableViewCell
         cell.selectionStyle = .none
         
         if isFiltering() {

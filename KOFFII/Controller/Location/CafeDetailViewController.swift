@@ -46,7 +46,6 @@ class CafeDetailViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_noti:) ), name: UIResponder.keyboardWillHideNotification , object: nil)
         
         setupFirebase()
-        setupButtons()
         activateButtons()
         
         //Register MessagingCell
@@ -114,16 +113,6 @@ class CafeDetailViewController: UIViewController {
     // So the keyboard disappears when there is a click outside the textfield
     @objc func tableViewTapped() {
         messageTextField.endEditing(true)
-    }
-    
-    func setupButtons() {
-        
-        wifiButton.layer.cornerRadius = 8
-        foodButton.layer.cornerRadius = 8
-        veganButton.layer.cornerRadius = 8
-        cakeButton.layer.cornerRadius = 8
-        plugButton.layer.cornerRadius = 8
-        
     }
     
     // which buttons have to be highlighted (depending on the data in firestore)

@@ -35,13 +35,13 @@ class AddCoffeePlaceViewController: UIViewController {
         // Add a new document with a generated id.
         var ref: DocumentReference? = nil
         ref = db.collection("AddedCoffeePlaces").addDocument(data: [
-            "name": coffeePlaceTextField.text,
+            "name": coffeePlaceTextField.text ?? "",
             "wifi": wifiSwitch.isOn,
             "food": foodSwitch.isOn,
             "vegan": veganSwitch.isOn,
             "cake": cakeSwitch.isOn,
             "plug": plugSwitch.isOn,
-            "note": note.text
+            "note": note.text ?? ""
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
