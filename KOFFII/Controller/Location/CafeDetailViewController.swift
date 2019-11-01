@@ -1,11 +1,3 @@
-//
-//  CafeDetailViewController.swift
-//  KOFFII
-//
-//  Created by Ümit Gül on 11.07.19.
-//  Copyright © 2019 Ümit Gül. All rights reserved.
-//
-
 import UIKit
 import FirebaseFirestore
 import MapKit

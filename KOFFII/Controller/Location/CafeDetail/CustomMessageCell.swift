@@ -1,11 +1,3 @@
-//
-//  CustomMessageCell.swift
-//  KOFFII
-//
-//  Created by Ümit Gül on 12.07.19.
-//  Copyright © 2019 Ümit Gül. All rights reserved.
-//
-
 import UIKit
 
 class CustomMessageCell: UITableViewCell {

@@ -17,7 +17,6 @@
 		B316F619236984FA00D6BADF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F618236984FA00D6BADF /* RoundButton.swift */; };
 		B316F61B236998BE00D6BADF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F61A236998BE00D6BADF /* LoginViewController.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
-		B3417F1D22DB9A0200E98C95 /* FavCafes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3417F1C22DB9A0200E98C95 /* FavCafes.swift */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
 		B34335C922C50509006CDBC1 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */; };
 		B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36572C522CD36AF00C618BD /* InformationViewController.swift */; };
@@ -58,7 +57,6 @@
 		B316F618236984FA00D6BADF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		B316F61A236998BE00D6BADF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
-		B3417F1C22DB9A0200E98C95 /* FavCafes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCafes.swift; sourceTree = "<group>"; };
 		B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		B36572C522CD36AF00C618BD /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				B367D58122D3A7250069F4D0 /* Complain.swift */,
 				B3C589E822D553C5002C03A8 /* Cafe.swift */,
 				B370A06C22D93200009C4CFA /* Message.swift */,
-				B3417F1C22DB9A0200E98C95 /* FavCafes.swift */,
 				B310BF9B2369D1A20065318C /* Roastery.swift */,
 			);
 			path = Model;
@@ -415,7 +412,6 @@
 				B3C589E922D553C5002C03A8 /* Cafe.swift in Sources */,
 				B3F62ED322D0C8FF002DF68C /* InformationDetailTableViewCell.swift in Sources */,
 				B310BF9C2369D1A20065318C /* Roastery.swift in Sources */,
-				B3417F1D22DB9A0200E98C95 /* FavCafes.swift in Sources */,
 				B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */,
 				B310BF9A2369D02B0065318C /* RoasterViewController.swift in Sources */,
 				B390EFC222D60F7300A931E9 /* City_CafeTableViewCell.swift in Sources */,

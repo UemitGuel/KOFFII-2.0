@@ -6,11 +6,9 @@ target 'KOFFII' do
 
   # Pods for KOFFII
     pod 'Firebase/Core'
-    pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'SVProgressHUD'
     pod 'Firebase/Firestore'
     pod 'CBFlashyTabBarController'
-    pod 'SDWebImage'
     
 end

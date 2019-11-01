@@ -1,11 +1,3 @@
-//
-//  Roastery.swift
-//  KOFFII
-//
-//  Created by Ümit Gül on 30.10.19.
-//  Copyright © 2019 Ümit Gül. All rights reserved.
-//
-
 import Foundation
 
 struct Roastery {

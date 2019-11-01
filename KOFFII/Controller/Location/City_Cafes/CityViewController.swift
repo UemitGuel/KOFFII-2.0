@@ -1,7 +1,6 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-import SDWebImage
 import SVProgressHUD
 
 // Needed to compare requested Features, so what the users clicked, and the actual value inside the data
