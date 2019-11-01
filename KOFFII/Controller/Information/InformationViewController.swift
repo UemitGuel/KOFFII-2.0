@@ -58,9 +58,10 @@ class InformationViewController: UIViewController {
         getAllDocumentIDs(fromCollection: fromCollection) { ids in
             for id in ids {
                 self.myGroup.enter()
-                self.useDocumentIDToRetrieveObject(fromCollection: fromCollection, id: id, completionHandler: { object in
-                    tempInformation.append(object)
-                    self.myGroup.leave()
+                self.useDocumentIDToRetrieveObject(fromCollection: fromCollection, id: id,
+                                                   completionHandler: { object in
+                                                       tempInformation.append(object)
+                                                       self.myGroup.leave()
                 })
             }
             self.myGroup.notify(queue: .main) {
@@ -86,7 +87,8 @@ class InformationViewController: UIViewController {
         }
     }
 
-    func useDocumentIDToRetrieveObject(fromCollection: String, id: String, completionHandler: @escaping (Information) -> Void) {
+    func useDocumentIDToRetrieveObject(fromCollection: String, id: String,
+                                       completionHandler: @escaping (Information) -> Void) {
         let docRef = db.collection(fromCollection).document(id)
 
         docRef.getDocument { document, _ in

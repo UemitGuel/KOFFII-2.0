@@ -89,7 +89,8 @@ class BrewingDetailViewController: UIViewController {
         }
     }
 
-    func downloadComplainObject(senderTag: Int, complainCategory: String, completionHandler: @escaping (Complain) -> Void) {
+    func downloadComplainObject(senderTag: Int, complainCategory: String,
+                                completionHandler: @escaping (Complain) -> Void) {
         var tempComplainObject: Complain?
         let collectionRef = db.collection("Complain")
         if complainCategory == "Coffee", senderTag == 0 {

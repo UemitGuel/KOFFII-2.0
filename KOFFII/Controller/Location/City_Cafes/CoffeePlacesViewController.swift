@@ -35,6 +35,10 @@ class CoffeePlacesViewController: UIViewController {
     var db: Firestore!
     let myGroup = DispatchGroup()
 
+    let buttonTappedColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
+    let quicksandMediumFont = UIFont(name: "Quicksand-Medium", size: 15)
+    let quicksandBoldFont = UIFont(name: "Quicksand-Bold", size: 15)
+
     var cafeObjects = [Cafe]()
     var filteredCafeObjects = [Cafe]()
     var requestedFeatures: [Features] = []
@@ -78,8 +82,8 @@ class CoffeePlacesViewController: UIViewController {
                     print("Error getting documents: \(err)")
                 } else {
                     for document in querySnapshot!.documents {
-                        let d = document.data()
-                        guard let cafe = Cafe(dictionary: d) else { return }
+                        let data = document.data()
+                        guard let cafe = Cafe(dictionary: data) else { return }
                         print("add cafe \(cafe)")
                         cafeArray.append(cafe)
                     }
@@ -92,111 +96,69 @@ class CoffeePlacesViewController: UIViewController {
     @IBAction func wifiButtonTapped(_: UIButton) {
         if !requestedFeatures.contains(.wifi) {
             requestedFeatures.append(.wifi)
-
-            wifiButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            wifiButton.borderWidth = 2
-            wifiLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonTappedAction(button: wifiButton, label: wifiLabel)
         } else {
             requestedFeatures = requestedFeatures.filter { $0 != .wifi }
-
-            wifiButton.customBGColor = UIColor.white
-            wifiButton.borderWidth = 1
-            wifiLabel.font = UIFont(name: "Quicksand-Medium", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonUnTappedAction(button: wifiButton, label: wifiLabel)
         }
     }
 
     @IBAction func foodButtonTapped(_: UIButton) {
         if !requestedFeatures.contains(.food) {
             requestedFeatures.append(.food)
-
-            foodButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            foodButton.borderWidth = 2
-            foodLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonTappedAction(button: foodButton, label: foodLabel)
         } else {
             requestedFeatures = requestedFeatures.filter { $0 != .food }
-
-            foodButton.customBGColor = UIColor.white
-            foodButton.borderWidth = 1
-            foodLabel.font = UIFont(name: "Quicksand-Medium", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonUnTappedAction(button: foodButton, label: foodLabel)
         }
     }
 
     @IBAction func veganButtonTapped(_: UIButton) {
         if !requestedFeatures.contains(.vegan) {
             requestedFeatures.append(.vegan)
-
-            veganButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            veganButton.borderWidth = 2
-            veganLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonTappedAction(button: veganButton, label: veganLabel)
         } else {
             requestedFeatures = requestedFeatures.filter { $0 != .vegan }
-
-            veganButton.customBGColor = UIColor.white
-            veganButton.borderWidth = 1
-            veganLabel.font = UIFont(name: "Quicksand-Medium", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonUnTappedAction(button: veganButton, label: veganLabel)
         }
     }
 
     @IBAction func cakeButtonTapped(_: UIButton) {
         if !requestedFeatures.contains(.cake) {
             requestedFeatures.append(.cake)
-
-            cakeButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            cakeButton.borderWidth = 2
-            cakeLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonTappedAction(button: cakeButton, label: cakeLabel)
         } else {
             requestedFeatures = requestedFeatures.filter { $0 != .cake }
-
-            cakeButton.customBGColor = UIColor.white
-            cakeButton.borderWidth = 1
-            cakeLabel.font = UIFont(name: "Quicksand-Medium", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonUnTappedAction(button: cakeButton, label: cakeLabel)
         }
     }
 
     @IBAction func plugButtonTapped(_: UIButton) {
         if !requestedFeatures.contains(.plug) {
             requestedFeatures.append(.plug)
-
-            plugButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            plugButton.borderWidth = 2
-            plugLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonTappedAction(button: plugButton, label: plugLabel)
         } else {
             requestedFeatures = requestedFeatures.filter { $0 != .plug }
-
-            plugButton.customBGColor = UIColor.white
-            plugButton.borderWidth = 1
-            plugLabel.font = UIFont(name: "Quicksand-Medium", size: 15)
-
-            filtering()
-            tableView.reloadData()
+            buttonUnTappedAction(button: plugButton, label: plugLabel)
         }
+    }
+
+    private func buttonTappedAction(button: RoundButton, label: UILabel) {
+        button.customBGColor = buttonTappedColor
+        button.borderWidth = 2
+        label.font = quicksandBoldFont
+
+        filtering()
+        tableView.reloadData()
+    }
+    
+    private func buttonUnTappedAction(button: RoundButton, label: UILabel) {
+        button.customBGColor = .white
+        button.borderWidth = 1
+        label.font = quicksandMediumFont
+
+        filtering()
+        tableView.reloadData()
     }
 
     // Active Filtering, if feature buttons are clicked

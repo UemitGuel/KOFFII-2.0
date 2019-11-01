@@ -200,8 +200,11 @@ class RoasterDetailViewController: UIViewController {
 
         let date = Date()
         let calendar = Calendar.current
+        let day = calendar.component(.day, from: date)
+        let month = calendar.component(.month, from: date)
+        let year = calendar.component(.year, from: date)
 
-        let sentDate = "\(calendar.component(.day, from: date)).\(calendar.component(.month, from: date)), \(calendar.component(.year, from: date))"
+        let sentDate = "\(day).\(month), \(year)"
         let username = UserDefaults.standard.string(forKey: "username") ?? ""
         print(passedRoastery!.name)
         db.collection("Roastery").document(passedRoastery!.name).collection("Messages").document().setData([
@@ -231,7 +234,8 @@ extension RoasterDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell",
+                                                 for: indexPath) as! CustomMessageCell
         cell.selectionStyle = .none
         cell.nameLabel.text = messages[indexPath.row].author
         cell.dateLabel.text = messages[indexPath.row].date

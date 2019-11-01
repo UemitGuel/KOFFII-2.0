@@ -39,18 +39,22 @@ class CafeDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_noti:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_noti:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
 
         setupFirebase()
         activateButtons()
 
         // Register MessagingCell
-        tableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
+        tableView.register(UINib(nibName: "CustomMessageCell", bundle: nil),
+                           forCellReuseIdentifier: "customMessageCell")
         configureTableView()
 
         // set map
-        let location = CLLocation(latitude: passedCafeObject?.latitude ?? 0, longitude: passedCafeObject?.longitude ?? 0)
+        let location = CLLocation(latitude: passedCafeObject?.latitude ?? 0,
+                                  longitude: passedCafeObject?.longitude ?? 0)
         centerMapOnLocation(location: location)
 
         // Adding TapGesture for Textfield
@@ -194,7 +198,9 @@ class CafeDetailViewController: UIViewController {
     func retrieveMessages() {
         messages.removeAll()
         SVProgressHUD.show()
-        let ref = db.collection("City").document(cityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages")
+        let ref = db.collection("City").document(cityName)
+            .collection("Cafes").document(passedCafeObject!.name)
+            .collection("Messages")
 
         // Before downloading the messages, let´s order them for creation date
         // HERE: The Order Function doesnt work!
@@ -240,8 +246,10 @@ class CafeDetailViewController: UIViewController {
 
         let date = Date()
         let calendar = Calendar.current
-
-        let sentDate = "\(calendar.component(.day, from: date)).\(calendar.component(.month, from: date)), \(calendar.component(.year, from: date))"
+        let day = calendar.component(.day, from: date)
+        let month = calendar.component(.month, from: date)
+        let year = calendar.component(.year, from: date)
+        let sentDate = "\(day).\(month), \(year)"
         let username = UserDefaults.standard.string(forKey: "username") ?? ""
         db.collection("City").document(cityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages").document().setData([
             "author": username,
@@ -294,28 +302,3 @@ extension CafeDetailViewController: UITableViewDataSource {
         tableView.estimatedRowHeight = 120.0
     }
 }
-
-extension CafeDetailViewController: UITableViewDelegate {}
-
-// extension CafeDetailViewController: UITextFieldDelegate {
-//
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//
-//        print(customKeyboardHeight)
-//        UIView.animate(withDuration: 0.5) {
-//            self.heightConstraint.constant = self.customKeyboardHeight ?? 400
-//            self.view.layoutIfNeeded()
-//            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
-//            self.tableView.setContentOffset(scrollPoint, animated: false)
-//        }
-//    }
-//
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//
-//        UIView.animate(withDuration: 0.5) {
-//            self.heightConstraint.constant = 50
-//            self.view.layoutIfNeeded()
-//            self.tableView.setContentOffset(.zero, animated: false)
-//        }
-//    }
-// }
