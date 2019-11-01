@@ -1,6 +1,6 @@
 import UIKit
 
-class City_CafeTableViewCell: UITableViewCell {
+class CoffeePlacesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cafeNameLabel: UILabel!
     

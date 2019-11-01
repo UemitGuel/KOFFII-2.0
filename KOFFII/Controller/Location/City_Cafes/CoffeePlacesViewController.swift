@@ -12,7 +12,7 @@ enum Features {
     case Plug
 }
 
-class CityViewController: UIViewController {
+class CoffeePlacesViewController: UIViewController {
     
     @IBOutlet weak var usernameOutlet: UIBarButtonItem!
     
@@ -270,7 +270,7 @@ class CityViewController: UIViewController {
     
 }
 
-extension CityViewController: UITableViewDataSource {
+extension CoffeePlacesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
             return filteredCafeObjects.count
@@ -294,7 +294,7 @@ extension CityViewController: UITableViewDataSource {
 
 }
 
-extension CityViewController: UITableViewDelegate {
+extension CoffeePlacesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 93
