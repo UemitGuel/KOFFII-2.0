@@ -1,9 +1,8 @@
 import UIKit
 
 class RoasterTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var roasterLabel: UILabel!
-    
+    @IBOutlet var roasterLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -11,5 +10,4 @@ class RoasterTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
 }

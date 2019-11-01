@@ -1,13 +1,11 @@
 import UIKit
 
 class HeaderView: UITableViewCell {
+    @IBOutlet var quanLabel: UILabel!
+    @IBOutlet var tempLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var seperator: UIView!
 
-    @IBOutlet weak var quanLabel: UILabel!
-    @IBOutlet weak var tempLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var seperator: UIView!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         seperator.layer.cornerRadius = 8
@@ -15,7 +13,5 @@ class HeaderView: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    
 }

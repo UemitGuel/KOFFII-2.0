@@ -9,7 +9,6 @@
 import UIKit
 
 class CBTabBarButton: UIControl {
-
     var tabImage = UIImageView()
     var tabLabel = UILabel()
     var dotView = UIView()
@@ -93,11 +92,11 @@ class CBTabBarButton: UIControl {
     override func layoutSubviews() {
         super.layoutSubviews()
         tabImage.sizeToFit()
-        tabImage.center = CGPoint(x: bounds.width/2.0, y: bounds.height/2.0)
+        tabImage.center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
         tabLabel.frame = bounds
         tabLabel.sizeToFit()
         tabLabel.center = tabImage.center
-        let dotX: CGFloat = tabImage.center.x - dotView.frame.width/2.0
+        let dotX: CGFloat = tabImage.center.x - dotView.frame.width / 2.0
         let dotY: CGFloat = tabLabel.frame.maxY + 13.0
         dotView.frame = CGRect(origin: CGPoint(x: dotX, y: dotY), size: dotView.frame.size)
     }
@@ -123,7 +122,7 @@ class CBTabBarButton: UIControl {
         }
         tabLabel.isHidden = false
         dotView.isHidden = false
-        selectAnimation.playAnimation(forTabBarItem: self) {[weak self] in
+        selectAnimation.playAnimation(forTabBarItem: self) { [weak self] in
             if self?._isSelected ?? false {
                 self?.tabImage.isHidden = true
             }
@@ -136,18 +135,17 @@ class CBTabBarButton: UIControl {
         }
         _isSelected = false
         guard animated, let deselectAnimation = deselectAnimation else {
-                tabLabel.isHidden = true
-                tabImage.isHidden = false
-                dotView.isHidden = true
-                return
+            tabLabel.isHidden = true
+            tabImage.isHidden = false
+            dotView.isHidden = true
+            return
         }
         tabImage.isHidden = false
-        deselectAnimation.playAnimation(forTabBarItem: self) {[weak self] in
+        deselectAnimation.playAnimation(forTabBarItem: self) { [weak self] in
             if !(self?._isSelected ?? true) {
                 self?.tabLabel.isHidden = true
                 self?.dotView.isHidden = true
             }
         }
     }
-
 }

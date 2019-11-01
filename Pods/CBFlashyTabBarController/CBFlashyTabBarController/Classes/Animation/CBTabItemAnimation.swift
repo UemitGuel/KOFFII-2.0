@@ -9,16 +9,12 @@
 import Foundation
 
 protocol CBTabItemAnimation {
-
     func playAnimation(forTabBarItem item: CBTabBarButton)
     func playAnimation(forTabBarItem item: CBTabBarButton, completion: (() -> Void)?)
-
 }
 
 extension CBTabItemAnimation {
-
     func playAnimation(forTabBarItem item: CBTabBarButton) {
         playAnimation(forTabBarItem: item, completion: nil)
     }
-
 }

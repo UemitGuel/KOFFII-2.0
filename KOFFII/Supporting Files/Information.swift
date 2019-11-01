@@ -6,18 +6,18 @@ struct Information {
     let quan: String?
     let temp: String?
     let time: String?
-    let tips: Array<String>?
+    let tips: [String]?
     let complainCatgory: String?
-    
+
     init?(dictionary: [String: Any]) {
         guard let name = dictionary["name"] as? String else { return nil }
         self.name = name
-        
-        self.imageName = dictionary["imageName"] as? String
-        self.quan = dictionary["quan"] as? String
-        self.temp = dictionary["temp"] as? String
-        self.time = dictionary["time"] as? String
-        self.tips = dictionary["tips"] as? Array<String>
-        self.complainCatgory = dictionary["complainCategory"] as? String
+
+        imageName = dictionary["imageName"] as? String
+        quan = dictionary["quan"] as? String
+        temp = dictionary["temp"] as? String
+        time = dictionary["time"] as? String
+        tips = dictionary["tips"] as? [String]
+        complainCatgory = dictionary["complainCategory"] as? String
     }
 }

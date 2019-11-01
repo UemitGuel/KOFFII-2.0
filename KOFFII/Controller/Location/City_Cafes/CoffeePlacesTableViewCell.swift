@@ -1,11 +1,10 @@
 import UIKit
 
 class CoffeePlacesTableViewCell: UITableViewCell {
+    @IBOutlet var cafeNameLabel: UILabel!
 
-    @IBOutlet weak var cafeNameLabel: UILabel!
-    
-    @IBOutlet weak var cafeImageView: UIImageView!
-    
+    @IBOutlet var cafeImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         cafeImageView.layer.cornerRadius = 8
@@ -16,5 +15,4 @@ class CoffeePlacesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

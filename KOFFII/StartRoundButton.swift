@@ -8,6 +8,4 @@
 
 import Foundation
 
-@IBDesignable class RoundButton: UIButton {
-    
-}
+@IBDesignable class RoundButton: UIButton {}

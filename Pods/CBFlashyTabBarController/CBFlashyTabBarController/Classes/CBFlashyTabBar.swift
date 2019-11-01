@@ -9,7 +9,6 @@
 import UIKit
 
 open class CBFlashyTabBar: UITabBar {
-
     private var buttons: [CBTabBarButton] = []
     public var animationSpeed: Double = 1.0 {
         didSet {
@@ -26,11 +25,10 @@ open class CBFlashyTabBar: UITabBar {
             }
             guard let index = items?.firstIndex(of: newValue),
                 index != NSNotFound else {
-                    return
+                return
             }
 
             select(itemAt: index, animated: false)
-
         }
     }
 
@@ -50,11 +48,10 @@ open class CBFlashyTabBar: UITabBar {
         super.setItems(items, animated: animated)
         reloadViews()
     }
-    
-    
+
     var barHeight: CGFloat = 60
-    
-    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
         var sizeThatFits = super.sizeThatFits(size)
         sizeThatFits.height = barHeight
         if #available(iOS 11.0, *) {
@@ -79,14 +76,14 @@ open class CBFlashyTabBar: UITabBar {
 
     func reloadViews() {
         subviews.filter { String(describing: type(of: $0)) == "UITabBarButton" }.forEach { $0.removeFromSuperview() }
-        buttons.forEach { $0.removeFromSuperview()}
+        buttons.forEach { $0.removeFromSuperview() }
         buttons = items?.map { self.button(forItem: $0) } ?? []
         reloadAnimations()
         setNeedsLayout()
     }
 
     private func reloadAnimations() {
-        buttons.forEach { (button) in
+        buttons.forEach { button in
             button.selectAnimation = CBTabItemSelectAnimation(duration: 0.5 / animationSpeed)
             button.deselectAnimation = CBTabItemDeselectAnimation(duration: 0.5 / animationSpeed)
         }
@@ -96,20 +93,20 @@ open class CBFlashyTabBar: UITabBar {
         let button = CBTabBarButton(item: item)
         button.tintColor = tintColor
         button.addTarget(self, action: #selector(btnPressed), for: .touchUpInside)
-        if selectedItem != nil && item === selectedItem {
+        if selectedItem != nil, item === selectedItem {
             button.select(animated: false)
         }
-        self.addSubview(button)
+        addSubview(button)
         return button
     }
 
     @objc private func btnPressed(sender: CBTabBarButton) {
         guard let index = buttons.firstIndex(of: sender),
-              index != NSNotFound,
-              let item = items?[index] else {
+            index != NSNotFound,
+            let item = items?[index] else {
             return
         }
-        buttons.forEach { (button) in
+        buttons.forEach { button in
             guard button != sender else {
                 return
             }
@@ -119,12 +116,12 @@ open class CBFlashyTabBar: UITabBar {
         delegate?.tabBar?(self, didSelect: item)
     }
 
-    func select(itemAt index: Int, animated: Bool = false) {
+    func select(itemAt index: Int, animated _: Bool = false) {
         guard index < buttons.count else {
             return
         }
         let selectedbutton = buttons[index]
-        buttons.forEach { (button) in
+        buttons.forEach { button in
             guard button != selectedbutton else {
                 return
             }
@@ -132,5 +129,4 @@ open class CBFlashyTabBar: UITabBar {
         }
         selectedbutton.setSelected(true, animated: false)
     }
-
 }

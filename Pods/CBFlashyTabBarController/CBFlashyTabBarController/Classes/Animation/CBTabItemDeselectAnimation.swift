@@ -9,7 +9,6 @@
 import UIKit
 
 struct CBTabItemDeselectAnimation: CBTabItemBasicAnimation {
-
     let duration: Double
 
     func imageOffsetAnimation(forTabBarItem item: CBTabBarButton) -> CAAnimation {
@@ -60,7 +59,7 @@ struct CBTabItemDeselectAnimation: CBTabItemBasicAnimation {
     func labelOffsetAnimation(forTabBarItem item: CBTabBarButton) -> CAAnimation {
         let labelOffsetAnimation = CABasicAnimation(keyPath: "transform.translation.y")
         labelOffsetAnimation.fromValue = 0.0
-        labelOffsetAnimation.toValue = (item.bounds.height - item.tabLabel.frame.height)/2.0 - 5.0
+        labelOffsetAnimation.toValue = (item.bounds.height - item.tabLabel.frame.height) / 2.0 - 5.0
         return labelOffsetAnimation
     }
 
@@ -97,11 +96,10 @@ struct CBTabItemDeselectAnimation: CBTabItemBasicAnimation {
         return maskAnimation
     }
 
-    func dotScaleAnimation(forTabBarItem item: CBTabBarButton) -> CAAnimation {
+    func dotScaleAnimation(forTabBarItem _: CBTabBarButton) -> CAAnimation {
         let dotAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         dotAnimation.values = [1.0, 1.0, 0.0, 0.0]
         dotAnimation.keyTimes = [0, 0.2, 0.7, 1.0]
         return dotAnimation
     }
-
 }

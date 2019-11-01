@@ -1,22 +1,18 @@
 import UIKit
 
 class CustomMessageCell: UITableViewCell {
+    @IBOutlet var rightSideConstraint: NSLayoutConstraint!
 
-    @IBOutlet weak var rightSideConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var leftSideContraint: NSLayoutConstraint!
-    
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var messageBackgroundView: UIView!
-    
-    
+    @IBOutlet var leftSideContraint: NSLayoutConstraint!
+
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var messageBackgroundView: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         messageBackgroundView.layer.cornerRadius = 8
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,5 +20,4 @@ class CustomMessageCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

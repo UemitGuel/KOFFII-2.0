@@ -9,7 +9,6 @@
 import UIKit
 
 protocol CBTabItemBasicAnimation: CBTabItemAnimation {
-
     func imageOffsetAnimation(forTabBarItem item: CBTabBarButton) -> CAAnimation
     func imageMaskAnimation(forTabBarItem item: CBTabBarButton) -> CAAnimation
     func labelOffsetAnimation(forTabBarItem item: CBTabBarButton) -> CAAnimation
@@ -17,11 +16,9 @@ protocol CBTabItemBasicAnimation: CBTabItemAnimation {
     func dotScaleAnimation(forTabBarItem item: CBTabBarButton) -> CAAnimation
 
     var duration: Double { get }
-
 }
 
 extension CBTabItemBasicAnimation {
-
     func playAnimation(forTabBarItem item: CBTabBarButton, completion: (() -> Void)? = nil) {
         let animateImageOffset = imageOffsetAnimation(forTabBarItem: item)
         let animateImageMask = imageMaskAnimation(forTabBarItem: item)
@@ -38,7 +35,7 @@ extension CBTabItemBasicAnimation {
                                              animateLabelOffset,
                                              animateLabelMask,
                                              dotAnimation]
-        mainAnimations.forEach { (animation) in
+        mainAnimations.forEach { animation in
             animation.duration = duration
             animation.isRemovedOnCompletion = false
             animation.fillMode = .forwards
@@ -50,7 +47,7 @@ extension CBTabItemBasicAnimation {
         }
 
         if let animateImageMask = animateImageMask as? CAKeyframeAnimation,
-           let imageMask = item.tabImage.layer.mask as? CAShapeLayer {
+            let imageMask = item.tabImage.layer.mask as? CAShapeLayer {
             imageMask.path = (animateImageMask.values as? [CGPath])?.last
         }
 
@@ -61,7 +58,7 @@ extension CBTabItemBasicAnimation {
         }
 
         if let animateLabelMask = animateLabelMask as? CAKeyframeAnimation,
-           let labelMask = item.tabLabel.layer.mask as? CAShapeLayer {
+            let labelMask = item.tabLabel.layer.mask as? CAShapeLayer {
             labelMask.path = (animateLabelMask.values as? [CGPath])?.last
         }
 
@@ -76,5 +73,4 @@ extension CBTabItemBasicAnimation {
         item.tabLabel.layer.mask?.add(animateLabelMask, forKey: "path")
         CATransaction.commit()
     }
-
 }

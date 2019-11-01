@@ -9,13 +9,12 @@
 import UIKit
 
 open class CBFlashyTabBarController: UITabBarController {
-
     fileprivate var shouldSelectOnTabBar = true
 
     open override var selectedViewController: UIViewController? {
         willSet {
             guard shouldSelectOnTabBar,
-                  let newValue = newValue else {
+                let newValue = newValue else {
                 shouldSelectOnTabBar = true
                 return
             }
@@ -48,7 +47,7 @@ open class CBFlashyTabBarController: UITabBarController {
         if let barTint = self.tabBar.barTintColor {
             tabBar.barTintColor = barTint
         }
-        self.setValue(tabBar, forKey: "tabBar")
+        setValue(tabBar, forKey: "tabBar")
     }
 
     open override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +62,7 @@ open class CBFlashyTabBarController: UITabBarController {
             (tabBar as? CBFlashyTabBar)?.barHeight = newValue
         }
     }
-    
+
     private func updateTabBarFrame() {
         var tabFrame = tabBar.frame
         if #available(iOS 11.0, *) {
@@ -71,11 +70,11 @@ open class CBFlashyTabBarController: UITabBarController {
         } else {
             tabFrame.size.height = barHeight
         }
-        tabFrame.origin.y = self.view.frame.size.height - tabFrame.size.height
+        tabFrame.origin.y = view.frame.size.height - tabFrame.size.height
         tabBar.frame = tabFrame
         tabBar.setNeedsLayout()
     }
-    
+
     @available(iOS 11.0, *)
     open override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
@@ -92,5 +91,4 @@ open class CBFlashyTabBarController: UITabBarController {
             delegate?.tabBarController?(self, didSelect: controller)
         }
     }
-
 }

@@ -5,13 +5,13 @@ struct Roastery {
     let latitude: Double?
     let longitude: Double?
     let locationURL: String?
-    
+
     init?(dictionary: [String: Any]) {
         guard let name = dictionary["name"] as? String else { return nil }
         self.name = name
-        
-        self.latitude = dictionary["latitude"] as? Double
-        self.longitude = dictionary["longitude"] as? Double
-        self.locationURL = dictionary["locationURL"] as? String
+
+        latitude = dictionary["latitude"] as? Double
+        longitude = dictionary["longitude"] as? Double
+        locationURL = dictionary["locationURL"] as? String
     }
 }

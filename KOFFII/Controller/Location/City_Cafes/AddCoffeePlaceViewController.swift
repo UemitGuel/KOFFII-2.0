@@ -1,28 +1,25 @@
-import UIKit
 import FirebaseFirestore
 import SVProgressHUD
+import UIKit
 
 class AddCoffeePlaceViewController: UIViewController {
+    @IBOutlet var coffeePlaceTextField: UITextField!
 
-    @IBOutlet weak var coffeePlaceTextField: UITextField!
-    
-    @IBOutlet weak var wifiSwitch: UISwitch!
-    @IBOutlet weak var foodSwitch: UISwitch!
-    @IBOutlet weak var veganSwitch: UISwitch!
-    @IBOutlet weak var cakeSwitch: UISwitch!
-    @IBOutlet weak var plugSwitch: UISwitch!
-    
-    @IBOutlet weak var note: UITextView!
-    
-    
+    @IBOutlet var wifiSwitch: UISwitch!
+    @IBOutlet var foodSwitch: UISwitch!
+    @IBOutlet var veganSwitch: UISwitch!
+    @IBOutlet var cakeSwitch: UISwitch!
+    @IBOutlet var plugSwitch: UISwitch!
+
+    @IBOutlet var note: UITextView!
+
     var db: Firestore!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
-        
     }
-    
+
     func setupFirebase() {
         // [START setup]
         let settings = FirestoreSettings()
@@ -31,9 +28,9 @@ class AddCoffeePlaceViewController: UIViewController {
         db = Firestore.firestore()
     }
 
-    @IBAction func addCoffeePlaceButtonTapped(_ sender: UIButton) {
+    @IBAction func addCoffeePlaceButtonTapped(_: UIButton) {
         // Add a new document with a generated id.
-        var ref: DocumentReference? = nil
+        var ref: DocumentReference?
         ref = db.collection("AddedCoffeePlaces").addDocument(data: [
             "name": coffeePlaceTextField.text ?? "",
             "wifi": wifiSwitch.isOn,
@@ -41,7 +38,7 @@ class AddCoffeePlaceViewController: UIViewController {
             "vegan": veganSwitch.isOn,
             "cake": cakeSwitch.isOn,
             "plug": plugSwitch.isOn,
-            "note": note.text ?? ""
+            "note": note.text ?? "",
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
