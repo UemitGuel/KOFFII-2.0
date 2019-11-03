@@ -73,7 +73,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Klw-3g-S38">
                                 <rect key="frame" x="60" y="262.66666666666674" width="294" height="437.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Apps made available through the App Store are licensed, not sold, to you. Your license to each App is subject to your prior acceptance of either this Licensed Application End User License Agreement (“Standard EULA”), or a custom end user license agreement between you and the Application Provider (“Custom EULA”), if one is provided. Your license to any Apple App under this Standard EULA or Custom EULA is granted by Apple, and your license to any Third Party App under this Standard EULA or Custom EULA is granted by the Application Provider of that Third Party App. Any App that is subject to this Standard EULA is referred to herein as the “Licensed Application.” The Application Provider or Apple as applicable (“Licensor”) reserves all rights in and to the Licensed Application not expressly granted to you under this Standard EULA.
+                                <string key="text">Apps made available through the App Store are licensed, not sold, to you. Your license to each App is subject to your prior acceptance of either this Licensed Application End User License Agreement (“Standard EULA”), or a custom end user license agreement between you and the Application Provider (“Custom EULA”), if one is provided. Your license to any Apple App under this Standard EULA or Custom EULA is granted by Apple, and your license to any Third Party App under this Standard EULA or Custom EULA is granted by the Application Provider of that Third Party App. Any App that is subject to this Standard EULA is referred to herein as the “Licensed Application.” The Application Provider or Apple as applicable (“Licensor”) reserves all rights in and to the Licensed Application not expressly granted to you under this Standard EULA.
 
 a. Scope of License: Licensor grants to you a nontransferable license to use the Licensed Application on any Apple-branded products that you own or control and as permitted by the Usage Rules. The terms of this Standard EULA will govern any content, materials, or services accessible from or purchased within the Licensed Application as well as upgrades provided by Licensor that replace or supplement the original Licensed Application, unless such upgrade is accompanied by a Custom EULA. Except as provided in the Usage Rules, you may not distribute or make the Licensed Application available over a network where it could be used by multiple devices at the same time. You may not transfer, redistribute or sublicense the Licensed Application and, if you sell your Apple Device to a third party, you must remove the Licensed Application from the Apple Device before doing so. You may not copy (except as permitted by this license and the Usage Rules), reverse-engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of the Licensed Application, any updates, or any part thereof (except as and only to the extent that any foregoing restriction is prohibited by applicable law or to the extent as may be permitted by the licensing terms governing use of any open-sourced components included with the Licensed Application).
 
@@ -95,7 +95,7 @@ i. Except to the extent expressly provided in the following paragraph, this Agre
 
 If you are a citizen of any European Union country or Switzerland, Norway or Iceland, the governing law and forum shall be the laws and courts of your usual place of residence.
 
-Specifically excluded from application to this Agreement is that law known as the United Nations Convention on the International Sale of Goods.</mutableString>
+Specifically excluded from application to this Agreement is that law known as the United Nations Convention on the International Sale of Goods.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -793,7 +793,13 @@ Specifically excluded from application to this Agreement is that law known as th
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CY6-Vq-zU7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QtK-TS-sem"/>
+                    <navigationItem key="navigationItem" id="QtK-TS-sem">
+                        <barButtonItem key="rightBarButtonItem" title="Report" id="xx2-6M-anv">
+                            <connections>
+                                <segue destination="Zm3-sQ-R2Z" kind="show" id="z0x-a4-rOH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cakeButton" destination="LhJ-0z-zU5" id="Jwi-W2-RQX"/>
@@ -818,6 +824,49 @@ Specifically excluded from application to this Agreement is that law known as th
             </objects>
             <point key="canvasLocation" x="6168" y="-342"/>
         </scene>
+        <!--Report View Controller-->
+        <scene sceneID="FJe-x9-OVL">
+            <objects>
+                <viewController id="Zm3-sQ-R2Z" customClass="ReportViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XHl-AD-FXc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hlE-kP-QLd">
+                                <rect key="frame" x="59.666666666666657" y="318" width="295" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIv-0U-Yb2">
+                                        <rect key="frame" x="67.333333333333343" y="0.0" width="160" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Report a user"/>
+                                        <connections>
+                                            <action selector="reportButtonTapped:" destination="Zm3-sQ-R2Z" eventType="touchUpInside" id="gFe-Kh-7id"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eom-dn-VIF">
+                                        <rect key="frame" x="0.0" y="54" width="295" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Hide content from a user"/>
+                                        <connections>
+                                            <action selector="hideContentButtonTapped:" destination="Zm3-sQ-R2Z" eventType="touchUpInside" id="LOC-Uh-fL8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hlE-kP-QLd" firstAttribute="centerX" secondItem="XHl-AD-FXc" secondAttribute="centerX" id="Bin-x7-MfU"/>
+                            <constraint firstItem="hlE-kP-QLd" firstAttribute="centerY" secondItem="XHl-AD-FXc" secondAttribute="centerY" id="bOm-Kh-K8c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qj8-TA-Qbn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7cF-Kx-Tk3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S89-2N-Ajj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7012" y="-1035"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="e4I-tl-Ccs">
             <objects>
@@ -827,21 +876,21 @@ Specifically excluded from application to this Agreement is that law known as th
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hon-fd-a8m">
-                                <rect key="frame" x="32" y="125.33333333333331" width="346" height="117.66666666666669"/>
+                                <rect key="frame" x="32" y="125.33333333333331" width="350" height="117.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHL-dh-coJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="346" height="71.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="71.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ag-VH-45b">
-                                        <rect key="frame" x="0.0" y="79.666666666666671" width="346" height="27"/>
+                                        <rect key="frame" x="0.0" y="79.666666666666671" width="350" height="27"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-yn-ZHj">
-                                        <rect key="frame" x="0.0" y="114.66666666666667" width="346" height="3"/>
+                                        <rect key="frame" x="0.0" y="114.66666666666667" width="350" height="3"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="3" id="smB-Gn-tHd"/>
@@ -855,7 +904,7 @@ Specifically excluded from application to this Agreement is that law known as th
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozp-20-ON7">
-                                <rect key="frame" x="178" y="259" width="200" height="40"/>
+                                <rect key="frame" x="182" y="259" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="P2v-JO-cPE"/>
@@ -874,9 +923,9 @@ Specifically excluded from application to this Agreement is that law known as th
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Kk-0a-JpF">
-                                <rect key="frame" x="16" y="397" width="378" height="323"/>
+                                <rect key="frame" x="16" y="397" width="382" height="323"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Apps made available through the App Store are licensed, not sold, to you. Your license to each App is subject to your prior acceptance of either this Licensed Application End User License Agreement (“Standard EULA”), or a custom end user license agreement between you and the Application Provider (“Custom EULA”), if one is provided. Your license to any Apple App under this Standard EULA or Custom EULA is granted by Apple, and your license to any Third Party App under this Standard EULA or Custom EULA is granted by the Application Provider of that Third Party App. Any App that is subject to this Standard EULA is referred to herein as the “Licensed Application.” The Application Provider or Apple as applicable (“Licensor”) reserves all rights in and to the Licensed Application not expressly granted to you under this Standard EULA.
+                                <string key="text">Apps made available through the App Store are licensed, not sold, to you. Your license to each App is subject to your prior acceptance of either this Licensed Application End User License Agreement (“Standard EULA”), or a custom end user license agreement between you and the Application Provider (“Custom EULA”), if one is provided. Your license to any Apple App under this Standard EULA or Custom EULA is granted by Apple, and your license to any Third Party App under this Standard EULA or Custom EULA is granted by the Application Provider of that Third Party App. Any App that is subject to this Standard EULA is referred to herein as the “Licensed Application.” The Application Provider or Apple as applicable (“Licensor”) reserves all rights in and to the Licensed Application not expressly granted to you under this Standard EULA.
 
 a. Scope of License: Licensor grants to you a nontransferable license to use the Licensed Application on any Apple-branded products that you own or control and as permitted by the Usage Rules. The terms of this Standard EULA will govern any content, materials, or services accessible from or purchased within the Licensed Application as well as upgrades provided by Licensor that replace or supplement the original Licensed Application, unless such upgrade is accompanied by a Custom EULA. Except as provided in the Usage Rules, you may not distribute or make the Licensed Application available over a network where it could be used by multiple devices at the same time. You may not transfer, redistribute or sublicense the Licensed Application and, if you sell your Apple Device to a third party, you must remove the Licensed Application from the Apple Device before doing so. You may not copy (except as permitted by this license and the Usage Rules), reverse-engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of the Licensed Application, any updates, or any part thereof (except as and only to the extent that any foregoing restriction is prohibited by applicable law or to the extent as may be permitted by the licensing terms governing use of any open-sourced components included with the Licensed Application).
 
@@ -898,7 +947,7 @@ i. Except to the extent expressly provided in the following paragraph, this Agre
 
 If you are a citizen of any European Union country or Switzerland, Norway or Iceland, the governing law and forum shall be the laws and courts of your usual place of residence.
 
-Specifically excluded from application to this Agreement is that law known as the United Nations Convention on the International Sale of Goods.</mutableString>
+Specifically excluded from application to this Agreement is that law known as the United Nations Convention on the International Sale of Goods.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1138,7 +1187,13 @@ Specifically excluded from application to this Agreement is that law known as th
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bet-Pu-NkN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="31n-vW-Klf"/>
+                    <navigationItem key="navigationItem" id="31n-vW-Klf">
+                        <barButtonItem key="rightBarButtonItem" title="Report" id="bSr-7C-p3a">
+                            <connections>
+                                <segue destination="Zm3-sQ-R2Z" kind="show" id="Jaf-Uf-aHG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="commentTextField" destination="fiY-6Z-Viv" id="cPG-xD-WdI"/>
                         <outlet property="heightConstraint" destination="UZU-W6-V3v" id="Qhr-5U-ega"/>
@@ -1149,7 +1204,7 @@ Specifically excluded from application to this Agreement is that law known as th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bH-1A-UyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6071" y="-1768"/>
+            <point key="canvasLocation" x="6064" y="-1789"/>
         </scene>
         <!--Flashy Tab Bar Controller-->
         <scene sceneID="qOs-tT-nbc">
@@ -1653,5 +1708,8 @@ Specifically excluded from application to this Agreement is that law known as th
         <image name="info_icon" width="29" height="29"/>
         <image name="roaster_icon" width="29" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jaf-Uf-aHG"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

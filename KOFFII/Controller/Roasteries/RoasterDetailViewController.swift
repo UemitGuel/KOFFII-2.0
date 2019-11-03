@@ -132,6 +132,17 @@ class RoasterDetailViewController: UIViewController {
                 }
                 self.myGroup.notify(queue: .main) {
                     print("Finished all requests.")
+                    
+                    //Hide Content from Blocked Users
+                    let defaults = UserDefaults.standard
+                    let blockedUsers = defaults.stringArray(forKey: "blockedUsers") ?? [String]()
+                    
+                    print("Before:!!!\(self.messages)")
+                    for user in blockedUsers {
+                        self.messages = self.messages.filter({ $0.author != user})
+                    }
+                    print("After:!!!\(self.messages)")
+                    
                     self.messages = self.messages.sorted(by: { $1.timeStamp!.dateValue() > $0.timeStamp!.dateValue() })
                     print("adkmskmakd \(self.messages)")
                     self.configureTableView()

@@ -36,7 +36,7 @@ class CafeDetailViewController: UIViewController {
     var cityName = "Cologne"
     var passedCafeObject: Cafe?
     let regionRadius: CLLocationDistance = 1000
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_noti:)),
@@ -64,6 +64,12 @@ class CafeDetailViewController: UIViewController {
         title = passedCafeObject?.name
         retrieveMessages()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        tableView.reloadData()
+    }
+    
 
     // Both objc functions are handling the kayboard when typing in a message.
     @objc func keyboardWillShow(_noti: NSNotification) {
@@ -227,6 +233,17 @@ class CafeDetailViewController: UIViewController {
                 }
                 self.myGroup.notify(queue: .main) {
                     print("Finished all requests.")
+                    
+                    //Hide Content from Blocked Users
+                    let defaults = UserDefaults.standard
+                    let blockedUsers = defaults.stringArray(forKey: "blockedUsers") ?? [String]()
+                    
+                    print("Before:!!!\(self.messages)")
+                    for user in blockedUsers {
+                        self.messages = self.messages.filter({ $0.author != user})
+                    }
+                    print("After:!!!\(self.messages)")
+                    
                     self.messages = self.messages.sorted(by: { $1.timeStamp!.dateValue() > $0.timeStamp!.dateValue() })
                     print("adkmskmakd \(self.messages)")
                     self.configureTableView()
@@ -235,6 +252,12 @@ class CafeDetailViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func hideMessagesFromBlockedUsers() {
+        let defaults = UserDefaults.standard
+        let blockedUsers = defaults.stringArray(forKey: "blockedUsers") ?? [String]()
+        
     }
 
     @IBAction func sendPressed(_: UIButton) {
