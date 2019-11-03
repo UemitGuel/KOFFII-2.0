@@ -74,8 +74,7 @@ class CoffeePlacesViewController: UIViewController {
 
     func downloadCafes(completionHandler: @escaping ([Cafe]) -> Void) {
         var cafeArray: [Cafe] = []
-        db.collection("City")
-            .document("Cologne")
+        db.collection("City").document("Cologne")
             .collection("Cafes")
             .getDocuments { querySnapshot, err in
                 if let err = err {
