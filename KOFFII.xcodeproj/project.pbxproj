@@ -16,6 +16,7 @@
 		B310BFA02369DB460065318C /* RoasterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9F2369DB460065318C /* RoasterDetailViewController.swift */; };
 		B316F619236984FA00D6BADF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F618236984FA00D6BADF /* RoundButton.swift */; };
 		B316F61B236998BE00D6BADF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F61A236998BE00D6BADF /* LoginViewController.swift */; };
+		B32E9411236EF190005E3603 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E9410236EF190005E3603 /* SettingsViewController.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
 		B34335C922C50509006CDBC1 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */; };
@@ -56,6 +57,7 @@
 		B310BF9F2369DB460065318C /* RoasterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetailViewController.swift; sourceTree = "<group>"; };
 		B316F618236984FA00D6BADF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		B316F61A236998BE00D6BADF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B32E9410236EF190005E3603 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				B367D58D22D502CD0069F4D0 /* CoffeePlacesViewController.swift */,
 				B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */,
 				B310BF972369BBC30065318C /* AddCoffeePlaceViewController.swift */,
+				B32E9410236EF190005E3603 /* SettingsViewController.swift */,
 			);
 			path = City_Cafes;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,
 				B367D58E22D502CD0069F4D0 /* CoffeePlacesViewController.swift in Sources */,
 				B367D58622D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift in Sources */,
+				B32E9411236EF190005E3603 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
