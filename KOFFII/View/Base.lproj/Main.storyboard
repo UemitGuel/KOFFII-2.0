@@ -629,7 +629,6 @@
                         <outlet property="cakeLabel" destination="kWJ-cQ-qWK" id="DPO-8n-6fQ"/>
                         <outlet property="foodButton" destination="Fc3-1L-tnV" id="thr-xm-itG"/>
                         <outlet property="foodLabel" destination="2rO-aK-5uW" id="rkU-id-Awu"/>
-                        <outlet property="heightConstraint" destination="WPC-Fy-lCA" id="UiS-2h-pXu"/>
                         <outlet property="map" destination="bM6-01-jye" id="McD-fw-zDM"/>
                         <outlet property="plugButton" destination="RdB-hq-9yi" id="j3Z-rd-6f8"/>
                         <outlet property="plugLabel" destination="MhJ-VL-70x" id="djS-OZ-t9j"/>

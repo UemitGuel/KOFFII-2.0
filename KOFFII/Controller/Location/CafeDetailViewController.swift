@@ -1,11 +1,9 @@
 import CoreLocation
 import FirebaseFirestore
 import MapKit
-import SVProgressHUD
 import UIKit
 
 class CafeDetailViewController: UIViewController {
-    @IBOutlet var tableView: UITableView!
     @IBOutlet var map: MKMapView!
     @IBOutlet var toLocationButton: UIButton!
 
@@ -23,13 +21,12 @@ class CafeDetailViewController: UIViewController {
 
     @IBOutlet var plugButton: RoundButton!
     @IBOutlet var plugLabel: UILabel!
-
-    @IBOutlet var heightConstraint: NSLayoutConstraint!
     
     var db: Firestore!
     let myGroup = DispatchGroup()
 
     var passedCafeObject: Cafe?
+    var features: [String:Bool] { return passedCafeObject?.features ?? [:] }
     var cafeName: String { return passedCafeObject?.name ?? "" }
     var location: CLLocation {
         let latitude = passedCafeObject?.latitude ?? 0
@@ -40,7 +37,7 @@ class CafeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
-        activateButtons()
+        highlightButtons()
         MapFunctions().centerMapOnLocation(map: map, location: location)
         title = passedCafeObject?.name
     }
@@ -61,35 +58,15 @@ class CafeDetailViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
     }
-
+    
     // which buttons have to be highlighted (depending on the data in firestore)
-    func activateButtons() {
-        if passedCafeObject?.features!["wifi"] == true {
-            wifiButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            wifiButton.borderWidth = 2
-            wifiLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-        }
-        if passedCafeObject?.features!["food"] == true {
-            foodButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            foodButton.borderWidth = 2
-            foodLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-        }
-        if passedCafeObject?.features!["vegan"] == true {
-            veganButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            veganButton.borderWidth = 2
-            veganLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-        }
-        if passedCafeObject?.features!["cake"] == true {
-            cakeButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            cakeButton.borderWidth = 2
-            cakeLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-        }
-        if passedCafeObject?.features!["plugin"] == true {
-            plugButton.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            plugButton.borderWidth = 2
-            plugLabel.font = UIFont(name: "Quicksand-Bold", size: 15)
-        }
+    func highlightButtons() {
+        let featureBF = FeatureButttonFunctions()
+        featureBF.features = features
+        featureBF.highlightSingleButton(featureAsString: "wifi", button: wifiButton, label: wifiLabel)
+        featureBF.highlightSingleButton(featureAsString: "food", button: foodButton, label: foodLabel)
+        featureBF.highlightSingleButton(featureAsString: "cake", button: cakeButton, label: cakeLabel)
+        featureBF.highlightSingleButton(featureAsString: "vegan", button: veganButton, label: veganLabel)
+        featureBF.highlightSingleButton(featureAsString: "plugin", button: plugButton, label: plugLabel)
     }
-
-
 }
