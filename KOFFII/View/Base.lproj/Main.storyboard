@@ -806,7 +806,7 @@
                     <navigationItem key="navigationItem" id="31n-vW-Klf"/>
                     <connections>
                         <outlet property="heightConstraint" destination="UZU-W6-V3v" id="Qhr-5U-ega"/>
-                        <outlet property="mapView" destination="8ff-e4-Lhf" id="CWh-WY-oIs"/>
+                        <outlet property="map" destination="8ff-e4-Lhf" id="CWh-WY-oIs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bH-1A-UyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

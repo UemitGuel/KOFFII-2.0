@@ -30,7 +30,6 @@ class CafeDetailViewController: UIViewController {
     let myGroup = DispatchGroup()
 
     var passedCafeObject: Cafe?
-    let regionRadius: CLLocationDistance = 1000
     var cafeName: String { return passedCafeObject?.name ?? "" }
     var location: CLLocation {
         let latitude = passedCafeObject?.latitude ?? 0
@@ -40,12 +39,9 @@ class CafeDetailViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupFirebase()
         activateButtons()
-
-        // set map
-        centerMapOnLocation(location: location)
+        MapFunctions().centerMapOnLocation(map: map, location: location)
         title = passedCafeObject?.name
     }
     
@@ -95,10 +91,5 @@ class CafeDetailViewController: UIViewController {
         }
     }
 
-    // Showing and handeling location
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        map.setRegion(coordinateRegion, animated: true)
-    }
+
 }

@@ -236,10 +236,10 @@
 				B34335C522C504ED006CDBC1 /* Fonts */,
 				B3AA7E5722C4F38B005848DA /* AppDelegate.swift */,
 				B316F618236984FA00D6BADF /* RoundButton.swift */,
+				B377596C2370264500D1D6B9 /* MapFunctions.swift */,
 				B3AA7E5E22C4F38C005848DA /* Assets.xcassets */,
 				B3AA7E6322C4F38C005848DA /* Info.plist */,
 				B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */,
-				B377596C2370264500D1D6B9 /* MapFunctions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

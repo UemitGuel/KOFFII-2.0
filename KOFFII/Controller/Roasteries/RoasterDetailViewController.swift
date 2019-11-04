@@ -4,12 +4,7 @@ import SVProgressHUD
 import UIKit
 
 class RoasterDetailViewController: UIViewController {
-    @IBOutlet var mapView: MKMapView!
-
-    @IBOutlet var roasterCommentsTableView: UITableView!
-    @IBOutlet var sendButton: UIButton!
-
-    @IBOutlet var commentTextField: UITextField!
+    @IBOutlet var map: MKMapView!
     @IBOutlet var heightConstraint: NSLayoutConstraint!
 
     var passedRoastery: Roastery?
@@ -24,12 +19,11 @@ class RoasterDetailViewController: UIViewController {
     var db: Firestore!
     let myGroup = DispatchGroup()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
         title = passedRoastery?.name
-        centerMapOnLocation(location: location)
+        MapFunctions().centerMapOnLocation(map: map, location: location)
     }
 
     func setupFirebase() {
@@ -38,13 +32,6 @@ class RoasterDetailViewController: UIViewController {
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
-    }
-
-    // Showing and handeling location
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
     }
 
     @IBAction func openMapsButtonTapped(_: UIButton) {

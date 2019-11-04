@@ -1,8 +1,11 @@
 import UIKit
 import Foundation
 import CoreLocation
+import MapKit
 
 class MapFunctions {
+    let regionRadius: CLLocationDistance = 1000
+    
     func returnMapOptionsAlert(cafeName: String, latitude: Double, longitude: Double) -> UIAlertController {
         let coordinates = CLLocationCoordinate2D(latitude: latitude,
                                                  longitude: longitude)
@@ -50,4 +53,12 @@ class MapFunctions {
         actionSheet.addAction(actionCancel)
         return actionSheet
     }
+    
+    // Showing and handeling location
+    func centerMapOnLocation(map: MKMapView, location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        map.setRegion(coordinateRegion, animated: true)
+    }
+    
 }
