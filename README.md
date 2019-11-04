@@ -20,5 +20,5 @@ To compile/run the iOS application:
 * iOS 12.2 or higher
 * Xcode 10 or higher
 
-![Alt-Text](/Users/uemitguel/Desktop/5.png)
+![Alt-Text](/Users/uemitguel/Desktop/1.jpg)
 
