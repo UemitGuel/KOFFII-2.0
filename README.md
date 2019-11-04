@@ -2,10 +2,9 @@
 
 KOFFII Cologne is designed to help people finding a coffee place to study or work.
 
-![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/ab/94/66/ab9466c2-6968-b7d0-4972-14d29abcc9b0/pr_source.png/0x0ss-P3.jpg)
-![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/4f/7c/b8/4f7cb8ad-ea86-100e-a07f-8f8deb9be673/pr_source.png/0x0ss-P3.jpg)
-![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/18/ff/fa/18fffa94-07f6-ae00-7e68-0eaa850a9edd/pr_source.png/0x0ss-P3.jpg)
-
+☕️ | 🗿| 🌋
+:-------------------------:|:-------------------------:|:-------------------------:
+![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/ab/94/66/ab9466c2-6968-b7d0-4972-14d29abcc9b0/pr_source.png/0x0ss-P3.jpg) | ![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/4f/7c/b8/4f7cb8ad-ea86-100e-a07f-8f8deb9be673/pr_source.png/0x0ss-P3.jpg) | ![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/18/ff/fa/18fffa94-07f6-ae00-7e68-0eaa850a9edd/pr_source.png/0x0ss-P3.jpg)
 
 ## Idea
 
