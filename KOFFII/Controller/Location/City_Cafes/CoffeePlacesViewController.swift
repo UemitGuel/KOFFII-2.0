@@ -180,8 +180,6 @@ class CoffeePlacesViewController: UIViewController {
             filteredCafeObjects = filteredCafeObjects.filter { $0.features!["plugin"] == true }
         }
     }
-
-    @IBAction func addPlaceButtonTapped(_: UIBarButtonItem) {}
 }
 
 extension CoffeePlacesViewController: UITableViewDataSource {

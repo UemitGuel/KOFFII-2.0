@@ -18,6 +18,8 @@
 		B316F61B236998BE00D6BADF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F61A236998BE00D6BADF /* LoginViewController.swift */; };
 		B32E9411236EF190005E3603 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E9410236EF190005E3603 /* SettingsViewController.swift */; };
 		B32E9413236F0155005E3603 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E9412236F0155005E3603 /* ReportViewController.swift */; };
+		B32E941B236F34C7005E3603 /* KOFFII_CologneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E941A236F34C7005E3603 /* KOFFII_CologneUITests.swift */; };
+		B32E9423236F3689005E3603 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E9422236F3689005E3603 /* SnapshotHelper.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
 		B34335C922C50509006CDBC1 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */; };
@@ -48,6 +50,16 @@
 		B3F62EDA22D0FFB6002DF68C /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F62ED922D0FFB6002DF68C /* Quicksand-Medium.ttf */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B32E941D236F34C7005E3603 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3AA7E4C22C4F38B005848DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3AA7E5322C4F38B005848DA;
+			remoteInfo = KOFFII;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
 		B309008122D796CC00DE7662 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = ../CafeDetailViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +72,10 @@
 		B316F61A236998BE00D6BADF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B32E9410236EF190005E3603 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B32E9412236F0155005E3603 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		B32E9418236F34C7005E3603 /* KOFFII CologneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KOFFII CologneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32E941A236F34C7005E3603 /* KOFFII_CologneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOFFII_CologneUITests.swift; sourceTree = "<group>"; };
+		B32E941C236F34C7005E3603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B32E9422236F3689005E3603 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
@@ -95,6 +111,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B32E9415236F34C7005E3603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3AA7E5122C4F38B005848DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +157,16 @@
 				B310BF9F2369DB460065318C /* RoasterDetailViewController.swift */,
 			);
 			path = Roasteries;
+			sourceTree = "<group>";
+		};
+		B32E9419236F34C7005E3603 /* KOFFII CologneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B32E941A236F34C7005E3603 /* KOFFII_CologneUITests.swift */,
+				B32E9422236F3689005E3603 /* SnapshotHelper.swift */,
+				B32E941C236F34C7005E3603 /* Info.plist */,
+			);
+			path = "KOFFII CologneUITests";
 			sourceTree = "<group>";
 		};
 		B34335C522C504ED006CDBC1 /* Fonts */ = {
@@ -226,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AA7E5622C4F38B005848DA /* KOFFII */,
+				B32E9419236F34C7005E3603 /* KOFFII CologneUITests */,
 				B3AA7E5522C4F38B005848DA /* Products */,
 				7DE5AA19BD4F92107B129CBD /* Pods */,
 				BAD448F2EC118B531A034562 /* Frameworks */,
@@ -236,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AA7E5422C4F38B005848DA /* KOFFII Cologne.app */,
+				B32E9418236F34C7005E3603 /* KOFFII CologneUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,6 +321,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B32E9417236F34C7005E3603 /* KOFFII CologneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B32E9421236F34C7005E3603 /* Build configuration list for PBXNativeTarget "KOFFII CologneUITests" */;
+			buildPhases = (
+				B32E9414236F34C7005E3603 /* Sources */,
+				B32E9415236F34C7005E3603 /* Frameworks */,
+				B32E9416236F34C7005E3603 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B32E941E236F34C7005E3603 /* PBXTargetDependency */,
+			);
+			name = "KOFFII CologneUITests";
+			productName = "KOFFII CologneUITests";
+			productReference = B32E9418236F34C7005E3603 /* KOFFII CologneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B3AA7E5322C4F38B005848DA /* KOFFII */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3AA7E6622C4F38C005848DA /* Build configuration list for PBXNativeTarget "KOFFII" */;
@@ -311,10 +364,14 @@
 		B3AA7E4C22C4F38B005848DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Ümit Gül";
 				TargetAttributes = {
+					B32E9417236F34C7005E3603 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = B3AA7E5322C4F38B005848DA;
+					};
 					B3AA7E5322C4F38B005848DA = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -334,11 +391,19 @@
 			projectRoot = "";
 			targets = (
 				B3AA7E5322C4F38B005848DA /* KOFFII */,
+				B32E9417236F34C7005E3603 /* KOFFII CologneUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B32E9416236F34C7005E3603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3AA7E5222C4F38B005848DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,6 +466,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B32E9414236F34C7005E3603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32E941B236F34C7005E3603 /* KOFFII_CologneUITests.swift in Sources */,
+				B32E9423236F3689005E3603 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3AA7E5022C4F38B005848DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,6 +512,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B32E941E236F34C7005E3603 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3AA7E5322C4F38B005848DA /* KOFFII */;
+			targetProxy = B32E941D236F34C7005E3603 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B3AA7E5B22C4F38B005848DA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -458,6 +540,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B32E941F236F34C7005E3603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YLGTKU7SLK;
+				INFOPLIST_FILE = "KOFFII CologneUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "quechup.KOFFII-CologneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KOFFII;
+			};
+			name = Debug;
+		};
+		B32E9420236F34C7005E3603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YLGTKU7SLK;
+				INFOPLIST_FILE = "KOFFII CologneUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "quechup.KOFFII-CologneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KOFFII;
+			};
+			name = Release;
+		};
 		B3AA7E6422C4F38C005848DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -580,7 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = YLGTKU7SLK;
 				INFOPLIST_FILE = "$(SRCROOT)/KOFFII/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -601,7 +723,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = YLGTKU7SLK;
 				INFOPLIST_FILE = "$(SRCROOT)/KOFFII/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -619,6 +741,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B32E9421236F34C7005E3603 /* Build configuration list for PBXNativeTarget "KOFFII CologneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B32E941F236F34C7005E3603 /* Debug */,
+				B32E9420236F34C7005E3603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B3AA7E4F22C4F38B005848DA /* Build configuration list for PBXProject "KOFFII" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

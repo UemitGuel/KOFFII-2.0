@@ -32,43 +32,71 @@ class CafeDetailViewController: UIViewController {
     var db: Firestore!
     let myGroup = DispatchGroup()
 
-    var messages: [Message] = [Message]()
     var cityName = "Cologne"
     var passedCafeObject: Cafe?
     let regionRadius: CLLocationDistance = 1000
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_noti:)),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_noti:)),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
 
         setupFirebase()
         activateButtons()
-
-        // Register MessagingCell
-        tableView.register(UINib(nibName: "CustomMessageCell", bundle: nil),
-                           forCellReuseIdentifier: "customMessageCell")
-        configureTableView()
 
         // set map
         let location = CLLocation(latitude: passedCafeObject?.latitude ?? 0,
                                   longitude: passedCafeObject?.longitude ?? 0)
         centerMapOnLocation(location: location)
 
-        // Adding TapGesture for Textfield
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
-        tableView.addGestureRecognizer(tapGesture)
-
         title = passedCafeObject?.name
-        retrieveMessages()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        tableView.reloadData()
+    @IBAction func openMapsButtonTapped(_ sender: UIButton) {
+        let actionSheet = UIAlertController(title: "Open Location",
+                                            message: "How you want to open?",
+                                            preferredStyle: .actionSheet)
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        let splitetStringName = passedCafeObject?.name.components(separatedBy: " ")
+        guard let nameJoined = splitetStringName!
+            .joined(separator: "+")
+            .addingPercentEncoding(withAllowedCharacters:
+                .urlHostAllowed)
+        else {
+            fatalError("Hotelname not found")
+        }
+        let latitude = String(format: "%.6f", (passedCafeObject?.latitude)!)
+        let longitude = String(format: "%.6f", (passedCafeObject?.longitude)!)
+
+        // Google Maps
+        let actionGoogleMaps = UIAlertAction(title: "Google Maps", style: .default) { _ in
+
+            if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
+                // ?q=Pizza&center=37.759748,-122.427135
+                let url = URL(string: "comgooglemaps://?daddr=\(nameJoined)&center=\(latitude),\(longitude)")!
+                print(url)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                print("Can't use comgooglemaps://")
+            }
+        }
+        // Apple Maps
+        let actionAppleMaps = UIAlertAction(title: "Apple Maps", style: .default) { _ in
+            let coreUrl = "http://maps.apple.com/?"
+            guard let url = URL(string: coreUrl +
+                "q=\(nameJoined)&sll=" +
+                latitude + "," + longitude +
+                "&t=s")
+            else {
+                return print("error")
+            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        actionSheet.addAction(actionGoogleMaps)
+        actionSheet.addAction(actionAppleMaps)
+        actionSheet.addAction(actionCancel)
+        present(actionSheet, animated: true, completion: nil)
     }
+    
     
 
     // Both objc functions are handling the kayboard when typing in a message.
@@ -199,129 +227,5 @@ class CafeDetailViewController: UIViewController {
         actionSheet.addAction(actionAppleMaps)
         actionSheet.addAction(actionCancel)
         present(actionSheet, animated: true, completion: nil)
-    }
-
-    func retrieveMessages() {
-        messages.removeAll()
-        SVProgressHUD.show()
-        let ref = db.collection("City").document(cityName)
-            .collection("Cafes").document(passedCafeObject!.name)
-            .collection("Messages")
-
-        // Before downloading the messages, let´s order them for creation date
-        // HERE: The Order Function doesnt work!
-        ref.order(by: "created", descending: true).getDocuments { querySnapshot, err in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    self.myGroup.enter()
-                    print("\(document.documentID) => \(document.data())")
-                    ref.document(document.documentID).getDocument { document, _ in
-                        if let messageObject = document.flatMap({
-                            $0.data().flatMap { data in
-                                Message(dictionary: data)
-                            }
-                        }) {
-                            print("Message Object: \(messageObject)")
-                            self.messages.append(messageObject)
-                            self.myGroup.leave()
-                        } else {
-                            print("Document does not exist")
-                        }
-                    }
-                }
-                self.myGroup.notify(queue: .main) {
-                    print("Finished all requests.")
-                    
-                    //Hide Content from Blocked Users
-                    let defaults = UserDefaults.standard
-                    let blockedUsers = defaults.stringArray(forKey: "blockedUsers") ?? [String]()
-                    
-                    print("Before:!!!\(self.messages)")
-                    for user in blockedUsers {
-                        self.messages = self.messages.filter({ $0.author != user})
-                    }
-                    print("After:!!!\(self.messages)")
-                    
-                    self.messages = self.messages.sorted(by: { $1.timeStamp!.dateValue() > $0.timeStamp!.dateValue() })
-                    print("adkmskmakd \(self.messages)")
-                    self.configureTableView()
-                    self.tableView.reloadData()
-                    SVProgressHUD.dismiss()
-                }
-            }
-        }
-    }
-    
-    private func hideMessagesFromBlockedUsers() {
-        let defaults = UserDefaults.standard
-        let blockedUsers = defaults.stringArray(forKey: "blockedUsers") ?? [String]()
-        
-    }
-
-    @IBAction func sendPressed(_: UIButton) {
-        SVProgressHUD.show()
-
-        messageTextField.endEditing(true)
-        messageTextField.isEnabled = false
-        sendButton.isEnabled = false
-
-        let date = Date()
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: date)
-        let month = calendar.component(.month, from: date)
-        let year = calendar.component(.year, from: date)
-        let sentDate = "\(day).\(month), \(year)"
-        let username = UserDefaults.standard.string(forKey: "username") ?? ""
-        db.collection("City").document(cityName).collection("Cafes").document(passedCafeObject!.name).collection("Messages").document().setData([
-            "author": username,
-            "date": sentDate,
-            "message": messageTextField.text ?? "",
-            "created": FieldValue.serverTimestamp(),
-        ]) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-                SVProgressHUD.dismiss()
-            } else {
-                print("Document successfully written!")
-                SVProgressHUD.dismiss()
-                self.messageTextField.isEnabled = true
-                self.sendButton.isEnabled = true
-                self.messageTextField.text = ""
-                self.retrieveMessages()
-            }
-        }
-    }
-}
-
-extension CafeDetailViewController: UITableViewDataSource {
-    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return messages.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
-        cell.selectionStyle = .none
-        cell.nameLabel.text = messages[indexPath.row].author
-        cell.dateLabel.text = messages[indexPath.row].date
-        cell.commentLabel?.text = messages[indexPath.row].message
-
-        let username = UserDefaults.standard.string(forKey: "username") ?? ""
-        if messages[indexPath.row].author == username {
-            cell.messageBackgroundView.backgroundColor = UIColor(red: 220 / 255, green: 248 / 255, blue: 198 / 255, alpha: 1)
-            cell.leftSideContraint.constant = 24
-            cell.rightSideConstraint.constant = 8
-        } else {
-            cell.messageBackgroundView.backgroundColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-            cell.leftSideContraint.constant = 8
-            cell.rightSideConstraint.constant = 24
-        }
-        return cell
-    }
-
-    func configureTableView() {
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 120.0
     }
 }

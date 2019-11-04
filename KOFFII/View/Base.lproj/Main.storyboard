@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KdP-IE-fI2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NHI-7U-5fT">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,111 +19,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Settings View Controller-->
-        <scene sceneID="cKj-b2-59c">
-            <objects>
-                <viewController id="fAZ-HC-UD9" customClass="SettingsViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tTK-0T-AR8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YEP-py-azB">
-                                <rect key="frame" x="60" y="174.66666666666666" width="294" height="80"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1O4-S3-rnZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="36"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O55-Nh-4Zn">
-                                                <rect key="frame" x="0.0" y="0.0" width="132" height="36"/>
-                                                <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <color key="textColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zya-SW-P1G">
-                                                <rect key="frame" x="162" y="0.0" width="132" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <state key="normal" title="edit"/>
-                                                <connections>
-                                                    <action selector="editButtonTapped:" destination="fAZ-HC-UD9" eventType="touchUpInside" id="dAP-Pn-1F3"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiP-fa-kZX">
-                                        <rect key="frame" x="0.0" y="44" width="294" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                        <state key="normal" title="See EULA Terms and Conditions"/>
-                                        <connections>
-                                            <action selector="termsButtonTapped:" destination="fAZ-HC-UD9" eventType="touchUpInside" id="jJn-kU-C9p"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="294" id="EJZ-lx-Nvs"/>
-                                    <constraint firstItem="1O4-S3-rnZ" firstAttribute="centerX" secondItem="YEP-py-azB" secondAttribute="centerX" id="VxM-Fm-eef"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwo-cE-MKp">
-                                <rect key="frame" x="142.66666666666669" y="51.333333333333343" width="128.66666666666669" height="40.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
-                                <color key="textColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Klw-3g-S38">
-                                <rect key="frame" x="60" y="262.66666666666674" width="294" height="437.33333333333326"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Apps made available through the App Store are licensed, not sold, to you. Your license to each App is subject to your prior acceptance of either this Licensed Application End User License Agreement (“Standard EULA”), or a custom end user license agreement between you and the Application Provider (“Custom EULA”), if one is provided. Your license to any Apple App under this Standard EULA or Custom EULA is granted by Apple, and your license to any Third Party App under this Standard EULA or Custom EULA is granted by the Application Provider of that Third Party App. Any App that is subject to this Standard EULA is referred to herein as the “Licensed Application.” The Application Provider or Apple as applicable (“Licensor”) reserves all rights in and to the Licensed Application not expressly granted to you under this Standard EULA.
-
-a. Scope of License: Licensor grants to you a nontransferable license to use the Licensed Application on any Apple-branded products that you own or control and as permitted by the Usage Rules. The terms of this Standard EULA will govern any content, materials, or services accessible from or purchased within the Licensed Application as well as upgrades provided by Licensor that replace or supplement the original Licensed Application, unless such upgrade is accompanied by a Custom EULA. Except as provided in the Usage Rules, you may not distribute or make the Licensed Application available over a network where it could be used by multiple devices at the same time. You may not transfer, redistribute or sublicense the Licensed Application and, if you sell your Apple Device to a third party, you must remove the Licensed Application from the Apple Device before doing so. You may not copy (except as permitted by this license and the Usage Rules), reverse-engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of the Licensed Application, any updates, or any part thereof (except as and only to the extent that any foregoing restriction is prohibited by applicable law or to the extent as may be permitted by the licensing terms governing use of any open-sourced components included with the Licensed Application).
-
-b. Consent to Use of Data: You agree that Licensor may collect and use technical data and related information—including but not limited to technical information about your device, system and application software, and peripherals—that is gathered periodically to facilitate the provision of software updates, product support, and other services to you (if any) related to the Licensed Application. Licensor may use this information, as long as it is in a form that does not personally identify you, to improve its products or to provide services or technologies to you.
-
-c. Termination. This Standard EULA is effective until terminated by you or Licensor. Your rights under this Standard EULA will terminate automatically if you fail to comply with any of its terms. 
-
-d. External Services. The Licensed Application may enable access to Licensor’s and/or third-party services and websites (collectively and individually, "External Services"). You agree to use the External Services at your sole risk. Licensor is not responsible for examining or evaluating the content or accuracy of any third-party External Services, and shall not be liable for any such third-party External Services. Data displayed by any Licensed Application or External Service, including but not limited to financial, medical and location information, is for general informational purposes only and is not guaranteed by Licensor or its agents. You will not use the External Services in any manner that is inconsistent with the terms of this Standard EULA or that infringes the intellectual property rights of Licensor or any third party. You agree not to use the External Services to harass, abuse, stalk, threaten or defame any person or entity, and that Licensor is not responsible for any such use. External Services may not be available in all languages or in your Home Country, and may not be appropriate or available for use in any particular location. To the extent you choose to use such External Services, you are solely responsible for compliance with any applicable laws. Licensor reserves the right to change, suspend, remove, disable or impose access restrictions or limits on any External Services at any time without notice or liability to you. 
-
-e. NO WARRANTY: YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT USE OF THE LICENSED APPLICATION IS AT YOUR SOLE RISK. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSED APPLICATION AND ANY SERVICES PERFORMED OR PROVIDED BY THE LICENSED APPLICATION ARE PROVIDED "AS IS" AND “AS AVAILABLE,” WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, AND LICENSOR HEREBY DISCLAIMS ALL WARRANTIES AND CONDITIONS WITH RESPECT TO THE LICENSED APPLICATION AND ANY SERVICES, EITHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND OF NONINFRINGEMENT OF THIRD-PARTY RIGHTS. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY LICENSOR OR ITS AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY. SHOULD THE LICENSED APPLICATION OR SERVICES PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR, OR CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.
-
-f. Limitation of Liability. TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL LICENSOR BE LIABLE FOR PERSONAL INJURY OR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION, OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE LICENSED APPLICATION, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT, OR OTHERWISE) AND EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY FOR PERSONAL INJURY, OR OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event shall Licensor’s total liability to you for all damages (other than as may be required by applicable law in cases involving personal injury) exceed the amount of fifty dollars ($50.00). The foregoing limitations will apply even if the above stated remedy fails of its essential purpose.
-
-g. You may not use or otherwise export or re-export the Licensed Application except as authorized by United States law and the laws of the jurisdiction in which the Licensed Application was obtained. In particular, but without limitation, the Licensed Application may not be exported or re-exported (a) into any U.S.-embargoed countries or (b) to anyone on the U.S. Treasury Department's Specially Designated Nationals List or the U.S. Department of Commerce Denied Persons List or Entity List. By using the Licensed Application, you represent and warrant that you are not located in any such country or on any such list. You also agree that you will not use these products for any purposes prohibited by United States law, including, without limitation, the development, design, manufacture, or production of nuclear, missile, or chemical or biological weapons.
-
-h. The Licensed Application and related documentation are "Commercial Items", as that term is defined at 48 C.F.R. §2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation", as such terms are used in 48 C.F.R. §12.212 or 48 C.F.R. §227.7202, as applicable. Consistent with 48 C.F.R. §12.212 or 48 C.F.R. §227.7202-1 through 227.7202-4, as applicable, the Commercial Computer Software and Commercial Computer Software Documentation are being licensed to U.S. Government end users (a) only as Commercial Items and (b) with only those rights as are granted to all other end users pursuant to the terms and conditions herein. Unpublished-rights reserved under the copyright laws of the United States.
-
-i. Except to the extent expressly provided in the following paragraph, this Agreement and the relationship between you and Apple shall be governed by the laws of the State of California, excluding its conflicts of law provisions. You and Apple agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Santa Clara, California, to resolve any dispute or claim arising from this Agreement. If (a) you are not a U.S. citizen; (b) you do not reside in the U.S.; (c) you are not accessing the Service from the U.S.; and (d) you are a citizen of one of the countries identified below, you hereby agree that any dispute or claim arising from this Agreement shall be governed by the applicable law set forth below, without regard to any conflict of law provisions, and you hereby irrevocably submit to the non-exclusive jurisdiction of the courts located in the state, province or country identified below whose law governs:
-
-If you are a citizen of any European Union country or Switzerland, Norway or Iceland, the governing law and forum shall be the laws and courts of your usual place of residence.
-
-Specifically excluded from application to this Agreement is that law known as the United Nations Convention on the International Sale of Goods.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="YEP-py-azB" firstAttribute="centerX" secondItem="tTK-0T-AR8" secondAttribute="centerX" id="F4D-74-cVU"/>
-                            <constraint firstItem="Klw-3g-S38" firstAttribute="leading" secondItem="XN2-8G-UBf" secondAttribute="leading" constant="60" id="HGJ-2f-lJu"/>
-                            <constraint firstItem="zwo-cE-MKp" firstAttribute="centerY" secondItem="tTK-0T-AR8" secondAttribute="centerY" multiplier="0.2" id="IWs-Qq-jyR"/>
-                            <constraint firstItem="zwo-cE-MKp" firstAttribute="centerX" secondItem="tTK-0T-AR8" secondAttribute="centerX" id="VHy-en-MCM"/>
-                            <constraint firstItem="XN2-8G-UBf" firstAttribute="trailing" secondItem="Klw-3g-S38" secondAttribute="trailing" constant="60" id="bA5-K3-sgb"/>
-                            <constraint firstItem="Klw-3g-S38" firstAttribute="top" secondItem="YEP-py-azB" secondAttribute="bottom" constant="8" id="muP-Xp-SNZ"/>
-                            <constraint firstItem="XN2-8G-UBf" firstAttribute="bottom" secondItem="Klw-3g-S38" secondAttribute="bottom" constant="16" id="pge-9d-fcv"/>
-                            <constraint firstItem="YEP-py-azB" firstAttribute="centerY" secondItem="tTK-0T-AR8" secondAttribute="centerY" multiplier="0.6" id="rDd-Ez-DiH"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="XN2-8G-UBf"/>
-                    </view>
-                    <connections>
-                        <outlet property="termsButton" destination="uiP-fa-kZX" id="xKQ-kg-aiH"/>
-                        <outlet property="termsConditionsTextView" destination="Klw-3g-S38" id="ksE-LM-hsJ"/>
-                        <outlet property="usernameLabel" destination="O55-Nh-4Zn" id="WO9-5q-Cup"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Py-ND-kgu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5228.985507246377" y="-1066.304347826087"/>
-        </scene>
         <!--Add Coffee Place View Controller-->
         <scene sceneID="0cG-Rp-47D">
             <objects>
@@ -133,7 +28,7 @@ Specifically excluded from application to this Agreement is that law known as th
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="56X-zX-2Qz">
-                                <rect key="frame" x="64" y="68.333333333333343" width="286" height="400.33333333333326"/>
+                                <rect key="frame" x="64" y="103.33333333333334" width="286" height="330.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your coffee place. The developer will review this shortly and add the coffee place to the list! Thank you :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hk-md-PaW">
                                         <rect key="frame" x="0.0" y="0.0" width="286" height="81.333333333333329"/>
@@ -161,7 +56,7 @@ Specifically excluded from application to this Agreement is that law known as th
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Gjn-XN-wk5">
-                                        <rect key="frame" x="0.0" y="176.33333333333331" width="286" height="31"/>
+                                        <rect key="frame" x="0.0" y="176.33333333333337" width="286" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP2-bO-vO8">
                                                 <rect key="frame" x="0.0" y="0.0" width="143" height="31"/>
@@ -216,16 +111,6 @@ Specifically excluded from application to this Agreement is that law known as th
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Something you want to tell the developer?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0dE-jl-8eL">
-                                        <rect key="frame" x="0.0" y="340.33333333333337" width="286" height="60"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Qtm-1Y-lIL"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBZ-uf-kD2">
@@ -264,7 +149,6 @@ Specifically excluded from application to this Agreement is that law known as th
                         <outlet property="cakeSwitch" destination="rIN-1e-8IY" id="LnA-SY-dra"/>
                         <outlet property="coffeePlaceTextField" destination="scB-rg-0vI" id="xrz-3j-Btn"/>
                         <outlet property="foodSwitch" destination="QtZ-Of-HfJ" id="4cC-Wh-Uqd"/>
-                        <outlet property="note" destination="0dE-jl-8eL" id="CKT-pA-zdH"/>
                         <outlet property="plugSwitch" destination="E5a-GA-uPk" id="cCH-Ox-DjF"/>
                         <outlet property="veganSwitch" destination="SVc-yR-97k" id="pda-st-Q4X"/>
                         <outlet property="wifiSwitch" destination="cSS-cU-oVL" id="ew0-mY-Wf3"/>
@@ -503,12 +387,6 @@ Specifically excluded from application to this Agreement is that law known as th
                         <viewLayoutGuide key="safeArea" id="WUx-bx-ZPg"/>
                     </view>
                     <navigationItem key="navigationItem" id="5W2-QD-Jbg">
-                        <barButtonItem key="leftBarButtonItem" title="account" style="plain" id="9Iq-A2-A2l">
-                            <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="fAZ-HC-UD9" kind="presentation" id="i4r-ok-Agw"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Coffee Place" id="6Xs-RH-tzF">
                             <connections>
                                 <action selector="addPlaceButtonTapped:" destination="8hJ-sQ-lT1" id="wiE-6i-GXU"/>
@@ -543,263 +421,209 @@ Specifically excluded from application to this Agreement is that law known as th
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UIu-cn-qwQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="642"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="YOP-I9-RhW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="378"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-r0-Otc">
-                                            <rect key="frame" x="16" y="279" width="382" height="83"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-9b-bfF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="63.666666666666664"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4W-zt-HNu" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="63.666666666666664"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="J4W-zt-HNu" secondAttribute="height" multiplier="1:1" id="w20-Dx-hzi"/>
-                                                            </constraints>
-                                                            <state key="normal" image="WIFI"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
-                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="8"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-1L-tnV" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                            <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="63.666666666666664"/>
-                                                            <state key="normal" image="FOOD"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
-                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="8"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ips-Qk-zbg" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                            <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="63.666666666666664"/>
-                                                            <state key="normal" image="VEGAN"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
-                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="8"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-0z-zU5" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                            <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="63.666666666666664"/>
-                                                            <state key="normal" image="CAKE"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
-                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="8"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdB-hq-9yi" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                            <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="63.666666666666664"/>
-                                                            <state key="normal" image="PLUG"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
-                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="8"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="J4W-zt-HNu" firstAttribute="width" secondItem="Fc3-1L-tnV" secondAttribute="width" id="Bh2-q7-ZzB"/>
-                                                    </constraints>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-at-Xaz">
-                                                    <rect key="frame" x="0.0" y="64.666666666666686" width="382" height="18.333333333333329"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8E-gZ-4Q6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="18.333333333333332"/>
-                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rO-aK-5uW">
-                                                            <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="18.333333333333332"/>
-                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP3-8Y-ZVu">
-                                                            <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="18.333333333333332"/>
-                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWJ-cQ-qWK">
-                                                            <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="18.333333333333332"/>
-                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-VL-70x">
-                                                            <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="18.333333333333332"/>
-                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="83" id="Iul-OB-yoB"/>
-                                            </constraints>
-                                        </stackView>
-                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-01-jye">
-                                            <rect key="frame" x="0.0" y="16" width="414" height="255"/>
-                                        </mapView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2D-8u-aeR">
-                                            <rect key="frame" x="0.0" y="16" width="414" height="255"/>
-                                            <connections>
-                                                <action selector="toLocationButtonTapped:" destination="ZMK-a5-n10" eventType="touchUpInside" id="a2u-5f-1JD"/>
-                                            </connections>
-                                        </button>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cafe_map_icon" translatesAutoresizingMaskIntoConstraints="NO" id="NfX-Ot-MU0">
-                                            <rect key="frame" x="199" y="123.66666666666669" width="20" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="20" id="lys-PZ-eWP"/>
-                                                <constraint firstAttribute="height" constant="20" id="pca-EX-oM8"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="6uH-r0-Otc" secondAttribute="trailing" constant="8" id="5cE-ib-Gtb"/>
-                                        <constraint firstItem="6uH-r0-Otc" firstAttribute="top" secondItem="bM6-01-jye" secondAttribute="bottom" constant="8" id="6Kd-dK-cRB"/>
-                                        <constraint firstItem="bM6-01-jye" firstAttribute="top" secondItem="YOP-I9-RhW" secondAttribute="topMargin" constant="8" id="8BQ-5H-qJy"/>
-                                        <constraint firstItem="W2D-8u-aeR" firstAttribute="leading" secondItem="YOP-I9-RhW" secondAttribute="leading" id="Dfg-a0-wCU"/>
-                                        <constraint firstItem="6uH-r0-Otc" firstAttribute="leading" secondItem="YOP-I9-RhW" secondAttribute="leadingMargin" constant="8" id="K9H-aq-SbW"/>
-                                        <constraint firstItem="6uH-r0-Otc" firstAttribute="top" secondItem="W2D-8u-aeR" secondAttribute="bottom" constant="8" id="KBb-5d-0Ma"/>
-                                        <constraint firstItem="bM6-01-jye" firstAttribute="leading" secondItem="YOP-I9-RhW" secondAttribute="leading" id="NdE-yf-MUi"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="6uH-r0-Otc" secondAttribute="bottom" constant="8" id="YW1-ic-zu5"/>
-                                        <constraint firstAttribute="trailing" secondItem="bM6-01-jye" secondAttribute="trailing" id="YYc-Ku-QJk"/>
-                                        <constraint firstItem="NfX-Ot-MU0" firstAttribute="centerY" secondItem="W2D-8u-aeR" secondAttribute="centerY" constant="-9.8333333333333428" id="mYy-w9-x1P"/>
-                                        <constraint firstItem="W2D-8u-aeR" firstAttribute="top" secondItem="YOP-I9-RhW" secondAttribute="topMargin" constant="8" id="tCz-zQ-CS9"/>
-                                        <constraint firstItem="NfX-Ot-MU0" firstAttribute="centerX" secondItem="W2D-8u-aeR" secondAttribute="centerX" constant="2" id="yFu-Z3-EQd"/>
-                                        <constraint firstAttribute="trailing" secondItem="W2D-8u-aeR" secondAttribute="trailing" id="yXC-iX-g51"/>
-                                    </constraints>
-                                </view>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customMessageCell" id="uht-fI-1So">
-                                        <rect key="frame" x="0.0" y="406" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uht-fI-1So" id="0pP-aG-tmb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2D-8u-aeR">
+                                <rect key="frame" x="16" y="334" width="382" height="60"/>
+                                <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="L1v-uK-TVF"/>
+                                </constraints>
+                                <state key="normal" title="Open in Apple/Google Maps"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="dataSource" destination="ZMK-a5-n10" id="FQ6-PM-UTu"/>
-                                    <outlet property="delegate" destination="ZMK-a5-n10" id="fWS-YI-ZEI"/>
+                                    <action selector="openMapsButtonTapped:" destination="ZMK-a5-n10" eventType="touchUpInside" id="vZA-X9-uMK"/>
+                                    <action selector="toLocationButtonTapped:" destination="ZMK-a5-n10" eventType="touchUpInside" id="a2u-5f-1JD"/>
                                 </connections>
-                            </tableView>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-01-jye">
+                                <rect key="frame" x="0.0" y="44" width="414" height="274"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="274" id="IeT-qG-a9C"/>
+                                </constraints>
+                            </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cafe_map_icon" translatesAutoresizingMaskIntoConstraints="NO" id="NfX-Ot-MU0">
+                                <rect key="frame" x="197" y="156.66666666666666" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="lys-PZ-eWP"/>
+                                    <constraint firstAttribute="height" constant="20" id="pca-EX-oM8"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aC-Qv-AAN" userLabel="Compose View">
                                 <rect key="frame" x="0.0" y="686" width="414" height="50"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is your favourite thing to order here? :)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tr-Dk-T0b">
-                                        <rect key="frame" x="8" y="8" width="348.66666666666669" height="34"/>
-                                        <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="send"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="ZMK-a5-n10" id="TNq-vY-kwm"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbs-od-JZC">
-                                        <rect key="frame" x="364.66666666666669" y="10" width="41.333333333333314" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="SU5-sq-2kt"/>
-                                        </constraints>
-                                        <state key="normal" title="Send">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sendPressed:" destination="ZMK-a5-n10" eventType="touchUpInside" id="mqp-v3-EWi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="nbs-od-JZC" firstAttribute="width" secondItem="8aC-Qv-AAN" secondAttribute="width" multiplier="0.1" id="DTv-f9-Qt2"/>
-                                    <constraint firstItem="nbs-od-JZC" firstAttribute="centerY" secondItem="1tr-Dk-T0b" secondAttribute="centerY" id="EGn-da-E9S"/>
-                                    <constraint firstItem="nbs-od-JZC" firstAttribute="leading" secondItem="1tr-Dk-T0b" secondAttribute="trailing" constant="8" id="JFK-sm-mix"/>
-                                    <constraint firstItem="1tr-Dk-T0b" firstAttribute="top" secondItem="8aC-Qv-AAN" secondAttribute="top" constant="8" id="RdT-tD-RHT"/>
-                                    <constraint firstItem="1tr-Dk-T0b" firstAttribute="leading" secondItem="8aC-Qv-AAN" secondAttribute="leading" constant="8" id="UA1-bi-wdt"/>
                                     <constraint firstAttribute="height" constant="50" id="WPC-Fy-lCA"/>
-                                    <constraint firstAttribute="trailing" secondItem="nbs-od-JZC" secondAttribute="trailing" constant="8" id="f5K-Sb-LzZ"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-r0-Otc">
+                                <rect key="frame" x="16" y="410" width="382" height="83.666666666666686"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-9b-bfF">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="63.666666666666664"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4W-zt-HNu" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="63.666666666666664"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="J4W-zt-HNu" secondAttribute="height" multiplier="1:1" id="w20-Dx-hzi"/>
+                                                </constraints>
+                                                <state key="normal" image="WIFI"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-1L-tnV" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
+                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="63.666666666666664"/>
+                                                <state key="normal" image="FOOD"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ips-Qk-zbg" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
+                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="63.666666666666664"/>
+                                                <state key="normal" image="VEGAN"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-0z-zU5" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
+                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="63.666666666666664"/>
+                                                <state key="normal" image="CAKE"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdB-hq-9yi" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
+                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="63.666666666666664"/>
+                                                <state key="normal" image="PLUG"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="J4W-zt-HNu" firstAttribute="width" secondItem="Fc3-1L-tnV" secondAttribute="width" id="Bh2-q7-ZzB"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-at-Xaz">
+                                        <rect key="frame" x="0.0" y="64.666666666666686" width="382" height="19"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8E-gZ-4Q6">
+                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="19"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rO-aK-5uW">
+                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="19"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP3-8Y-ZVu">
+                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="19"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWJ-cQ-qWK">
+                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="19"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-VL-70x">
+                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="19"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="bM6-01-jye" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="34E-G6-5dl"/>
+                            <constraint firstItem="6uH-r0-Otc" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" constant="16" id="6dC-Ij-BFS"/>
+                            <constraint firstItem="NfX-Ot-MU0" firstAttribute="centerY" secondItem="bM6-01-jye" secondAttribute="centerY" multiplier="0.92" id="7Bp-Wi-kVn"/>
+                            <constraint firstItem="bM6-01-jye" firstAttribute="trailing" secondItem="CY6-Vq-zU7" secondAttribute="trailing" id="IvX-pg-FXz"/>
                             <constraint firstItem="CY6-Vq-zU7" firstAttribute="trailing" secondItem="8aC-Qv-AAN" secondAttribute="trailing" id="Th7-xZ-2vX"/>
-                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="cQD-fZ-zai"/>
+                            <constraint firstItem="bM6-01-jye" firstAttribute="trailing" secondItem="CY6-Vq-zU7" secondAttribute="trailing" id="add-8y-ZeO"/>
+                            <constraint firstItem="bM6-01-jye" firstAttribute="top" secondItem="CY6-Vq-zU7" secondAttribute="top" id="cYL-wF-cdX"/>
+                            <constraint firstItem="CY6-Vq-zU7" firstAttribute="trailing" secondItem="W2D-8u-aeR" secondAttribute="trailing" constant="16" id="fsL-xA-0NV"/>
+                            <constraint firstItem="W2D-8u-aeR" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" constant="16" id="gEy-sH-xhF"/>
+                            <constraint firstItem="6uH-r0-Otc" firstAttribute="top" secondItem="W2D-8u-aeR" secondAttribute="bottom" constant="16" id="hj1-d1-sP1"/>
+                            <constraint firstItem="bM6-01-jye" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="jDp-4p-bMG"/>
                             <constraint firstItem="8aC-Qv-AAN" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="jUe-J2-jhZ"/>
-                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="top" secondItem="CY6-Vq-zU7" secondAttribute="top" id="jYh-8m-xf8"/>
+                            <constraint firstItem="NfX-Ot-MU0" firstAttribute="centerX" secondItem="bM6-01-jye" secondAttribute="centerX" id="kQ3-KB-Fht"/>
+                            <constraint firstItem="W2D-8u-aeR" firstAttribute="top" secondItem="bM6-01-jye" secondAttribute="bottom" constant="16" id="mbo-Pk-rPs"/>
+                            <constraint firstItem="CY6-Vq-zU7" firstAttribute="trailing" secondItem="6uH-r0-Otc" secondAttribute="trailing" constant="16" id="mlE-Ob-hky"/>
                             <constraint firstItem="8aC-Qv-AAN" firstAttribute="bottom" secondItem="CY6-Vq-zU7" secondAttribute="bottom" id="npg-L0-Hcn"/>
-                            <constraint firstItem="8aC-Qv-AAN" firstAttribute="top" secondItem="UIu-cn-qwQ" secondAttribute="bottom" id="sej-ur-ss4"/>
-                            <constraint firstItem="8aC-Qv-AAN" firstAttribute="top" secondItem="UIu-cn-qwQ" secondAttribute="bottom" id="tt7-QS-GgD"/>
-                            <constraint firstItem="UIu-cn-qwQ" firstAttribute="trailing" secondItem="CY6-Vq-zU7" secondAttribute="trailing" id="xSl-WS-K95"/>
+                            <constraint firstItem="6uH-r0-Otc" firstAttribute="top" secondItem="W2D-8u-aeR" secondAttribute="bottom" constant="16" id="rLr-07-gaj"/>
+                            <constraint firstItem="bM6-01-jye" firstAttribute="top" secondItem="CY6-Vq-zU7" secondAttribute="top" id="wlQ-TO-sQE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CY6-Vq-zU7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QtK-TS-sem">
-                        <barButtonItem key="rightBarButtonItem" title="Report" id="xx2-6M-anv">
-                            <connections>
-                                <segue destination="Zm3-sQ-R2Z" kind="show" id="z0x-a4-rOH"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="QtK-TS-sem"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cakeButton" destination="LhJ-0z-zU5" id="Jwi-W2-RQX"/>
@@ -808,11 +632,8 @@ Specifically excluded from application to this Agreement is that law known as th
                         <outlet property="foodLabel" destination="2rO-aK-5uW" id="rkU-id-Awu"/>
                         <outlet property="heightConstraint" destination="WPC-Fy-lCA" id="UiS-2h-pXu"/>
                         <outlet property="map" destination="bM6-01-jye" id="McD-fw-zDM"/>
-                        <outlet property="messageTextField" destination="1tr-Dk-T0b" id="v93-ov-SOO"/>
                         <outlet property="plugButton" destination="RdB-hq-9yi" id="j3Z-rd-6f8"/>
                         <outlet property="plugLabel" destination="MhJ-VL-70x" id="djS-OZ-t9j"/>
-                        <outlet property="sendButton" destination="nbs-od-JZC" id="NWV-1o-GIb"/>
-                        <outlet property="tableView" destination="UIu-cn-qwQ" id="wx4-2h-aYr"/>
                         <outlet property="toLocationButton" destination="W2D-8u-aeR" id="5uc-O0-RXq"/>
                         <outlet property="veganButton" destination="ips-Qk-zbg" id="KGK-QG-hCF"/>
                         <outlet property="veganLabel" destination="eP3-8Y-ZVu" id="EuW-rV-g1V"/>
@@ -822,177 +643,7 @@ Specifically excluded from application to this Agreement is that law known as th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsL-bI-y6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6168" y="-342"/>
-        </scene>
-        <!--Report View Controller-->
-        <scene sceneID="FJe-x9-OVL">
-            <objects>
-                <viewController id="Zm3-sQ-R2Z" customClass="ReportViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XHl-AD-FXc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hlE-kP-QLd">
-                                <rect key="frame" x="59.666666666666657" y="318" width="295" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIv-0U-Yb2">
-                                        <rect key="frame" x="67.333333333333343" y="0.0" width="160" height="46"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <state key="normal" title="Report a user"/>
-                                        <connections>
-                                            <action selector="reportButtonTapped:" destination="Zm3-sQ-R2Z" eventType="touchUpInside" id="gFe-Kh-7id"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eom-dn-VIF">
-                                        <rect key="frame" x="0.0" y="54" width="295" height="46"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <state key="normal" title="Hide content from a user"/>
-                                        <connections>
-                                            <action selector="hideContentButtonTapped:" destination="Zm3-sQ-R2Z" eventType="touchUpInside" id="LOC-Uh-fL8"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="hlE-kP-QLd" firstAttribute="centerX" secondItem="XHl-AD-FXc" secondAttribute="centerX" id="Bin-x7-MfU"/>
-                            <constraint firstItem="hlE-kP-QLd" firstAttribute="centerY" secondItem="XHl-AD-FXc" secondAttribute="centerY" id="bOm-Kh-K8c"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Qj8-TA-Qbn"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="7cF-Kx-Tk3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S89-2N-Ajj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7012" y="-1035"/>
-        </scene>
-        <!--Login View Controller-->
-        <scene sceneID="e4I-tl-Ccs">
-            <objects>
-                <viewController id="KdP-IE-fI2" customClass="LoginViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="b3C-2i-4ZE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hon-fd-a8m">
-                                <rect key="frame" x="32" y="125.33333333333331" width="350" height="117.66666666666669"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHL-dh-coJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="71.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ag-VH-45b">
-                                        <rect key="frame" x="0.0" y="79.666666666666671" width="350" height="27"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-yn-ZHj">
-                                        <rect key="frame" x="0.0" y="114.66666666666667" width="350" height="3"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="3" id="smB-Gn-tHd"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozp-20-ON7">
-                                <rect key="frame" x="182" y="259" width="200" height="40"/>
-                                <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="P2v-JO-cPE"/>
-                                    <constraint firstAttribute="width" constant="200" id="a5z-AC-BHS"/>
-                                </constraints>
-                                <state key="normal" title="Enter the App">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="enterAppButtonTapped:" destination="KdP-IE-fI2" eventType="touchUpInside" id="FeT-az-ZWc"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Kk-0a-JpF">
-                                <rect key="frame" x="16" y="397" width="382" height="323"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Apps made available through the App Store are licensed, not sold, to you. Your license to each App is subject to your prior acceptance of either this Licensed Application End User License Agreement (“Standard EULA”), or a custom end user license agreement between you and the Application Provider (“Custom EULA”), if one is provided. Your license to any Apple App under this Standard EULA or Custom EULA is granted by Apple, and your license to any Third Party App under this Standard EULA or Custom EULA is granted by the Application Provider of that Third Party App. Any App that is subject to this Standard EULA is referred to herein as the “Licensed Application.” The Application Provider or Apple as applicable (“Licensor”) reserves all rights in and to the Licensed Application not expressly granted to you under this Standard EULA.
-
-a. Scope of License: Licensor grants to you a nontransferable license to use the Licensed Application on any Apple-branded products that you own or control and as permitted by the Usage Rules. The terms of this Standard EULA will govern any content, materials, or services accessible from or purchased within the Licensed Application as well as upgrades provided by Licensor that replace or supplement the original Licensed Application, unless such upgrade is accompanied by a Custom EULA. Except as provided in the Usage Rules, you may not distribute or make the Licensed Application available over a network where it could be used by multiple devices at the same time. You may not transfer, redistribute or sublicense the Licensed Application and, if you sell your Apple Device to a third party, you must remove the Licensed Application from the Apple Device before doing so. You may not copy (except as permitted by this license and the Usage Rules), reverse-engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of the Licensed Application, any updates, or any part thereof (except as and only to the extent that any foregoing restriction is prohibited by applicable law or to the extent as may be permitted by the licensing terms governing use of any open-sourced components included with the Licensed Application).
-
-b. Consent to Use of Data: You agree that Licensor may collect and use technical data and related information—including but not limited to technical information about your device, system and application software, and peripherals—that is gathered periodically to facilitate the provision of software updates, product support, and other services to you (if any) related to the Licensed Application. Licensor may use this information, as long as it is in a form that does not personally identify you, to improve its products or to provide services or technologies to you.
-
-c. Termination. This Standard EULA is effective until terminated by you or Licensor. Your rights under this Standard EULA will terminate automatically if you fail to comply with any of its terms. 
-
-d. External Services. The Licensed Application may enable access to Licensor’s and/or third-party services and websites (collectively and individually, "External Services"). You agree to use the External Services at your sole risk. Licensor is not responsible for examining or evaluating the content or accuracy of any third-party External Services, and shall not be liable for any such third-party External Services. Data displayed by any Licensed Application or External Service, including but not limited to financial, medical and location information, is for general informational purposes only and is not guaranteed by Licensor or its agents. You will not use the External Services in any manner that is inconsistent with the terms of this Standard EULA or that infringes the intellectual property rights of Licensor or any third party. You agree not to use the External Services to harass, abuse, stalk, threaten or defame any person or entity, and that Licensor is not responsible for any such use. External Services may not be available in all languages or in your Home Country, and may not be appropriate or available for use in any particular location. To the extent you choose to use such External Services, you are solely responsible for compliance with any applicable laws. Licensor reserves the right to change, suspend, remove, disable or impose access restrictions or limits on any External Services at any time without notice or liability to you. 
-
-e. NO WARRANTY: YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT USE OF THE LICENSED APPLICATION IS AT YOUR SOLE RISK. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSED APPLICATION AND ANY SERVICES PERFORMED OR PROVIDED BY THE LICENSED APPLICATION ARE PROVIDED "AS IS" AND “AS AVAILABLE,” WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, AND LICENSOR HEREBY DISCLAIMS ALL WARRANTIES AND CONDITIONS WITH RESPECT TO THE LICENSED APPLICATION AND ANY SERVICES, EITHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND OF NONINFRINGEMENT OF THIRD-PARTY RIGHTS. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY LICENSOR OR ITS AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY. SHOULD THE LICENSED APPLICATION OR SERVICES PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR, OR CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.
-
-f. Limitation of Liability. TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL LICENSOR BE LIABLE FOR PERSONAL INJURY OR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION, OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE LICENSED APPLICATION, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT, OR OTHERWISE) AND EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY FOR PERSONAL INJURY, OR OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event shall Licensor’s total liability to you for all damages (other than as may be required by applicable law in cases involving personal injury) exceed the amount of fifty dollars ($50.00). The foregoing limitations will apply even if the above stated remedy fails of its essential purpose.
-
-g. You may not use or otherwise export or re-export the Licensed Application except as authorized by United States law and the laws of the jurisdiction in which the Licensed Application was obtained. In particular, but without limitation, the Licensed Application may not be exported or re-exported (a) into any U.S.-embargoed countries or (b) to anyone on the U.S. Treasury Department's Specially Designated Nationals List or the U.S. Department of Commerce Denied Persons List or Entity List. By using the Licensed Application, you represent and warrant that you are not located in any such country or on any such list. You also agree that you will not use these products for any purposes prohibited by United States law, including, without limitation, the development, design, manufacture, or production of nuclear, missile, or chemical or biological weapons.
-
-h. The Licensed Application and related documentation are "Commercial Items", as that term is defined at 48 C.F.R. §2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation", as such terms are used in 48 C.F.R. §12.212 or 48 C.F.R. §227.7202, as applicable. Consistent with 48 C.F.R. §12.212 or 48 C.F.R. §227.7202-1 through 227.7202-4, as applicable, the Commercial Computer Software and Commercial Computer Software Documentation are being licensed to U.S. Government end users (a) only as Commercial Items and (b) with only those rights as are granted to all other end users pursuant to the terms and conditions herein. Unpublished-rights reserved under the copyright laws of the United States.
-
-i. Except to the extent expressly provided in the following paragraph, this Agreement and the relationship between you and Apple shall be governed by the laws of the State of California, excluding its conflicts of law provisions. You and Apple agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Santa Clara, California, to resolve any dispute or claim arising from this Agreement. If (a) you are not a U.S. citizen; (b) you do not reside in the U.S.; (c) you are not accessing the Service from the U.S.; and (d) you are a citizen of one of the countries identified below, you hereby agree that any dispute or claim arising from this Agreement shall be governed by the applicable law set forth below, without regard to any conflict of law provisions, and you hereby irrevocably submit to the non-exclusive jurisdiction of the courts located in the state, province or country identified below whose law governs:
-
-If you are a citizen of any European Union country or Switzerland, Norway or Iceland, the governing law and forum shall be the laws and courts of your usual place of residence.
-
-Specifically excluded from application to this Agreement is that law known as the United Nations Convention on the International Sale of Goods.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e98-f7-dmL">
-                                <rect key="frame" x="16" y="347" width="378" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="0rJ-44-AK0"/>
-                                    <constraint firstAttribute="width" constant="378" id="HU4-b5-p85"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <state key="normal" title="See the Standart EULA Terms and Conditions."/>
-                                <connections>
-                                    <action selector="termsButtonTapped:" destination="KdP-IE-fI2" eventType="touchUpInside" id="GXM-uE-CRm"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="vlB-oP-gKV" firstAttribute="trailing" secondItem="Ozp-20-ON7" secondAttribute="trailing" constant="32" id="2ct-uV-LHc"/>
-                            <constraint firstAttribute="trailing" secondItem="e98-f7-dmL" secondAttribute="trailing" constant="16" id="7mz-7y-I1M"/>
-                            <constraint firstItem="e98-f7-dmL" firstAttribute="centerX" secondItem="b3C-2i-4ZE" secondAttribute="centerX" id="8M7-i8-74S"/>
-                            <constraint firstItem="hon-fd-a8m" firstAttribute="centerX" secondItem="b3C-2i-4ZE" secondAttribute="centerX" id="CKD-LF-x0p"/>
-                            <constraint firstItem="e98-f7-dmL" firstAttribute="leading" secondItem="b3C-2i-4ZE" secondAttribute="leading" constant="16" id="Cgu-J9-0L0"/>
-                            <constraint firstItem="e98-f7-dmL" firstAttribute="centerY" secondItem="b3C-2i-4ZE" secondAttribute="centerY" id="hxS-5C-SCY"/>
-                            <constraint firstItem="vlB-oP-gKV" firstAttribute="trailing" secondItem="hon-fd-a8m" secondAttribute="trailing" constant="32" id="ik2-nc-qFK"/>
-                            <constraint firstItem="hon-fd-a8m" firstAttribute="centerY" secondItem="b3C-2i-4ZE" secondAttribute="centerY" multiplier="0.5" id="ksX-Ff-8Qg"/>
-                            <constraint firstItem="Ozp-20-ON7" firstAttribute="top" secondItem="hon-fd-a8m" secondAttribute="bottom" constant="16" id="lSY-IH-JK1"/>
-                            <constraint firstItem="vlB-oP-gKV" firstAttribute="bottom" secondItem="3Kk-0a-JpF" secondAttribute="bottom" constant="16" id="nue-au-B7Y"/>
-                            <constraint firstItem="vlB-oP-gKV" firstAttribute="trailing" secondItem="3Kk-0a-JpF" secondAttribute="trailing" constant="16" id="oSZ-Ti-Mhh"/>
-                            <constraint firstItem="3Kk-0a-JpF" firstAttribute="top" secondItem="e98-f7-dmL" secondAttribute="bottom" constant="8" id="rCu-SG-VJh"/>
-                            <constraint firstItem="hon-fd-a8m" firstAttribute="leading" secondItem="vlB-oP-gKV" secondAttribute="leading" constant="32" id="sBR-kt-ZAh"/>
-                            <constraint firstItem="3Kk-0a-JpF" firstAttribute="leading" secondItem="vlB-oP-gKV" secondAttribute="leading" constant="16" id="sc5-oC-xSc"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="vlB-oP-gKV"/>
-                    </view>
-                    <connections>
-                        <outlet property="termsTextView" destination="3Kk-0a-JpF" id="EeU-6A-fsU"/>
-                        <outlet property="usernameTextField" destination="6Ag-VH-45b" id="BhC-Ff-F3c"/>
-                        <segue destination="NHI-7U-5fT" kind="presentation" identifier="Login to Start" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7ts-Vt-JWd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ico-B1-RqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2608.6956521739135" y="-342.39130434782612"/>
+            <point key="canvasLocation" x="6166.666666666667" y="-342.39130434782612"/>
         </scene>
         <!--Roaster View Controller-->
         <scene sceneID="Fzb-qa-ea8">
@@ -1103,19 +754,10 @@ Specifically excluded from application to this Agreement is that law known as th
                                     <constraint firstAttribute="height" constant="230" id="YPb-3K-Ff7"/>
                                 </constraints>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eb6-Dk-jod">
-                                <rect key="frame" x="0.0" y="350" width="414" height="291"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BX3-ye-0e3" id="lib-qk-cSS"/>
-                                    <outlet property="delegate" destination="BX3-ye-0e3" id="812-DP-MqZ"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyQ-9d-OQJ">
-                                <rect key="frame" x="82" y="282" width="250" height="60"/>
+                                <rect key="frame" x="16" y="290" width="382" height="60"/>
                                 <color key="backgroundColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="6Fo-r4-WHH"/>
                                     <constraint firstAttribute="height" constant="60" id="aXb-HK-4Nv"/>
                                 </constraints>
                                 <state key="normal" title="Open in Apple/Google Maps">
@@ -1132,29 +774,6 @@ Specifically excluded from application to this Agreement is that law known as th
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anS-wv-KFd" userLabel="Compose View">
                                 <rect key="frame" x="0.0" y="637" width="414" height="50"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is your favourite thing to order here? :)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fiY-6Z-Viv">
-                                        <rect key="frame" x="8" y="8" width="348.66666666666669" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="send"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="ZMK-a5-n10" id="bGy-ps-acR"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nun-R3-zU4">
-                                        <rect key="frame" x="364.66666666666669" y="10" width="41.333333333333314" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Send">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sendButtonTapped:" destination="BX3-ye-0e3" eventType="touchUpInside" id="EHe-un-Euc"/>
-                                            <action selector="sendPressed:" destination="ZMK-a5-n10" eventType="touchUpInside" id="57z-S6-3fs"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UZU-W6-V3v"/>
@@ -1170,36 +789,25 @@ Specifically excluded from application to this Agreement is that law known as th
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="oyQ-9d-OQJ" firstAttribute="top" secondItem="8ff-e4-Lhf" secondAttribute="bottom" constant="16" id="4pH-KT-cyW"/>
                             <constraint firstItem="anS-wv-KFd" firstAttribute="trailing" secondItem="bet-Pu-NkN" secondAttribute="trailing" id="A80-JR-fFG"/>
-                            <constraint firstItem="oyQ-9d-OQJ" firstAttribute="top" secondItem="8ff-e4-Lhf" secondAttribute="bottom" constant="8" id="AxA-Ei-sN4"/>
-                            <constraint firstItem="bet-Pu-NkN" firstAttribute="bottom" secondItem="Eb6-Dk-jod" secondAttribute="bottom" constant="46" id="D6m-x0-UaS"/>
+                            <constraint firstItem="oyQ-9d-OQJ" firstAttribute="leading" secondItem="bet-Pu-NkN" secondAttribute="leading" constant="16" id="GEQ-TR-WWh"/>
                             <constraint firstItem="anS-wv-KFd" firstAttribute="bottom" secondItem="bet-Pu-NkN" secondAttribute="bottom" id="JUx-b0-8ax"/>
                             <constraint firstItem="anS-wv-KFd" firstAttribute="leading" secondItem="bet-Pu-NkN" secondAttribute="leading" id="S2v-no-yE1"/>
                             <constraint firstItem="oyQ-9d-OQJ" firstAttribute="centerX" secondItem="GDA-3B-VMl" secondAttribute="centerX" id="SLy-PK-7kB"/>
-                            <constraint firstItem="Eb6-Dk-jod" firstAttribute="leading" secondItem="bet-Pu-NkN" secondAttribute="leading" id="YQy-gz-p9d"/>
                             <constraint firstItem="Z3y-8E-lVx" firstAttribute="centerX" secondItem="8ff-e4-Lhf" secondAttribute="centerX" id="Z14-Wh-z3C"/>
-                            <constraint firstItem="Eb6-Dk-jod" firstAttribute="top" secondItem="oyQ-9d-OQJ" secondAttribute="bottom" constant="8" id="fT4-5j-dT4"/>
+                            <constraint firstItem="bet-Pu-NkN" firstAttribute="trailing" secondItem="oyQ-9d-OQJ" secondAttribute="trailing" constant="16" id="fxO-XY-Ipz"/>
                             <constraint firstItem="Z3y-8E-lVx" firstAttribute="centerY" secondItem="8ff-e4-Lhf" secondAttribute="centerY" id="hU3-WZ-390"/>
                             <constraint firstItem="8ff-e4-Lhf" firstAttribute="leading" secondItem="bet-Pu-NkN" secondAttribute="leading" id="hyZ-40-cLN"/>
                             <constraint firstItem="8ff-e4-Lhf" firstAttribute="trailing" secondItem="bet-Pu-NkN" secondAttribute="trailing" id="mNB-cl-y2y"/>
                             <constraint firstItem="8ff-e4-Lhf" firstAttribute="top" secondItem="bet-Pu-NkN" secondAttribute="top" id="qV3-Cs-UDN"/>
-                            <constraint firstItem="Eb6-Dk-jod" firstAttribute="trailing" secondItem="bet-Pu-NkN" secondAttribute="trailing" id="zX7-tE-g6J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bet-Pu-NkN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="31n-vW-Klf">
-                        <barButtonItem key="rightBarButtonItem" title="Report" id="bSr-7C-p3a">
-                            <connections>
-                                <segue destination="Zm3-sQ-R2Z" kind="show" id="Jaf-Uf-aHG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="31n-vW-Klf"/>
                     <connections>
-                        <outlet property="commentTextField" destination="fiY-6Z-Viv" id="cPG-xD-WdI"/>
                         <outlet property="heightConstraint" destination="UZU-W6-V3v" id="Qhr-5U-ega"/>
                         <outlet property="mapView" destination="8ff-e4-Lhf" id="CWh-WY-oIs"/>
-                        <outlet property="roasterCommentsTableView" destination="Eb6-Dk-jod" id="6j4-sd-TiP"/>
-                        <outlet property="sendButton" destination="Nun-R3-zU4" id="Yna-VL-txF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bH-1A-UyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1708,8 +1316,5 @@ Specifically excluded from application to this Agreement is that law known as th
         <image name="info_icon" width="29" height="29"/>
         <image name="roaster_icon" width="29" height="29"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Jaf-Uf-aHG"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
