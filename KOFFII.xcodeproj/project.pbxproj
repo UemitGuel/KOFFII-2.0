@@ -28,11 +28,9 @@
 		B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */; };
 		B367D58622D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58522D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift */; };
 		B367D58E22D502CD0069F4D0 /* CoffeePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58D22D502CD0069F4D0 /* CoffeePlacesViewController.swift */; };
-		B370A06D22D93200009C4CFA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370A06C22D93200009C4CFA /* Message.swift */; };
 		B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596C2370264500D1D6B9 /* MapFunctions.swift */; };
 		B377596F2370336600D1D6B9 /* FeatureButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */; };
 		B390EFC222D60F7300A931E9 /* CoffeePlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */; };
-		B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8C22CE0EAC003C5EDD /* User.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
 		B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5722C4F38B005848DA /* AppDelegate.swift */; };
 		B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5B22C4F38B005848DA /* Main.storyboard */; };
@@ -81,11 +79,9 @@
 		B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
 		B367D58522D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		B367D58D22D502CD0069F4D0 /* CoffeePlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePlacesViewController.swift; sourceTree = "<group>"; };
-		B370A06C22D93200009C4CFA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B377596C2370264500D1D6B9 /* MapFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFunctions.swift; sourceTree = "<group>"; };
 		B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureButtonFunctions.swift; sourceTree = "<group>"; };
 		B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePlacesTableViewCell.swift; sourceTree = "<group>"; };
-		B399DB8C22CE0EAC003C5EDD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "KOFFII/Supporting Files/User.swift"; sourceTree = SOURCE_ROOT; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
 		B3AA7E5422C4F38B005848DA /* KOFFII Cologne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KOFFII Cologne.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AA7E5722C4F38B005848DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,11 +190,9 @@
 		B385DA5D22C4FDD600BD8C88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B399DB8C22CE0EAC003C5EDD /* User.swift */,
 				B399DB8E22CE0FFA003C5EDD /* Information.swift */,
 				B367D58122D3A7250069F4D0 /* Complain.swift */,
 				B3C589E822D553C5002C03A8 /* Cafe.swift */,
-				B370A06C22D93200009C4CFA /* Message.swift */,
 				B310BF9B2369D1A20065318C /* Roastery.swift */,
 			);
 			path = Model;
@@ -474,7 +468,6 @@
 				B367D58022D39C810069F4D0 /* ComplainTableViewCell.swift in Sources */,
 				B310BFA02369DB460065318C /* RoasterDetailViewController.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
-				B370A06D22D93200009C4CFA /* Message.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
 				B367D58222D3A7250069F4D0 /* Complain.swift in Sources */,
 				B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */,
@@ -490,7 +483,6 @@
 				B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
 				B310BF9E2369D49A0065318C /* RoasterTableViewCell.swift in Sources */,
-				B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */,
 				B310BF982369BBC30065318C /* AddCoffeePlaceViewController.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,
 				B367D58E22D502CD0069F4D0 /* CoffeePlacesViewController.swift in Sources */,
