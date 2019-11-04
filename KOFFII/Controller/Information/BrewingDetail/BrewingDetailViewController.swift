@@ -11,8 +11,6 @@ class BrewingDetailViewController: UIViewController {
 
     var db: Firestore!
     var downloadedComplainObject: Complain?
-    let myGroup = DispatchGroup()
-    let myGrouptwo = DispatchGroup()
 
     var passedInformationBrewing: Information?
 
@@ -24,13 +22,9 @@ class BrewingDetailViewController: UIViewController {
         setupComplainButton()
     }
 
-    // MARK: - Setup Firebase/ViewController/TableViewHeader
-
     func setupFirebase() {
-        // [START setup]
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
-        // [END setup]
         db = Firestore.firestore()
     }
 
@@ -43,25 +37,10 @@ class BrewingDetailViewController: UIViewController {
         guard let imageName = passedInformationBrewing?.imageName else { return }
         headerImageView.image = UIImage(named: imageName)
     }
-
-    // MARK: - Setup Complain Buttons. After, downloading the right Complain-Model Object by checking which button is tapped(via tag) and which complainCategory("Coffee" or "Espresso") is choosen, and then the right document from Firestore is downloaded ( Collecton: Complain )
-
+    
     func setupComplainButton() {
         if let passedCategory = passedInformationBrewing?.complainCatgory {
             if passedCategory == "Coffee" {
-                db.collection("Complain").whereField("coffee", arrayContains: true)
-                    .getDocuments { querySnapshot, err in
-                        if let err = err {
-                            print("Error getting documents: \(err)")
-                        } else {
-                            var docIDs = [String]()
-                            self.myGroup.enter()
-                            for document in querySnapshot!.documents {
-                                self.myGroup.enter()
-                                docIDs.append(document.documentID)
-                            }
-                        }
-                    }
                 rightButton.setTitle("coffee too sour?", for: .normal)
                 leftButton.setTitle("coffee too bitter?", for: .normal)
             } else {
@@ -88,66 +67,39 @@ class BrewingDetailViewController: UIViewController {
             complainVC.passedComplainObject = downloadedComplainObject
         }
     }
+    
+    private func getDocumentsfor(complainCategory: String, completionHandler: @escaping (Complain) -> Void) {
+        let collectionRef = db.collection("Complain")
+        collectionRef.document(complainCategory).getDocument { document, _ in
+            if let complain = document.flatMap({
+                $0.data().flatMap { data in
+                    Complain(dictionary: data)
+                }
+            }) {
+                completionHandler(complain)
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
 
     func downloadComplainObject(senderTag: Int, complainCategory: String,
                                 completionHandler: @escaping (Complain) -> Void) {
-        var tempComplainObject: Complain?
-        let collectionRef = db.collection("Complain")
         if complainCategory == "Coffee", senderTag == 0 {
-            collectionRef.document("coffee too bitter?").getDocument { document, _ in
-                if let complain = document.flatMap({
-                    $0.data().flatMap { data in
-                        Complain(dictionary: data)
-                    }
-                }) {
-                    tempComplainObject = complain
-                    completionHandler(tempComplainObject!)
-
-                } else {
-                    print("Document does not exist")
-                }
+            getDocumentsfor(complainCategory: "coffee too bitter?") { complain in
+                completionHandler(complain)
             }
         } else if complainCategory == "Coffee", senderTag == 1 {
-            collectionRef.document("coffee too sour?").getDocument { document, _ in
-                if let complain = document.flatMap({
-                    $0.data().flatMap { data in
-                        Complain(dictionary: data)
-                    }
-                }) {
-                    tempComplainObject = complain
-                    completionHandler(tempComplainObject!)
-
-                } else {
-                    print("Document does not exist")
-                }
+            getDocumentsfor(complainCategory: "coffee too sour?") { complain in
+                completionHandler(complain)
             }
         } else if complainCategory == "Espresso", senderTag == 0 {
-            collectionRef.document("espresso too bitter?").getDocument { document, _ in
-                if let complain = document.flatMap({
-                    $0.data().flatMap { data in
-                        Complain(dictionary: data)
-                    }
-                }) {
-                    tempComplainObject = complain
-                    completionHandler(tempComplainObject!)
-
-                } else {
-                    print("Document does not exist")
-                }
+            getDocumentsfor(complainCategory: "espresso too bitter?") { complain in
+                completionHandler(complain)
             }
         } else if complainCategory == "Espresso", senderTag == 1 {
-            collectionRef.document("espresso too sour?").getDocument { document, _ in
-                if let complain = document.flatMap({
-                    $0.data().flatMap { data in
-                        Complain(dictionary: data)
-                    }
-                }) {
-                    tempComplainObject = complain
-                    completionHandler(tempComplainObject!)
-
-                } else {
-                    print("Document does not exist")
-                }
+            getDocumentsfor(complainCategory: "espresso too sour?") { complain in
+                completionHandler(complain)
             }
         }
     }
