@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 import CoreLocation
 
-class OpenMapDirection {
+class MapFunctions {
     func returnMapOptionsAlert(cafeName: String, latitude: Double, longitude: Double) -> UIAlertController {
         let coordinates = CLLocationCoordinate2D(latitude: latitude,
                                                  longitude: longitude)

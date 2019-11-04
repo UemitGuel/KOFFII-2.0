@@ -52,7 +52,7 @@ class CafeDetailViewController: UIViewController {
     @IBAction func openMapsButtonTapped(_ sender: UIButton) {
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude
-        let actionsheet = OpenMapDirection().returnMapOptionsAlert(cafeName: cafeName,
+        let actionsheet = MapFunctions().returnMapOptionsAlert(cafeName: cafeName,
                                                                    latitude: latitude,
                                                                    longitude: longitude)
         present(actionsheet, animated: true, completion: nil)
