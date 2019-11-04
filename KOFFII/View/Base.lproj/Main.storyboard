@@ -193,7 +193,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="wifiButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="11E-e7-q8T"/>
+                                                    <action selector="featureButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="uay-fg-SmS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGT-oj-GcI" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
@@ -215,7 +215,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="foodButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="z2g-ds-rGA"/>
+                                                    <action selector="featureButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="mI3-YX-Cbh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfw-YV-uQy" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
@@ -236,7 +236,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="veganButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="c8m-4B-KzF"/>
+                                                    <action selector="featureButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="jm0-As-Jz9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdk-sF-0UX" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
@@ -257,7 +257,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="cakeButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="Ljo-Yw-cHQ"/>
+                                                    <action selector="featureButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="371-eV-Xar"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af3-ef-nbw" customClass="RoundButton" customModule="KOFFII_Cologne" customModuleProvider="target">
@@ -278,7 +278,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="plugButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="eO5-aE-Eu9"/>
+                                                    <action selector="featureButtonTapped:" destination="8hJ-sQ-lT1" eventType="touchUpInside" id="bWh-It-Gp2"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -435,7 +435,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="openMapsButtonTapped:" destination="ZMK-a5-n10" eventType="touchUpInside" id="vZA-X9-uMK"/>
-                                    <action selector="toLocationButtonTapped:" destination="ZMK-a5-n10" eventType="touchUpInside" id="a2u-5f-1JD"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-01-jye">

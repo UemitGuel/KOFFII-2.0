@@ -24,17 +24,19 @@ class CafeDetailViewController: UIViewController {
     @IBOutlet var plugButton: RoundButton!
     @IBOutlet var plugLabel: UILabel!
 
-    @IBOutlet var messageTextField: UITextField!
     @IBOutlet var heightConstraint: NSLayoutConstraint!
-
-    @IBOutlet var sendButton: UIButton!
-
+    
     var db: Firestore!
     let myGroup = DispatchGroup()
 
-    var cityName = "Cologne"
     var passedCafeObject: Cafe?
     let regionRadius: CLLocationDistance = 1000
+    var cafeName: String { return passedCafeObject?.name ?? "" }
+    var location: CLLocation {
+        let latitude = passedCafeObject?.latitude ?? 0
+        let longitude = passedCafeObject?.longitude ?? 0
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,94 +45,17 @@ class CafeDetailViewController: UIViewController {
         activateButtons()
 
         // set map
-        let location = CLLocation(latitude: passedCafeObject?.latitude ?? 0,
-                                  longitude: passedCafeObject?.longitude ?? 0)
         centerMapOnLocation(location: location)
-
         title = passedCafeObject?.name
     }
     
     @IBAction func openMapsButtonTapped(_ sender: UIButton) {
-        let actionSheet = UIAlertController(title: "Open Location",
-                                            message: "How you want to open?",
-                                            preferredStyle: .actionSheet)
-        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-
-        let splitetStringName = passedCafeObject?.name.components(separatedBy: " ")
-        guard let nameJoined = splitetStringName!
-            .joined(separator: "+")
-            .addingPercentEncoding(withAllowedCharacters:
-                .urlHostAllowed)
-        else {
-            fatalError("Hotelname not found")
-        }
-        let latitude = String(format: "%.6f", (passedCafeObject?.latitude)!)
-        let longitude = String(format: "%.6f", (passedCafeObject?.longitude)!)
-
-        // Google Maps
-        let actionGoogleMaps = UIAlertAction(title: "Google Maps", style: .default) { _ in
-
-            if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
-                // ?q=Pizza&center=37.759748,-122.427135
-                let url = URL(string: "comgooglemaps://?daddr=\(nameJoined)&center=\(latitude),\(longitude)")!
-                print(url)
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                print("Can't use comgooglemaps://")
-            }
-        }
-        // Apple Maps
-        let actionAppleMaps = UIAlertAction(title: "Apple Maps", style: .default) { _ in
-            let coreUrl = "http://maps.apple.com/?"
-            guard let url = URL(string: coreUrl +
-                "q=\(nameJoined)&sll=" +
-                latitude + "," + longitude +
-                "&t=s")
-            else {
-                return print("error")
-            }
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
-        actionSheet.addAction(actionGoogleMaps)
-        actionSheet.addAction(actionAppleMaps)
-        actionSheet.addAction(actionCancel)
-        present(actionSheet, animated: true, completion: nil)
-    }
-    
-    
-
-    // Both objc functions are handling the kayboard when typing in a message.
-    @objc func keyboardWillShow(_noti: NSNotification) {
-        let keyBoard = _noti.userInfo
-        let keyBoardValue = keyBoard![UIResponder.keyboardFrameEndUserInfoKey]
-        let fram = keyBoardValue as? CGRect // this is frame
-
-        // Identify Iphone X Familiy because of different keyboard heights..
-        var hasTopNotch: Bool {
-            if #available(iOS 11.0, tvOS 11.0, *) {
-                return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
-            }
-            return false
-        }
-
-        UIView.animate(withDuration: 0.5) {
-            if hasTopNotch {
-                self.heightConstraint.constant = fram!.height + 16
-            } else {
-                self.heightConstraint.constant = fram!.height + 50
-            }
-            self.view.layoutIfNeeded()
-            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
-            self.tableView.setContentOffset(scrollPoint, animated: false)
-        }
-    }
-
-    @objc func keyboardWillHide(_noti _: NSNotification) {
-        UIView.animate(withDuration: 0.5) {
-            self.heightConstraint.constant = 50
-            self.view.layoutIfNeeded()
-            self.tableView.setContentOffset(.zero, animated: false)
-        }
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        let actionsheet = OpenMapDirection().returnMapOptionsAlert(cafeName: cafeName,
+                                                                   latitude: latitude,
+                                                                   longitude: longitude)
+        present(actionsheet, animated: true, completion: nil)
     }
 
     func setupFirebase() {
@@ -139,11 +64,6 @@ class CafeDetailViewController: UIViewController {
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
-    }
-
-    // So the keyboard disappears when there is a click outside the textfield
-    @objc func tableViewTapped() {
-        messageTextField.endEditing(true)
     }
 
     // which buttons have to be highlighted (depending on the data in firestore)
@@ -180,52 +100,5 @@ class CafeDetailViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         map.setRegion(coordinateRegion, animated: true)
-    }
-
-    @IBAction func toLocationButtonTapped(_: UIButton) {
-        let actionSheet = UIAlertController(title: "Open Location",
-                                            message: "How you want to open?",
-                                            preferredStyle: .actionSheet)
-        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-
-        let splitetStringName = passedCafeObject?.name.components(separatedBy: " ")
-        guard let nameJoined = splitetStringName!
-            .joined(separator: "+")
-            .addingPercentEncoding(withAllowedCharacters:
-                .urlHostAllowed)
-        else {
-            fatalError("Hotelname not found")
-        }
-        let latitude = String(format: "%.6f", (passedCafeObject?.latitude)!)
-        let longitude = String(format: "%.6f", (passedCafeObject?.longitude)!)
-
-        // Google Maps
-        let actionGoogleMaps = UIAlertAction(title: "Google Maps", style: .default) { _ in
-
-            if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
-                // ?q=Pizza&center=37.759748,-122.427135
-                let url = URL(string: "comgooglemaps://?daddr=\(nameJoined)&center=\(latitude),\(longitude)")!
-                print(url)
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                print("Can't use comgooglemaps://")
-            }
-        }
-        // Apple Maps
-        let actionAppleMaps = UIAlertAction(title: "Apple Maps", style: .default) { _ in
-            let coreUrl = "http://maps.apple.com/?"
-            guard let url = URL(string: coreUrl +
-                "q=\(nameJoined)&sll=" +
-                latitude + "," + longitude +
-                "&t=s")
-            else {
-                return print("error")
-            }
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
-        actionSheet.addAction(actionGoogleMaps)
-        actionSheet.addAction(actionAppleMaps)
-        actionSheet.addAction(actionCancel)
-        present(actionSheet, animated: true, completion: nil)
     }
 }

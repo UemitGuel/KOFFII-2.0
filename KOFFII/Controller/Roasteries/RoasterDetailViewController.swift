@@ -67,7 +67,6 @@ class RoasterDetailViewController: UIViewController {
             if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
                 // ?q=Pizza&center=37.759748,-122.427135
                 let url = URL(string: "comgooglemaps://?daddr=\(nameJoined)&center=\(latitude),\(longitude)&\(modeGM)")!
-                print(url)
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
                 print("Can't use comgooglemaps://")

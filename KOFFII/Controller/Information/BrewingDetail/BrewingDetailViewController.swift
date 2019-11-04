@@ -100,7 +100,6 @@ class BrewingDetailViewController: UIViewController {
                         Complain(dictionary: data)
                     }
                 }) {
-//                    print("Complain: \(complain)")
                     tempComplainObject = complain
                     completionHandler(tempComplainObject!)
 
@@ -115,7 +114,6 @@ class BrewingDetailViewController: UIViewController {
                         Complain(dictionary: data)
                     }
                 }) {
-//                    print("Complain: \(complain)")
                     tempComplainObject = complain
                     completionHandler(tempComplainObject!)
 
@@ -130,7 +128,6 @@ class BrewingDetailViewController: UIViewController {
                         Complain(dictionary: data)
                     }
                 }) {
-//                    print("Complain: \(complain)")
                     tempComplainObject = complain
                     completionHandler(tempComplainObject!)
 
@@ -145,7 +142,6 @@ class BrewingDetailViewController: UIViewController {
                         Complain(dictionary: data)
                     }
                 }) {
-//                    print("Complain: \(complain)")
                     tempComplainObject = complain
                     completionHandler(tempComplainObject!)
 

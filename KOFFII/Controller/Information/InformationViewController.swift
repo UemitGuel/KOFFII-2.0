@@ -79,7 +79,6 @@ class InformationViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-//                    print("\(document.documentID) => \(document.data())")
                     tempDocIDs.append(document.documentID)
                 }
                 completionHandler(tempDocIDs)

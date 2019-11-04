@@ -35,23 +35,14 @@ class RoasterViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    let d = document.data()
-                    guard let roastery = Roastery(dictionary: d) else { return }
+                    let data = document.data()
+                    guard let roastery = Roastery(dictionary: data) else { return }
                     self.roasteries.append(roastery)
                 }
                 completionHandler(self.roasteries)
             }
         }
     }
-
-//    for document in querySnapshot!.documents {
-//        let d = document.data()
-//        guard let cafe = Cafe(dictionary: d) else { return }
-//        print("add cafe \(cafe)")
-//        cafeArray.append(cafe)
-//    }
-//    completionHandler(cafeArray)
 }
 
 extension RoasterViewController: UITableViewDataSource {

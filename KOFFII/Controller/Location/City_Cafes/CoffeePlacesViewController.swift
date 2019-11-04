@@ -13,41 +13,40 @@ enum Features {
 }
 
 class CoffeePlacesViewController: UIViewController {
-
+    
     @IBOutlet var tableView: UITableView!
-
+    
     @IBOutlet var wifiButton: RoundButton!
     @IBOutlet var wifiLabel: UILabel!
-
+    
     @IBOutlet var foodButton: RoundButton!
     @IBOutlet var foodLabel: UILabel!
-
+    
     @IBOutlet var veganButton: RoundButton!
     @IBOutlet var veganLabel: UILabel!
-
+    
     @IBOutlet var cakeButton: RoundButton!
     @IBOutlet var cakeLabel: UILabel!
-
+    
     @IBOutlet var plugButton: RoundButton!
     @IBOutlet var plugLabel: UILabel!
-
+    
     var db: Firestore!
     let myGroup = DispatchGroup()
-
+    
     let buttonTappedColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
     let quicksandMediumFont = UIFont(name: "Quicksand-Medium", size: 15)
     let quicksandBoldFont = UIFont(name: "Quicksand-Bold", size: 15)
-
+    
     var cafeObjects = [Cafe]()
     var filteredCafeObjects = [Cafe]()
     var requestedFeatures: [Features] = []
-    var passedCityName = String()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
         setupViewController()
-
+        
         downloadCafes { cafeArray in
             self.cafeObjects = cafeArray
             self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name })
@@ -55,7 +54,7 @@ class CoffeePlacesViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-
+    
     func setupFirebase() {
         // [START setup]
         let settings = FirestoreSettings()
@@ -63,12 +62,12 @@ class CoffeePlacesViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
     }
-
+    
     func setupViewController() {
         // eliminate 1pt line
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
-
+    
     func downloadCafes(completionHandler: @escaping ([Cafe]) -> Void) {
         var cafeArray: [Cafe] = []
         db.collection("City").document("Cologne")
@@ -80,12 +79,28 @@ class CoffeePlacesViewController: UIViewController {
                     for document in querySnapshot!.documents {
                         let data = document.data()
                         guard let cafe = Cafe(dictionary: data) else { return }
-                        print("add cafe \(cafe)")
                         cafeArray.append(cafe)
                     }
                     completionHandler(cafeArray)
                 }
-            }
+        }
+    }
+    
+    @IBAction func featureButtonTapped(_ sender: UIButton) {
+        switch sender {
+        case wifiButton:
+            handleButtonTap(feature: .wifi, button: wifiButton, label: wifiLabel)
+        case foodButton:
+            handleButtonTap(feature: .food, button: foodButton, label: foodLabel)
+        case veganButton:
+            handleButtonTap(feature: .vegan, button: veganButton, label: veganLabel)
+        case cakeButton:
+            handleButtonTap(feature: .cake, button: cakeButton, label: cakeLabel)
+        case plugButton:
+            handleButtonTap(feature: .plug, button: plugButton, label: plugLabel)
+        default:
+            break
+        }
     }
     
     private func handleButtonTap(feature: Features, button: RoundButton, label: UILabel) {
@@ -94,7 +109,6 @@ class CoffeePlacesViewController: UIViewController {
             button.customBGColor = buttonTappedColor
             button.borderWidth = 2
             label.font = quicksandBoldFont
-
             filtering()
             tableView.reloadData()
         } else {
@@ -102,39 +116,16 @@ class CoffeePlacesViewController: UIViewController {
             button.customBGColor = .white
             button.borderWidth = 1
             label.font = quicksandMediumFont
-
             filtering()
             tableView.reloadData()
         }
     }
     
-
-    // Handling what happens when Feature Buttons get clicked
-    @IBAction func wifiButtonTapped(_: UIButton) {
-        handleButtonTap(feature: .wifi, button: wifiButton, label: wifiLabel)
-    }
-
-    @IBAction func foodButtonTapped(_: UIButton) {
-        handleButtonTap(feature: .food, button: foodButton, label: foodLabel)
-    }
-
-    @IBAction func veganButtonTapped(_: UIButton) {
-        handleButtonTap(feature: .vegan, button: veganButton, label: veganLabel)
-    }
-
-    @IBAction func cakeButtonTapped(_: UIButton) {
-        handleButtonTap(feature: .cake, button: cakeButton, label: cakeLabel)
-    }
-
-    @IBAction func plugButtonTapped(_: UIButton) {
-        handleButtonTap(feature: .plug, button: plugButton, label: plugLabel)
-    }
-
     // Active Filtering, if feature buttons are clicked
     func isFiltering() -> Bool {
         return !requestedFeatures.isEmpty
     }
-
+    
     func filtering() {
         filteredCafeObjects = cafeObjects
         if requestedFeatures.contains(.wifi) {
@@ -163,11 +154,11 @@ extension CoffeePlacesViewController: UITableViewDataSource {
             return cafeObjects.count
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoffeePLacesTableViewCell", for: indexPath) as! CoffeePlacesTableViewCell
         cell.selectionStyle = .none
-
+        
         if isFiltering() {
             cell.cafeNameLabel.text = filteredCafeObjects[indexPath.row].name
         } else {
@@ -181,15 +172,15 @@ extension CoffeePlacesViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 93
     }
-
+    
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
         performSegue(withIdentifier: "fromCitytoDetailSegue", sender: self)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == "fromCitytoDetailSegue" {
             let cityDetailVC = segue.destination as! CafeDetailViewController
-
+            
             if let indexPath = tableView.indexPathForSelectedRow {
                 if isFiltering() {
                     cityDetailVC.passedCafeObject = filteredCafeObjects[indexPath.row]
