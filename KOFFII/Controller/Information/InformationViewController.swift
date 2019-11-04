@@ -16,30 +16,20 @@ class InformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
-
-        // MARK: Loading Content from FireStore
-
         SVProgressHUD.show()
-        loadAllObjects(fromCollection: "Information_Brewing") { array in
-            self.items.append(array)
-            self.loadAllObjects(fromCollection: "Information_Knowledge") { array in
-                self.items.append(array)
-                self.tableView.reloadData()
-                SVProgressHUD.dismiss()
-            }
+        loadInformationObjects { _ in
+            self.tableView.reloadData()
+            SVProgressHUD.dismiss()
         }
     }
 
     func setupFirebase() {
-        // [START setup]
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
-        // [END setup]
         db = Firestore.firestore()
     }
 
     // MARK: - Handling the appearence and disappearnce of the Navigation and Tabbar
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -50,61 +40,45 @@ class InformationViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
-    /* MARK: - Neccessary Functions for Downloading the Objects from the Firestore Server. First we downloading all the DocIDs from a collection. Then we use the IDs to download the data for every Document and put it in the right DataModel */
-
-    func loadAllObjects(fromCollection: String, completionHandler: @escaping ([Information]) -> Void) {
-        var tempInformation = [Information]()
-        getAllDocumentIDs(fromCollection: fromCollection) { ids in
-            for id in ids {
-                self.myGroup.enter()
-                self.useDocumentIDToRetrieveObject(fromCollection: fromCollection, id: id,
-                                                   completionHandler: { object in
-                                                       tempInformation.append(object)
-                                                       self.myGroup.leave()
-                })
-            }
-            self.myGroup.notify(queue: .main) {
-                print("Finished all requests.")
-                completionHandler(tempInformation)
-            }
-        }
-    }
-
-    func getAllDocumentIDs(fromCollection: String, completionHandler: @escaping ([String]) -> Void) {
-        var tempDocIDs = [String]()
-        let docRef = db.collection(fromCollection)
-        docRef.getDocuments { querySnapshot, err in
+    
+    private func loadInformationObjects(completionHandler: @escaping ([[Information]]) -> Void) {
+        let brewingRef = db.collection("Information_Brewing")
+        let knowledgeRef = db.collection("Information_Knowledge")
+        myGroup.enter()
+        brewingRef.getDocuments { querySnapshot, err in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    tempDocIDs.append(document.documentID)
+                    let data = document.data()
+                    guard let inforation = Information(dictionary: data) else { return }
+                    self.informationBrew.append(inforation)
+                    
                 }
-                completionHandler(tempDocIDs)
+                self.myGroup.leave()
             }
         }
-    }
-
-    func useDocumentIDToRetrieveObject(fromCollection: String, id: String,
-                                       completionHandler: @escaping (Information) -> Void) {
-        let docRef = db.collection(fromCollection).document(id)
-
-        docRef.getDocument { document, _ in
-            if let information = document.flatMap({
-                $0.data().flatMap { data in
-                    Information(dictionary: data)
-                }
-            }) {
-                completionHandler(information)
+        myGroup.enter()
+        knowledgeRef.getDocuments { querySnapshot, err in
+            if let err = err {
+                print("Error getting documents: \(err)")
             } else {
-                print("Document does not exist")
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    guard let inforation = Information(dictionary: data) else { return }
+                    self.informationKnow.append(inforation)
+                }
+                self.myGroup.leave()
             }
+        }
+        self.myGroup.notify(queue: .main) {
+            print("Finished all requests.")
+            self.items.append(self.informationBrew)
+            self.items.append(self.informationKnow)
+            completionHandler(self.items)
         }
     }
 }
-
-// MARK: - DataSource, Delegate
 
 extension InformationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
