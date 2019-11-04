@@ -140,7 +140,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B309008022D796A500DE7662 /* City_Cafes */ = {
+		B309008022D796A500DE7662 /* Cafes */ = {
 			isa = PBXGroup;
 			children = (
 				B367D58D22D502CD0069F4D0 /* CoffeePlacesViewController.swift */,
@@ -148,7 +148,7 @@
 				B310BF972369BBC30065318C /* AddCoffeePlaceViewController.swift */,
 				B32E9410236EF190005E3603 /* SettingsViewController.swift */,
 			);
-			path = City_Cafes;
+			path = Cafes;
 			sourceTree = "<group>";
 		};
 		B310BFA12369DBEB0065318C /* Roasteries */ = {
@@ -194,7 +194,7 @@
 		B367D58822D4F2D10069F4D0 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				B309008022D796A500DE7662 /* City_Cafes */,
+				B309008022D796A500DE7662 /* Cafes */,
 				B3BCACD722D8D3F000A4FEDF /* CafeDetail */,
 			);
 			path = Location;
@@ -238,11 +238,11 @@
 				B34335C522C504ED006CDBC1 /* Fonts */,
 				B3AA7E5722C4F38B005848DA /* AppDelegate.swift */,
 				B316F618236984FA00D6BADF /* RoundButton.swift */,
+				B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */,
 				B377596C2370264500D1D6B9 /* MapFunctions.swift */,
 				B3AA7E5E22C4F38C005848DA /* Assets.xcassets */,
 				B3AA7E6322C4F38C005848DA /* Info.plist */,
 				B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */,
-				B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

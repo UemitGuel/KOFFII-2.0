@@ -61,7 +61,7 @@ class CafeDetailViewController: UIViewController {
     
     // which buttons have to be highlighted (depending on the data in firestore)
     func highlightButtons() {
-        let featureBF = FeatureButttonFunctions()
+        let featureBF = FeatureButtonFunctions()
         featureBF.features = features
         featureBF.highlightSingleButton(featureAsString: "wifi", button: wifiButton, label: wifiLabel)
         featureBF.highlightSingleButton(featureAsString: "food", button: foodButton, label: foodLabel)

@@ -34,13 +34,9 @@ class CoffeePlacesViewController: UIViewController {
     var db: Firestore!
     let myGroup = DispatchGroup()
     
-    let buttonTappedColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
-    let quicksandMediumFont = UIFont(name: "Quicksand-Medium", size: 15)
-    let quicksandBoldFont = UIFont(name: "Quicksand-Bold", size: 15)
-    
     var cafeObjects = [Cafe]()
     var filteredCafeObjects = [Cafe]()
-    var requestedFeatures: [Features] = []
+    var userRequestedFeatures: [Features] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,60 +83,50 @@ class CoffeePlacesViewController: UIViewController {
     }
     
     @IBAction func featureButtonTapped(_ sender: UIButton) {
+        let featureBF = FeatureButtonFunctions()
         switch sender {
         case wifiButton:
-            handleButtonTap(feature: .wifi, button: wifiButton, label: wifiLabel)
+            featureBF.handleButtonTap(userRequestedFeatures: &userRequestedFeatures,
+                                      feature: .wifi, button: wifiButton, label: wifiLabel)
         case foodButton:
-            handleButtonTap(feature: .food, button: foodButton, label: foodLabel)
+            featureBF.handleButtonTap(userRequestedFeatures: &userRequestedFeatures,
+                                      feature: .food, button: foodButton, label: foodLabel)
         case veganButton:
-            handleButtonTap(feature: .vegan, button: veganButton, label: veganLabel)
+            featureBF.handleButtonTap(userRequestedFeatures: &userRequestedFeatures,
+                                      feature: .vegan, button: veganButton, label: veganLabel)
         case cakeButton:
-            handleButtonTap(feature: .cake, button: cakeButton, label: cakeLabel)
+            featureBF.handleButtonTap(userRequestedFeatures: &userRequestedFeatures,
+                                      feature: .cake, button: cakeButton, label: cakeLabel)
         case plugButton:
-            handleButtonTap(feature: .plug, button: plugButton, label: plugLabel)
+            featureBF.handleButtonTap(userRequestedFeatures: &userRequestedFeatures,
+                                      feature: .plug, button: plugButton, label: plugLabel)
         default:
             break
         }
-    }
-    
-    private func handleButtonTap(feature: Features, button: RoundButton, label: UILabel) {
-        if !requestedFeatures.contains(feature) {
-            requestedFeatures.append(feature)
-            button.customBGColor = buttonTappedColor
-            button.borderWidth = 2
-            label.font = quicksandBoldFont
-            filtering()
-            tableView.reloadData()
-        } else {
-            requestedFeatures = requestedFeatures.filter{ $0 != feature }
-            button.customBGColor = .white
-            button.borderWidth = 1
-            label.font = quicksandMediumFont
-            filtering()
-            tableView.reloadData()
-        }
+        filtering()
+        tableView.reloadData()
     }
     
     // Active Filtering, if feature buttons are clicked
     func isFiltering() -> Bool {
-        return !requestedFeatures.isEmpty
+        return !userRequestedFeatures.isEmpty
     }
     
     func filtering() {
         filteredCafeObjects = cafeObjects
-        if requestedFeatures.contains(.wifi) {
+        if userRequestedFeatures.contains(.wifi) {
             filteredCafeObjects = filteredCafeObjects.filter { $0.features!["wifi"] == true }
         }
-        if requestedFeatures.contains(.food) {
+        if userRequestedFeatures.contains(.food) {
             filteredCafeObjects = filteredCafeObjects.filter { $0.features!["food"] == true }
         }
-        if requestedFeatures.contains(.vegan) {
+        if userRequestedFeatures.contains(.vegan) {
             filteredCafeObjects = filteredCafeObjects.filter { $0.features!["vegan"] == true }
         }
-        if requestedFeatures.contains(.cake) {
+        if userRequestedFeatures.contains(.cake) {
             filteredCafeObjects = filteredCafeObjects.filter { $0.features!["cake"] == true }
         }
-        if requestedFeatures.contains(.plug) {
+        if userRequestedFeatures.contains(.plug) {
             filteredCafeObjects = filteredCafeObjects.filter { $0.features!["plugin"] == true }
         }
     }
