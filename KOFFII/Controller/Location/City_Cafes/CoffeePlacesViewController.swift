@@ -87,74 +87,47 @@ class CoffeePlacesViewController: UIViewController {
                 }
             }
     }
+    
+    private func handleButtonTap(feature: Features, button: RoundButton, label: UILabel) {
+        if !requestedFeatures.contains(feature) {
+            requestedFeatures.append(feature)
+            button.customBGColor = buttonTappedColor
+            button.borderWidth = 2
+            label.font = quicksandBoldFont
+
+            filtering()
+            tableView.reloadData()
+        } else {
+            requestedFeatures = requestedFeatures.filter{ $0 != feature }
+            button.customBGColor = .white
+            button.borderWidth = 1
+            label.font = quicksandMediumFont
+
+            filtering()
+            tableView.reloadData()
+        }
+    }
+    
 
     // Handling what happens when Feature Buttons get clicked
     @IBAction func wifiButtonTapped(_: UIButton) {
-        if !requestedFeatures.contains(.wifi) {
-            requestedFeatures.append(.wifi)
-            buttonTappedAction(button: wifiButton, label: wifiLabel)
-        } else {
-            requestedFeatures = requestedFeatures.filter { $0 != .wifi }
-            buttonUnTappedAction(button: wifiButton, label: wifiLabel)
-        }
+        handleButtonTap(feature: .wifi, button: wifiButton, label: wifiLabel)
     }
 
     @IBAction func foodButtonTapped(_: UIButton) {
-        if !requestedFeatures.contains(.food) {
-            requestedFeatures.append(.food)
-            buttonTappedAction(button: foodButton, label: foodLabel)
-        } else {
-            requestedFeatures = requestedFeatures.filter { $0 != .food }
-            buttonUnTappedAction(button: foodButton, label: foodLabel)
-        }
+        handleButtonTap(feature: .food, button: foodButton, label: foodLabel)
     }
 
     @IBAction func veganButtonTapped(_: UIButton) {
-        if !requestedFeatures.contains(.vegan) {
-            requestedFeatures.append(.vegan)
-            buttonTappedAction(button: veganButton, label: veganLabel)
-        } else {
-            requestedFeatures = requestedFeatures.filter { $0 != .vegan }
-            buttonUnTappedAction(button: veganButton, label: veganLabel)
-        }
+        handleButtonTap(feature: .vegan, button: veganButton, label: veganLabel)
     }
 
     @IBAction func cakeButtonTapped(_: UIButton) {
-        if !requestedFeatures.contains(.cake) {
-            requestedFeatures.append(.cake)
-            buttonTappedAction(button: cakeButton, label: cakeLabel)
-        } else {
-            requestedFeatures = requestedFeatures.filter { $0 != .cake }
-            buttonUnTappedAction(button: cakeButton, label: cakeLabel)
-        }
+        handleButtonTap(feature: .cake, button: cakeButton, label: cakeLabel)
     }
 
     @IBAction func plugButtonTapped(_: UIButton) {
-        if !requestedFeatures.contains(.plug) {
-            requestedFeatures.append(.plug)
-            buttonTappedAction(button: plugButton, label: plugLabel)
-        } else {
-            requestedFeatures = requestedFeatures.filter { $0 != .plug }
-            buttonUnTappedAction(button: plugButton, label: plugLabel)
-        }
-    }
-
-    private func buttonTappedAction(button: RoundButton, label: UILabel) {
-        button.customBGColor = buttonTappedColor
-        button.borderWidth = 2
-        label.font = quicksandBoldFont
-
-        filtering()
-        tableView.reloadData()
-    }
-    
-    private func buttonUnTappedAction(button: RoundButton, label: UILabel) {
-        button.customBGColor = .white
-        button.borderWidth = 1
-        label.font = quicksandMediumFont
-
-        filtering()
-        tableView.reloadData()
+        handleButtonTap(feature: .plug, button: plugButton, label: plugLabel)
     }
 
     // Active Filtering, if feature buttons are clicked
