@@ -39,7 +39,13 @@ class CafeDetailViewController: UIViewController {
         setupFirebase()
         highlightButtons()
         MapFunctions().centerMapOnLocation(map: map, location: location)
-        title = passedCafeObject?.name
+        title = cafeName
+    }
+    
+    func setupFirebase() {
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
     }
     
     @IBAction func openMapsButtonTapped(_ sender: UIButton) {
@@ -49,14 +55,6 @@ class CafeDetailViewController: UIViewController {
                                                                    latitude: latitude,
                                                                    longitude: longitude)
         present(actionsheet, animated: true, completion: nil)
-    }
-
-    func setupFirebase() {
-        // [START setup]
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        // [END setup]
-        db = Firestore.firestore()
     }
     
     // which buttons have to be highlighted (depending on the data in firestore)

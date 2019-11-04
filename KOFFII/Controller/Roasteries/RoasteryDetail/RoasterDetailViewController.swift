@@ -5,10 +5,8 @@ import UIKit
 
 class RoasterDetailViewController: UIViewController {
     @IBOutlet var map: MKMapView!
-    @IBOutlet var heightConstraint: NSLayoutConstraint!
 
     var passedRoastery: Roastery?
-    let regionRadius: CLLocationDistance = 1000
     var roasteryName: String { return passedRoastery?.name ?? "" }
     var location: CLLocation {
         let latitude = passedRoastery?.latitude ?? 0
@@ -22,15 +20,13 @@ class RoasterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirebase()
-        title = passedRoastery?.name
+        title = roasteryName
         MapFunctions().centerMapOnLocation(map: map, location: location)
     }
 
     func setupFirebase() {
-        // [START setup]
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
-        // [END setup]
         db = Firestore.firestore()
     }
 

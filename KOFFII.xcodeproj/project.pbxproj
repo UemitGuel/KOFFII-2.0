@@ -15,8 +15,6 @@
 		B310BF9E2369D49A0065318C /* RoasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9D2369D49A0065318C /* RoasterTableViewCell.swift */; };
 		B310BFA02369DB460065318C /* RoasterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9F2369DB460065318C /* RoasterDetailViewController.swift */; };
 		B316F619236984FA00D6BADF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F618236984FA00D6BADF /* RoundButton.swift */; };
-		B32E9411236EF190005E3603 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E9410236EF190005E3603 /* SettingsViewController.swift */; };
-		B32E9413236F0155005E3603 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E9412236F0155005E3603 /* ReportViewController.swift */; };
 		B32E941B236F34C7005E3603 /* KOFFII_CologneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E941A236F34C7005E3603 /* KOFFII_CologneUITests.swift */; };
 		B32E9423236F3689005E3603 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E9422236F3689005E3603 /* SnapshotHelper.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
@@ -41,8 +39,6 @@
 		B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5E22C4F38C005848DA /* Assets.xcassets */; };
 		B3AA7E6222C4F38C005848DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6022C4F38C005848DA /* LaunchScreen.storyboard */; };
 		B3AA7E6A22C4F877005848DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */; };
-		B3BCACDA22D8D7B800A4FEDF /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */; };
-		B3BCACDB22D8D7B800A4FEDF /* CustomMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */; };
 		B3C589E922D553C5002C03A8 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C589E822D553C5002C03A8 /* Cafe.swift */; };
 		B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ECA22D0C371002DF68C /* BrewingDetailViewController.swift */; };
 		B3F62ED322D0C8FF002DF68C /* InformationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ED222D0C8FF002DF68C /* InformationDetailTableViewCell.swift */; };
@@ -70,8 +66,6 @@
 		B310BF9D2369D49A0065318C /* RoasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterTableViewCell.swift; sourceTree = "<group>"; };
 		B310BF9F2369DB460065318C /* RoasterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetailViewController.swift; sourceTree = "<group>"; };
 		B316F618236984FA00D6BADF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		B32E9410236EF190005E3603 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		B32E9412236F0155005E3603 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B32E9418236F34C7005E3603 /* KOFFII CologneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KOFFII CologneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32E941A236F34C7005E3603 /* KOFFII_CologneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOFFII_CologneUITests.swift; sourceTree = "<group>"; };
 		B32E941C236F34C7005E3603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,8 +94,6 @@
 		B3AA7E6122C4F38C005848DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3AA7E6322C4F38C005848DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
-		B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMessageCell.xib; sourceTree = "<group>"; };
 		B3C589E822D553C5002C03A8 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		B3F62ECA22D0C371002DF68C /* BrewingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingDetailViewController.swift; sourceTree = "<group>"; };
 		B3F62ED222D0C8FF002DF68C /* InformationDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,23 +132,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B309008022D796A500DE7662 /* Cafes */ = {
-			isa = PBXGroup;
-			children = (
-				B367D58D22D502CD0069F4D0 /* CoffeePlacesViewController.swift */,
-				B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */,
-				B310BF972369BBC30065318C /* AddCoffeePlaceViewController.swift */,
-				B32E9410236EF190005E3603 /* SettingsViewController.swift */,
-			);
-			path = Cafes;
-			sourceTree = "<group>";
-		};
 		B310BFA12369DBEB0065318C /* Roasteries */ = {
 			isa = PBXGroup;
 			children = (
 				B310BF992369D02B0065318C /* RoasterViewController.swift */,
 				B310BF9D2369D49A0065318C /* RoasterTableViewCell.swift */,
-				B310BF9F2369DB460065318C /* RoasterDetailViewController.swift */,
+				B37759722370504C00D1D6B9 /* RoasteryDetail */,
 			);
 			path = Roasteries;
 			sourceTree = "<group>";
@@ -191,13 +172,23 @@
 			path = KnowledgeDetail;
 			sourceTree = "<group>";
 		};
-		B367D58822D4F2D10069F4D0 /* Location */ = {
+		B367D58822D4F2D10069F4D0 /* Coffee Places */ = {
 			isa = PBXGroup;
 			children = (
-				B309008022D796A500DE7662 /* Cafes */,
+				B367D58D22D502CD0069F4D0 /* CoffeePlacesViewController.swift */,
+				B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */,
+				B310BF972369BBC30065318C /* AddCoffeePlaceViewController.swift */,
 				B3BCACD722D8D3F000A4FEDF /* CafeDetail */,
 			);
-			path = Location;
+			path = "Coffee Places";
+			sourceTree = "<group>";
+		};
+		B37759722370504C00D1D6B9 /* RoasteryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B310BF9F2369DB460065318C /* RoasterDetailViewController.swift */,
+			);
+			path = RoasteryDetail;
 			sourceTree = "<group>";
 		};
 		B385DA5D22C4FDD600BD8C88 /* Model */ = {
@@ -225,7 +216,7 @@
 		B385DA5F22C4FDE700BD8C88 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B367D58822D4F2D10069F4D0 /* Location */,
+				B367D58822D4F2D10069F4D0 /* Coffee Places */,
 				B399DB8B22CE081B003C5EDD /* Information */,
 				B310BFA12369DBEB0065318C /* Roasteries */,
 			);
@@ -293,9 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				B309008122D796CC00DE7662 /* CafeDetailViewController.swift */,
-				B3BCACD822D8D7B800A4FEDF /* CustomMessageCell.swift */,
-				B3BCACD922D8D7B800A4FEDF /* CustomMessageCell.xib */,
-				B32E9412236F0155005E3603 /* ReportViewController.swift */,
 			);
 			path = CafeDetail;
 			sourceTree = "<group>";
@@ -419,7 +407,6 @@
 				B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */,
 				B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */,
 				B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */,
-				B3BCACDB22D8D7B800A4FEDF /* CustomMessageCell.xib in Resources */,
 				B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,17 +487,14 @@
 				B390EFC222D60F7300A931E9 /* CoffeePlacesTableViewCell.swift in Sources */,
 				B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */,
 				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,
-				B3BCACDA22D8D7B800A4FEDF /* CustomMessageCell.swift in Sources */,
 				B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
-				B32E9413236F0155005E3603 /* ReportViewController.swift in Sources */,
 				B310BF9E2369D49A0065318C /* RoasterTableViewCell.swift in Sources */,
 				B399DB8D22CE0EAC003C5EDD /* User.swift in Sources */,
 				B310BF982369BBC30065318C /* AddCoffeePlaceViewController.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,
 				B367D58E22D502CD0069F4D0 /* CoffeePlacesViewController.swift in Sources */,
 				B367D58622D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift in Sources */,
-				B32E9411236EF190005E3603 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

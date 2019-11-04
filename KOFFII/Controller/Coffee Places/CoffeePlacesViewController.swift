@@ -52,10 +52,8 @@ class CoffeePlacesViewController: UIViewController {
     }
     
     func setupFirebase() {
-        // [START setup]
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
-        // [END setup]
         db = Firestore.firestore()
     }
     

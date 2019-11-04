@@ -10,9 +10,7 @@ class AddCoffeePlaceViewController: UIViewController {
     @IBOutlet var veganSwitch: UISwitch!
     @IBOutlet var cakeSwitch: UISwitch!
     @IBOutlet var plugSwitch: UISwitch!
-
-    @IBOutlet var note: UITextView!
-
+    
     var db: Firestore!
 
     override func viewDidLoad() {
@@ -21,10 +19,8 @@ class AddCoffeePlaceViewController: UIViewController {
     }
 
     func setupFirebase() {
-        // [START setup]
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
-        // [END setup]
         db = Firestore.firestore()
     }
 
@@ -38,7 +34,6 @@ class AddCoffeePlaceViewController: UIViewController {
             "vegan": veganSwitch.isOn,
             "cake": cakeSwitch.isOn,
             "plug": plugSwitch.isOn,
-            "note": note.text ?? "",
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

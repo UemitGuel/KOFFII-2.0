@@ -804,7 +804,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="31n-vW-Klf"/>
                     <connections>
-                        <outlet property="heightConstraint" destination="UZU-W6-V3v" id="Qhr-5U-ega"/>
                         <outlet property="map" destination="8ff-e4-Lhf" id="CWh-WY-oIs"/>
                     </connections>
                 </viewController>
