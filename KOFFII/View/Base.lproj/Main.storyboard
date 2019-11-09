@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-jf-HtW">
-                                <rect key="frame" x="16" y="52" width="382" height="140"/>
+                                <rect key="frame" x="16" y="52" width="382" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="95r-Al-j97">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="63.666666666666664"/>
@@ -322,7 +322,7 @@
                                         </subviews>
                                     </stackView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzl-mG-bP9">
-                                        <rect key="frame" x="0.0" y="85" width="382" height="55"/>
+                                        <rect key="frame" x="0.0" y="84.666666666666657" width="382" height="115.33333333333334"/>
                                         <connections>
                                             <outlet property="dataSource" destination="8hJ-sQ-lT1" id="ro9-NS-vgy"/>
                                             <outlet property="delegate" destination="8hJ-sQ-lT1" id="TSg-WW-T9i"/>
@@ -330,11 +330,11 @@
                                     </pickerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="iQ6-kx-1Ti"/>
+                                    <constraint firstAttribute="height" constant="200" id="iQ6-kx-1Ti"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qsS-jK-kIv">
-                                <rect key="frame" x="0.0" y="208" width="414" height="479"/>
+                                <rect key="frame" x="0.0" y="268" width="414" height="419"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeePLacesTableViewCell" rowHeight="93" id="Xbs-ug-k1m" customClass="CoffeePlacesTableViewCell" customModule="KOFFII_Cologne" customModuleProvider="target">
