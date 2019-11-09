@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-jf-HtW">
-                                <rect key="frame" x="16" y="52" width="382" height="83"/>
+                                <rect key="frame" x="16" y="52" width="382" height="140"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="95r-Al-j97">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="63.666666666666664"/>
@@ -287,47 +287,54 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-Ha-20X">
-                                        <rect key="frame" x="0.0" y="64.666666666666671" width="382" height="18.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="64.666666666666671" width="382" height="19"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-Ln-w3a">
-                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="18.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbQ-6d-qV5">
-                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="18.333333333333332"/>
+                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-9M-kc8">
-                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="18.333333333333332"/>
+                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtz-Za-ccM">
-                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="18.333333333333332"/>
+                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsj-sj-GGu">
-                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="18.333333333333332"/>
+                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzl-mG-bP9">
+                                        <rect key="frame" x="0.0" y="85" width="382" height="55"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="8hJ-sQ-lT1" id="ro9-NS-vgy"/>
+                                            <outlet property="delegate" destination="8hJ-sQ-lT1" id="TSg-WW-T9i"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="iQ6-kx-1Ti"/>
+                                    <constraint firstAttribute="height" constant="140" id="iQ6-kx-1Ti"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qsS-jK-kIv">
-                                <rect key="frame" x="0.0" y="151" width="414" height="536"/>
+                                <rect key="frame" x="0.0" y="208" width="414" height="479"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeePLacesTableViewCell" rowHeight="93" id="Xbs-ug-k1m" customClass="CoffeePlacesTableViewCell" customModule="KOFFII_Cologne" customModuleProvider="target">
@@ -376,12 +383,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qsS-jK-kIv" firstAttribute="top" secondItem="eAN-jf-HtW" secondAttribute="bottom" constant="16" id="69v-EK-vAl"/>
                             <constraint firstItem="qsS-jK-kIv" firstAttribute="leading" secondItem="WUx-bx-ZPg" secondAttribute="leading" id="Chn-oz-SMg"/>
                             <constraint firstItem="WUx-bx-ZPg" firstAttribute="bottom" secondItem="qsS-jK-kIv" secondAttribute="bottom" id="OLC-OX-NeU"/>
                             <constraint firstItem="WUx-bx-ZPg" firstAttribute="trailing" secondItem="qsS-jK-kIv" secondAttribute="trailing" id="RWO-2k-pby"/>
                             <constraint firstItem="WUx-bx-ZPg" firstAttribute="trailing" secondItem="eAN-jf-HtW" secondAttribute="trailing" constant="16" id="b7u-9N-gQv"/>
                             <constraint firstItem="eAN-jf-HtW" firstAttribute="top" secondItem="WUx-bx-ZPg" secondAttribute="top" constant="8" id="iU6-k2-txc"/>
+                            <constraint firstItem="qsS-jK-kIv" firstAttribute="top" secondItem="eAN-jf-HtW" secondAttribute="bottom" constant="16" id="nup-L8-nQS"/>
                             <constraint firstItem="eAN-jf-HtW" firstAttribute="leading" secondItem="WUx-bx-ZPg" secondAttribute="leading" constant="16" id="oRA-Qs-qEU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WUx-bx-ZPg"/>
@@ -399,6 +406,7 @@
                         <outlet property="cakeLabel" destination="rtz-Za-ccM" id="Y93-bN-s6p"/>
                         <outlet property="foodButton" destination="uGT-oj-GcI" id="oN4-kn-sIH"/>
                         <outlet property="foodLabel" destination="dbQ-6d-qV5" id="Umf-7A-v1D"/>
+                        <outlet property="hoodPickerView" destination="hzl-mG-bP9" id="tpu-OO-H5E"/>
                         <outlet property="plugButton" destination="af3-ef-nbw" id="tHx-15-xRb"/>
                         <outlet property="plugLabel" destination="nsj-sj-GGu" id="q8o-oE-H1c"/>
                         <outlet property="tableView" destination="qsS-jK-kIv" id="Aks-A3-yFw"/>
@@ -411,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xv-2a-RWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5268" y="-342"/>
+            <point key="canvasLocation" x="5266.666666666667" y="-342.39130434782612"/>
         </scene>
         <!--Cafe Detail View Controller-->
         <scene sceneID="LY7-zn-5Mi">

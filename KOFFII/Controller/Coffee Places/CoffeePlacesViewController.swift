@@ -12,9 +12,16 @@ enum Features {
     case plug
 }
 
+enum Neigborhood {
+    case Deutz
+    case Nippes
+    case Belgisches
+}
+
 class CoffeePlacesViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var hoodPickerView: UIPickerView!
     
     @IBOutlet var wifiButton: RoundButton!
     @IBOutlet var wifiLabel: UILabel!
@@ -34,6 +41,7 @@ class CoffeePlacesViewController: UIViewController {
     var db: Firestore!
     let myGroup = DispatchGroup()
     
+    var testHardCodedHood = ["Belgisches", "Deutz", "Nippes"]
     var cafeObjects = [Cafe]()
     var filteredCafeObjects = [Cafe]()
     var userRequestedFeatures: [Features] = []
@@ -128,6 +136,9 @@ class CoffeePlacesViewController: UIViewController {
             filteredCafeObjects = filteredCafeObjects.filter { $0.features!["plugin"] == true }
         }
     }
+    
+    private func filterForNeighborhood() {
+    }
 }
 
 extension CoffeePlacesViewController: UITableViewDataSource {
@@ -174,4 +185,24 @@ extension CoffeePlacesViewController: UITableViewDelegate {
             }
         }
     }
+}
+
+extension CoffeePlacesViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return testHardCodedHood.count
+    }
+    
+    
+}
+
+extension CoffeePlacesViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return testHardCodedHood[row]
+    }
+    
 }
