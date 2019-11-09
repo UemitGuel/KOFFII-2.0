@@ -196,7 +196,6 @@ extension CoffeePlacesViewController: UIPickerViewDataSource {
         return testHardCodedHood.count
     }
     
-    
 }
 
 extension CoffeePlacesViewController: UIPickerViewDelegate {
