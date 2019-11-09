@@ -137,7 +137,11 @@ class CoffeePlacesViewController: UIViewController {
         }
     }
     
-    private func filterForNeighborhood() {
+    private func filterForNeighborhood(selectedHood: String) {
+        if selectedHood == "Deutz" {
+            cafeObjects = cafeObjects.filter { $0.hood == "Deutz" }
+        }
+        
     }
 }
 
@@ -202,6 +206,10 @@ extension CoffeePlacesViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return testHardCodedHood[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        filterForNeighborhood(selectedHood: testHardCodedHood[row])
     }
     
 }
