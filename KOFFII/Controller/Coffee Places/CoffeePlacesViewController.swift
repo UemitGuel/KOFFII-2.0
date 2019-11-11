@@ -3,25 +3,6 @@ import FirebaseFirestore
 import SVProgressHUD
 import UIKit
 
-// Needed to compare requested Features, so what the users clicked, and the actual value inside the data
-enum Features {
-    case wifi
-    case food
-    case vegan
-    case cake
-    case plug
-    
-    //neighborhood
-    case deutz
-    case lindenthal
-    case nippes
-    case ehrenfeld
-    case südstadt
-    case innenstadt
-    case belgisches
-    case latin
-}
-
 class CoffeePlacesViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -48,7 +29,8 @@ class CoffeePlacesViewController: UIViewController {
     var testHardCodedHood = ["All districts","Deutz/Kalk","Lindenthal/Sülz", "Nippes", "Ehrenfeld","Südstadt","Innenstadt", "Belgisches Viertel", "Latin Quarter"]
     var cafeObjects = [Cafe]()
     var filteredCafeObjects = [Cafe]()
-    var userRequestedFeatures: [Features] = []
+    var userRequestedFeatures: [Feature] = []
+    var userChoosenNeighborhoods: [Neighborhood] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +91,7 @@ class CoffeePlacesViewController: UIViewController {
                                       feature: .cake, button: cakeButton, label: cakeLabel)
         case plugButton:
             featureBF.handleButtonTap(userRequestedFeatures: &userRequestedFeatures,
-                                      feature: .plug, button: plugButton, label: plugLabel)
+                                      feature: .plugin, button: plugButton, label: plugLabel)
         default:
             break
         }
@@ -119,111 +101,21 @@ class CoffeePlacesViewController: UIViewController {
     
     // Active Filtering, if feature buttons are clicked
     func isFiltering() -> Bool {
-        return !userRequestedFeatures.isEmpty
-    }
-    
-    func filterForNeighborhoods(selectedHood: String = "") {
-        if selectedHood == "Deutz/Kalk" {
-            userRequestedFeatures.append(.deutz)
-            filtering()
-        } else {
-            userRequestedFeatures = userRequestedFeatures.filter{ $0 != .deutz }
-            filtering()
-        }
-        if selectedHood == "Lindenthal/Sülz" {
-            userRequestedFeatures.append(.lindenthal)
-            filtering()
-        } else {
-            userRequestedFeatures = userRequestedFeatures.filter{ $0 != .lindenthal }
-            filtering()
-        }
-        if selectedHood == "Nippes" {
-            userRequestedFeatures.append(.nippes)
-            filtering()
-        } else {
-            userRequestedFeatures = userRequestedFeatures.filter{ $0 != .nippes }
-            filtering()
-        }
-        if selectedHood == "Ehrenfeld" {
-            userRequestedFeatures.append(.ehrenfeld)
-            filtering()
-        } else {
-            userRequestedFeatures = userRequestedFeatures.filter{ $0 != .ehrenfeld }
-            filtering()
-        }
-        if selectedHood == "Südstadt" {
-            userRequestedFeatures.append(.südstadt)
-            filtering()
-        } else {
-            userRequestedFeatures = userRequestedFeatures.filter{ $0 != .südstadt }
-            filtering()
-        }
-        if selectedHood == "Innenstadt" {
-            userRequestedFeatures.append(.innenstadt)
-            filtering()
-        } else {
-            userRequestedFeatures = userRequestedFeatures.filter{ $0 != .innenstadt }
-            filtering()
-        }
-        if selectedHood == "Belgisches Viertel" {
-            userRequestedFeatures.append(.belgisches)
-            filtering()
-        } else {
-            userRequestedFeatures = userRequestedFeatures.filter{ $0 != .belgisches }
-            filtering()
-        }
-        if selectedHood == "Latin Quarter" {
-            userRequestedFeatures.append(.latin)
-            filtering()
-        } else {
-            userRequestedFeatures = userRequestedFeatures.filter{ $0 != .latin }
-            filtering()
-        }
-        tableView.reloadData()
+        return !userRequestedFeatures.isEmpty || !userChoosenNeighborhoods.isEmpty
     }
     
     func filtering() {
         filteredCafeObjects = cafeObjects
-        if userRequestedFeatures.contains(.wifi) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.features!["wifi"] == true }
+        for feature in Feature.allCases {
+            if userRequestedFeatures.contains(feature) {
+                filteredCafeObjects = filteredCafeObjects.filter { $0.features![feature.rawValue] == true }
+            }
         }
-        if userRequestedFeatures.contains(.food) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.features!["food"] == true }
+        for neighborhood in Neighborhood.allCases {
+            if userChoosenNeighborhoods.contains(neighborhood) {
+                filteredCafeObjects = filteredCafeObjects.filter { $0.hood == neighborhood.rawValue }
+            }
         }
-        if userRequestedFeatures.contains(.vegan) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.features!["vegan"] == true }
-        }
-        if userRequestedFeatures.contains(.cake) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.features!["cake"] == true }
-        }
-        if userRequestedFeatures.contains(.plug) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.features!["plugin"] == true }
-        }
-        if userRequestedFeatures.contains(.deutz) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.hood == "Deutz/Kalk" }
-        }
-        if userRequestedFeatures.contains(.lindenthal) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.hood == "Lindenthal/Sülz" }
-        }
-        if userRequestedFeatures.contains(.nippes) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.hood == "Nippes" }
-        }
-        if userRequestedFeatures.contains(.ehrenfeld) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.hood == "Ehrenfeld" }
-        }
-        if userRequestedFeatures.contains(.südstadt) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.hood == "Südstadt" }
-        }
-        if userRequestedFeatures.contains(.innenstadt) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.hood == "Innenstadt" }
-        }
-        if userRequestedFeatures.contains(.belgisches) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.hood == "Belgisches Viertel" }
-        }
-        if userRequestedFeatures.contains(.latin) {
-            filteredCafeObjects = filteredCafeObjects.filter { $0.hood == "Latin Quarter" }
-        }
-
     }
 }
 
@@ -292,7 +184,11 @@ extension CoffeePlacesViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(testHardCodedHood[row])
-        filterForNeighborhoods(selectedHood: testHardCodedHood[row])
+        let featureBF = FeatureButtonFunctions()
+        featureBF.filterForNeighborhoods(userChoosenNeighborhoods: &userChoosenNeighborhoods, selectedHood: testHardCodedHood[row])
+        print("hihihih \(userChoosenNeighborhoods)")
+        filtering()
+        tableView.reloadData()
     }
     
 }

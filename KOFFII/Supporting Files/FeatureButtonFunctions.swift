@@ -1,6 +1,27 @@
 import UIKit
 import Foundation
 
+enum Neighborhood: String, CaseIterable {
+    case deutz = "Deutz/Kalk"
+    case lindenthal = "Lindenthal/Sülz"
+    case nippes = "Nippes"
+    case ehrenfeld = "Ehrenfeld"
+    case südstadt = "Südstadt"
+    case innenstadt = "Innenstadt"
+    case belgisches = "Belgisches Viertel"
+    case latin = "Latin Quarter"
+}
+
+// Needed to compare requested Features, so what the users clicked, and the actual value inside the data
+enum Feature: String, CaseIterable {
+    case wifi = "wifi"
+    case food = "food"
+    case vegan = "vegan"
+    case cake = "cake"
+    case plugin = "plugin"
+}
+
+
 class FeatureButtonFunctions {
     let buttonTappedColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
     let quicksandMediumFont = UIFont(name: "Quicksand-Medium", size: 15)
@@ -17,7 +38,7 @@ class FeatureButtonFunctions {
         }
     }
     
-    func handleButtonTap(userRequestedFeatures: inout [Features], feature: Features, button: RoundButton, label: UILabel) {
+    func handleButtonTap(userRequestedFeatures: inout [Feature], feature: Feature, button: RoundButton, label: UILabel) {
         if !userRequestedFeatures.contains(feature) {
             userRequestedFeatures.append(feature)
             button.customBGColor = buttonTappedColor
@@ -28,6 +49,16 @@ class FeatureButtonFunctions {
             button.customBGColor = .white
             button.borderWidth = 1
             label.font = quicksandMediumFont
+        }
+    }
+    
+    func filterForNeighborhoods(userChoosenNeighborhoods: inout [Neighborhood], selectedHood: String = "") {
+        for neigbhorhood in Neighborhood.allCases {
+            if selectedHood == neigbhorhood.rawValue {
+                userChoosenNeighborhoods.append(neigbhorhood)
+            } else {
+                userChoosenNeighborhoods = userChoosenNeighborhoods.filter{ $0 != neigbhorhood }
+            }
         }
     }
 }
