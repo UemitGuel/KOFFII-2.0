@@ -129,7 +129,12 @@ extension CoffeePlacesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CoffeePLacesTableViewCell", for: indexPath) as! CoffeePlacesTableViewCell
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "CoffeePLacesTableViewCell",for: indexPath)
+            as? CoffeePlacesTableViewCell else {
+                return UITableViewCell()
+        }
+        
         cell.selectionStyle = .none
         
         if isFiltering() {
@@ -183,10 +188,8 @@ extension CoffeePlacesViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(testHardCodedHood[row])
         let featureBF = FeatureButtonFunctions()
         featureBF.filterForNeighborhoods(userChoosenNeighborhoods: &userChoosenNeighborhoods, selectedHood: testHardCodedHood[row])
-        print("hihihih \(userChoosenNeighborhoods)")
         filtering()
         tableView.reloadData()
     }
