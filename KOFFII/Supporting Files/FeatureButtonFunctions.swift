@@ -23,7 +23,7 @@ enum Feature: String, CaseIterable {
 
 
 class FeatureButtonFunctions {
-    let buttonTappedColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
+    let buttonTappedColor = UIColor.systemGray2
     let quicksandMediumFont = UIFont(name: "Quicksand-Medium", size: 15)
     let quicksandBoldFont = UIFont(name: "Quicksand-Bold", size: 15)    
     var features : [String:Bool] = [:]
@@ -32,7 +32,7 @@ class FeatureButtonFunctions {
                                         button: RoundButton,
                                         label: UILabel) {
         if features[featureAsString] == true {
-            button.customBGColor = UIColor(red: 236 / 255, green: 240 / 255, blue: 241 / 255, alpha: 1)
+            button.customBGColor = buttonTappedColor
             button.borderWidth = 2
             label.font = UIFont(name: "Quicksand-Bold", size: 15)
         }

@@ -137,7 +137,6 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_: UITableView, willDisplayHeaderView view: UIView, forSection _: Int) {
-        view.tintColor = .white
 
         let header = view as! UITableViewHeaderFooterView
         guard let customFont = UIFont(name: "Staatliches-Regular", size: 40) else {
@@ -148,7 +147,8 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
             )
         }
         header.textLabel?.font = UIFontMetrics.default.scaledFont(for: customFont)
-        header.backgroundColor = .white
+        header.tintColor = .systemBackground
+        header.textLabel?.textColor = .label
     }
 
     func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {

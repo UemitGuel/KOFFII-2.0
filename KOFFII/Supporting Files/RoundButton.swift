@@ -21,7 +21,7 @@ import UIKit
         refreshColor(color: customBGColor)
         refreshBorderColor(_colorBorder: customBorderColor)
         refreshBorder(_borderWidth: borderWidth)
-        tintColor = UIColor.white
+        tintColor = .white
     }
 
     func refreshCorners(value: CGFloat) {
