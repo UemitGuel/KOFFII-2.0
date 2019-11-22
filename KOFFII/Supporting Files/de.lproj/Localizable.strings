@@ -25,6 +25,8 @@
 
 "Aeropress Temperature" = "90°";
 
+"All neighborhoods" = "Alle Nachbarschaften";
+
 "Bialetti" = "Bialetti";
 
 "Bialetti 1" = "Die italienische Art";
@@ -41,7 +43,7 @@
 
 "Bialetti Brewing Time" = "-";
 
-"Bialetti Quantity" = "vollständig füllen";
+"Bialetti Quantity" = "Füllen";
 
 "Bialetti Temperature" = "mittlere Hitze";
 

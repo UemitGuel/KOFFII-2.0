@@ -37,6 +37,8 @@ internal enum L10n {
   internal static let aeropressQuantity = L10n.tr("Localizable", "Aeropress Quantity")
   /// 90°
   internal static let aeropressTemperature = L10n.tr("Localizable", "Aeropress Temperature")
+  /// All neighborhoods
+  internal static let allNeighborhoods = L10n.tr("Localizable", "All neighborhoods")
   /// Bialetti
   internal static let bialetti = L10n.tr("Localizable", "Bialetti")
   /// The Italian way

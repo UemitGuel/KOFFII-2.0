@@ -1,4 +1,3 @@
-import Firebase
 import UIKit
 
 class BrewingDetailViewController: UIViewController {
@@ -9,23 +8,15 @@ class BrewingDetailViewController: UIViewController {
     @IBOutlet var leftButton: UIButton!
     @IBOutlet var rightButton: UIButton!
 
-    var db: Firestore!
-    var downloadedComplainObject: Complain?
+    var complain: Complain?
 
     var passedInformationBrewing: Information?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFirebase()
         setupViewController()
         setupTableViewHeader()
         setupComplainButton()
-    }
-
-    func setupFirebase() {
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        db = Firestore.firestore()
     }
 
     func setupViewController() {
@@ -52,56 +43,27 @@ class BrewingDetailViewController: UIViewController {
         }
     }
 
-//    @IBAction func complainButtonTapped(_ sender: UIButton) {
-//        guard let complainCategory = passedInformationBrewing?.complainCategory else { return }
-//        downloadComplainObject(senderTag: sender.tag, complainCategory: complainCategory) { complain in
-//            self.downloadedComplainObject = complain
-//            self.performSegue(withIdentifier: "fromDetailToComplainSegue", sender: self)
-//        }
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-//        if segue.identifier == "fromDetailToComplainSegue" {
-//            let complainVC = segue.destination as! ComplainViewController
-//            complainVC.passedComplainObject = downloadedComplainObject
-//        }
-//    }
-    
-//    private func getDocumentsfor(complainCategory: String, completionHandler: @escaping (Complain) -> Void) {
-//        let collectionRef = db.collection("Complain")
-//        collectionRef.document(complainCategory).getDocument { document, _ in
-//            if let complain = document.flatMap({
-//                $0.data().flatMap { data in
-//                    Complain(dictionary: data)
-//                }
-//            }) {
-//                completionHandler(complain)
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-//    }
+    @IBAction func complainButtonTapped(_ sender: UIButton) {
+        let complainCategory = passedInformationBrewing?.complainCategory
+        if complainCategory == .coffee && sender.tag == 0 {
+            complain = coffeeTooBitter
+        } else if complainCategory == .coffee && sender.tag == 1 {
+            complain = coffeeTooSour
+        } else if complainCategory == .espresso && sender.tag == 0 {
+            complain = espressoTooBitter
+        } else if complainCategory == .espresso && sender.tag == 1 {
+            complain = espressoTooSour
+        }
+        performSegue(withIdentifier: "fromDetailToComplainSegue", sender: self)
 
-//    func downloadComplainObject(senderTag: Int, complainCategory: String,
-//                                completionHandler: @escaping (Complain) -> Void) {
-//        if complainCategory == "Coffee", senderTag == 0 {
-//            getDocumentsfor(complainCategory: "coffee too bitter?") { complain in
-//                completionHandler(complain)
-//            }
-//        } else if complainCategory == "Coffee", senderTag == 1 {
-//            getDocumentsfor(complainCategory: "coffee too sour?") { complain in
-//                completionHandler(complain)
-//            }
-//        } else if complainCategory == "Espresso", senderTag == 0 {
-//            getDocumentsfor(complainCategory: "espresso too bitter?") { complain in
-//                completionHandler(complain)
-//            }
-//        } else if complainCategory == "Espresso", senderTag == 1 {
-//            getDocumentsfor(complainCategory: "espresso too sour?") { complain in
-//                completionHandler(complain)
-//            }
-//        }
-//    }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if segue.identifier == "fromDetailToComplainSegue" {
+            let complainVC = segue.destination as! ComplainViewController
+            complainVC.complain = complain
+        }
+    }
 }
 
 extension BrewingDetailViewController: UITableViewDataSource {

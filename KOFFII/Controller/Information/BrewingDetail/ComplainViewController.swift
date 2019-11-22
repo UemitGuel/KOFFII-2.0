@@ -1,7 +1,7 @@
 import UIKit
 
 class ComplainViewController: UIViewController {
-    var passedComplainObject: Information.complainCategory?
+    var complain : Complain?
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var complainLabel: UILabel!
@@ -10,7 +10,7 @@ class ComplainViewController: UIViewController {
         super.viewDidLoad()
         setupViewController()
 
-//        complainLabel.text = passedComplainObject?.name
+        complainLabel.text = complain?.name
     }
 
     func setupViewController() {
@@ -21,13 +21,13 @@ class ComplainViewController: UIViewController {
 
 extension ComplainViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 0
+        return complain!.improvements.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "complainCell",
                                                  for: indexPath) as? ComplainTableViewCell
-//        cell?.complainLabel.text = passedComplainObject?.improvements?[indexPath.row]
+        cell?.complainLabel.text = complain?.improvements[indexPath.row]
         return cell!
     }
 }

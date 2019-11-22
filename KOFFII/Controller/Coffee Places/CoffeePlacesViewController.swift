@@ -26,7 +26,6 @@ class CoffeePlacesViewController: UIViewController {
     var db: Firestore!
     let myGroup = DispatchGroup()
     
-    var testHardCodedHood = ["All districts","Deutz/Kalk","Lindenthal/Sülz", "Nippes", "Ehrenfeld","Südstadt","Innenstadt", "Belgisches Viertel", "Latin Quarter"]
     var cafeObjects = [Cafe]()
     var filteredCafeObjects = [Cafe]()
     var userRequestedFeatures: [Feature] = []
@@ -176,7 +175,7 @@ extension CoffeePlacesViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return testHardCodedHood.count
+        return neighborhoods.count
     }
     
 }
@@ -184,12 +183,12 @@ extension CoffeePlacesViewController: UIPickerViewDataSource {
 extension CoffeePlacesViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return testHardCodedHood[row]
+        return neighborhoods[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let featureBF = FeatureButtonFunctions()
-        featureBF.filterForNeighborhoods(userChoosenNeighborhoods: &userChoosenNeighborhoods, selectedHood: testHardCodedHood[row])
+        featureBF.filterForNeighborhoods(userChoosenNeighborhoods: &userChoosenNeighborhoods, selectedHood: neighborhoods[row])
         filtering()
         tableView.reloadData()
     }
