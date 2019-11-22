@@ -19,6 +19,12 @@
 
 "Aeropress 9" = "Enjoy your coffee :)";
 
+"Aeropress Brewing Time" = "1:30min";
+
+"Aeropress Quantity" = "16g/200ml";
+
+"Aeropress Temperature" = "90°";
+
 "Bialetti" = "Bialetti";
 
 "Bialetti 1" = "The Italian way";
@@ -33,7 +39,15 @@
 
 "Bialetti 6" = "Enjoy your coffee :)";
 
+"Bialetti Brewing Time" = "-";
+
+"Bialetti Quantity" = "fill completely";
+
+"Bialetti Temperature" = "medium heat";
+
 "Brewing" = "Brewing";
+
+"Brewing time" = "Brewing time";
 
 "Chemex" = "Chemex";
 
@@ -55,6 +69,54 @@
 
 "Chemex 9" = "Enjoy your coffee :)";
 
+"Chemex Brewing Time" = "4-5min";
+
+"Chemex Quantity" = "38g/600ml";
+
+"Chemex Temperature" = "96°";
+
+"Coffee & Health" = "Coffee & Health";
+
+"Coffee & Health 1" = "In the short-term caffeine has a diuretic effect, but regular coffee drinkers get used to the caffeine intake. If you take coffee regularly, your fluid balance will be effected solely by the amount of water supplied with the coffee";
+
+"Coffee & Health 2" = "Caffeine takes between 30 - 45 minutes to enter the bloodstream and has a half-life of about 4 hours";
+
+"Coffee & Health 3" = "Caffeine stimulates, in small doses, the heart and circulatory system, increases physical performance and increases concentration. Additionally, it can improve your mood. Recent studies showing that lifelong coffee consumption can reduce the risk of depression and age-related decline in mental performance";
+
+"Coffee & Health 4" = "Yes, I could be biased :D";
+
+"Coffee & Health 5" = "The downside of too much caffeine: can lead to potassium deficiency, muscle problems, fatigue and headaches";
+
+"Coffee too bitter" = "Coffee too bitter";
+
+"Coffee too bitter 1" = "If your grinding degree is too fine, the coffee extraction time will take too long and therefore your coffee can taste too bitter. Try a coarser grinding degree";
+
+"Coffee too bitter 2" = "Make sure you don`t use boiling water for making your coffee, because it can lead to a bitter taste";
+
+"Coffee too bitter 3" = "Robusta coffee usually tastes darker and more bitter than Arabica beans";
+
+"Coffee too bitter 4" = "For financial reasons, parts of the coffee industry are roasting the beans shortly at very high temperatures. This leads to beans which are burned outside, but still raw from the inside. Check the quality of your beans if you think your coffee is too bitter";
+
+"Coffee too sour" = "Coffee too sour";
+
+"Coffee too sour 1" = "If your grinding degree is too coarse, the coffee can taste too sour. Try a finer grinding degree";
+
+"Coffee too sour 2" = "If your water is cooling down too long, the coffee can taste sour. Try to use the freshly boiled water 60 seconds after letting it stand for a minute";
+
+"Coffee too sour 3" = "Some Arabica beans tasting more fruity. If these are then lightly roasted, the natural fruit acids are not completely broken down";
+
+"Coffee too sour 4" = "Coffee tastes can get sour if it is standing too long after it´s brewed";
+
+"Coffee too sour 5" = "If your water has a pH value under 7.0 your coffee can taste sour";
+
+"Coffee water" = "Coffee water";
+
+"Coffee water 1" = "Water with a pH value of 7.0 and a total hardness of approx. 4 - 8°d is ideal for preparing coffee";
+
+"Coffee water 2" = "https://www.wasserhaerte.net/ here you check the water hardness ( at least for Germany, Switzerland, Austria, and Belgium )";
+
+"Coffee water 3" = "If your water is too hard, you can use a table water filter to soften it";
+
 "Espresso" = "Espresso";
 
 "Espresso 1" = "The champions league of coffee making";
@@ -73,6 +135,62 @@
 
 "Espresso 8" = "Enjoy your espresso :)";
 
+"Espresso Brewing Time" = "30sec";
+
+"Espresso Quantity" = "18g/40ml";
+
+"Espresso Temperature" = "93°-95°";
+
+"Espresso too bitter" = "Espresso too bitter";
+
+"Espresso too bitter 1" = "If your grinding degree is too fine, the espresso can taste too bitter. Try a coarser grinding degree";
+
+"Espresso too bitter 2" = "The roasting of the beans may be too dark. Also consider, that Robusta beans taste bitterer than Arabica beans";
+
+"Espresso too bitter 3" = "The brewing pressure could be too high (above 10 bar)";
+
+"Espresso too bitter 4" = "A good espresso should run in 25 - 35 seconds. If it takes longer, the expresso will be over extracted";
+
+"Espresso too bitter 5" = "Make sure you don`t use boiling water for making your espresso, because it can lead to a bitter taste";
+
+"Espresso too bitter 6" = "Maybe you used too much espresso powder in relation to water";
+
+"Espresso too sour" = "Espresso too sour";
+
+"Espresso too sour 1" = "If your grinding degree is too coarse, the espresso can taste too sour. Try a finer grinding degree";
+
+"Espresso too sour 2" = "Maybe you chose to lightly roasted coffee beans, try a darker roast";
+
+"Espresso too sour 3" = "The brewing pressure could be too low (under 6 bar)";
+
+"Espresso too sour 4" = "A good espresso should run in 25 - 35 seconds. If it takes shorter, the expresso could taste sour";
+
+"Espresso too sour 5" = "If your water is cooling down too long, the coffee can taste sour";
+
+"Espresso too sour 6" = "Maybe you used too little espresso powder in relation to water";
+
+"Fabrication" = "Fabrication";
+
+"Fabrication 1" = "There just two types of coffee which became important for the world market: 'Arabica' and 'Robusta'. Arabica plants account for around 70% of the global coffee cultures";
+
+"Fabrication 10" = "After this, just grinding and preparing your coffee is missing from you and your cup of delicious coffee";
+
+"Fabrication 2" = "Coffee seeds are generally planted in large beds in shaded nurseries. They need ideally rainfall of around 1500 - 2000 liters per square meter and plenty of sunlight";
+
+"Fabrication 3" = "The fruit, called the coffee cherry, turns a bright, deep red when it is ripe and ready to be harvested. Usually, there is one major harvest a year. Picking the crop is often done by hand and is a labor-intensive and difficult process";
+
+"Fabrication 4" = "Quickly after picking processing must begin to prevent fruit spoilage. Coffee is processed in one of two ways:";
+
+"Fabrication 5" = "1. The Dry Methode: The freshly picked cherries are spread simply out on huge surfaces to dry in the sun. This process can take several weeks and ends when the moisture content of the cherries drops to 11 - 12 %";
+
+"Fabrication 6" = "2. The Wet Method: After harvesting, the pulp is being removed from the coffee cherry so the bean is dried with only the parchment skin left on. Then the beans are getting separated by weight and then passed through a series of rotating drums which separate them by size. After separation, the beans are transported to large, water-filled fermentation tanks. While laying in the tanks, naturally occurring enzymes will cause the slick layer of mucilage that is still attached to the parchment to dissolve. After fermentation, they are ready for drying";
+
+"Fabrication 7" = "Before the coffee can be exported in shipping containers, it has to be hulled, polished and sorted";
+
+"Fabrication 8" = "Samples of the coffee are tested for quality and taste daily. Not just to determine their characteristics, but also for creating the proper roast. This process is called cupping and usually takes place in a specially designed room";
+
+"Fabrication 9" = "Roasting takes place in the importing country because the freshly roasted beans must reach the consumer asap. Most roasting machines maintain a temperature of about 287° degrees. After reaching around 200° degrees the beans are starting to turn brown and the caffeol, a fragant oil from inside the bean, begins to appear. This process produces the aroma of the coffee we drink. The beans are getting cooled after the roasting process immediately by water or air";
+
 "French Press" = "French Press";
 
 "French Press 1" = "la voie française";
@@ -86,6 +204,26 @@
 "French Press 5" = "Press the filter down. If the plunger falls down immediately, your grind was too coarse. If it´s hard to press that means your grind was too fine. You shouldn´t let the coffee too long in there after";
 
 "French Press 6" = "Enjoy your coffee :)";
+
+"French Press Brewing Time" = "4min";
+
+"French Press Quantity" = "65g/1l";
+
+"French Press Temperature" = "96°";
+
+"History of Coffee" = "History of Coffee";
+
+"History of Coffee 1" = "The word 'coffee' comes from the word koffie (Dutch), which was taken from the Ottomans Turkish word kahve, which was taken from the Arabic gahwah";
+
+"History of Coffee 2" = "According to the legends, the shepherd Kaldi notices that his goats are jumping upside down the whole night after eating the red coffee cherries. Intrigued by it, Kaldi finds the fruit himself and start chewing them. Amazed and afraid by the effects, he brings the berries to a monk in a nearby monastery. The monk, who never see something like this before, is afraid that this could be the work of the devil and therefore threw them into the fire, from which a seductive aroma rises, causing the monk and Kaldi to investigate further";
+
+"History of Coffee 3" = "Coffee was first mentioned in the Kaffa region of southwest Ethiopia in 900 A.D. The ethnic group (nowadays called Oromo) gave their tribesman coffee to be better hunters";
+
+"History of Coffee 4" = "Ethiopia → Yemen → Mecca, Medina → Cairo, Damascus, Baghdad and Constantinople (15 hundred)";
+
+"History of Coffee 5" = "But in the Islamic world drinking coffee wasn´t mainly for pleasure, it was directly connected to religious practices. It should help to fast in the day and stay awake at night during Ramadan";
+
+"History of Coffee 6" = "Drinking coffee spread to Italy, before it got passed to the rest of Europe. After, the Dutch Republic started exporting coffee beans to the East Indies and to the Americas";
 
 /* No comment provided by engineer. */
 "Loading" = "Loading";
@@ -108,6 +246,60 @@
 
 "Pour Over 8" = "Enjoy your coffee :)";
 
+"Pour Over Brewing Time" = "3-4min";
+
+"Pour Over Quantity" = "32g/500ml";
+
+"Pour Over Temperature" = "96°";
+
+"Quantity" = "Quantity";
+
+"Regions" = "Regions";
+
+"Regions 1" = "Brazil - the South American country with tropical climate is with the production of more than 30% of the world´s traded coffee export-champion";
+
+"Regions 10" = "Ethiopia - the birthplace of coffee";
+
+"Regions 11" = "E - The work by hand guarantees highest quality, because only ripe fruits are harvested";
+
+"Regions 12" = "E - To produce larger quantities can be processed while maintaining the high quality, small farmers often organize themselves in cooperations";
+
+"Regions 13" = "E - Ethiopia is one of the poorest countries in the world. 85 percent of jobs are closely linked to coffee production, and around 60 percent of government revenue comes from the export of coffee beans";
+
+"Regions 14" = "Vietnam - Vietnam became the second biggest coffee exporter in the world";
+
+"Regions 15" = "V - 90% of the planted coffee is Robusta, which is particularly resistant to pests and thrives even under the worst conditions, even if the coffee farmer does not know exactly what he is doing. This could be the reason why it is not considered to produce high-quality coffee";
+
+"Regions 16" = "V - In Vietnam, they drink a ca phe nau (brown coffee) or ca phe sua (milk coffee), which is cold coffee with condensed milk. The condensed milk dates back to earlier times when it was difficult to cool food";
+
+"Regions 2" = "B - The coffee beans are harvested predominantly by hand and drying out in the blazing sun";
+
+"Regions 3" = "B - The main costumer are USA and Europe, especially Germany";
+
+"Regions 4" = "B - Since Brazil is using more and more pesticides in production, there is are some concerns about negative health effects in the long term";
+
+"Regions 5" = "B - The flavour is predominantly mild with little acidity";
+
+"Regions 6" = "Colombia - The coffee from the third largest coffee exporter is known for its high quality and purity";
+
+"Regions 7" = "C - The Tinto, how a typical Colombian bitter coffee is called, is usually drunk black, without milk or sugar";
+
+"Regions 8" = "C - For the most part the coffee is grown in Caldas, Risaralda, and Quinidio - also known as the 'coffee triangle of Colombia'";
+
+"Regions 9" = "C - Coffee is the main source of income for around 500.000 Colombians";
+
+"Storage" = "Storage";
+
+"Storage 1" = "You should use pre-ground coffee within 2 weeks because it loses quickly its aroma";
+
+"Storage 2" = "Store your coffee in a dark, dry and cool place";
+
+"Storage 3" = "Use a package with an aroma valve, which allows gases from the coffee to escape without air entering";
+
+"Storage 4" = "Don´t store your coffee in the fridge, because it can easily absorb moisture and foreign aromas";
+
+"Temperature" = "Temperature";
+
 "Turkish Mocha" = "Turkish Mocha";
 
 "Turkish Mocha 1" = "The most original way to make coffee";
@@ -121,3 +313,9 @@
 "Turkish Mocha 5" = "Often the coffee is served with a small candy like baklava or other Turkish Delights";
 
 "Turkish Mocha 6" = "Enjoy your mocha :) - p.s. make sure you avoid drinking the coffee grounds";
+
+"Turkish Mocha Brewing Time" = "2min";
+
+"Turkish Mocha Quantity" = "1 to 10 ratio";
+
+"Turkish Mocha Temperature" = "60°";

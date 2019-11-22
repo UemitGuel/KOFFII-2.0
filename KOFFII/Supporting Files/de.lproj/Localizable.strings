@@ -19,6 +19,12 @@
 
 "Aeropress 9" = "Genieße deinen Kaffee :)";
 
+"Aeropress Brewing Time" = "1:30min";
+
+"Aeropress Quantity" = "16g/200ml";
+
+"Aeropress Temperature" = "90°";
+
 "Bialetti" = "Bialetti";
 
 "Bialetti 1" = "Die italienische Art";
@@ -33,7 +39,15 @@
 
 "Bialetti 6" = "Genieße deinen Kaffee :)";
 
+"Bialetti Brewing Time" = "-";
+
+"Bialetti Quantity" = "vollständig füllen";
+
+"Bialetti Temperature" = "mittlere Hitze";
+
 "Brewing" = "Brühmethoden";
+
+"Brewing time" = "Brühzeit";
 
 "Chemex" = "Chemex";
 
@@ -55,6 +69,54 @@
 
 "Chemex 9" = "Genieße deinen Kaffee :)";
 
+"Chemex Brewing Time" = "4-5min";
+
+"Chemex Quantity" = "38g/600ml";
+
+"Chemex Temperature" = "96°";
+
+"Coffee & Health" = "Gesundheit";
+
+"Coffee & Health 1" = "Kurzfristig hat Koffein eine harntreibende Wirkung, aber regelmäßige Kaffeetrinker gewöhnen sich an die Koffeinzufuhr. Wenn du regelmäßig Kaffee trinkst, wird deine Flüssigkeitsbilanz nur durch die Wassermenge beeinflusst, die mit Kaffee zugeführt wird";
+
+"Coffee & Health 2" = "Koffein benötigt zwischen 30 - 45 Minuten um in den Blutkreislauf zu gelangen und hat eine Halbwertszeit von ca. 4 Stunden";
+
+"Coffee & Health 3" = "Koffein stimuliert in kleinen Dosen das Herz und den Kreislauf, erhöht die körperliche Leistungsfähigkeit und erhöht die Konzentration. Außerdem kann es Ihre Stimmung verbessern. Neuere Studien zeigen, dass lebenslanger Kaffeekonsum das Risiko von Depressionen und altersbedingten Leistungseinbußen verringern kann";
+
+"Coffee & Health 4" = "Ja, ich könnte parteiisch sein :D";
+
+"Coffee & Health 5" = "Der Nachteil von zu viel Koffein: kann zu Kaliummangel, Muskelproblemen, Müdigkeit und Kopfschmerzen führen";
+
+"Coffee too bitter" = "Kaffee zu bitter?";
+
+"Coffee too bitter 1" = "Wenn der Mahlgrad zu fein ist, dauert die Kaffeeextraktionszeit zu lange und dein Kaffee kann daher zu bitter schmecken. Versuche ein gröberen Mahlgrad";
+
+"Coffee too bitter 2" = "Achte darauf, dass du für die Zubereitung kein kochendes Wasser verwendst, da das zu einem bitteren Geschmack führen kann";
+
+"Coffee too bitter 3" = "Robusta-Kaffee schmeckt in der Regel dunkler und bitterer als Arabica-Bohnen";
+
+"Coffee too bitter 4" = "Aus finanziellen Gründen rösten Teile der Kaffeeindustrie die Bohnen nur kurz bei sehr hohen Temperaturen. Dies führt zu Bohnen, die außen verbrannt werden, aber von innen noch roh sind. Überprüfe die Qualität deiner Bohnen, wenn du der Meinung bist, dass dein Kaffee zu bitter ist";
+
+"Coffee too sour" = "Kaffee zu sauer?";
+
+"Coffee too sour 1" = "Wenn der Mahlgrad zu grob ist, kann der Kaffee zu sauer schmecken. Versuche einen feineren Mahlgrad";
+
+"Coffee too sour 2" = "Wenn das Wasser zu lange abkühlt, kann der Kaffee sauer schmecken. Versuche das frisch gekochte Wasser 60 Sekunden stehen zu lassen";
+
+"Coffee too sour 3" = "Einige Arabica-Bohnen schmecken fruchtiger. Werden diese dann leicht geröstet, werden die natürlichen Fruchtsäuren nicht vollständig abgebaut";
+
+"Coffee too sour 4" = "Der Kaffeegeschmack kann sauer werden, wenn der Kaffee zu lange steht";
+
+"Coffee too sour 5" = "Wenn das Wasser einen pH-Wert unter 7,0 hat, kann der Kaffee sauer schmecken";
+
+"Coffee water" = "Wasser";
+
+"Coffee water 1" = "Wasser mit einem pH-Wert von 7,0 und einer Gesamthärte von ca. 4 - 8°d ist ideal für die Kaffeezubereitung";
+
+"Coffee water 2" = "https://www.wasserhaerte.net/ Hier kannst du die Wasserhärte überprüfen(zumindest für Deutschland, Schweiz, Österreich und Belgien)";
+
+"Coffee water 3" = "Wenn das Wasser zu hart ist, kannst du einen Wasserfilter verwenden, um es zu enthärten";
+
 "Espresso" = "Espresso";
 
 "Espresso 1" = "Die Champions League der Kaffeezubereitung";
@@ -73,6 +135,62 @@
 
 "Espresso 8" = "Genieße deinen Espresso :)";
 
+"Espresso Brewing Time" = "30sek";
+
+"Espresso Quantity" = "18g/40ml";
+
+"Espresso Temperature" = "93-95°";
+
+"Espresso too bitter" = "Espresso zu bitter?";
+
+"Espresso too bitter 1" = "Wenn der Mahlgrad zu fein ist, kann der Espresso zu bitter schmecken. Versuche einen gröberen Mahlgrad";
+
+"Espresso too bitter 2" = "Die Röstung der Bohnen kann zu dunkel sein. Beachte auch, dass Robusta-Bohnen bitterer schmecken als Arabica-Bohnen";
+
+"Espresso too bitter 3" = "Der Brühdruck kann zu hoch sein (über 10 bar)";
+
+"Espresso too bitter 4" = "Ein guter Espresso sollte in 25 - 35 Sekunden laufen. Wenn es länger dauert, wird der Expresso übermäßig extrahiert";
+
+"Espresso too bitter 5" = "Achte darauf, dass du für die Zubereitung deines Espressos kein kochendes Wasser verwendst, da dies zu einem bitteren Geschmack führen kann";
+
+"Espresso too bitter 6" = "Vielleicht hast du zu viel Espressopulver in Bezug auf Wasser verwendet";
+
+"Espresso too sour" = "Espresso zu sauer?";
+
+"Espresso too sour 1" = "Wenn der Mahlgrad zu grob ist, kann der Espresso zu sauer schmecken. Versuche einen feineren Mahlgrad";
+
+"Espresso too sour 2" = "Vielleicht hast du dich für leicht geröstete Kaffeebohnen entschieden. Probieren einfach eine dunklere Röstung";
+
+"Espresso too sour 3" = "Der Brühdruck könnte zu niedrig sein (unter 6 bar)";
+
+"Espresso too sour 4" = "Ein guter Espresso sollte in 25 - 35 Sekunden laufen. Wenn es kürzer dauert, könnte der Expresso sauer schmecken";
+
+"Espresso too sour 5" = "Wenn das Wasser zu lange abkühlt, kann der Kaffee sauer schmecken";
+
+"Espresso too sour 6" = "Vielleicht hast du zu wenig Espressopulver in Bezug auf Wasser verwendet";
+
+"Fabrication" = "Verarbeitung";
+
+"Fabrication 1" = "Es gibt nur zwei Kaffeesorten, die für den Weltmarkt relevant sind: 'Arabica' und 'Robusta'. Arabica-Bohnen machen rund 70% der globalen Kaffeekulturen aus";
+
+"Fabrication 10" = "Danach fehlt dir und deiner Tasse köstlichem Kaffee nur noch das Mahlen und Zubereiten deines Kaffees";
+
+"Fabrication 2" = "Kaffeebüsche benötigen idealerweise eine Regenmenge von ca. 1500 - 2000 Liter pro Quadratmeter und viel Sonnenlicht";
+
+"Fabrication 3" = "Die Frucht, die Kaffeekirsche genannt wird, wird hellrot wenn sie reif und erntefertig ist. Normalerweise gibt es eine große Ernte pro Jahr. Die Ernte erfolgt oft von Hand und ist ein arbeitsintensiver und schwieriger Prozess";
+
+"Fabrication 4" = "Schnell nach der Ernte muss die Verarbeitung beginnen, um den Verderb der Früchte zu verhindern. Der Kaffee wird auf eine von zwei Arten verarbeitet:";
+
+"Fabrication 5" = "Die Trockenmethode: Die frisch gepflückten Kirschen werden einfach auf riesige Flächen ausgebreitet, um an der Sonne zu trocknen. Dieser Prozess kann mehrere Wochen dauern und endet, wenn der Feuchtigkeitsgehalt der Kirschen auf 11 - 12 % sinkt";
+
+"Fabrication 6" = "Die Nassmethode: Nach der Ernte wird das Fruchtfleisch von der Kaffeekirsche entfernt, so dass die Bohne getrocknet wird, wobei nur die Pergamenthaut erhalten bleibt. Dann werden die Bohnen nach Gewicht getrennt und durchlaufen dann eine Reihe von rotierenden Trommeln, die sie nach Größe trennen. Nach der Trennung werden die Bohnen in große, mit Wasser gefüllte Gärtanks transportiert. Während sie in den Tanks liegen, bewirken natürlich vorkommende Enzyme, dass sich die glatte Schleimschicht, die noch am Pergament haftet, auflöst. Nach der Gärung sind sie bereit zur Trocknung";
+
+"Fabrication 7" = "Bevor der Kaffee in Transportbehälter exportiert werden kann, muss er geschält, poliert und sortiert werden";
+
+"Fabrication 8" = "Die Proben des Kaffees werden täglich auf Qualität und Geschmack geprüft. Nicht nur, um ihre Eigenschaften zu bestimmen, sondern auch, um den richtigen Verarbeitungsprozess zu wählen";
+
+"Fabrication 9" = "Die Röstung erfolgt im Importland, da die frisch gerösteten Bohnen so schnell wie möglich beim Verbraucher ankommen müssen. Die meisten Röstmaschinen haben eine Temperatur von etwa 287° Grad. Nach etwa 200° Grad fangen die Bohnen an, braun zu werden und der Kaffee, ein duftendes Öl aus dem Inneren der Bohne, beginnt zu erscheinen. Dieser Prozess erzeugt das Aroma des Kaffees, den wir trinken. Die Bohnen werden nach dem Röstprozess sofort mit Wasser oder Luft gekühlt";
+
 "French Press" = "French Press";
 
 "French Press 1" = "la voie française";
@@ -86,6 +204,26 @@
 "French Press 5" = "Drücke den Filter nun nach unten. Wenn der Kolben sofort herunterfällt, war der Mahlgrad zu grob. Wenn es schwer zu drücken ist, bedeutet das, dass der Mahlgrad zu fein war. Lass den fertigen Kaffee nicht zu lange in der French Press stehen";
 
 "French Press 6" = "Genieße deinen Kaffee :)";
+
+"French Press Brewing Time" = "4min";
+
+"French Press Quantity" = "65g/1l";
+
+"French Press Temperature" = "96°";
+
+"History of Coffee" = "Geschichte";
+
+"History of Coffee 1" = "Das Wort 'Kaffee' kommt von dem Wort koffie (niederländisch), das aus dem türkischen Wort kahve der Osmanen stammt, das wiederrum aus dem arabischen Wort gahwah kommt";
+
+"History of Coffee 2" = "Den Legenden zufolge bemerkt der Hirte Kaldi, dass seine Ziegen die ganze Nacht über nicht schlafen konnten, nachdem sie die roten Kaffeekirschen gegessen haben. Von dieser Bohne fasziniert, findet Kaldi die Frucht selbst und beginnt sie zu kauen. Er ist zu gleich erstaunt und ängstlich über die Auswirkungen und bringt die Beeren zu einem Mönch in einem nahegelegenen Kloster. Der Mönch, der so etwas noch nie gesehen hat, hat Angst, dass dies das Werk des Teufels sein könnte und warf sie deshalb ins Feuer, aus dem ein verführerisches Aroma aufsteigt, das den Mönch und Kaldi veranlasst  weitere Untersuchungen durchzuführen";
+
+"History of Coffee 3" = "Kaffee wurde erstmals 900 n. Chr. in der Region Kaffa im Südwesten Äthiopiens erwähnt. Die Volksgruppe (heute Oromo genannt) gab ihrem Stammesangehörigen Kaffee, um bessere Jäger zu sein";
+
+"History of Coffee 4" = "Von da aus breitete es sich aus: Äthiopien → Jemen → Mekka, Medina → Kairo, Damaskus, Bagdad und Konstantinopel (15 Jahrhundert)";
+
+"History of Coffee 5" = "In der islamischen Welt hat man Kaffee nicht hauptsächlich zum Vergnügen getrunken, sondern es war mit religiösen Praktiken verbunden. Es sollte helfen, tagsüber zu fasten und nachts während des Ramadans wach zu bleiben";
+
+"History of Coffee 6" = "Das Kaffee trinken verbreitete sich nach Italien, bevor es sich im Rest von Europa verteilte. Danach begann die niederländische Republik mit dem Export von Kaffeebohnen nach Ostindien und nach Amerika";
 
 /* No comment provided by engineer. */
 "Loading" = "Loading";
@@ -108,6 +246,60 @@
 
 "Pour Over 8" = "Genieße deinen Kaffee :)";
 
+"Pour Over Brewing Time" = "3-4min";
+
+"Pour Over Quantity" = "32g/500ml";
+
+"Pour Over Temperature" = "96°";
+
+"Quantity" = "Quantität";
+
+"Regions" = "Regionen";
+
+"Regions 1" = "Brasilien - das südamerikanische Land mit tropischem Klima ist mit der Produktion von mehr als 30% des weltweiten Kaffees der Kaffee-Exportmeister";
+
+"Regions 10" = "Äthiopien - die Geburtsstätte des Kaffees";
+
+"Regions 11" = "Ä - Die Handarbeit garantiert höchste Qualität, da nur reife Früchte geerntet werden";
+
+"Regions 12" = "Ä - Um größere Mengen unter Beibehaltung der hohen Qualität verarbeiten zu können, organisieren sich Kleinbauern oft in Kooperationen";
+
+"Regions 13" = "Ä - Äthiopien ist eines der ärmsten Länder der Welt. 85 Prozent der Arbeitsplätze sind eng mit der Kaffeeproduktion verbunden, und rund 60 Prozent der Staatseinnahmen stammen aus dem Export von Kaffeebohnen";
+
+"Regions 14" = "Vietnam - Vietnam wurde zum zweitgrößten Kaffeeexporteur der Welt";
+
+"Regions 15" = "V - 90% des angebauten Kaffees ist Robusta, der besonders schädlingsresistent ist und auch unter den schlimmsten Bedingungen gedeiht, auch wenn der Kaffeebauer nicht genau weiß, was er tut. Dies könnte der Grund dafür sein, dass dem Kaffee aus Vietnam nicht die höchste Qualität zugesprochen wird";
+
+"Regions 16" = "V - In Vietnam trinken sie einen ca phe nau (brauner Kaffee) oder ca phe sua (Milchkaffee), was kalter Kaffee mit Kondensmilch ist. Die Kondensmilch stammt aus früheren Zeiten, als es schwierig war, Lebensmittel zu kühlen";
+
+"Regions 2" = "B - Die Kaffeebohnen werden überwiegend von Hand geerntet und trocknen in der prallen Sonne";
+
+"Regions 3" = "B - Die Hauptkunden sind die USA und Europa, insbesondere Deutschland";
+
+"Regions 4" = "B - Da Brasilien immer mehr Pestizide in der Produktion verwendet, gibt es einige Bedenken hinsichtlich negativer gesundheitlicher Auswirkungen auf lange Sicht";
+
+"Regions 5" = "B - Der Geschmack ist überwiegend mild mit wenig Säure";
+
+"Regions 6" = "Kolumbien - Der Kaffee des drittgrößten Kaffeeexporteurs ist bekannt für seine hohe Qualität und Reinheit";
+
+"Regions 7" = "K - Der Tinto, wie ein typischer kolumbianischer Bitterkaffee genannt wird, wird meist schwarz getrunken, ohne Milch und Zucker";
+
+"Regions 8" = "K - Der Kaffee wird größtenteils in Caldas, Risaralda und Quinidio angebaut - auch bekannt als das 'Kaffeedreieck Kolumbiens'";
+
+"Regions 9" = "K - Kaffee ist die Haupteinnahmequelle für rund 500.000 Kolumbianer";
+
+"Storage" = "Lagerung";
+
+"Storage 1" = "Du solltest vorgemahlenen Kaffee innerhalb von 2 Wochen verwenden, da er sein Aroma schnell verliert";
+
+"Storage 2" = "Lager deinen Kaffee an einem dunklen, trockenen und kühlen Ort";
+
+"Storage 3" = "Verwende eine Verpackung mit einem Aromaventil, damit Gase aus dem Kaffee entweichen können, ohne dass Luft eindringt";
+
+"Storage 4" = "Lager deinen Kaffee nicht im Kühlschrank, da er Feuchtigkeit und Fremdaromen leicht aufnehmen kann";
+
+"Temperature" = "Temperatur";
+
 "Turkish Mocha" = "Türkischer Mokka";
 
 "Turkish Mocha 1" = "Die originale Art Kaffee zuzubereiten";
@@ -121,3 +313,9 @@
 "Turkish Mocha 5" = "Oft wird der Kaffee mit einer Kleinigkeit wie Baklava oder anderen türkischen Köstlichkeiten serviert";
 
 "Turkish Mocha 6" = "Genieße deinen Mokka :) - p.s. stell sicher, dass du den Kaffeesatz nicht mittrinkst";
+
+"Turkish Mocha Brewing Time" = "2min";
+
+"Turkish Mocha Quantity" = "1 zu 10";
+
+"Turkish Mocha Temperature" = "60°";

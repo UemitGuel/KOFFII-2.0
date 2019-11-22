@@ -24,7 +24,7 @@
 "Cgl-vu-7Xl.title" = "Info";
 
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "Dj6-Bn-kOp"; */
-"Dj6-Bn-kOp.title" = " j";
+"Dj6-Bn-kOp.title" = " ";
 
 /* Class = "UITabBarItem"; title = "places"; ObjectID = "GPg-WA-BMY"; */
 "GPg-WA-BMY.title" = "Cafes";
@@ -87,7 +87,7 @@
 "peN-X9-LxV.text" = "Label";
 
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "rAz-1t-PvD"; */
-"rAz-1t-PvD.title" = "j";
+"rAz-1t-PvD.title" = " ";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "rMk-R4-g6r"; */
 "rMk-R4-g6r.text" = "Label";
