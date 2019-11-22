@@ -28,6 +28,8 @@
 		B367D58E22D502CD0069F4D0 /* CoffeePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58D22D502CD0069F4D0 /* CoffeePlacesViewController.swift */; };
 		B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596C2370264500D1D6B9 /* MapFunctions.swift */; };
 		B377596F2370336600D1D6B9 /* FeatureButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */; };
+		B38C41DB2387E43900C92E8D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C41DA2387E43900C92E8D /* Localized.swift */; };
+		B38C41DC2387E4AC00C92E8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B38C41DE2387E4AC00C92E8D /* Localizable.strings */; };
 		B390EFC222D60F7300A931E9 /* CoffeePlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
 		B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5722C4F38B005848DA /* AppDelegate.swift */; };
@@ -68,6 +70,11 @@
 		B367D58D22D502CD0069F4D0 /* CoffeePlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePlacesViewController.swift; sourceTree = "<group>"; };
 		B377596C2370264500D1D6B9 /* MapFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFunctions.swift; sourceTree = "<group>"; };
 		B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureButtonFunctions.swift; sourceTree = "<group>"; };
+		B38C41522387E2B700C92E8D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B38C41532387E2B900C92E8D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		B38C41DA2387E43900C92E8D /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		B38C41DD2387E4AC00C92E8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B38C41DF2387E4B000C92E8D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePlacesTableViewCell.swift; sourceTree = "<group>"; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
 		B3AA7E5422C4F38B005848DA /* KOFFII Cologne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KOFFII Cologne.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +215,8 @@
 				B3AA7E5E22C4F38C005848DA /* Assets.xcassets */,
 				B3AA7E6322C4F38C005848DA /* Info.plist */,
 				B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */,
+				B38C41DE2387E4AC00C92E8D /* Localizable.strings */,
+				B38C41DA2387E43900C92E8D /* Localized.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -290,6 +299,8 @@
 			buildConfigurationList = B3AA7E6622C4F38C005848DA /* Build configuration list for PBXNativeTarget "KOFFII" */;
 			buildPhases = (
 				D4CF939A6B216106839CE895 /* [CP] Check Pods Manifest.lock */,
+				B38C41D62387E2DE00C92E8D /* bartycrouch */,
+				B38C41D72387E2F900C92E8D /* swiftgen */,
 				B3AA7E5022C4F38B005848DA /* Sources */,
 				B3AA7E5122C4F38B005848DA /* Frameworks */,
 				B3AA7E5222C4F38B005848DA /* Resources */,
@@ -326,6 +337,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = B3AA7E4B22C4F38B005848DA;
 			productRefGroup = B3AA7E5522C4F38B005848DA /* Products */;
@@ -347,6 +359,7 @@
 				B3F62EDA22D0FFB6002DF68C /* Quicksand-Medium.ttf in Resources */,
 				B3AA7E6222C4F38C005848DA /* LaunchScreen.storyboard in Resources */,
 				B3F62ED822D0CB37002DF68C /* HeaderView.xib in Resources */,
+				B38C41DC2387E4AC00C92E8D /* Localizable.strings in Resources */,
 				B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */,
 				B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */,
 				B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */,
@@ -357,6 +370,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B38C41D62387E2DE00C92E8D /* bartycrouch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = bartycrouch;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
+		};
+		B38C41D72387E2F900C92E8D /* swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
 		CC83AC63C17D3EBB4448172F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +472,7 @@
 				B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
 				B310BF9E2369D49A0065318C /* RoasterTableViewCell.swift in Sources */,
+				B38C41DB2387E43900C92E8D /* Localized.swift in Sources */,
 				B310BF982369BBC30065318C /* AddCoffeePlaceViewController.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,
 				B367D58E22D502CD0069F4D0 /* CoffeePlacesViewController.swift in Sources */,
@@ -433,10 +483,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B38C41DE2387E4AC00C92E8D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B38C41DD2387E4AC00C92E8D /* en */,
+				B38C41DF2387E4B000C92E8D /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B3AA7E5B22C4F38B005848DA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B3AA7E5C22C4F38B005848DA /* Base */,
+				B38C41532387E2B900C92E8D /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -445,6 +505,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B3AA7E6122C4F38C005848DA /* Base */,
+				B38C41522387E2B700C92E8D /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -456,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -517,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -574,7 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = YLGTKU7SLK;
 				INFOPLIST_FILE = "KOFFII/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -596,7 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = YLGTKU7SLK;
 				INFOPLIST_FILE = "KOFFII/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

@@ -1,6 +1,3 @@
-//
-//  Cafe.swift
-//  KOFFII
 import Foundation
 
 struct Cafe {
