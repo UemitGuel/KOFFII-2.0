@@ -21,3 +21,4 @@ struct Information {
         complainCatgory = dictionary["complainCategory"] as? String
     }
 }
+

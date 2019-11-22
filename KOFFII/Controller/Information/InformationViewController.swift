@@ -1,32 +1,18 @@
-import Firebase
 import SVProgressHUD
 import UIKit
 
 class InformationViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
-    var db: Firestore!
-    var informationBrew = [Information]()
-    var informationKnow = [Information]()
-    let sections = ["Brewing", "Knowledge"]
-    var items = [[Information]]()
-
-    let myGroup = DispatchGroup()
+    var brewingMethodes : [BrewingMethode] = [aeropress,bialetti,chemex,espresso,frenchPress,pourOver,turkishMocha]
+    var knowledge : [Knowledge] = [coffeeWater,health,history,fabrication,regions,storage]
+    let sections = [L10n.brewing, L10n.knowledge]
+    var items = [[Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFirebase()
-        SVProgressHUD.show()
-        loadInformationObjects { _ in
-            self.tableView.reloadData()
-            SVProgressHUD.dismiss()
-        }
-    }
-
-    func setupFirebase() {
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        db = Firestore.firestore()
+        items.append(brewingMethodes)
+        items.append(knowledge)
     }
 
     // MARK: - Handling the appearence and disappearnce of the Navigation and Tabbar
@@ -39,44 +25,6 @@ class InformationViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
-    private func loadInformationObjects(completionHandler: @escaping ([[Information]]) -> Void) {
-        let brewingRef = db.collection("Information_Brewing")
-        let knowledgeRef = db.collection("Information_Knowledge")
-        myGroup.enter()
-        brewingRef.getDocuments { querySnapshot, err in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = document.data()
-                    guard let inforation = Information(dictionary: data) else { return }
-                    self.informationBrew.append(inforation)
-                    
-                }
-                self.myGroup.leave()
-            }
-        }
-        myGroup.enter()
-        knowledgeRef.getDocuments { querySnapshot, err in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = document.data()
-                    guard let inforation = Information(dictionary: data) else { return }
-                    self.informationKnow.append(inforation)
-                }
-                self.myGroup.leave()
-            }
-        }
-        self.myGroup.notify(queue: .main) {
-            print("Finished all requests.")
-            self.items.append(self.informationBrew)
-            self.items.append(self.informationKnow)
-            completionHandler(self.items)
-        }
     }
 }
 

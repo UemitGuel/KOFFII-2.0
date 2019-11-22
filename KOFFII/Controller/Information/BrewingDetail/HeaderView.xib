@@ -102,9 +102,12 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="brewingTime" destination="Qgf-Rv-NOk" id="EBd-CB-sRK"/>
                 <outlet property="quanLabel" destination="eUg-ZT-pbZ" id="nZm-Az-FRr"/>
+                <outlet property="quantity" destination="sV4-Js-nDl" id="haw-8n-pl6"/>
                 <outlet property="seperator" destination="pfQ-QN-i9P" id="dV9-jF-F37"/>
                 <outlet property="tempLabel" destination="YJ0-dU-7Gk" id="1er-kA-Jwa"/>
+                <outlet property="temperature" destination="r25-pc-28U" id="oJo-Zo-RXa"/>
                 <outlet property="timeLabel" destination="oat-DL-hLW" id="ftH-ju-4ci"/>
             </connections>
             <point key="canvasLocation" x="171.01449275362319" y="129.24107142857142"/>

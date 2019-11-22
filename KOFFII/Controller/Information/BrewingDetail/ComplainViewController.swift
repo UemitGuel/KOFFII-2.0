@@ -1,7 +1,7 @@
 import UIKit
 
 class ComplainViewController: UIViewController {
-    var passedComplainObject: Complain?
+    var passedComplainObject: BrewingMethode.complainCategory?
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var complainLabel: UILabel!

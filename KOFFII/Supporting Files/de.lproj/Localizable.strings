@@ -171,7 +171,7 @@
 
 "Fabrication" = "Verarbeitung";
 
-"Fabrication 1" = "Es gibt nur zwei Kaffeesorten, die für den Weltmarkt relevant sind: 'Arabica' und 'Robusta'. Arabica-Bohnen machen rund 70% der globalen Kaffeekulturen aus";
+"Fabrication 1" = "Es gibt nur zwei Kaffeesorten, die für den Weltmarkt relevant sind: 'Arabica' und 'Robusta'. Arabica-Bohnen machen rund 70 Prozent der globalen Kaffeekulturen aus";
 
 "Fabrication 10" = "Danach fehlt dir und deiner Tasse köstlichem Kaffee nur noch das Mahlen und Zubereiten deines Kaffees";
 
@@ -225,6 +225,8 @@
 
 "History of Coffee 6" = "Das Kaffee trinken verbreitete sich nach Italien, bevor es sich im Rest von Europa verteilte. Danach begann die niederländische Republik mit dem Export von Kaffeebohnen nach Ostindien und nach Amerika";
 
+"Knowledge" = "Wissen";
+
 /* No comment provided by engineer. */
 "Loading" = "Loading";
 
@@ -256,7 +258,7 @@
 
 "Regions" = "Regionen";
 
-"Regions 1" = "Brasilien - das südamerikanische Land mit tropischem Klima ist mit der Produktion von mehr als 30% des weltweiten Kaffees der Kaffee-Exportmeister";
+"Regions 1" = "Brasilien - das südamerikanische Land mit tropischem Klima ist mit der Produktion von mehr als 30 Prozent des weltweiten Kaffees der Kaffee-Exportmeister";
 
 "Regions 10" = "Äthiopien - die Geburtsstätte des Kaffees";
 
@@ -268,7 +270,7 @@
 
 "Regions 14" = "Vietnam - Vietnam wurde zum zweitgrößten Kaffeeexporteur der Welt";
 
-"Regions 15" = "V - 90% des angebauten Kaffees ist Robusta, der besonders schädlingsresistent ist und auch unter den schlimmsten Bedingungen gedeiht, auch wenn der Kaffeebauer nicht genau weiß, was er tut. Dies könnte der Grund dafür sein, dass dem Kaffee aus Vietnam nicht die höchste Qualität zugesprochen wird";
+"Regions 15" = "V - 90 Prozent des angebauten Kaffees ist Robusta, der besonders schädlingsresistent ist und auch unter den schlimmsten Bedingungen gedeiht, auch wenn der Kaffeebauer nicht genau weiß, was er tut. Dies könnte der Grund dafür sein, dass dem Kaffee aus Vietnam nicht die höchste Qualität zugesprochen wird";
 
 "Regions 16" = "V - In Vietnam trinken sie einen ca phe nau (brauner Kaffee) oder ca phe sua (Milchkaffee), was kalter Kaffee mit Kondensmilch ist. Die Kondensmilch stammt aus früheren Zeiten, als es schwierig war, Lebensmittel zu kühlen";
 

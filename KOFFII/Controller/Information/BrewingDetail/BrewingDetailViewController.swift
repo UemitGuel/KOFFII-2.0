@@ -41,11 +41,11 @@ class BrewingDetailViewController: UIViewController {
     func setupComplainButton() {
         if let passedCategory = passedInformationBrewing?.complainCatgory {
             if passedCategory == "Coffee" {
-                rightButton.setTitle("coffee too sour?", for: .normal)
-                leftButton.setTitle("coffee too bitter?", for: .normal)
+                rightButton.setTitle(L10n.coffeeTooSour, for: .normal)
+                leftButton.setTitle(L10n.coffeeTooBitter, for: .normal)
             } else {
-                rightButton.setTitle("espresso too sour?", for: .normal)
-                leftButton.setTitle("espresso to bitter?", for: .normal)
+                rightButton.setTitle(L10n.espressoTooSour, for: .normal)
+                leftButton.setTitle(L10n.espressoTooBitter, for: .normal)
             }
         } else {
             rightButton.setTitle("", for: .normal)

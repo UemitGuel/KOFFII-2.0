@@ -183,10 +183,8 @@ internal enum L10n {
   internal static let espressoTooSour6 = L10n.tr("Localizable", "Espresso too sour 6")
   /// Fabrication
   internal static let fabrication = L10n.tr("Localizable", "Fabrication")
-  /// There just two types of coffee which became important for the world market: 'Arabica' and 'Robusta'. Arabica plants account for around 70% of the global coffee cultures
-  internal static func fabrication1(_ p1: Int) -> String {
-    return L10n.tr("Localizable", "Fabrication 1", p1)
-  }
+  /// There just two types of coffee which became important for the world market: 'Arabica' and 'Robusta'. Arabica plants account for around 70 percent of the global coffee cultures
+  internal static let fabrication1 = L10n.tr("Localizable", "Fabrication 1")
   /// After this, just grinding and preparing your coffee is missing from you and your cup of delicious coffee
   internal static let fabrication10 = L10n.tr("Localizable", "Fabrication 10")
   /// Coffee seeds are generally planted in large beds in shaded nurseries. They need ideally rainfall of around 1500 - 2000 liters per square meter and plenty of sunlight
@@ -239,6 +237,8 @@ internal enum L10n {
   internal static let historyOfCoffee5 = L10n.tr("Localizable", "History of Coffee 5")
   /// Drinking coffee spread to Italy, before it got passed to the rest of Europe. After, the Dutch Republic started exporting coffee beans to the East Indies and to the Americas
   internal static let historyOfCoffee6 = L10n.tr("Localizable", "History of Coffee 6")
+  /// Knowledge
+  internal static let knowledge = L10n.tr("Localizable", "Knowledge")
   /// Loading
   internal static let loading = L10n.tr("Localizable", "Loading")
   /// Pour Over
@@ -269,10 +269,8 @@ internal enum L10n {
   internal static let quantity = L10n.tr("Localizable", "Quantity")
   /// Regions
   internal static let regions = L10n.tr("Localizable", "Regions")
-  /// Brazil - the South American country with tropical climate is with the production of more than 30% of the world´s traded coffee export-champion
-  internal static func regions1(_ p1: Int) -> String {
-    return L10n.tr("Localizable", "Regions 1", p1)
-  }
+  /// Brazil - the South American country with tropical climate is with the production of more than 30 percent of the world´s traded coffee export-champion
+  internal static let regions1 = L10n.tr("Localizable", "Regions 1")
   /// Ethiopia - the birthplace of coffee
   internal static let regions10 = L10n.tr("Localizable", "Regions 10")
   /// E - The work by hand guarantees highest quality, because only ripe fruits are harvested
@@ -283,10 +281,8 @@ internal enum L10n {
   internal static let regions13 = L10n.tr("Localizable", "Regions 13")
   /// Vietnam - Vietnam became the second biggest coffee exporter in the world
   internal static let regions14 = L10n.tr("Localizable", "Regions 14")
-  /// V - 90% of the planted coffee is Robusta, which is particularly resistant to pests and thrives even under the worst conditions, even if the coffee farmer does not know exactly what he is doing. This could be the reason why it is not considered to produce high-quality coffee
-  internal static func regions15(_ p1: Int) -> String {
-    return L10n.tr("Localizable", "Regions 15", p1)
-  }
+  /// V - 90 percent of the planted coffee is Robusta, which is particularly resistant to pests and thrives even under the worst conditions, even if the coffee farmer does not know exactly what he is doing. This could be the reason why it is not considered to produce high-quality coffee
+  internal static let regions15 = L10n.tr("Localizable", "Regions 15")
   /// V - In Vietnam, they drink a ca phe nau (brown coffee) or ca phe sua (milk coffee), which is cold coffee with condensed milk. The condensed milk dates back to earlier times when it was difficult to cool food
   internal static let regions16 = L10n.tr("Localizable", "Regions 16")
   /// B - The coffee beans are harvested predominantly by hand and drying out in the blazing sun
