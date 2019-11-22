@@ -20,14 +20,14 @@ class KnowledgeDetailViewController: UIViewController {
     }
 
     func setupHeaderView() {
-        guard let imageName = passedInformationKnowledge?.imageName else { return }
-        headerImageView.image = UIImage(named: imageName)
+        guard let imageName = passedInformationKnowledge?.image else { return }
+        headerImageView.image = passedInformationKnowledge?.image
     }
 }
 
 extension KnowledgeDetailViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        guard let count = passedInformationKnowledge?.tips?.count else { return 0 }
+        guard let count = passedInformationKnowledge?.tips.count else { return 0 }
         return count
     }
 
@@ -37,11 +37,8 @@ extension KnowledgeDetailViewController: UITableViewDataSource {
         guard let information = passedInformationKnowledge else {
             return cell
         }
-        guard let tips = information.tips else {
-            return cell
-        }
         cell.countLabel.text = String(indexPath.row + 1)
-        cell.longTextLabel.text = tips[indexPath.row]
+        cell.longTextLabel.text = information.tips[indexPath.row]
         return cell
     }
 }

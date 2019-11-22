@@ -1,36 +1,30 @@
 import UIKit
 
-struct Knowledge {
-    let name: String
-    let imageName: UIImage
-    let points: [String]
-}
-
-let coffeeWater = Knowledge(name: L10n.coffeeWater, imageName: Asset.water.image,
-                            points: [
+let coffeeWater = Information(name: L10n.coffeeWater, image: Asset.water.image, quan: nil, temp: nil, time: nil,
+                            tips: [
                                 L10n.coffeeWater1,
                                 L10n.coffeeWater2,
-                                L10n.coffeeWater3])
+                                L10n.coffeeWater3], complainCategory: nil)
 
-let health = Knowledge(name: L10n.coffeeHealth, imageName: Asset.health.image,
-                       points: [
+let health = Information(name: L10n.coffeeHealth, image: Asset.health.image,  quan: nil, temp: nil, time: nil,
+                       tips: [
                         L10n.coffeeHealth1,
                         L10n.coffeeHealth2,
                         L10n.coffeeHealth3,
                         L10n.coffeeHealth4,
-                        L10n.coffeeHealth5])
+                        L10n.coffeeHealth5], complainCategory: nil)
 
-let history = Knowledge(name: L10n.historyOfCoffee, imageName: Asset.history.image,
-                        points: [
+let history = Information(name: L10n.historyOfCoffee, image: Asset.history.image,  quan: nil, temp: nil, time: nil,
+                        tips: [
                             L10n.historyOfCoffee1,
                             L10n.historyOfCoffee2,
                             L10n.historyOfCoffee3,
                             L10n.historyOfCoffee4,
                             L10n.historyOfCoffee5,
-                            L10n.historyOfCoffee6])
+                            L10n.historyOfCoffee6], complainCategory: nil)
 
-let fabrication = Knowledge(name: L10n.fabrication, imageName: Asset.fabrication.image,
-                            points: [
+let fabrication = Information(name: L10n.fabrication, image: Asset.fabrication.image,  quan: nil, temp: nil, time: nil,
+                            tips: [
                                 L10n.fabrication1,
                                 L10n.fabrication2,
                                 L10n.fabrication3,
@@ -40,10 +34,10 @@ let fabrication = Knowledge(name: L10n.fabrication, imageName: Asset.fabrication
                                 L10n.fabrication7,
                                 L10n.fabrication8,
                                 L10n.fabrication9,
-                                L10n.fabrication10])
+                                L10n.fabrication10], complainCategory: nil)
 
-let regions = Knowledge(name: L10n.regions, imageName: Asset.regions.image,
-                        points: [
+let regions = Information(name: L10n.regions, image: Asset.regions.image,  quan: nil, temp: nil, time: nil,
+                        tips: [
                             L10n.regions1,
                             L10n.regions2,
                             L10n.regions3,
@@ -59,11 +53,11 @@ let regions = Knowledge(name: L10n.regions, imageName: Asset.regions.image,
                             L10n.regions13,
                             L10n.regions14,
                             L10n.regions15,
-                            L10n.regions16])
+                            L10n.regions16], complainCategory: nil)
 
-let storage = Knowledge(name: L10n.storage, imageName: Asset.storage.image,
-                        points: [
+let storage = Information(name: L10n.storage, image: Asset.storage.image,  quan: nil, temp: nil, time: nil,
+                        tips: [
                             L10n.storage1,
                             L10n.storage2,
                             L10n.storage3,
-                            L10n.storage4])
+                            L10n.storage4], complainCategory: nil)

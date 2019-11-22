@@ -4,10 +4,10 @@ import UIKit
 class InformationViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
-    var brewingMethodes : [BrewingMethode] = [aeropress,bialetti,chemex,espresso,frenchPress,pourOver,turkishMocha]
-    var knowledge : [Knowledge] = [coffeeWater,health,history,fabrication,regions,storage]
+    var brewingMethodes : [Information] = [aeropress,bialetti,chemex,espresso,frenchPress,pourOver,turkishMocha]
+    var knowledge : [Information] = [coffeeWater,health,history,fabrication,regions,storage]
     let sections = [L10n.brewing, L10n.knowledge]
-    var items = [[Any]]()
+    var items = [[Information]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell",
                                                  for: indexPath) as! InformationTableViewCell
         cell.nameLabel?.text = items[indexPath.section][indexPath.row].name
-        cell.infoImageView?.image = UIImage(named: items[indexPath.section][indexPath.row].imageName ?? "")
+        cell.infoImageView?.image = items[indexPath.section][indexPath.row].image
         cell.selectionStyle = .none
         return cell
     }

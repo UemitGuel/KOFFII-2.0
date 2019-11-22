@@ -2,7 +2,7 @@ import Foundation
 
 struct Complain {
     let name: String
-    let complainCategory: BrewingMethode.complainCategory
+    let complainCategory: Information.complainCategory
     let improvements: [String]
 }
 

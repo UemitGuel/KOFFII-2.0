@@ -1,21 +1,6 @@
 import UIKit
 
-struct BrewingMethode {
-    let name: String
-    let imageName: UIImage
-    let quan: String
-    let temp: String
-    let time: String
-    let tips: [String]
-    let complainCategory: complainCategory
-    
-    enum complainCategory {
-        case coffee
-        case espresso
-    }
-}
-
-let pourOver = BrewingMethode(name: L10n.pourOver, imageName: Asset.handfilter.image,
+let pourOver = Information(name: L10n.pourOver, image: Asset.handfilter.image,
                               quan: L10n.pourOverQuantity,
                               temp: L10n.pourOverTemperature,
                               time: L10n.pourOverBrewingTime,
@@ -27,9 +12,9 @@ let pourOver = BrewingMethode(name: L10n.pourOver, imageName: Asset.handfilter.i
                                      L10n.pourOver6,
                                      L10n.pourOver7,
                                      L10n.pourOver8 ],
-                              complainCategory: BrewingMethode.complainCategory.coffee )
+                              complainCategory: Information.complainCategory.coffee )
 
-let aeropress = BrewingMethode(name: L10n.aeropress, imageName: Asset.aeropress.image,
+let aeropress = Information(name: L10n.aeropress, image: Asset.aeropress.image,
                                quan: L10n.aeropressQuantity,
                                temp: L10n.aeropressTemperature,
                                time: L10n.aeropressBrewingTime,
@@ -42,9 +27,9 @@ let aeropress = BrewingMethode(name: L10n.aeropress, imageName: Asset.aeropress.
                                       L10n.aeropress7,
                                       L10n.aeropress8,
                                       L10n.aeropress9 ],
-                               complainCategory: BrewingMethode.complainCategory.coffee )
+                               complainCategory: Information.complainCategory.coffee )
 
-let bialetti = BrewingMethode(name: L10n.bialetti, imageName: Asset.espressokocher.image,
+let bialetti = Information(name: L10n.bialetti, image: Asset.espressokocher.image,
                               quan: L10n.bialettiQuantity,
                               temp: L10n.bialettiTemperature,
                               time: L10n.bialettiBrewingTime,
@@ -54,10 +39,10 @@ let bialetti = BrewingMethode(name: L10n.bialetti, imageName: Asset.espressokoch
                                      L10n.bialetti4,
                                      L10n.bialetti5,
                                      L10n.bialetti6 ],
-                              complainCategory: BrewingMethode.complainCategory.espresso )
+                              complainCategory: Information.complainCategory.espresso )
 
 
-let chemex = BrewingMethode(name: L10n.chemex, imageName: Asset.chemex.image,
+let chemex = Information(name: L10n.chemex, image: Asset.chemex.image,
                             quan: L10n.chemexQuantity,
                             temp: L10n.chemexTemperature,
                             time: L10n.chemexBrewingTime,
@@ -70,9 +55,9 @@ let chemex = BrewingMethode(name: L10n.chemex, imageName: Asset.chemex.image,
                                    L10n.chemex7,
                                    L10n.chemex8,
                                    L10n.chemex9 ],
-                            complainCategory: BrewingMethode.complainCategory.coffee )
+                            complainCategory: Information.complainCategory.coffee )
 
-let espresso = BrewingMethode(name: L10n.espresso, imageName: Asset.espresso.image,
+let espresso = Information(name: L10n.espresso, image: Asset.espresso.image,
                               quan: L10n.espressoQuantity,
                               temp: L10n.espressoTemperature,
                               time: L10n.espressoBrewingTime,
@@ -84,9 +69,9 @@ let espresso = BrewingMethode(name: L10n.espresso, imageName: Asset.espresso.ima
                                      L10n.espresso6,
                                      L10n.espresso7,
                                      L10n.espresso8 ],
-                              complainCategory: BrewingMethode.complainCategory.espresso )
+                              complainCategory: Information.complainCategory.espresso )
 
-let frenchPress = BrewingMethode(name: L10n.frenchPress, imageName: Asset.frenchpress.image,
+let frenchPress = Information(name: L10n.frenchPress, image: Asset.frenchpress.image,
                                  quan: L10n.frenchPressQuantity,
                                  temp: L10n.frenchPressTemperature,
                                  time: L10n.frenchPressBrewingTime,
@@ -96,9 +81,9 @@ let frenchPress = BrewingMethode(name: L10n.frenchPress, imageName: Asset.french
                                         L10n.frenchPress4,
                                         L10n.frenchPress5,
                                         L10n.frenchPress6 ],
-                                 complainCategory: BrewingMethode.complainCategory.coffee )
+                                 complainCategory: Information.complainCategory.coffee )
 
-let turkishMocha = BrewingMethode(name: L10n.turkishMocha, imageName: Asset.turkishMocha.image,
+let turkishMocha = Information(name: L10n.turkishMocha, image: Asset.turkishMocha.image,
                                   quan: L10n.turkishMochaQuantity,
                                   temp: L10n.turkishMochaTemperature,
                                   time: L10n.turkishMochaBrewingTime,
@@ -108,6 +93,6 @@ let turkishMocha = BrewingMethode(name: L10n.turkishMocha, imageName: Asset.turk
                                          L10n.turkishMocha4,
                                          L10n.turkishMocha5,
                                          L10n.turkishMocha6 ],
-                                  complainCategory: BrewingMethode.complainCategory.coffee )
+                                  complainCategory: Information.complainCategory.coffee )
 
 

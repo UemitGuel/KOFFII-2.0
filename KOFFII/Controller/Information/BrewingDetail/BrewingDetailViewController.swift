@@ -34,13 +34,12 @@ class BrewingDetailViewController: UIViewController {
     }
 
     func setupTableViewHeader() {
-        guard let imageName = passedInformationBrewing?.imageName else { return }
-        headerImageView.image = UIImage(named: imageName)
+        headerImageView.image = passedInformationBrewing?.image
     }
     
     func setupComplainButton() {
-        if let passedCategory = passedInformationBrewing?.complainCatgory {
-            if passedCategory == "Coffee" {
+        if let passedCategory = passedInformationBrewing?.complainCategory {
+            if passedCategory == .coffee {
                 rightButton.setTitle(L10n.coffeeTooSour, for: .normal)
                 leftButton.setTitle(L10n.coffeeTooBitter, for: .normal)
             } else {
@@ -53,62 +52,61 @@ class BrewingDetailViewController: UIViewController {
         }
     }
 
-    @IBAction func complainButtonTapped(_ sender: UIButton) {
-        guard let complainCategory = passedInformationBrewing?.complainCatgory else { return }
-        downloadComplainObject(senderTag: sender.tag, complainCategory: complainCategory) { complain in
-            self.downloadedComplainObject = complain
-            self.performSegue(withIdentifier: "fromDetailToComplainSegue", sender: self)
-        }
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == "fromDetailToComplainSegue" {
-            let complainVC = segue.destination as! ComplainViewController
-            complainVC.passedComplainObject = downloadedComplainObject
-        }
-    }
+//    @IBAction func complainButtonTapped(_ sender: UIButton) {
+//        guard let complainCategory = passedInformationBrewing?.complainCategory else { return }
+//        downloadComplainObject(senderTag: sender.tag, complainCategory: complainCategory) { complain in
+//            self.downloadedComplainObject = complain
+//            self.performSegue(withIdentifier: "fromDetailToComplainSegue", sender: self)
+//        }
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+//        if segue.identifier == "fromDetailToComplainSegue" {
+//            let complainVC = segue.destination as! ComplainViewController
+//            complainVC.passedComplainObject = downloadedComplainObject
+//        }
+//    }
     
-    private func getDocumentsfor(complainCategory: String, completionHandler: @escaping (Complain) -> Void) {
-        let collectionRef = db.collection("Complain")
-        collectionRef.document(complainCategory).getDocument { document, _ in
-            if let complain = document.flatMap({
-                $0.data().flatMap { data in
-                    Complain(dictionary: data)
-                }
-            }) {
-                completionHandler(complain)
-            } else {
-                print("Document does not exist")
-            }
-        }
-    }
+//    private func getDocumentsfor(complainCategory: String, completionHandler: @escaping (Complain) -> Void) {
+//        let collectionRef = db.collection("Complain")
+//        collectionRef.document(complainCategory).getDocument { document, _ in
+//            if let complain = document.flatMap({
+//                $0.data().flatMap { data in
+//                    Complain(dictionary: data)
+//                }
+//            }) {
+//                completionHandler(complain)
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
+//    }
 
-    func downloadComplainObject(senderTag: Int, complainCategory: String,
-                                completionHandler: @escaping (Complain) -> Void) {
-        if complainCategory == "Coffee", senderTag == 0 {
-            getDocumentsfor(complainCategory: "coffee too bitter?") { complain in
-                completionHandler(complain)
-            }
-        } else if complainCategory == "Coffee", senderTag == 1 {
-            getDocumentsfor(complainCategory: "coffee too sour?") { complain in
-                completionHandler(complain)
-            }
-        } else if complainCategory == "Espresso", senderTag == 0 {
-            getDocumentsfor(complainCategory: "espresso too bitter?") { complain in
-                completionHandler(complain)
-            }
-        } else if complainCategory == "Espresso", senderTag == 1 {
-            getDocumentsfor(complainCategory: "espresso too sour?") { complain in
-                completionHandler(complain)
-            }
-        }
-    }
+//    func downloadComplainObject(senderTag: Int, complainCategory: String,
+//                                completionHandler: @escaping (Complain) -> Void) {
+//        if complainCategory == "Coffee", senderTag == 0 {
+//            getDocumentsfor(complainCategory: "coffee too bitter?") { complain in
+//                completionHandler(complain)
+//            }
+//        } else if complainCategory == "Coffee", senderTag == 1 {
+//            getDocumentsfor(complainCategory: "coffee too sour?") { complain in
+//                completionHandler(complain)
+//            }
+//        } else if complainCategory == "Espresso", senderTag == 0 {
+//            getDocumentsfor(complainCategory: "espresso too bitter?") { complain in
+//                completionHandler(complain)
+//            }
+//        } else if complainCategory == "Espresso", senderTag == 1 {
+//            getDocumentsfor(complainCategory: "espresso too sour?") { complain in
+//                completionHandler(complain)
+//            }
+//        }
+//    }
 }
 
 extension BrewingDetailViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        guard let count = passedInformationBrewing?.tips?.count else { return 0 }
-        return count
+        return passedInformationBrewing!.tips.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,11 +115,9 @@ extension BrewingDetailViewController: UITableViewDataSource {
         guard let information = passedInformationBrewing else {
             return cell
         }
-        guard let tips = information.tips else {
-            return cell
-        }
+
         cell.countLabel.text = String(indexPath.row + 1)
-        cell.longTextLabel.text = tips[indexPath.row]
+        cell.longTextLabel.text = information.tips[indexPath.row]
         return cell
     }
 }
