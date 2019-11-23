@@ -1,5 +1,3 @@
-import Foundation
-
 struct Roastery {
     let name: String
     let latitude: Double?

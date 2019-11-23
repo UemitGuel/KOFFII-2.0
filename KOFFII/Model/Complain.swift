@@ -1,5 +1,3 @@
-import Foundation
-
 struct Complain {
     let name: String
     let complainCategory: Information.complainCategory

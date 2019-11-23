@@ -20,7 +20,6 @@ class KnowledgeDetailViewController: UIViewController {
     }
 
     func setupHeaderView() {
-        guard let imageName = passedInformationKnowledge?.image else { return }
         headerImageView.image = passedInformationKnowledge?.image
     }
 }

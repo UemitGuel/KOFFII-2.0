@@ -1,4 +1,3 @@
-import SVProgressHUD
 import UIKit
 
 class InformationViewController: UIViewController {
@@ -67,7 +66,6 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     // MARK: Sections for TableView
-
     func numberOfSections(in _: UITableView) -> Int {
         return sections.count
     }
