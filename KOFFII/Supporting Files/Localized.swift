@@ -101,6 +101,8 @@ internal enum L10n {
   internal static let coffeeHealth4 = L10n.tr("Localizable", "Coffee & Health 4")
   /// The downside of too much caffeine: can lead to potassium deficiency, muscle problems, fatigue and headaches
   internal static let coffeeHealth5 = L10n.tr("Localizable", "Coffee & Health 5")
+  /// Coffee place sent for review!
+  internal static let coffeePlaceSentForReview = L10n.tr("Localizable", "Coffee place sent for review!")
   /// Coffee too bitter
   internal static let coffeeTooBitter = L10n.tr("Localizable", "Coffee too bitter")
   /// If your grinding degree is too fine, the coffee extraction time will take too long and therefore your coffee can taste too bitter. Try a coarser grinding degree

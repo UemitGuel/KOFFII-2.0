@@ -23,31 +23,31 @@ enum Feature: String, CaseIterable {
 
 
 class FeatureButtonFunctions {
-    let buttonTappedColor = UIColor.systemGray2
+    let buttonTappedColor = UIColor.systemRed
     let quicksandMediumFont = UIFont(name: "Quicksand-Medium", size: 15)
     let quicksandBoldFont = UIFont(name: "Quicksand-Bold", size: 15)    
     var features : [String:Bool] = [:]
     
     func highlightSingleButton(featureAsString: String,
-                                        button: RoundButton,
+                                        button: UIButton,
                                         label: UILabel) {
         if features[featureAsString] == true {
-            button.customBGColor = buttonTappedColor
-            button.borderWidth = 2
+            button.backgroundColor = buttonTappedColor
+            button.layer.borderWidth = 2
             label.font = UIFont(name: "Quicksand-Bold", size: 15)
         }
     }
     
-    func handleButtonTap(userRequestedFeatures: inout [Feature], feature: Feature, button: RoundButton, label: UILabel) {
+    func handleButtonTap(userRequestedFeatures: inout [Feature], feature: Feature, button: UIButton, label: UILabel) {
         if !userRequestedFeatures.contains(feature) {
             userRequestedFeatures.append(feature)
-            button.customBGColor = buttonTappedColor
-            button.borderWidth = 2
+            button.backgroundColor = buttonTappedColor
+            button.layer.borderWidth = 2
             label.font = quicksandBoldFont
         } else {
             userRequestedFeatures = userRequestedFeatures.filter{ $0 != feature }
-            button.customBGColor = .white
-            button.borderWidth = 1
+            button.backgroundColor = .systemBackground
+            button.layer.borderWidth = 1
             label.font = quicksandMediumFont
         }
     }

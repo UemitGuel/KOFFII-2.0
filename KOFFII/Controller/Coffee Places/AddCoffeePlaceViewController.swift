@@ -41,7 +41,7 @@ class AddCoffeePlaceViewController: UIViewController {
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
-        SVProgressHUD.showSuccess(withStatus: "Coffee place sent for review!")
+        SVProgressHUD.showSuccess(withStatus: L10n.coffeePlaceSentForReview)
         dismiss(animated: true)
     }
 }
