@@ -41,6 +41,7 @@ class CoffeePlacesViewController: UIViewController {
     func setupViewController() {
         // eliminate 1pt line
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
     }
     
     func downloadCafes(completionHandler: @escaping ([Cafe]) -> Void) {
@@ -133,9 +134,6 @@ extension CoffeePlacesViewController: UITableViewDataSource {
 }
 
 extension CoffeePlacesViewController: UITableViewDelegate {
-    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 93
-    }
     
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
         performSegue(withIdentifier: Constants.segues.citytoDetail, sender: self)

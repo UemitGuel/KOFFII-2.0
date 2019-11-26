@@ -37,10 +37,6 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
 
-    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 220
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == Constants.segues.infoToDetailBrew {
             guard let detailVC = segue.destination as? BrewingDetailViewController else { return }

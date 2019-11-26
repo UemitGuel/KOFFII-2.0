@@ -50,9 +50,6 @@ extension RoasteryViewController: UITableViewDataSource {
 }
 
 extension RoasteryViewController: UITableViewDelegate {
-    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 93
-    }
 
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
         performSegue(withIdentifier: Constants.segues.roasterToDetail, sender: self)

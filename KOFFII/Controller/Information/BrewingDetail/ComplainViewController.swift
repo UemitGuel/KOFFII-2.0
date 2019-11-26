@@ -21,13 +21,16 @@ class ComplainViewController: UIViewController {
 
 extension ComplainViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return complain!.improvements.count
+        guard let complainCount = complain?.improvements.count else { return 0 }
+        return complainCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ComplainTableViewCell.cellId,
-                                                 for: indexPath) as? ComplainTableViewCell
-        cell?.complainLabel.text = complain?.improvements[indexPath.row]
-        return cell!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ComplainTableViewCell.cellId,
+                                                       for: indexPath) as? ComplainTableViewCell else {
+                                                        return UITableViewCell()
+        }
+        cell.complainLabel.text = complain?.improvements[indexPath.row]
+        return cell
     }
 }
