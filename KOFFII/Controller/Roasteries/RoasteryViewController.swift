@@ -1,7 +1,7 @@
 import FirebaseFirestore
 import UIKit
 
-class RoasterViewController: UIViewController {
+class RoasteryViewController: UIViewController {
     var roasteries: [Roastery] = []
 
     @IBOutlet var roasterTableView: UITableView!
@@ -35,21 +35,21 @@ class RoasterViewController: UIViewController {
     }
 }
 
-extension RoasterViewController: UITableViewDataSource {
+extension RoasteryViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return roasteries.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "roasteryCell",
-                                                 for: indexPath) as! RoasterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RoasteryTableViewCell.cellId,
+                                                 for: indexPath) as! RoasteryTableViewCell
         cell.selectionStyle = .none
         cell.roasterLabel.text = roasteries[indexPath.row].name
         return cell
     }
 }
 
-extension RoasterViewController: UITableViewDelegate {
+extension RoasteryViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 93
     }
@@ -60,7 +60,7 @@ extension RoasterViewController: UITableViewDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == Constants.segues.roasterToDetail {
-            let roasteryDetailVC = segue.destination as! RoasterDetailViewController
+            let roasteryDetailVC = segue.destination as! RoasteryDetailViewController
             if let indexPath = roasterTableView.indexPathForSelectedRow {
                 roasteryDetailVC.passedRoastery = roasteries[indexPath.row]
             }

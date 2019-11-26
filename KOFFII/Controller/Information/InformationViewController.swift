@@ -29,7 +29,7 @@ class InformationViewController: UIViewController {
 
 extension InformationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell",
+        let cell = tableView.dequeueReusableCell(withIdentifier: InformationTableViewCell.cellId,
                                                  for: indexPath) as! InformationTableViewCell
         cell.nameLabel?.text = items[indexPath.section][indexPath.row].name
         cell.infoImageView?.image = items[indexPath.section][indexPath.row].image

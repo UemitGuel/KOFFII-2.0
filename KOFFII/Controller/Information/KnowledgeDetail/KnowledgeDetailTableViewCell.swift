@@ -4,6 +4,8 @@ class KnowledgeDetailTableViewCell: UITableViewCell {
     @IBOutlet var longTextLabel: UILabel!
     @IBOutlet var countLabel: UILabel!
 
+    static let cellId = "KnowledgeDetailTableViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

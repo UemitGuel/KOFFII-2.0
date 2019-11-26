@@ -1,7 +1,7 @@
 import MapKit
 import UIKit
 
-class RoasterDetailViewController: UIViewController {
+class RoasteryDetailViewController: UIViewController {
     @IBOutlet var map: MKMapView!
 
     var passedRoastery: Roastery?

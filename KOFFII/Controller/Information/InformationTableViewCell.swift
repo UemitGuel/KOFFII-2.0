@@ -4,6 +4,8 @@ class InformationTableViewCell: UITableViewCell {
     @IBOutlet var infoImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
 
+    static let cellId = "informationCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupLayer()

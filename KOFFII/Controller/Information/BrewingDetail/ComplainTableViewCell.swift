@@ -3,6 +3,8 @@ import UIKit
 class ComplainTableViewCell: UITableViewCell {
     @IBOutlet var complainLabel: UILabel!
 
+    static let cellId = "complainCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

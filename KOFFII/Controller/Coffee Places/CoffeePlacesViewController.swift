@@ -131,7 +131,7 @@ extension CoffeePlacesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "CoffeePLacesTableViewCell",for: indexPath)
+            withIdentifier: CoffeePlacesTableViewCell.cellId,for: indexPath)
             as? CoffeePlacesTableViewCell else {
                 return UITableViewCell()
         }

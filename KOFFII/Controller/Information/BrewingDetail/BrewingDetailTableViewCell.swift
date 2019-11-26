@@ -1,9 +1,11 @@
 import UIKit
 
-class InformationDetailTableViewCell: UITableViewCell {
+class BrewingDetailTableViewCell: UITableViewCell {
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var longTextLabel: UILabel!
 
+    static let cellId = "InformationDetailTableViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
