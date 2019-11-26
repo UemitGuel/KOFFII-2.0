@@ -6,19 +6,19 @@ class CafeDetailViewController: UIViewController {
     @IBOutlet var map: MKMapView!
     @IBOutlet var toLocationButton: UIButton!
 
-    @IBOutlet var wifiButton: UIButton!
+    @IBOutlet var wifiButton: FeatureButton!
     @IBOutlet var wifiLabel: UILabel!
 
-    @IBOutlet var foodButton: UIButton!
+    @IBOutlet var foodButton: FeatureButton!
     @IBOutlet var foodLabel: UILabel!
 
-    @IBOutlet var veganButton: UIButton!
+    @IBOutlet var veganButton: FeatureButton!
     @IBOutlet var veganLabel: UILabel!
 
-    @IBOutlet var cakeButton: UIButton!
+    @IBOutlet var cakeButton: FeatureButton!
     @IBOutlet var cakeLabel: UILabel!
 
-    @IBOutlet var plugButton: UIButton!
+    @IBOutlet var plugButton: FeatureButton!
     @IBOutlet var plugLabel: UILabel!
     
     var passedCafeObject: Cafe?
@@ -32,28 +32,11 @@ class CafeDetailViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButtons()
         highlightButtons()
         MapFunctions().centerMapOnLocation(map: map, location: location)
         title = cafeName
     }
-    
-    func setupButtons() {
-        wifiButton.layer.borderWidth = 1
-        wifiButton.layer.borderColor = UIColor.label.cgColor
-        wifiButton.layer.borderWidth = 1
-        foodButton.layer.borderColor = UIColor.label.cgColor
-        foodButton.layer.borderWidth = 1
-        veganButton.layer.borderColor = UIColor.label.cgColor
-        veganButton.layer.borderWidth = 1
-        cakeButton.layer.borderColor = UIColor.label.cgColor
-        cakeButton.layer.borderWidth = 1
-        plugButton.layer.borderColor = UIColor.label.cgColor
-        plugButton.layer.borderWidth = 1
-    }
-    
-    // TODO: Subclassing Buttons
-    
+        
     @IBAction func openMapsButtonTapped(_ sender: UIButton) {
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude

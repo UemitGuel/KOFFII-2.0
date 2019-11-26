@@ -32,6 +32,7 @@
 		B38E8EBC2388191C00541A2E /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E8EBB2388191C00541A2E /* assets-images.swift */; };
 		B390EFC222D60F7300A931E9 /* CoffeePlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */; };
 		B3970966238D1C3900190C53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3970965238D1C3900190C53 /* Constants.swift */; };
+		B3970968238D2B2700190C53 /* FeatureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3970967238D2B2700190C53 /* FeatureButton.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
 		B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5722C4F38B005848DA /* AppDelegate.swift */; };
 		B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5B22C4F38B005848DA /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		B38E8EBB2388191C00541A2E /* assets-images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assets-images.swift"; sourceTree = "<group>"; };
 		B390EFC122D60F7300A931E9 /* CoffeePlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePlacesTableViewCell.swift; sourceTree = "<group>"; };
 		B3970965238D1C3900190C53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B3970967238D2B2700190C53 /* FeatureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureButton.swift; sourceTree = "<group>"; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
 		B3AA7E5422C4F38B005848DA /* KOFFII Cologne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KOFFII Cologne.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AA7E5722C4F38B005848DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,9 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				B34335C522C504ED006CDBC1 /* Fonts */,
+				B3970969238D2B3400190C53 /* Buttons */,
 				B3AA7E5722C4F38B005848DA /* AppDelegate.swift */,
 				B3970965238D1C3900190C53 /* Constants.swift */,
-				B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */,
 				B377596C2370264500D1D6B9 /* MapFunctions.swift */,
 				B3AA7E5E22C4F38C005848DA /* Assets.xcassets */,
 				B3AA7E6322C4F38C005848DA /* Info.plist */,
@@ -222,6 +224,15 @@
 				B38E8EBB2388191C00541A2E /* assets-images.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3970969238D2B3400190C53 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */,
+				B3970967238D2B2700190C53 /* FeatureButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		B399DB8B22CE081B003C5EDD /* Information */ = {
@@ -472,6 +483,7 @@
 				B310BF9A2369D02B0065318C /* RoasteryViewController.swift in Sources */,
 				B390EFC222D60F7300A931E9 /* CoffeePlacesTableViewCell.swift in Sources */,
 				B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */,
+				B3970968238D2B2700190C53 /* FeatureButton.swift in Sources */,
 				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,
 				B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,

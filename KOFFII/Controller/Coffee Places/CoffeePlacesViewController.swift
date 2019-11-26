@@ -6,19 +6,19 @@ class CoffeePlacesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var hoodPickerView: UIPickerView!
     
-    @IBOutlet var wifiButton: UIButton!
+    @IBOutlet var wifiButton: FeatureButton!
     @IBOutlet var wifiLabel: UILabel!
     
-    @IBOutlet var foodButton: UIButton!
+    @IBOutlet var foodButton: FeatureButton!
     @IBOutlet var foodLabel: UILabel!
     
-    @IBOutlet var veganButton: UIButton!
+    @IBOutlet var veganButton: FeatureButton!
     @IBOutlet var veganLabel: UILabel!
     
-    @IBOutlet var cakeButton: UIButton!
+    @IBOutlet var cakeButton: FeatureButton!
     @IBOutlet var cakeLabel: UILabel!
     
-    @IBOutlet var plugButton: UIButton!
+    @IBOutlet var plugButton: FeatureButton!
     @IBOutlet var plugLabel: UILabel!
         
     var cafeObjects = [Cafe]()
@@ -28,7 +28,6 @@ class CoffeePlacesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButtons()
         setupViewController()
         
         downloadCafes { cafeArray in
@@ -37,20 +36,6 @@ class CoffeePlacesViewController: UIViewController {
             self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name })
             self.tableView.reloadData()
         }
-    }
-    
-    func setupButtons() {
-        wifiButton.layer.borderWidth = 1
-        wifiButton.layer.borderColor = UIColor.label.cgColor
-        wifiButton.layer.borderWidth = 1
-        foodButton.layer.borderColor = UIColor.label.cgColor
-        foodButton.layer.borderWidth = 1
-        veganButton.layer.borderColor = UIColor.label.cgColor
-        veganButton.layer.borderWidth = 1
-        cakeButton.layer.borderColor = UIColor.label.cgColor
-        cakeButton.layer.borderWidth = 1
-        plugButton.layer.borderColor = UIColor.label.cgColor
-        plugButton.layer.borderWidth = 1
     }
     
     func setupViewController() {
