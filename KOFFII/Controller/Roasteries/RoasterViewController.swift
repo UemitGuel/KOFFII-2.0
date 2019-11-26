@@ -2,24 +2,16 @@ import FirebaseFirestore
 import UIKit
 
 class RoasterViewController: UIViewController {
-    var db: Firestore!
     var roasteries: [Roastery] = []
 
     @IBOutlet var roasterTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFirebase()
         setupViewController()
         fetchRoasteries { _ in
             self.roasterTableView.reloadData()
         }
-    }
-
-    func setupFirebase() {
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        db = Firestore.firestore()
     }
 
     func setupViewController() {
@@ -28,7 +20,7 @@ class RoasterViewController: UIViewController {
     }
 
     private func fetchRoasteries(completionHandler: @escaping ([Roastery]) -> Void) {
-        db.collection("Roastery").getDocuments { querySnapshot, err in
+        Constants.refs.firestoreRoasteries.getDocuments { querySnapshot, err in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
