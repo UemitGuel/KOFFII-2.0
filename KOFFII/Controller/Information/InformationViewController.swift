@@ -42,13 +42,13 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == "fromInfoToDetailBrewSegue" {
+        if segue.identifier == Constants.segues.infoToDetailBrew {
             guard let detailVC = segue.destination as? BrewingDetailViewController else { return }
 
             if let indexPath = tableView.indexPathForSelectedRow {
                 detailVC.passedInformationBrewing = items[indexPath.section][indexPath.row]
             }
-        } else if segue.identifier == "fromInfoToDetailKnowSegue" {
+        } else if segue.identifier == Constants.segues.infoToDetailKnow {
             guard let detailVC = segue.destination as? KnowledgeDetailViewController else { return }
 
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -59,9 +59,9 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            performSegue(withIdentifier: "fromInfoToDetailBrewSegue", sender: self)
+            performSegue(withIdentifier: Constants.segues.infoToDetailBrew, sender: self)
         } else if indexPath.section == 1 {
-            performSegue(withIdentifier: "fromInfoToDetailKnowSegue", sender: self)
+            performSegue(withIdentifier: Constants.segues.infoToDetailKnow, sender: self)
         }
     }
 

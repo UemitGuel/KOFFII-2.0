@@ -211,6 +211,7 @@
 			children = (
 				B34335C522C504ED006CDBC1 /* Fonts */,
 				B3AA7E5722C4F38B005848DA /* AppDelegate.swift */,
+				B3970965238D1C3900190C53 /* Constants.swift */,
 				B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */,
 				B377596C2370264500D1D6B9 /* MapFunctions.swift */,
 				B3AA7E5E22C4F38C005848DA /* Assets.xcassets */,
@@ -219,7 +220,6 @@
 				B38C41DE2387E4AC00C92E8D /* Localizable.strings */,
 				B38C41DA2387E43900C92E8D /* Localized.swift */,
 				B38E8EBB2388191C00541A2E /* assets-images.swift */,
-				B3970965238D1C3900190C53 /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

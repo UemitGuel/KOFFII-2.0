@@ -54,12 +54,12 @@ class BrewingDetailViewController: UIViewController {
         } else if complainCategory == .espresso && sender.tag == 1 {
             complain = espressoTooSour
         }
-        performSegue(withIdentifier: "fromDetailToComplainSegue", sender: self)
+        performSegue(withIdentifier: Constants.segues.detailToComplain, sender: self)
 
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == "fromDetailToComplainSegue" {
+        if segue.identifier == Constants.segues.detailToComplain {
             let complainVC = segue.destination as! ComplainViewController
             complainVC.complain = complain
         }

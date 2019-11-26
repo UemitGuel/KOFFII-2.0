@@ -55,11 +55,11 @@ extension RoasterViewController: UITableViewDelegate {
     }
 
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-        performSegue(withIdentifier: "Roaster to Detail", sender: self)
+        performSegue(withIdentifier: Constants.segues.roasterToDetail, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == "Roaster to Detail" {
+        if segue.identifier == Constants.segues.roasterToDetail {
             let roasteryDetailVC = segue.destination as! RoasterDetailViewController
             if let indexPath = roasterTableView.indexPathForSelectedRow {
                 roasteryDetailVC.passedRoastery = roasteries[indexPath.row]

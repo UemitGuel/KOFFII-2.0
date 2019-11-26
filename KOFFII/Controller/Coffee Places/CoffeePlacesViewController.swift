@@ -153,11 +153,11 @@ extension CoffeePlacesViewController: UITableViewDelegate {
     }
     
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-        performSegue(withIdentifier: "fromCitytoDetailSegue", sender: self)
+        performSegue(withIdentifier: Constants.segues.citytoDetail, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == "fromCitytoDetailSegue" {
+        if segue.identifier == Constants.segues.citytoDetail {
             let cityDetailVC = segue.destination as! CafeDetailViewController
             
             if let indexPath = tableView.indexPathForSelectedRow {
