@@ -1,4 +1,4 @@
-import FirebaseFirestore
+import Firebase
 import SVProgressHUD
 import UIKit
 
@@ -11,23 +11,14 @@ class AddCoffeePlaceViewController: UIViewController {
     @IBOutlet var cakeSwitch: UISwitch!
     @IBOutlet var plugSwitch: UISwitch!
     
-    var db: Firestore!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFirebase()
-    }
-
-    func setupFirebase() {
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        db = Firestore.firestore()
     }
 
     @IBAction func addCoffeePlaceButtonTapped(_: UIButton) {
-        // Add a new document with a generated id.
         var ref: DocumentReference?
-        ref = db.collection("AddedCoffeePlaces").addDocument(data: [
+        ref = Constants.refs.firestoreAddCoffeeCollection
+            .addDocument(data: [
             "name": coffeePlaceTextField.text ?? "",
             "wifi": wifiSwitch.isOn,
             "food": foodSwitch.isOn,

@@ -1,5 +1,4 @@
 import CoreLocation
-import FirebaseFirestore
 import MapKit
 import UIKit
 
@@ -22,9 +21,6 @@ class CafeDetailViewController: UIViewController {
     @IBOutlet var plugButton: UIButton!
     @IBOutlet var plugLabel: UILabel!
     
-    var db: Firestore!
-    let myGroup = DispatchGroup()
-
     var passedCafeObject: Cafe?
     var features: [String:Bool] { return passedCafeObject?.features ?? [:] }
     var cafeName: String { return passedCafeObject?.name ?? "" }
@@ -36,17 +32,10 @@ class CafeDetailViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFirebase()
         setupButtons()
         highlightButtons()
         MapFunctions().centerMapOnLocation(map: map, location: location)
         title = cafeName
-    }
-    
-    func setupFirebase() {
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        db = Firestore.firestore()
     }
     
     func setupButtons() {
@@ -62,6 +51,8 @@ class CafeDetailViewController: UIViewController {
         plugButton.layer.borderColor = UIColor.label.cgColor
         plugButton.layer.borderWidth = 1
     }
+    
+    // TODO: Subclassing Buttons
     
     @IBAction func openMapsButtonTapped(_ sender: UIButton) {
         let latitude = location.coordinate.latitude

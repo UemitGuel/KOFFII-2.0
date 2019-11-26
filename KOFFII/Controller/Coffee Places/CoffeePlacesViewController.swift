@@ -1,6 +1,4 @@
-import Firebase
 import FirebaseFirestore
-import SVProgressHUD
 import UIKit
 
 class CoffeePlacesViewController: UIViewController {
@@ -22,10 +20,7 @@ class CoffeePlacesViewController: UIViewController {
     
     @IBOutlet var plugButton: UIButton!
     @IBOutlet var plugLabel: UILabel!
-    
-    var db: Firestore!
-    let myGroup = DispatchGroup()
-    
+        
     var cafeObjects = [Cafe]()
     var filteredCafeObjects = [Cafe]()
     var userRequestedFeatures: [Feature] = []
@@ -33,7 +28,6 @@ class CoffeePlacesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFirebase()
         setupButtons()
         setupViewController()
         
@@ -43,12 +37,6 @@ class CoffeePlacesViewController: UIViewController {
             self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name })
             self.tableView.reloadData()
         }
-    }
-    
-    func setupFirebase() {
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        db = Firestore.firestore()
     }
     
     func setupButtons() {
@@ -72,8 +60,7 @@ class CoffeePlacesViewController: UIViewController {
     
     func downloadCafes(completionHandler: @escaping ([Cafe]) -> Void) {
         var cafeArray: [Cafe] = []
-        db.collection("City").document("Cologne")
-            .collection("Cafes")
+        Constants.refs.firestoreCologneCafes
             .getDocuments { querySnapshot, err in
                 if let err = err {
                     print("Error getting documents: \(err)")
