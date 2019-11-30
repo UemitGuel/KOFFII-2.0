@@ -1,12 +1,17 @@
 import Foundation
 
-struct Cafe {
+struct Cafe: Hashable {
     let name: String
     let latitude: Double?
     let longitude: Double?
     let locationURL: String?
     let features: [String: Bool]?
     let hood: String?
+    
+    private let identifier: UUID
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.identifier)
+    }
 
     init?(dictionary: [String: Any]) {
         guard let name = dictionary["name"] as? String else { return nil }
@@ -17,6 +22,7 @@ struct Cafe {
         locationURL = dictionary["locationURL"] as? String
         features = dictionary["features"] as? [String: Bool]
         hood = dictionary["hood"] as? String
+        self.identifier = UUID()
     }
 }
 

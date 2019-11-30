@@ -3,6 +3,14 @@ import UIKit
 
 class CoffeePlacesViewController: UIViewController {
     
+    enum Section: CaseIterable {
+        case cafes
+    }
+    
+    var dataSource: UITableViewDiffableDataSource<Section, Cafe>! = nil
+    var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Cafe>! = nil
+    static let reuseIdentifier = "reuse-identifier"
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var hoodPickerView: UIPickerView!
     
@@ -20,7 +28,7 @@ class CoffeePlacesViewController: UIViewController {
     
     @IBOutlet var plugButton: FeatureButton!
     @IBOutlet var plugLabel: UILabel!
-        
+    
     var cafeObjects = [Cafe]()
     var filteredCafeObjects = [Cafe]()
     var userRequestedFeatures: [Feature] = []
@@ -29,12 +37,12 @@ class CoffeePlacesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
-        
+        configureDataSource()
         downloadCafes { cafeArray in
             self.cafeObjects = cafeArray
             self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name })
             self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name })
-            self.tableView.reloadData()
+            self.updateUI()
         }
     }
     
@@ -103,35 +111,36 @@ class CoffeePlacesViewController: UIViewController {
                 filteredCafeObjects = filteredCafeObjects.filter { $0.hood == neighborhood.rawValue }
             }
         }
+        updateUI()
     }
 }
 
-extension CoffeePlacesViewController: UITableViewDataSource {
-    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        if isFiltering() {
-            return filteredCafeObjects.count
-        } else {
-            return cafeObjects.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: CoffeePlacesTableViewCell.cellId,for: indexPath)
-            as? CoffeePlacesTableViewCell else {
-                return UITableViewCell()
-        }
-        
-        cell.selectionStyle = .none
-        
-        if isFiltering() {
-            cell.cafeNameLabel.text = filteredCafeObjects[indexPath.row].name
-        } else {
-            cell.cafeNameLabel.text = cafeObjects[indexPath.row].name
-        }
-        return cell
-    }
-}
+//extension CoffeePlacesViewController: UITableViewDataSource {
+//    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+//        if isFiltering() {
+//            return filteredCafeObjects.count
+//        } else {
+//            return cafeObjects.count
+//        }
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(
+//            withIdentifier: CoffeePlacesTableViewCell.cellId,for: indexPath)
+//            as? CoffeePlacesTableViewCell else {
+//                return UITableViewCell()
+//        }
+//        
+//        cell.selectionStyle = .none
+//        
+//        if isFiltering() {
+//            cell.cafeNameLabel.text = filteredCafeObjects[indexPath.row].name
+//        } else {
+//            cell.cafeNameLabel.text = cafeObjects[indexPath.row].name
+//        }
+//        return cell
+//    }
+//}
 
 extension CoffeePlacesViewController: UITableViewDelegate {
     
@@ -176,6 +185,66 @@ extension CoffeePlacesViewController: UIPickerViewDelegate {
         featureBF.filterForNeighborhoods(userChoosenNeighborhoods: &userChoosenNeighborhoods, selectedHood: neighborhoods[row])
         filtering()
         tableView.reloadData()
+    }
+    
+}
+
+//extension CoffeePlacesViewController {
+    
+    //    func configureTableView() {
+    //        view.addSubview(tableView)
+    //        tableView.translatesAutoresizingMaskIntoConstraints = false
+    //        NSLayoutConstraint.activate([
+    //            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+    //            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+    //            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+    //            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    //            ])
+    //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CoffeePlacesViewController.reuseIdentifier)
+    //    }
+    //
+    //    @objc
+    //    func toggleWifi(_ wifiEnabledSwitch: UISwitch) {
+    //        wifiController.wifiEnabled = wifiEnabledSwitch.isOn
+    //        updateUI()
+    //    }
+//}
+
+extension CoffeePlacesViewController {
+    
+    func configureDataSource() {
+        self.dataSource = UITableViewDiffableDataSource
+            <Section, Cafe>(tableView: tableView) {
+                (tableView: UITableView, indexPath: IndexPath, item: Cafe) -> UITableViewCell? in
+                
+                guard let cafeCell = tableView.dequeueReusableCell(withIdentifier: CoffeePlacesTableViewCell.cellId, for: indexPath) as? CoffeePlacesTableViewCell else { fatalError("Cannot create new cell!") }
+                
+                cafeCell.selectionStyle = .none
+                cafeCell.cafeNameLabel.text = item.name
+//                if self.isFiltering() {
+//                    cafeCell.cafeNameLabel.text = item.name
+//                } else {
+//                    cafeCell.cafeNameLabel.text = item.name
+//                }
+                return cafeCell
+        }
+        self.dataSource.defaultRowAnimation = .fade
+    }
+    
+    func updateUI(animated: Bool = true) {
+        
+        currentSnapshot = NSDiffableDataSourceSnapshot<Section, Cafe>()
+        
+        currentSnapshot.appendSections([.cafes])
+        print(self.isFiltering())
+        if self.isFiltering() {
+            currentSnapshot.appendItems(filteredCafeObjects, toSection: .cafes)
+        } else {
+            currentSnapshot.appendItems(cafeObjects, toSection: .cafes)
+        }
+        print(filteredCafeObjects)
+        print(cafeObjects)
+        self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
     }
     
 }
