@@ -7,9 +7,9 @@ class CoffeePlacesViewController: UIViewController {
         case cafes
     }
     
-    var dataSource: UITableViewDiffableDataSource<Section, Cafe>! = nil
-    var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Cafe>! = nil
-    static let reuseIdentifier = "reuse-identifier"
+    let cafeController = CafeController()
+    var dataSource: UITableViewDiffableDataSource<Section, CafeController.Cafe>! = nil
+    var currentSnapshot: NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>! = nil
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var hoodPickerView: UIPickerView!
@@ -29,8 +29,9 @@ class CoffeePlacesViewController: UIViewController {
     @IBOutlet var plugButton: FeatureButton!
     @IBOutlet var plugLabel: UILabel!
     
-    var cafeObjects = [Cafe]()
-    var filteredCafeObjects = [Cafe]()
+    private var cafes = [CafeController.Cafe]()
+    var cafeObjects = [CafeController.Cafe]()
+    var filteredCafeObjects = [CafeController.Cafe]()
     var userRequestedFeatures: [Feature] = []
     var userChoosenNeighborhoods: [Neighborhood] = []
     
@@ -53,8 +54,8 @@ class CoffeePlacesViewController: UIViewController {
         
     }
     
-    func downloadCafes(completionHandler: @escaping ([Cafe]) -> Void) {
-        var cafeArray: [Cafe] = []
+    func downloadCafes(completionHandler: @escaping ([CafeController.Cafe]) -> Void) {
+        var cafeArray: [CafeController.Cafe] = []
         Constants.refs.firestoreCologneCafes
             .getDocuments { querySnapshot, err in
                 if let err = err {
@@ -62,7 +63,7 @@ class CoffeePlacesViewController: UIViewController {
                 } else {
                     for document in querySnapshot!.documents {
                         let data = document.data()
-                        guard let cafe = Cafe(dictionary: data) else { return }
+                        guard let cafe = CafeController.Cafe(dictionary: data) else { return }
                         cafeArray.append(cafe)
                     }
                     completionHandler(cafeArray)
@@ -91,26 +92,6 @@ class CoffeePlacesViewController: UIViewController {
         default:
             break
         }
-        filtering()
-    }
-    
-    // Active Filtering, if feature buttons are clicked
-    func isFiltering() -> Bool {
-        return !userRequestedFeatures.isEmpty || !userChoosenNeighborhoods.isEmpty
-    }
-    
-    func filtering() {
-        filteredCafeObjects = cafeObjects
-        for feature in Feature.allCases {
-            if userRequestedFeatures.contains(feature) {
-                filteredCafeObjects = filteredCafeObjects.filter { $0.features![feature.rawValue] == true }
-            }
-        }
-        for neighborhood in Neighborhood.allCases {
-            if userChoosenNeighborhoods.contains(neighborhood) {
-                filteredCafeObjects = filteredCafeObjects.filter { $0.hood == neighborhood.rawValue }
-            }
-        }
         updateUI()
     }
 }
@@ -124,13 +105,8 @@ extension CoffeePlacesViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == Constants.segues.citytoDetail {
             let cityDetailVC = segue.destination as! CafeDetailViewController
-            
             if let indexPath = tableView.indexPathForSelectedRow {
-                if isFiltering() {
-                    cityDetailVC.passedCafeObject = filteredCafeObjects[indexPath.row]
-                } else {
-                    cityDetailVC.passedCafeObject = cafeObjects[indexPath.row]
-                }
+                cityDetailVC.passedCafeObject = cafes[indexPath.row]
             }
         }
     }
@@ -156,7 +132,7 @@ extension CoffeePlacesViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let featureBF = FeatureButtonFunctions()
         featureBF.filterForNeighborhoods(userChoosenNeighborhoods: &userChoosenNeighborhoods, selectedHood: neighborhoods[row])
-        filtering()
+        updateUI()
     }
     
 }
@@ -165,8 +141,8 @@ extension CoffeePlacesViewController {
     
     func configureDataSource() {
         self.dataSource = UITableViewDiffableDataSource
-            <Section, Cafe>(tableView: tableView) {
-                (tableView: UITableView, indexPath: IndexPath, item: Cafe) -> UITableViewCell? in
+            <Section, CafeController.Cafe>(tableView: tableView) {
+                (tableView: UITableView, indexPath: IndexPath, item: CafeController.Cafe) -> UITableViewCell? in
                 
                 guard let cafeCell = tableView.dequeueReusableCell(withIdentifier: CoffeePlacesTableViewCell.cellId, for: indexPath) as? CoffeePlacesTableViewCell else { fatalError("Cannot create new cell!") }
                 
@@ -178,18 +154,12 @@ extension CoffeePlacesViewController {
     }
     
     func updateUI(animated: Bool = true) {
+        cafes = cafeController.filteredCafes(cafes: cafeObjects, userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
         
-        currentSnapshot = NSDiffableDataSourceSnapshot<Section, Cafe>()
+        currentSnapshot = NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>()
         
         currentSnapshot.appendSections([.cafes])
-        print(self.isFiltering())
-        if self.isFiltering() {
-            currentSnapshot.appendItems(filteredCafeObjects, toSection: .cafes)
-        } else {
-            currentSnapshot.appendItems(cafeObjects, toSection: .cafes)
-        }
-        print(filteredCafeObjects)
-        print(cafeObjects)
+        currentSnapshot.appendItems(cafes, toSection: .cafes)
         self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
     }
     
