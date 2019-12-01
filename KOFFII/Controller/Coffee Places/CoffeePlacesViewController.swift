@@ -38,11 +38,12 @@ class CoffeePlacesViewController: UIViewController {
         super.viewDidLoad()
         setupViewController()
         configureDataSource()
+        tableView.delegate = self
         downloadCafes { cafeArray in
             self.cafeObjects = cafeArray
             self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name })
             self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name })
-            self.updateUI()
+            self.updateUI(animated: false)
         }
     }
     
@@ -91,7 +92,6 @@ class CoffeePlacesViewController: UIViewController {
             break
         }
         filtering()
-        tableView.reloadData()
     }
     
     // Active Filtering, if feature buttons are clicked
@@ -114,33 +114,6 @@ class CoffeePlacesViewController: UIViewController {
         updateUI()
     }
 }
-
-//extension CoffeePlacesViewController: UITableViewDataSource {
-//    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-//        if isFiltering() {
-//            return filteredCafeObjects.count
-//        } else {
-//            return cafeObjects.count
-//        }
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(
-//            withIdentifier: CoffeePlacesTableViewCell.cellId,for: indexPath)
-//            as? CoffeePlacesTableViewCell else {
-//                return UITableViewCell()
-//        }
-//        
-//        cell.selectionStyle = .none
-//        
-//        if isFiltering() {
-//            cell.cafeNameLabel.text = filteredCafeObjects[indexPath.row].name
-//        } else {
-//            cell.cafeNameLabel.text = cafeObjects[indexPath.row].name
-//        }
-//        return cell
-//    }
-//}
 
 extension CoffeePlacesViewController: UITableViewDelegate {
     
@@ -184,31 +157,9 @@ extension CoffeePlacesViewController: UIPickerViewDelegate {
         let featureBF = FeatureButtonFunctions()
         featureBF.filterForNeighborhoods(userChoosenNeighborhoods: &userChoosenNeighborhoods, selectedHood: neighborhoods[row])
         filtering()
-        tableView.reloadData()
     }
     
 }
-
-//extension CoffeePlacesViewController {
-    
-    //    func configureTableView() {
-    //        view.addSubview(tableView)
-    //        tableView.translatesAutoresizingMaskIntoConstraints = false
-    //        NSLayoutConstraint.activate([
-    //            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-    //            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-    //            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-    //            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-    //            ])
-    //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CoffeePlacesViewController.reuseIdentifier)
-    //    }
-    //
-    //    @objc
-    //    func toggleWifi(_ wifiEnabledSwitch: UISwitch) {
-    //        wifiController.wifiEnabled = wifiEnabledSwitch.isOn
-    //        updateUI()
-    //    }
-//}
 
 extension CoffeePlacesViewController {
     
@@ -221,11 +172,6 @@ extension CoffeePlacesViewController {
                 
                 cafeCell.selectionStyle = .none
                 cafeCell.cafeNameLabel.text = item.name
-//                if self.isFiltering() {
-//                    cafeCell.cafeNameLabel.text = item.name
-//                } else {
-//                    cafeCell.cafeNameLabel.text = item.name
-//                }
                 return cafeCell
         }
         self.dataSource.defaultRowAnimation = .fade
