@@ -1,7 +1,7 @@
 import FirebaseFirestore
 import UIKit
 
-class CoffeePlacesViewController: UIViewController {
+class CafeViewController: UIViewController {
     
     enum Section: CaseIterable {
         case cafes
@@ -41,9 +41,7 @@ class CoffeePlacesViewController: UIViewController {
         configureDataSource()
         tableView.delegate = self
         downloadCafes { cafeArray in
-            self.cafeObjects = cafeArray
-            self.cafeObjects = self.cafeObjects.sorted(by: { $0.name < $1.name })
-            self.filteredCafeObjects = self.filteredCafeObjects.sorted(by: { $0.name < $1.name })
+            self.cafes = cafeArray
             self.updateUI(animated: false)
         }
     }
@@ -96,7 +94,7 @@ class CoffeePlacesViewController: UIViewController {
     }
 }
 
-extension CoffeePlacesViewController: UITableViewDelegate {
+extension CafeViewController: UITableViewDelegate {
     
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
         performSegue(withIdentifier: Constants.segues.citytoDetail, sender: self)
@@ -112,7 +110,7 @@ extension CoffeePlacesViewController: UITableViewDelegate {
     }
 }
 
-extension CoffeePlacesViewController: UIPickerViewDataSource {
+extension CafeViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -123,7 +121,7 @@ extension CoffeePlacesViewController: UIPickerViewDataSource {
     
 }
 
-extension CoffeePlacesViewController: UIPickerViewDelegate {
+extension CafeViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return neighborhoods[row]
@@ -137,14 +135,14 @@ extension CoffeePlacesViewController: UIPickerViewDelegate {
     
 }
 
-extension CoffeePlacesViewController {
+extension CafeViewController {
     
     func configureDataSource() {
         self.dataSource = UITableViewDiffableDataSource
             <Section, CafeController.Cafe>(tableView: tableView) {
                 (tableView: UITableView, indexPath: IndexPath, item: CafeController.Cafe) -> UITableViewCell? in
                 
-                guard let cafeCell = tableView.dequeueReusableCell(withIdentifier: CoffeePlacesTableViewCell.cellId, for: indexPath) as? CoffeePlacesTableViewCell else { fatalError("Cannot create new cell!") }
+                guard let cafeCell = tableView.dequeueReusableCell(withIdentifier: CafeTableViewCell.cellId, for: indexPath) as? CafeTableViewCell else { fatalError("Cannot create new cell!") }
                 
                 cafeCell.selectionStyle = .none
                 cafeCell.cafeNameLabel.text = item.name
@@ -154,12 +152,13 @@ extension CoffeePlacesViewController {
     }
     
     func updateUI(animated: Bool = true) {
-        cafes = cafeController.filteredCafes(cafes: cafeObjects, userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
-        
+        print(cafes)
+        let filteredCafes = cafeController.filteredCafes(cafes: cafes, userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
+        print(cafes)
         currentSnapshot = NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>()
         
         currentSnapshot.appendSections([.cafes])
-        currentSnapshot.appendItems(cafes, toSection: .cafes)
+        currentSnapshot.appendItems(filteredCafes, toSection: .cafes)
         self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
     }
     

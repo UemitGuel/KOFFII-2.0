@@ -2,7 +2,7 @@ import Firebase
 import SVProgressHUD
 import UIKit
 
-class AddCoffeePlaceViewController: UIViewController {
+class AddCafeViewController: UIViewController {
     @IBOutlet var coffeePlaceTextField: UITextField!
 
     @IBOutlet var wifiSwitch: UISwitch!
