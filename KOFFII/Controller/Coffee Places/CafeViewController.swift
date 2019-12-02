@@ -29,9 +29,8 @@ class CafeViewController: UIViewController {
     @IBOutlet var plugButton: FeatureButton!
     @IBOutlet var plugLabel: UILabel!
     
-    private var cafes = [CafeController.Cafe]()
-    var cafeObjects = [CafeController.Cafe]()
-    var filteredCafeObjects = [CafeController.Cafe]()
+//    var cafeObjects = [CafeController.Cafe]()
+//    var filteredCafeObjects = [CafeController.Cafe]()
     var userRequestedFeatures: [Feature] = []
     var userChoosenNeighborhoods: [Neighborhood] = []
     
@@ -39,11 +38,13 @@ class CafeViewController: UIViewController {
         super.viewDidLoad()
         setupViewController()
         configureDataSource()
-        tableView.delegate = self
-        downloadCafes { cafeArray in
-            self.cafes = cafeArray
-            self.updateUI(animated: false)
+        cafeController.fetchAndConfigureUnfilteredCafes {
+            self.updateUI()
         }
+//        downloadCafes { cafeArray in
+//            self.cafes = cafeArray
+//            self.updateUI(animated: false)
+//        }
     }
     
     func setupViewController() {
@@ -100,14 +101,14 @@ extension CafeViewController: UITableViewDelegate {
         performSegue(withIdentifier: Constants.segues.citytoDetail, sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == Constants.segues.citytoDetail {
-            let cityDetailVC = segue.destination as! CafeDetailViewController
-            if let indexPath = tableView.indexPathForSelectedRow {
-                cityDetailVC.passedCafeObject = cafes[indexPath.row]
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+//        if segue.identifier == Constants.segues.citytoDetail {
+//            let cityDetailVC = segue.destination as! CafeDetailViewController
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                cityDetailVC.passedCafeObject = cafes[indexPath.row]
+//            }
+//        }
+//    }
 }
 
 extension CafeViewController: UIPickerViewDataSource {
@@ -138,6 +139,7 @@ extension CafeViewController: UIPickerViewDelegate {
 extension CafeViewController {
     
     func configureDataSource() {
+        
         self.dataSource = UITableViewDiffableDataSource
             <Section, CafeController.Cafe>(tableView: tableView) {
                 (tableView: UITableView, indexPath: IndexPath, item: CafeController.Cafe) -> UITableViewCell? in
@@ -152,13 +154,12 @@ extension CafeViewController {
     }
     
     func updateUI(animated: Bool = true) {
+        let cafes = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
         print(cafes)
-        let filteredCafes = cafeController.filteredCafes(cafes: cafes, userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
-        print(cafes)
-        currentSnapshot = NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>()
         
+        currentSnapshot = NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>()
         currentSnapshot.appendSections([.cafes])
-        currentSnapshot.appendItems(filteredCafes, toSection: .cafes)
+        currentSnapshot.appendItems(cafes, toSection: .cafes)
         self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
     }
     

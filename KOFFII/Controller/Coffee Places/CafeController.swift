@@ -28,7 +28,7 @@ class CafeController {
         }
     }
     
-    func filteredCafes(cafes: [Cafe],userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
+    func filteredCafes(userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
         var filtered = cafes
         for feature in Feature.allCases {
             if userRequestedFeatures.contains(feature) {
@@ -43,4 +43,21 @@ class CafeController {
         return filtered
     }
     
+    var cafes = [Cafe]()
+    
+    func fetchAndConfigureUnfilteredCafes(completion: @escaping () -> Void) {
+        Constants.refs.firestoreCologneCafes
+            .getDocuments { querySnapshot, err in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let data = document.data()
+                        guard let cafe = CafeController.Cafe(dictionary: data) else { return }
+                        self.cafes.append(cafe)
+                    }
+                    completion()
+                }
+        }
+    }
 }

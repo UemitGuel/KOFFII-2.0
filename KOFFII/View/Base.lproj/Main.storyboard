@@ -247,34 +247,34 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-Ha-20X">
-                                        <rect key="frame" x="0.0" y="64.666666666666671" width="382" height="19"/>
+                                        <rect key="frame" x="0.0" y="64.666666666666671" width="382" height="17.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-Ln-w3a">
-                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbQ-6d-qV5">
-                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="19"/>
+                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-9M-kc8">
-                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="19"/>
+                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtz-Za-ccM">
-                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="19"/>
+                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsj-sj-GGu">
-                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="19"/>
+                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -282,7 +282,7 @@
                                         </subviews>
                                     </stackView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzl-mG-bP9">
-                                        <rect key="frame" x="0.0" y="84.666666666666657" width="382" height="115.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="83.333333333333343" width="382" height="116.66666666666666"/>
                                         <connections>
                                             <outlet property="dataSource" destination="8hJ-sQ-lT1" id="ro9-NS-vgy"/>
                                             <outlet property="delegate" destination="8hJ-sQ-lT1" id="TSg-WW-T9i"/>
@@ -338,6 +338,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="8hJ-sQ-lT1" id="1Qy-F5-D8p"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -419,7 +422,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-r0-Otc">
-                                <rect key="frame" x="16" y="366" width="382" height="83.666666666666686"/>
+                                <rect key="frame" x="16" y="366" width="382" height="82.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-9b-bfF">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="63.666666666666664"/>
@@ -528,34 +531,34 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-at-Xaz">
-                                        <rect key="frame" x="0.0" y="64.666666666666686" width="382" height="19"/>
+                                        <rect key="frame" x="0.0" y="64.666666666666686" width="382" height="17.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8E-gZ-4Q6">
-                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rO-aK-5uW">
-                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="19"/>
+                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP3-8Y-ZVu">
-                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="19"/>
+                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWJ-cQ-qWK">
-                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="19"/>
+                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-VL-70x">
-                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="19"/>
+                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
