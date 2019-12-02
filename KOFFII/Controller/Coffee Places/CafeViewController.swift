@@ -44,7 +44,6 @@ class CafeViewController: UIViewController {
     func setupViewController() {
         // eliminate 1pt line
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-        
     }
     
     @IBAction func featureButtonTapped(_ sender: UIButton) {
@@ -84,7 +83,7 @@ extension CafeViewController: UITableViewDelegate {
             
             if let indexPath = tableView.indexPathForSelectedRow {
                 if let identifier = dataSource.itemIdentifier(for: indexPath) {
-                    cityDetailVC.passedCafeObject = identifier
+                    cityDetailVC.passedCafe = identifier
                 }
             }
         }

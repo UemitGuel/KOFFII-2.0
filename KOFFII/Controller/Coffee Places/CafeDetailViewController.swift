@@ -21,12 +21,12 @@ class CafeDetailViewController: UIViewController {
     @IBOutlet var plugButton: FeatureButton!
     @IBOutlet var plugLabel: UILabel!
     
-    var passedCafeObject: CafeController.Cafe?
-    var features: [String:Bool] { return passedCafeObject?.features ?? [:] }
-    var cafeName: String { return passedCafeObject?.name ?? "" }
+    var passedCafe: CafeController.Cafe?
+    var features: [String:Bool] { return passedCafe?.features ?? [:] }
+    var cafeName: String { return passedCafe?.name ?? "" }
     var location: CLLocation {
-        let latitude = passedCafeObject?.latitude ?? 0
-        let longitude = passedCafeObject?.longitude ?? 0
+        let latitude = passedCafe?.latitude ?? 0
+        let longitude = passedCafe?.longitude ?? 0
         return CLLocation(latitude: latitude, longitude: longitude)
     }
         

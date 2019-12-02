@@ -28,6 +28,8 @@ class CafeController {
         }
     }
     
+    var cafes = [Cafe]()
+    
     func filteredCafes(userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
         var filtered = cafes
         for feature in Feature.allCases {
@@ -42,8 +44,6 @@ class CafeController {
         }
         return filtered
     }
-    
-    var cafes = [Cafe]()
     
     func fetchAndConfigureUnfilteredCafes(completion: @escaping () -> Void) {
         Constants.refs.firestoreCologneCafes
