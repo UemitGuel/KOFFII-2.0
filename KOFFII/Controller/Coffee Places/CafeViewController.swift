@@ -29,8 +29,6 @@ class CafeViewController: UIViewController {
     @IBOutlet var plugButton: FeatureButton!
     @IBOutlet var plugLabel: UILabel!
     
-//    var cafeObjects = [CafeController.Cafe]()
-//    var filteredCafeObjects = [CafeController.Cafe]()
     var userRequestedFeatures: [Feature] = []
     var userChoosenNeighborhoods: [Neighborhood] = []
     
@@ -41,33 +39,12 @@ class CafeViewController: UIViewController {
         cafeController.fetchAndConfigureUnfilteredCafes {
             self.updateUI()
         }
-//        downloadCafes { cafeArray in
-//            self.cafes = cafeArray
-//            self.updateUI(animated: false)
-//        }
     }
     
     func setupViewController() {
         // eliminate 1pt line
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
-    }
-    
-    func downloadCafes(completionHandler: @escaping ([CafeController.Cafe]) -> Void) {
-        var cafeArray: [CafeController.Cafe] = []
-        Constants.refs.firestoreCologneCafes
-            .getDocuments { querySnapshot, err in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        let data = document.data()
-                        guard let cafe = CafeController.Cafe(dictionary: data) else { return }
-                        cafeArray.append(cafe)
-                    }
-                    completionHandler(cafeArray)
-                }
-        }
     }
     
     @IBAction func featureButtonTapped(_ sender: UIButton) {
@@ -101,14 +78,17 @@ extension CafeViewController: UITableViewDelegate {
         performSegue(withIdentifier: Constants.segues.citytoDetail, sender: self)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-//        if segue.identifier == Constants.segues.citytoDetail {
-//            let cityDetailVC = segue.destination as! CafeDetailViewController
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                cityDetailVC.passedCafeObject = cafes[indexPath.row]
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if segue.identifier == Constants.segues.citytoDetail {
+            let cityDetailVC = segue.destination as! CafeDetailViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                if let identifier = dataSource.itemIdentifier(for: indexPath) {
+                    cityDetailVC.passedCafeObject = identifier
+                }
+            }
+        }
+    }
 }
 
 extension CafeViewController: UIPickerViewDataSource {
