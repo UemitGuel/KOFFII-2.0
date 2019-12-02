@@ -8,11 +8,25 @@ class CafeController {
         let longitude: Double?
         let locationURL: String?
         let features: [String: Bool]?
-        let hood: String?
+        let neighborhood: String?
         
         private let identifier: UUID
+        
         func hash(into hasher: inout Hasher) {
             hasher.combine(self.identifier)
+        }
+        static func == (lhs: Cafe, rhs: Cafe) -> Bool {
+            return lhs.identifier == rhs.identifier
+        }
+        
+        func containsFeature(_ featureCase: Feature?) -> Bool {
+            guard let featureCase = featureCase else { return true }
+            return features![featureCase.rawValue] == true
+        }
+        
+        func containsNeighborhood(_ neighborhoodCase: Neighborhood?) -> Bool {
+            guard let neighborhoodCase = neighborhoodCase else { return true }
+            return neighborhood == neighborhoodCase.rawValue
         }
 
         init?(dictionary: [String: Any]) {
@@ -23,7 +37,7 @@ class CafeController {
             longitude = dictionary["longitude"] as? Double
             locationURL = dictionary["locationURL"] as? String
             features = dictionary["features"] as? [String: Bool]
-            hood = dictionary["hood"] as? String
+            neighborhood = dictionary["hood"] as? String
             self.identifier = UUID()
         }
     }
@@ -32,15 +46,11 @@ class CafeController {
     
     func filteredCafes(userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
         var filtered = cafes
-        for feature in Feature.allCases {
-            if userRequestedFeatures.contains(feature) {
-                filtered = filtered.filter { $0.features![feature.rawValue] == true }
-            }
+        for userRequestedFeature in userRequestedFeatures {
+            filtered = filtered.filter { $0.containsFeature(userRequestedFeature) }
         }
-        for neighborhood in Neighborhood.allCases {
-            if userChoosenNeighborhoods.contains(neighborhood) {
-                filtered = filtered.filter { $0.hood == neighborhood.rawValue }
-            }
+        for userChoosenNeighborhood in userChoosenNeighborhoods {
+            filtered = filtered.filter { $0.containsNeighborhood(userChoosenNeighborhood)}
         }
         return filtered
     }
