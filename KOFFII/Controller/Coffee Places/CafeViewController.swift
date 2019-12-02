@@ -1,5 +1,6 @@
 import FirebaseFirestore
 import UIKit
+import SVProgressHUD
 
 class CafeViewController: UIViewController {
     
@@ -36,8 +37,10 @@ class CafeViewController: UIViewController {
         super.viewDidLoad()
         setupViewController()
         configureDataSource()
+        SVProgressHUD.show()
         cafeController.fetchAndConfigureUnfilteredCafes {
             self.updateUI()
+            SVProgressHUD.dismiss()
         }
     }
     
