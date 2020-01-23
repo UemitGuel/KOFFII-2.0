@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+  /// Add a new coffee place
+  internal static let addANewCoffeePlace = L10n.tr("Localizable", "Add a new coffee place")
   /// Aeropress
   internal static let aeropress = L10n.tr("Localizable", "Aeropress")
   /// The AeroPress was introduced to the coffee market from a company originally producing professional Frisbee discs. The ways of the Lord are inscrutable
@@ -133,6 +135,16 @@ internal enum L10n {
   internal static let coffeeWater2 = L10n.tr("Localizable", "Coffee water 2")
   /// If your water is too hard, you can use a table water filter to soften it
   internal static let coffeeWater3 = L10n.tr("Localizable", "Coffee water 3")
+  /// Do they have cake?
+  internal static let doTheyHaveCake = L10n.tr("Localizable", "Do they have cake?")
+  /// Do they have plugs?
+  internal static let doTheyHavePlugs = L10n.tr("Localizable", "Do they have plugs?")
+  /// Do they have vegan options?
+  internal static let doTheyHaveVeganOptions = L10n.tr("Localizable", "Do they have vegan options?")
+  /// Do they have wifi?
+  internal static let doTheyHaveWifi = L10n.tr("Localizable", "Do they have wifi?")
+  /// Do they serve food?
+  internal static let doTheyServeFood = L10n.tr("Localizable", "Do they serve food?")
   /// Espresso
   internal static let espresso = L10n.tr("Localizable", "Espresso")
   /// The champions league of coffee making
@@ -245,6 +257,10 @@ internal enum L10n {
   internal static let knowledge = L10n.tr("Localizable", "Knowledge")
   /// Loading
   internal static let loading = L10n.tr("Localizable", "Loading")
+  /// Name of the coffee place
+  internal static let nameOfTheCoffeePlace = L10n.tr("Localizable", "Name of the coffee place")
+  /// No
+  internal static let no = L10n.tr("Localizable", "No")
   /// Pour Over
   internal static let pourOver = L10n.tr("Localizable", "Pour Over")
   /// Nothing fancy here — just a good, solid technique
@@ -305,6 +321,8 @@ internal enum L10n {
   internal static let regions8 = L10n.tr("Localizable", "Regions 8")
   /// C - Coffee is the main source of income for around 500.000 Colombians
   internal static let regions9 = L10n.tr("Localizable", "Regions 9")
+  /// Send
+  internal static let send = L10n.tr("Localizable", "Send")
   /// Storage
   internal static let storage = L10n.tr("Localizable", "Storage")
   /// You should use pre-ground coffee within 2 weeks because it loses quickly its aroma
@@ -337,6 +355,8 @@ internal enum L10n {
   internal static let turkishMochaQuantity = L10n.tr("Localizable", "Turkish Mocha Quantity")
   /// 60°
   internal static let turkishMochaTemperature = L10n.tr("Localizable", "Turkish Mocha Temperature")
+  /// Yes
+  internal static let yes = L10n.tr("Localizable", "Yes")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

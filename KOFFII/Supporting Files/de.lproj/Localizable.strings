@@ -1,4 +1,6 @@
 
+"Add a new coffee place" = "Füge ein Cafe hinzu";
+
 "Aeropress" = "Aeropress";
 
 "Aeropress 1" = "Die AeroPress wurde von einem Unternehmen das ursprünglich professionelle Frisbee Discs herstellt auf den Kaffeemarkt gebracht. Die Wege des Herrn sind unergründlich";
@@ -121,6 +123,16 @@
 
 "Coffee water 3" = "Wenn das Wasser zu hart ist, kannst du einen Wasserfilter verwenden, um es zu enthärten";
 
+"Do they have cake?" = "Gibt es Kuchen?";
+
+"Do they have plugs?" = "Gibt es Steckdosen?";
+
+"Do they have vegan options?" = "Gibt es vegane Optionen";
+
+"Do they have wifi?" = "Gibt es Wifi?";
+
+"Do they serve food?" = "Gibt es Mahlzeiten?";
+
 "Espresso" = "Espresso";
 
 "Espresso 1" = "Die Champions League der Kaffeezubereitung";
@@ -234,6 +246,10 @@
 /* No comment provided by engineer. */
 "Loading" = "Loading";
 
+"Name of the coffee place" = "Name des Cafes";
+
+"No" = "Nein";
+
 "Pour Over" = "Filterkaffee";
 
 "Pour Over 1" = "Nichts zu Verrücktes - nur eine gute, solide Technik";
@@ -325,3 +341,7 @@
 "Turkish Mocha Quantity" = "1 zu 10";
 
 "Turkish Mocha Temperature" = "60°";
+
+"Yes" = "Ja";
+
+"Send" = "";

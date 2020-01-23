@@ -1,4 +1,6 @@
 
+"Add a new coffee place" = "Add a new coffee place";
+
 "Aeropress" = "Aeropress";
 
 "Aeropress 1" = "The AeroPress was introduced to the coffee market from a company originally producing professional Frisbee discs. The ways of the Lord are inscrutable";
@@ -121,6 +123,16 @@
 
 "Coffee water 3" = "If your water is too hard, you can use a table water filter to soften it";
 
+"Do they have cake?" = "Do they have cake?";
+
+"Do they have plugs?" = "Do they have plugs?";
+
+"Do they have vegan options?" = "Do they have vegan options?";
+
+"Do they have wifi?" = "Do they have wifi?";
+
+"Do they serve food?" = "Do they serve food?";
+
 "Espresso" = "Espresso";
 
 "Espresso 1" = "The champions league of coffee making";
@@ -234,6 +246,10 @@
 /* No comment provided by engineer. */
 "Loading" = "Loading";
 
+"Name of the coffee place" = "Name of the coffee place";
+
+"No" = "No";
+
 "Pour Over" = "Pour Over";
 
 "Pour Over 1" = "Nothing fancy here — just a good, solid technique";
@@ -294,6 +310,8 @@
 
 "Regions 9" = "C - Coffee is the main source of income for around 500.000 Colombians";
 
+"Send" = "Send";
+
 "Storage" = "Storage";
 
 "Storage 1" = "You should use pre-ground coffee within 2 weeks because it loses quickly its aroma";
@@ -325,3 +343,5 @@
 "Turkish Mocha Quantity" = "1 to 10 ratio";
 
 "Turkish Mocha Temperature" = "60°";
+
+"Yes" = "Yes";

@@ -1,5 +1,6 @@
 import FirebaseFirestore
 import UIKit
+import SwiftUI
 import SVProgressHUD
 
 class CafeViewController: UIViewController {
@@ -11,6 +12,13 @@ class CafeViewController: UIViewController {
     let cafeController = CafeController()
     var dataSource: UITableViewDiffableDataSource<Section, CafeController.Cafe>! = nil
     var currentSnapshot: NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>! = nil
+    
+    @IBOutlet weak var addCoffeePlace: UIBarButtonItem!
+    @IBAction func addCoffeePlaceTapped(_ sender: UIBarButtonItem) {
+        let hostView = UIHostingController(rootView: addCoffeePlaceView())
+        navigationController?.present(hostView, animated: true)
+    }
+    
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var hoodPickerView: UIPickerView!
