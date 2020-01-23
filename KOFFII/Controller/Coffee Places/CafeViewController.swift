@@ -125,12 +125,15 @@ extension CafeViewController {
         self.dataSource = UITableViewDiffableDataSource
             <Section, CafeController.Cafe>(tableView: tableView) {
                 (tableView: UITableView, indexPath: IndexPath, item: CafeController.Cafe) -> UITableViewCell? in
-                
-                guard let cafeCell = tableView.dequeueReusableCell(withIdentifier: CafeTableViewCell.cellId, for: indexPath) as? CafeTableViewCell else { fatalError("Cannot create new cell!") }
-                
-                cafeCell.selectionStyle = .none
-                cafeCell.cafeNameLabel.text = item.name
-                return cafeCell
+                let cell: UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "DefaultCell")
+                cell.accessoryType = .disclosureIndicator
+                cell.selectionStyle = .none
+                cell.textLabel?.text = item.name
+                cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+                cell.detailTextLabel?.text = item.neighborhood
+                cell.detailTextLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
+                cell.imageView?.image = UIImage(asset: Asset.coffeeIcon)
+                return cell
         }
         self.dataSource.defaultRowAnimation = .fade
     }
