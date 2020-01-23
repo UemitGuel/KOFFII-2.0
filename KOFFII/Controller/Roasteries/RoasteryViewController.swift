@@ -46,7 +46,8 @@ extension RoasteryViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = roasteries[indexPath.row].name
         cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
-        cell.imageView?.image = UIImage(asset: Asset.roasterIcon)
+        cell.imageView?.image = UIImage(systemName: "cart", withConfiguration: UIImage.SymbolConfiguration(scale: .large))
+        cell.imageView?.tintColor = .label
         return cell
     }
 }

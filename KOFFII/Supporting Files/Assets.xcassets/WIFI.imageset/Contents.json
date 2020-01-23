@@ -2,51 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "baseline_wifi_black_48pt_1x.png",
-      "scale" : "1x"
+      "filename" : "wifi_icon_black_pdf.pdf"
     },
     {
       "idiom" : "universal",
-      "filename" : "baseline_wifi_white_48pt_1x.png",
+      "filename" : "wifi_icon_white_pdf.pdf",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
         }
-      ],
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "baseline_wifi_black_48pt_2x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "baseline_wifi_white_48pt_2x.png",
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "baseline_wifi_black_48pt_3x.png",
-      "scale" : "3x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "baseline_wifi_white_48pt_3x.png",
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "scale" : "3x"
+      ]
     }
   ],
   "info" : {
@@ -54,6 +20,6 @@
     "author" : "xcode"
   },
   "properties" : {
-    "template-rendering-intent" : "template"
+    "preserves-vector-representation" : true
   }
 }

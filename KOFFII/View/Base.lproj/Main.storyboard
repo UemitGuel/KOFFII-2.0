@@ -165,16 +165,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-jf-HtW">
                                 <rect key="frame" x="16" y="8" width="382" height="200"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="95r-Al-j97">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="63.666666666666664"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="95r-Al-j97">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="54"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-bb-GXI" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="63.666666666666664"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="tb9-bb-GXI" secondAttribute="height" multiplier="1:1" id="L64-dd-wrG"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="54"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="wifi" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </state>
@@ -188,9 +186,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGT-oj-GcI" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="63.666666666666664"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="54"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="FOOD"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -203,8 +202,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfw-YV-uQy" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="63.666666666666664"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="54"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="VEGAN"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -216,8 +216,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdk-sF-0UX" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="63.666666666666664"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="54"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="CAKE"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -229,8 +230,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af3-ef-nbw" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="63.666666666666664"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="54"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="PLUG"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -242,39 +244,36 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="tb9-bb-GXI" firstAttribute="width" secondItem="uGT-oj-GcI" secondAttribute="width" id="VRJ-18-dTP"/>
-                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-Ha-20X">
-                                        <rect key="frame" x="0.0" y="64.666666666666671" width="382" height="19"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-Ha-20X">
+                                        <rect key="frame" x="0.0" y="55" width="382" height="19"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-Ln-w3a">
-                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbQ-6d-qV5">
-                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="19"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-9M-kc8">
-                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="19"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtz-Za-ccM">
-                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="19"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsj-sj-GGu">
-                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="19"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -282,16 +281,16 @@
                                         </subviews>
                                     </stackView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzl-mG-bP9">
-                                        <rect key="frame" x="0.0" y="84.666666666666657" width="382" height="115.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="75" width="382" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="h7R-Br-MwU"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="8hJ-sQ-lT1" id="ro9-NS-vgy"/>
                                             <outlet property="delegate" destination="8hJ-sQ-lT1" id="TSg-WW-T9i"/>
                                         </connections>
                                     </pickerView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="iQ6-kx-1Ti"/>
-                                </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qsS-jK-kIv">
                                 <rect key="frame" x="0.0" y="208" width="414" height="435"/>
@@ -349,7 +348,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2D-8u-aeR">
-                                <rect key="frame" x="16" y="290" width="382" height="60"/>
+                                <rect key="frame" x="16" y="526" width="382" height="60"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="L1v-uK-TVF"/>
@@ -365,14 +364,11 @@
                                     <action selector="openMapsButtonTapped:" destination="ZMK-a5-n10" eventType="touchUpInside" id="vZA-X9-uMK"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-01-jye">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="274"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="274" id="IeT-qG-a9C"/>
-                                </constraints>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-01-jye">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="510"/>
                             </mapView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NfX-Ot-MU0">
-                                <rect key="frame" x="192" y="111.33333333333333" width="30" height="29.333333333333329"/>
+                                <rect key="frame" x="192" y="220.00000000000003" width="30" height="29.333333333333343"/>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="lys-PZ-eWP"/>
@@ -380,17 +376,15 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-r0-Otc">
-                                <rect key="frame" x="16" y="366" width="382" height="83.666666666666686"/>
+                                <rect key="frame" x="16" y="602" width="382" height="74"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-9b-bfF">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="63.666666666666664"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-9b-bfF">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="54"/>
                                         <subviews>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4W-zt-HNu" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="63.666666666666664"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="J4W-zt-HNu" secondAttribute="height" multiplier="1:1" id="w20-Dx-hzi"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="54"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="WIFI"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -408,8 +402,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-1L-tnV" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="63.666666666666664"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="54"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="FOOD"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
@@ -427,8 +422,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ips-Qk-zbg" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="63.666666666666664"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="54"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="VEGAN"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
@@ -446,8 +442,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-0z-zU5" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="63.666666666666664"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="54"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="CAKE"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
@@ -465,8 +462,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdB-hq-9yi" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
-                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="63.666666666666664"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="54"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                                 <state key="normal" image="PLUG"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="customBGColor">
@@ -484,39 +482,36 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="J4W-zt-HNu" firstAttribute="width" secondItem="Fc3-1L-tnV" secondAttribute="width" id="Bh2-q7-ZzB"/>
-                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-at-Xaz">
-                                        <rect key="frame" x="0.0" y="64.666666666666686" width="382" height="19"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-at-Xaz">
+                                        <rect key="frame" x="0.0" y="55" width="382" height="19"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8E-gZ-4Q6">
-                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rO-aK-5uW">
-                                                <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="19"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP3-8Y-ZVu">
-                                                <rect key="frame" x="159.33333333333334" y="0.0" width="63.333333333333343" height="19"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWJ-cQ-qWK">
-                                                <rect key="frame" x="238.66666666666666" y="0.0" width="63.666666666666657" height="19"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-VL-70x">
-                                                <rect key="frame" x="318.33333333333331" y="0.0" width="63.666666666666686" height="19"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="19"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -531,6 +526,7 @@
                             <constraint firstItem="bM6-01-jye" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" id="34E-G6-5dl"/>
                             <constraint firstItem="6uH-r0-Otc" firstAttribute="leading" secondItem="CY6-Vq-zU7" secondAttribute="leading" constant="16" id="6dC-Ij-BFS"/>
                             <constraint firstItem="NfX-Ot-MU0" firstAttribute="centerY" secondItem="bM6-01-jye" secondAttribute="centerY" multiplier="0.92" id="7Bp-Wi-kVn"/>
+                            <constraint firstItem="CY6-Vq-zU7" firstAttribute="bottom" secondItem="6uH-r0-Otc" secondAttribute="bottom" constant="16" id="FYc-pG-BDC"/>
                             <constraint firstItem="bM6-01-jye" firstAttribute="trailing" secondItem="CY6-Vq-zU7" secondAttribute="trailing" id="IvX-pg-FXz"/>
                             <constraint firstItem="bM6-01-jye" firstAttribute="trailing" secondItem="CY6-Vq-zU7" secondAttribute="trailing" id="add-8y-ZeO"/>
                             <constraint firstItem="bM6-01-jye" firstAttribute="top" secondItem="CY6-Vq-zU7" secondAttribute="top" id="cYL-wF-cdX"/>
@@ -632,14 +628,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-e4-Lhf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="YPb-3K-Ff7"/>
-                                </constraints>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-e4-Lhf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="551"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyQ-9d-OQJ">
-                                <rect key="frame" x="16" y="246" width="382" height="60"/>
+                                <rect key="frame" x="16" y="567" width="382" height="60"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="aXb-HK-4Nv"/>
@@ -656,8 +649,9 @@
                                     <action selector="openMapsButtonTapped:" destination="BX3-ye-0e3" eventType="touchUpInside" id="c0P-rz-LRY"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cafe_map_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-8E-lVx">
-                                <rect key="frame" x="197" y="105" width="20" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-8E-lVx">
+                                <rect key="frame" x="197" y="266" width="20" height="19.333333333333343"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="hZr-dw-06A"/>
                                     <constraint firstAttribute="height" constant="20" id="n6o-vI-NCM"/>
@@ -673,6 +667,7 @@
                             <constraint firstItem="Z3y-8E-lVx" firstAttribute="centerY" secondItem="8ff-e4-Lhf" secondAttribute="centerY" id="hU3-WZ-390"/>
                             <constraint firstItem="8ff-e4-Lhf" firstAttribute="leading" secondItem="bet-Pu-NkN" secondAttribute="leading" id="hyZ-40-cLN"/>
                             <constraint firstItem="8ff-e4-Lhf" firstAttribute="trailing" secondItem="bet-Pu-NkN" secondAttribute="trailing" id="mNB-cl-y2y"/>
+                            <constraint firstItem="bet-Pu-NkN" firstAttribute="bottom" secondItem="oyQ-9d-OQJ" secondAttribute="bottom" constant="16" id="n6H-5f-a8b"/>
                             <constraint firstItem="8ff-e4-Lhf" firstAttribute="top" secondItem="bet-Pu-NkN" secondAttribute="top" id="qV3-Cs-UDN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bet-Pu-NkN"/>
@@ -1069,12 +1064,11 @@
     </scenes>
     <resources>
         <image name="Blob1" width="418" height="428"/>
-        <image name="CAKE" width="48" height="48"/>
-        <image name="Cafe_map_icon" width="26" height="35"/>
-        <image name="FOOD" width="48" height="48"/>
-        <image name="PLUG" width="48" height="48"/>
-        <image name="VEGAN" width="48" height="48"/>
-        <image name="WIFI" width="48" height="48"/>
+        <image name="CAKE" width="18" height="22"/>
+        <image name="FOOD" width="20" height="18"/>
+        <image name="PLUG" width="12" height="18"/>
+        <image name="VEGAN" width="18" height="21"/>
+        <image name="WIFI" width="22" height="16"/>
         <image name="coffee_icon" width="29" height="27"/>
         <image name="info_icon" width="29" height="29"/>
         <image name="mappin" catalog="system" width="52" height="64"/>
