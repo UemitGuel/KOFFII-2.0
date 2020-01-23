@@ -5,17 +5,11 @@
 /* Class = "UILabel"; text = "FOOD"; ObjectID = "2rO-aK-5uW"; */
 "2rO-aK-5uW.text" = "ESSEN";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "3cj-hs-3dL"; */
-"3cj-hs-3dL.text" = "Label";
-
 /* Class = "UILabel"; text = "Add your coffee place. The developer will review this shortly and add the coffee place to the list! Thank you :)"; ObjectID = "5hk-md-PaW"; */
 "5hk-md-PaW.text" = "Füge deinen Cafe hinzu. Der Entwickler wird dies in Kürze überprüfen und das Cafe in die Liste aufnehmen! Danke :)";
 
 /* Class = "UIBarButtonItem"; title = "Add Coffee Place"; ObjectID = "6Xs-RH-tzF"; */
 "6Xs-RH-tzF.title" = "Cafe hinzufügen";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "CDu-Gq-EEd"; */
-"CDu-Gq-EEd.text" = "Label";
 
 /* Class = "UILabel"; text = "Complain"; ObjectID = "Cab-DX-tl4"; */
 "Cab-DX-tl4.text" = "Beschwerde";
@@ -47,9 +41,6 @@
 /* Class = "UIButton"; normalTitle = "Open in Apple/Google Maps"; ObjectID = "W2D-8u-aeR"; */
 "W2D-8u-aeR.normalTitle" = "In Apple/Google Maps öffnen";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "ZYQ-gB-vii"; */
-"ZYQ-gB-vii.text" = "Label";
-
 /* Class = "UILabel"; text = "FOOD"; ObjectID = "dbQ-6d-qV5"; */
 "dbQ-6d-qV5.text" = "ESSEN";
 
@@ -62,9 +53,6 @@
 /* Class = "UILabel"; text = "VEGAN"; ObjectID = "eP3-8Y-ZVu"; */
 "eP3-8Y-ZVu.text" = "VEGAN";
 
-/* Class = "UILabel"; text = "10"; ObjectID = "jQH-7M-2Um"; */
-"jQH-7M-2Um.text" = "10";
-
 /* Class = "UITabBarItem"; title = "Roasteries"; ObjectID = "kNi-FI-VSX"; */
 "kNi-FI-VSX.title" = "Röstereien";
 
@@ -74,23 +62,14 @@
 /* Class = "UIButton"; normalTitle = "Send coffee place for review"; ObjectID = "nBZ-uf-kD2"; */
 "nBZ-uf-kD2.normalTitle" = "Cafe zur Überprüfung senden";
 
-/* Class = "UILabel"; text = "10"; ObjectID = "nia-cB-8H9"; */
-"nia-cB-8H9.text" = "10";
-
 /* Class = "UILabel"; text = "PLUG"; ObjectID = "nsj-sj-GGu"; */
 "nsj-sj-GGu.text" = "STROM";
 
 /* Class = "UIButton"; normalTitle = "Open in Apple/Google Maps"; ObjectID = "oyQ-9d-OQJ"; */
 "oyQ-9d-OQJ.normalTitle" = "In Apple/Google Maps öffnen";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "peN-X9-LxV"; */
-"peN-X9-LxV.text" = "Label";
-
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "rAz-1t-PvD"; */
 "rAz-1t-PvD.title" = " ";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "rMk-R4-g6r"; */
-"rMk-R4-g6r.text" = "Label";
 
 /* Class = "UILabel"; text = "CAKE"; ObjectID = "rtz-Za-ccM"; */
 "rtz-Za-ccM.text" = "KUCHEN";
