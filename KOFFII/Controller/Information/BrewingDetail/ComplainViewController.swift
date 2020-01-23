@@ -16,7 +16,10 @@ class ComplainViewController: UIViewController {
     func setupViewController() {
         // eliminate 1pt line
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+ 
     }
+    
+
 }
 
 extension ComplainViewController: UITableViewDataSource {
@@ -26,11 +29,11 @@ extension ComplainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ComplainTableViewCell.cellId,
-                                                       for: indexPath) as? ComplainTableViewCell else {
-                                                        return UITableViewCell()
-        }
-        cell.complainLabel.text = complain?.improvements[indexPath.row]
+        let cell: UITableViewCell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
+        cell.textLabel?.text = complain?.improvements[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
+        cell.imageView?.image = UIImage(systemName: "flame.fill")
+        cell.imageView?.tintColor = .label
         return cell
     }
 }

@@ -41,10 +41,12 @@ extension RoasteryViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RoasteryTableViewCell.cellId,
-                                                 for: indexPath) as! RoasteryTableViewCell
+        let cell: UITableViewCell = UITableViewCell(style: .default , reuseIdentifier: "DefaultCell")
         cell.selectionStyle = .none
-        cell.roasterLabel.text = roasteries[indexPath.row].name
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = roasteries[indexPath.row].name
+        cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        cell.imageView?.image = UIImage(asset: Asset.roasterIcon)
         return cell
     }
 }

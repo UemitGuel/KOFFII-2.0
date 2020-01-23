@@ -72,14 +72,11 @@ extension BrewingDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BrewingDetailTableViewCell.cellId,
-                                                 for: indexPath) as! BrewingDetailTableViewCell
-        guard let information = passedInformationBrewing else {
-            return cell
-        }
-
-        cell.countLabel.text = String(indexPath.row + 1)
-        cell.longTextLabel.text = information.tips[indexPath.row]
+        let cell: UITableViewCell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
+        cell.imageView?.image = UIImage(systemName: "\(indexPath.row + 1).square",withConfiguration: UIImage.SymbolConfiguration(scale: .large))
+        cell.imageView?.tintColor = .label
+        cell.textLabel?.text = passedInformationBrewing?.tips[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
 }

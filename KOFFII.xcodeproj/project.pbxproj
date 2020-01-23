@@ -12,7 +12,6 @@
 		B310BF982369BBC30065318C /* AddCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF972369BBC30065318C /* AddCafeViewController.swift */; };
 		B310BF9A2369D02B0065318C /* RoasteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF992369D02B0065318C /* RoasteryViewController.swift */; };
 		B310BF9C2369D1A20065318C /* Roastery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9B2369D1A20065318C /* Roastery.swift */; };
-		B310BF9E2369D49A0065318C /* RoasteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9D2369D49A0065318C /* RoasteryTableViewCell.swift */; };
 		B310BFA02369DB460065318C /* RoasteryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9F2369DB460065318C /* RoasteryDetailViewController.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
@@ -21,10 +20,8 @@
 		B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36572C522CD36AF00C618BD /* InformationViewController.swift */; };
 		B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */; };
 		B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D57D22D39BFF0069F4D0 /* ComplainViewController.swift */; };
-		B367D58022D39C810069F4D0 /* ComplainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D57F22D39C810069F4D0 /* ComplainTableViewCell.swift */; };
 		B367D58222D3A7250069F4D0 /* Complain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58122D3A7250069F4D0 /* Complain.swift */; };
 		B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */; };
-		B367D58622D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58522D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift */; };
 		B367D58E22D502CD0069F4D0 /* CafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58D22D502CD0069F4D0 /* CafeViewController.swift */; };
 		B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596C2370264500D1D6B9 /* MapFunctions.swift */; };
 		B377596F2370336600D1D6B9 /* FeatureButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */; };
@@ -53,7 +50,6 @@
 		B310BF972369BBC30065318C /* AddCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCafeViewController.swift; sourceTree = "<group>"; };
 		B310BF992369D02B0065318C /* RoasteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasteryViewController.swift; sourceTree = "<group>"; };
 		B310BF9B2369D1A20065318C /* Roastery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roastery.swift; sourceTree = "<group>"; };
-		B310BF9D2369D49A0065318C /* RoasteryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasteryTableViewCell.swift; sourceTree = "<group>"; };
 		B310BF9F2369DB460065318C /* RoasteryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasteryDetailViewController.swift; sourceTree = "<group>"; };
 		B32E941A236F34C7005E3603 /* KOFFII_CologneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOFFII_CologneUITests.swift; sourceTree = "<group>"; };
 		B32E941C236F34C7005E3603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,10 +61,8 @@
 		B36572C522CD36AF00C618BD /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
 		B367D57D22D39BFF0069F4D0 /* ComplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainViewController.swift; sourceTree = "<group>"; };
-		B367D57F22D39C810069F4D0 /* ComplainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTableViewCell.swift; sourceTree = "<group>"; };
 		B367D58122D3A7250069F4D0 /* Complain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complain.swift; sourceTree = "<group>"; };
 		B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
-		B367D58522D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		B367D58D22D502CD0069F4D0 /* CafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeViewController.swift; sourceTree = "<group>"; };
 		B377596C2370264500D1D6B9 /* MapFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFunctions.swift; sourceTree = "<group>"; };
 		B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureButtonFunctions.swift; sourceTree = "<group>"; };
@@ -123,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				B310BF992369D02B0065318C /* RoasteryViewController.swift */,
-				B310BF9D2369D49A0065318C /* RoasteryTableViewCell.swift */,
 				B37759722370504C00D1D6B9 /* RoasteryDetail */,
 			);
 			path = Roasteries;
@@ -154,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */,
-				B367D58522D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift */,
 			);
 			path = KnowledgeDetail;
 			sourceTree = "<group>";
@@ -292,7 +284,6 @@
 				B3F62ED522D0CB37002DF68C /* HeaderView.swift */,
 				B3F62ED622D0CB37002DF68C /* HeaderView.xib */,
 				B367D57D22D39BFF0069F4D0 /* ComplainViewController.swift */,
-				B367D57F22D39C810069F4D0 /* ComplainTableViewCell.swift */,
 			);
 			path = BrewingDetail;
 			sourceTree = "<group>";
@@ -467,7 +458,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */,
-				B367D58022D39C810069F4D0 /* ComplainTableViewCell.swift in Sources */,
 				B310BFA02369DB460065318C /* RoasteryDetailViewController.swift in Sources */,
 				B34E50A32393FFE80043091B /* CafeController.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
@@ -487,12 +477,10 @@
 				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,
 				B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
-				B310BF9E2369D49A0065318C /* RoasteryTableViewCell.swift in Sources */,
 				B38C41DB2387E43900C92E8D /* Localized.swift in Sources */,
 				B310BF982369BBC30065318C /* AddCafeViewController.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,
 				B367D58E22D502CD0069F4D0 /* CafeViewController.swift in Sources */,
-				B367D58622D4C7D00069F4D0 /* KnowledgeDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
