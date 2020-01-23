@@ -20,7 +20,6 @@
 internal enum Asset {
   internal static let aeropress = ImageAsset(name: "Aeropress")
   internal static let cake = ImageAsset(name: "CAKE")
-  internal static let cafeMapIcon = ImageAsset(name: "Cafe_map_icon")
   internal static let chemex = ImageAsset(name: "Chemex")
   internal static let complain = ImageAsset(name: "Complain")
   internal static let espresso = ImageAsset(name: "Espresso")
@@ -32,7 +31,6 @@ internal enum Asset {
   internal static let health = ImageAsset(name: "Health")
   internal static let history = ImageAsset(name: "History")
   internal static let plug = ImageAsset(name: "PLUG")
-  internal static let profilIcon = ImageAsset(name: "ProfilIcon")
   internal static let quechup = ImageAsset(name: "QUECHUP")
   internal static let quechupDigitalNomadBrand = ImageAsset(name: "QUECHUP_digital_nomad_brand")
   internal static let regions = ImageAsset(name: "Regions")
@@ -41,10 +39,8 @@ internal enum Asset {
   internal static let vegan = ImageAsset(name: "VEGAN")
   internal static let wifi = ImageAsset(name: "WIFI")
   internal static let water = ImageAsset(name: "Water")
-  internal static let arrowIcon = ImageAsset(name: "arrow_icon")
   internal static let coffeeIcon = ImageAsset(name: "coffee_icon")
   internal static let infoIcon = ImageAsset(name: "info_icon")
-  internal static let locationIcon = ImageAsset(name: "locationIcon")
   internal static let roasterIcon = ImageAsset(name: "roaster_icon")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
