@@ -131,6 +131,7 @@ extension CafeViewController {
                 cell.textLabel?.text = item.name
                 cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
                 cell.detailTextLabel?.text = item.neighborhood
+                cell.detailTextLabel?.textColor = .secondaryLabel
                 cell.detailTextLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
                 cell.imageView?.image = UIImage(asset: Asset.coffeeIcon)
                 return cell

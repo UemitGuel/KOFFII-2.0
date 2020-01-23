@@ -42,11 +42,13 @@ class FeatureButtonFunctions {
         if !userRequestedFeatures.contains(feature) {
             userRequestedFeatures.append(feature)
             button.backgroundColor = buttonTappedColor
-            button.layer.borderWidth = 2
+            button.layer.borderWidth = 0
+            button.imageView?.tintColor = .white
             label.font = quicksandBoldFont
         } else {
             userRequestedFeatures = userRequestedFeatures.filter{ $0 != feature }
             button.backgroundColor = .systemBackground
+            button.imageView?.tintColor = .label
             button.layer.borderWidth = 1
             label.font = quicksandMediumFont
         }

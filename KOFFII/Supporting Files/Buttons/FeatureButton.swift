@@ -9,6 +9,8 @@ class FeatureButton: UIButton {
 
     private func setup() {
         layer.borderWidth = 1
-        layer.borderColor = UIColor.label.cgColor
+        self.traitCollection.performAsCurrent {
+            self.layer.borderColor = UIColor.label.cgColor
+        }
     }
 }

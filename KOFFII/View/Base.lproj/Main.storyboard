@@ -175,7 +175,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <state key="normal" image="WIFI"/>
+                                                <state key="normal" image="wifi" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="8"/>
@@ -187,6 +189,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGT-oj-GcI" customClass="FeatureButton" customModule="KOFFII_Cologne" customModuleProvider="target">
                                                 <rect key="frame" x="79.666666666666671" y="0.0" width="63.666666666666671" height="63.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" image="FOOD"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1076,6 +1079,7 @@
         <image name="info_icon" width="29" height="29"/>
         <image name="mappin" catalog="system" width="52" height="64"/>
         <image name="roaster_icon" width="29" height="29"/>
+        <image name="wifi" catalog="system" width="64" height="46"/>
     </resources>
     <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
