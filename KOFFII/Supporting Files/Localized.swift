@@ -11,8 +11,6 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
-  /// Add a new coffee place
-  internal static let addANewCoffeePlace = L10n.tr("Localizable", "Add a new coffee place")
   /// Aeropress
   internal static let aeropress = L10n.tr("Localizable", "Aeropress")
   /// The AeroPress was introduced to the coffee market from a company originally producing professional Frisbee discs. The ways of the Lord are inscrutable
@@ -259,6 +257,8 @@ internal enum L10n {
   internal static let loading = L10n.tr("Localizable", "Loading")
   /// Name of the coffee place
   internal static let nameOfTheCoffeePlace = L10n.tr("Localizable", "Name of the coffee place")
+  /// New coffee place
+  internal static let newCoffeePlace = L10n.tr("Localizable", "New coffee place")
   /// No
   internal static let no = L10n.tr("Localizable", "No")
   /// Pour Over

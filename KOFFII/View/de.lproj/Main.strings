@@ -1,12 +1,6 @@
 
-/* Class = "UILabel"; text = "Vegan"; ObjectID = "1Bl-jU-1Ac"; */
-"1Bl-jU-1Ac.text" = "Vegan";
-
 /* Class = "UILabel"; text = "FOOD"; ObjectID = "2rO-aK-5uW"; */
 "2rO-aK-5uW.text" = "ESSEN";
-
-/* Class = "UILabel"; text = "Add your coffee place. The developer will review this shortly and add the coffee place to the list! Thank you :)"; ObjectID = "5hk-md-PaW"; */
-"5hk-md-PaW.text" = "Füge deinen Cafe hinzu. Der Entwickler wird dies in Kürze überprüfen und das Cafe in die Liste aufnehmen! Danke :)";
 
 /* Class = "UIBarButtonItem"; title = "Add Coffee Place"; ObjectID = "6Xs-RH-tzF"; */
 "6Xs-RH-tzF.title" = "Cafe hinzufügen";
@@ -23,20 +17,11 @@
 /* Class = "UITabBarItem"; title = "places"; ObjectID = "GPg-WA-BMY"; */
 "GPg-WA-BMY.title" = "Cafes";
 
-/* Class = "UILabel"; text = "Wifi"; ObjectID = "JeU-aO-q2x"; */
-"JeU-aO-q2x.text" = "Wifi";
-
 /* Class = "UILabel"; text = "PLUG"; ObjectID = "MhJ-VL-70x"; */
 "MhJ-VL-70x.text" = "STROM";
 
 /* Class = "UILabel"; text = "WIFI"; ObjectID = "Ohb-Ln-w3a"; */
 "Ohb-Ln-w3a.text" = "WIFI";
-
-/* Class = "UILabel"; text = "Cake"; ObjectID = "PSx-75-JG4"; */
-"PSx-75-JG4.text" = "Kuchen";
-
-/* Class = "UILabel"; text = "Plug"; ObjectID = "S1B-Co-FTW"; */
-"S1B-Co-FTW.text" = "Steckdose";
 
 /* Class = "UIButton"; normalTitle = "Open in Apple/Google Maps"; ObjectID = "W2D-8u-aeR"; */
 "W2D-8u-aeR.normalTitle" = "In Apple/Google Maps öffnen";
@@ -59,9 +44,6 @@
 /* Class = "UILabel"; text = "CAKE"; ObjectID = "kWJ-cQ-qWK"; */
 "kWJ-cQ-qWK.text" = "KUCHEN";
 
-/* Class = "UIButton"; normalTitle = "Send coffee place for review"; ObjectID = "nBZ-uf-kD2"; */
-"nBZ-uf-kD2.normalTitle" = "Cafe zur Überprüfung senden";
-
 /* Class = "UILabel"; text = "PLUG"; ObjectID = "nsj-sj-GGu"; */
 "nsj-sj-GGu.text" = "STROM";
 
@@ -73,12 +55,6 @@
 
 /* Class = "UILabel"; text = "CAKE"; ObjectID = "rtz-Za-ccM"; */
 "rtz-Za-ccM.text" = "KUCHEN";
-
-/* Class = "UITextField"; placeholder = "name"; ObjectID = "scB-rg-0vI"; */
-"scB-rg-0vI.placeholder" = "Cafe name";
-
-/* Class = "UILabel"; text = "Food"; ObjectID = "tP2-bO-vO8"; */
-"tP2-bO-vO8.text" = "Essen";
 
 /* Class = "UILabel"; text = "Where to buy beans"; ObjectID = "tzw-Pv-t0l"; */
 "tzw-Pv-t0l.text" = "Frische Bohnen kaufen";

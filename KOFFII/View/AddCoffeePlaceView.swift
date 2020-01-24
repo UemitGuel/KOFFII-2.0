@@ -57,11 +57,11 @@ struct AddCoffeePlaceView: View {
                     }.pickerStyle(SegmentedPickerStyle())
                 }
             }
-            .navigationBarTitle(L10n.addANewCoffeePlace)
+            .navigationBarTitle(L10n.newCoffeePlace)
             .navigationBarItems(trailing:
                 Button(action: {
                     self.addPlaceToFirebase()
-                    SVProgressHUD.showSuccess(withStatus: "Your Coffee Place is sent for review!")
+                    SVProgressHUD.showSuccess(withStatus: L10n.coffeePlaceSentForReview)
                     self.dismiss()
                 }) {
                     HStack {

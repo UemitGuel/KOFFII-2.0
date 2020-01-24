@@ -1,6 +1,4 @@
 
-"Add a new coffee place" = "Füge ein Cafe hinzu";
-
 "Aeropress" = "Aeropress";
 
 "Aeropress 1" = "Die AeroPress wurde von einem Unternehmen das ursprünglich professionelle Frisbee Discs herstellt auf den Kaffeemarkt gebracht. Die Wege des Herrn sind unergründlich";
@@ -127,7 +125,7 @@
 
 "Do they have plugs?" = "Gibt es Steckdosen?";
 
-"Do they have vegan options?" = "Gibt es vegane Optionen";
+"Do they have vegan options?" = "Gibt es vegane Optionen?";
 
 "Do they have wifi?" = "Gibt es Wifi?";
 
@@ -247,6 +245,8 @@
 "Loading" = "Loading";
 
 "Name of the coffee place" = "Name des Cafes";
+
+"New coffee place" = "Neues Cafe";
 
 "No" = "Nein";
 
