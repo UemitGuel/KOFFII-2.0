@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8A4204AD85B4D3AC3588B652 /* Pods_KOFFII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0285450D2D979851A99E479 /* Pods_KOFFII.framework */; };
 		B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309008122D796CC00DE7662 /* CafeDetailViewController.swift */; };
-		B310BF982369BBC30065318C /* AddCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF972369BBC30065318C /* AddCafeViewController.swift */; };
 		B310BF9A2369D02B0065318C /* RoasteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF992369D02B0065318C /* RoasteryViewController.swift */; };
 		B310BF9C2369D1A20065318C /* Roastery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9B2369D1A20065318C /* Roastery.swift */; };
 		B310BFA02369DB460065318C /* RoasteryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9F2369DB460065318C /* RoasteryDetailViewController.swift */; };
@@ -31,7 +30,7 @@
 		B3970966238D1C3900190C53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3970965238D1C3900190C53 /* Constants.swift */; };
 		B3970968238D2B2700190C53 /* FeatureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3970967238D2B2700190C53 /* FeatureButton.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
-		B39ADA9123D9FE0D00000699 /* addCoffeePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39ADA9023D9FE0D00000699 /* addCoffeePlaceView.swift */; };
+		B39ADA9123D9FE0D00000699 /* AddCoffeePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39ADA9023D9FE0D00000699 /* AddCoffeePlaceView.swift */; };
 		B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA7E5722C4F38B005848DA /* AppDelegate.swift */; };
 		B3AA7E5D22C4F38B005848DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5B22C4F38B005848DA /* Main.storyboard */; };
 		B3AA7E5F22C4F38C005848DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AA7E5E22C4F38C005848DA /* Assets.xcassets */; };
@@ -48,7 +47,6 @@
 /* Begin PBXFileReference section */
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
 		B309008122D796CC00DE7662 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = ../CafeDetailViewController.swift; sourceTree = "<group>"; };
-		B310BF972369BBC30065318C /* AddCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCafeViewController.swift; sourceTree = "<group>"; };
 		B310BF992369D02B0065318C /* RoasteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasteryViewController.swift; sourceTree = "<group>"; };
 		B310BF9B2369D1A20065318C /* Roastery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roastery.swift; sourceTree = "<group>"; };
 		B310BF9F2369DB460065318C /* RoasteryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasteryDetailViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +74,7 @@
 		B3970965238D1C3900190C53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B3970967238D2B2700190C53 /* FeatureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureButton.swift; sourceTree = "<group>"; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
-		B39ADA9023D9FE0D00000699 /* addCoffeePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCoffeePlaceView.swift; sourceTree = "<group>"; };
+		B39ADA9023D9FE0D00000699 /* AddCoffeePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeePlaceView.swift; sourceTree = "<group>"; };
 		B3AA7E5422C4F38B005848DA /* KOFFII Cologne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KOFFII Cologne.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AA7E5722C4F38B005848DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3AA7E5C22C4F38B005848DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			children = (
 				B367D58D22D502CD0069F4D0 /* CafeViewController.swift */,
 				B34E50A22393FFE80043091B /* CafeController.swift */,
-				B310BF972369BBC30065318C /* AddCafeViewController.swift */,
 				B3BCACD722D8D3F000A4FEDF /* CafeDetail */,
 			);
 			path = "Coffee Places";
@@ -188,7 +185,7 @@
 			children = (
 				B3AA7E6022C4F38C005848DA /* LaunchScreen.storyboard */,
 				B3AA7E5B22C4F38B005848DA /* Main.storyboard */,
-				B39ADA9023D9FE0D00000699 /* addCoffeePlaceView.swift */,
+				B39ADA9023D9FE0D00000699 /* AddCoffeePlaceView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,10 +478,9 @@
 				B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
 				B38C41DB2387E43900C92E8D /* Localized.swift in Sources */,
-				B310BF982369BBC30065318C /* AddCafeViewController.swift in Sources */,
 				B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */,
 				B367D58E22D502CD0069F4D0 /* CafeViewController.swift in Sources */,
-				B39ADA9123D9FE0D00000699 /* addCoffeePlaceView.swift in Sources */,
+				B39ADA9123D9FE0D00000699 /* AddCoffeePlaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

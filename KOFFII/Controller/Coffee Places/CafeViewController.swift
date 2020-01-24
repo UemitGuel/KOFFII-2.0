@@ -15,8 +15,12 @@ class CafeViewController: UIViewController {
     
     @IBOutlet weak var addCoffeePlace: UIBarButtonItem!
     @IBAction func addCoffeePlaceTapped(_ sender: UIBarButtonItem) {
-        let hostView = UIHostingController(rootView: addCoffeePlaceView())
+        let hostView = UIHostingController(rootView: AddCoffeePlaceView(dismiss: dismiss))
         navigationController?.present(hostView, animated: true)
+    }
+    
+    func dismiss(){
+      self.dismiss(animated: true, completion: nil)
     }
     
     

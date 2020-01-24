@@ -1,14 +1,9 @@
-//
-//  addCoffeePlaceView.swift
-//  KOFFII
-//
-//  Created by Ümit Gül on 23.01.20.
-//  Copyright © 2020 Ümit Gül. All rights reserved.
-//
-
 import SwiftUI
+import FirebaseFirestore
+import SVProgressHUD
 
-struct addCoffeePlaceView: View {
+struct AddCoffeePlaceView: View {
+    var dismiss: () -> Void
     @State private var name = ""
     
     let state = [L10n.yes,L10n.no]
@@ -65,7 +60,9 @@ struct addCoffeePlaceView: View {
             .navigationBarTitle(L10n.addANewCoffeePlace)
             .navigationBarItems(trailing:
                 Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
+                    self.addPlaceToFirebase()
+                    SVProgressHUD.showSuccess(withStatus: "Your Coffee Place is sent for review!")
+                    self.dismiss()
                 }) {
                     HStack {
                         Image(systemName: "paperplane")
@@ -76,10 +73,29 @@ struct addCoffeePlaceView: View {
             )
         }
     }
-}
-
-struct addCoffeePlaceView_Previews: PreviewProvider {
-    static var previews: some View {
-        addCoffeePlaceView()
+    
+    private func addPlaceToFirebase() {
+        var ref: DocumentReference?
+        ref = Constants.refs.firestoreAddCoffeeCollection
+            .addDocument(data: [
+                "name": "\(self.name)",
+            "wifi": "\(self.selectedWifi)",
+            "food": "\(self.selectedFood)",
+            "vegan": "\(self.selectedVegan)",
+            "cake": "\(self.selectedCake)",
+            "plug": "\(self.selectedPlug)",
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
     }
 }
+
+//struct addCoffeePlaceView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        addCoffeePlaceView()
+//    }
+//}

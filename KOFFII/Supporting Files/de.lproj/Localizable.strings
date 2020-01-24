@@ -310,6 +310,8 @@
 
 "Regions 9" = "K - Kaffee ist die Haupteinnahmequelle für rund 500.000 Kolumbianer";
 
+"Send" = "Senden";
+
 "Storage" = "Lagerung";
 
 "Storage 1" = "Du solltest vorgemahlenen Kaffee innerhalb von 2 Wochen verwenden, da er sein Aroma schnell verliert";
@@ -343,5 +345,3 @@
 "Turkish Mocha Temperature" = "60°";
 
 "Yes" = "Ja";
-
-"Send" = "";
