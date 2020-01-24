@@ -649,7 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.6;
+				MARKETING_VERSION = 4.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sketchup.PU-.a-simple-coffee-guide-endversion";
 				PRODUCT_NAME = "KOFFII Cologne";
 				SWIFT_VERSION = 5.0;
@@ -671,7 +671,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.6;
+				MARKETING_VERSION = 4.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sketchup.PU-.a-simple-coffee-guide-endversion";
 				PRODUCT_NAME = "KOFFII Cologne";
 				SWIFT_VERSION = 5.0;
