@@ -8,9 +8,13 @@ class FeatureButton: UIButton {
     }
 
     private func setup() {
-        layer.borderWidth = 1
         self.traitCollection.performAsCurrent {
             self.layer.borderColor = UIColor.label.cgColor
+        }
+        let blur = Constants.getBlur(view: self)
+        self.insertSubview(blur, at: 0)
+        if let imageView = self.imageView{
+            self.bringSubviewToFront(imageView)
         }
     }
 }

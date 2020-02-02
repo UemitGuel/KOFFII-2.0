@@ -15,4 +15,14 @@ struct Constants {
         static let detailToComplain = "fromDetailToComplainSegue"
         static let roasterToDetail = "Roaster to Detail"
     }
+    
+    static func getBlur(view: UIView) -> UIVisualEffectView {
+        let blurEffect = UIBlurEffect.init(style: .systemThickMaterial)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.layer.cornerRadius = 16
+        blurEffectView.clipsToBounds = true
+        blurEffectView.frame = view.bounds
+        blurEffectView.isUserInteractionEnabled = false
+        return blurEffectView
+    }
 }

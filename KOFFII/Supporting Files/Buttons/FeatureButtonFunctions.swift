@@ -29,27 +29,38 @@ class FeatureButtonFunctions {
     var features : [String:Bool] = [:]
     
     func highlightSingleButton(featureAsString: String,
-                                        button: UIButton,
+                                        button: FeatureButton,
                                         label: UILabel) {
         if features[featureAsString] == true {
             button.backgroundColor = buttonTappedColor
-            button.layer.borderWidth = 2
-            label.font = UIFont(name: "Quicksand-Bold", size: 15)
+            label.font = quicksandBoldFont
+            for subview in button.subviews {
+                if subview is UIVisualEffectView {
+                    subview.removeFromSuperview()
+                }
+            }
         }
     }
     
     func handleButtonTap(userRequestedFeatures: inout [Feature], feature: Feature, button: UIButton, label: UILabel) {
         if !userRequestedFeatures.contains(feature) {
             userRequestedFeatures.append(feature)
-            button.backgroundColor = buttonTappedColor
-            button.layer.borderWidth = 0
             button.imageView?.tintColor = .white
+            for subview in button.subviews {
+                if subview is UIVisualEffectView {
+                    subview.removeFromSuperview()
+                }
+            }
+            button.backgroundColor = buttonTappedColor
             label.font = quicksandBoldFont
         } else {
             userRequestedFeatures = userRequestedFeatures.filter{ $0 != feature }
             button.backgroundColor = .systemBackground
-            button.imageView?.tintColor = .label
-            button.layer.borderWidth = 1
+            let blur = Constants.getBlur(view: button)
+            button.insertSubview(blur, at: 0)
+            if let imageView = button.imageView{
+                button.bringSubviewToFront(imageView)
+            }
             label.font = quicksandMediumFont
         }
     }
