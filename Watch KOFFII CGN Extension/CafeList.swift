@@ -3,7 +3,23 @@ import Combine
 
 struct CafeList: View {
     @ObservedObject var model: CafeModel
-    var neighborhoods = ["Alle Viertel","Deutz/Kalk","Lindenthal/Sülz", "Nippes", "Ehrenfeld","Südstadt","Innenstadt", "Belgisches Viertel", "Latin Quarter"]
+    var filtered: Bool {
+        if choosenHood == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
+    var neighborhoods:[String] {
+        var array: [String] = []
+        for hood in Neighborhood.allCases {
+            array.append(hood.rawValue)
+        }
+        return array
+    }
+    var filteredCafes: [Cafe] {
+        return model.cafes.filter{ $0.neighborhood.rawValue == neighborhoods[choosenHood] }
+    }
     
     @State private var choosenHood = 0
     
@@ -14,7 +30,7 @@ struct CafeList: View {
                     Text(self.neighborhoods[$0])
                 }
             }
-            ForEach(model.cafes) { cafe in
+            ForEach(filtered ? filteredCafes : model.cafes) { cafe in
                 NavigationLink(destination: CafeDetail(cafe: cafe)) {
                     CafeCell(cafe: cafe)
                 }
