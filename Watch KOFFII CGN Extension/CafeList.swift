@@ -14,7 +14,7 @@ struct CafeList: View {
             }
         }
         .listStyle(CarouselListStyle())
-        .navigationBarTitle(Text("Pop Quiz!"))
+        .navigationBarTitle(Text("KOFFII Cologne"))
     }
 }
 

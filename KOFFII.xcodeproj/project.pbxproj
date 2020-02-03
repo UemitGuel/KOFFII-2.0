@@ -38,6 +38,7 @@
 		B3966DDC23E8143200FC8100 /* Watch KOFFII CGN.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B3966DBD23E8142D00FC8100 /* Watch KOFFII CGN.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B3966DE723E816FC00FC8100 /* CafeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3966DE623E816FC00FC8100 /* CafeModel.swift */; };
 		B3966DEA23E8268100FC8100 /* CafeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3966DE923E8268100FC8100 /* CafeDetail.swift */; };
+		B3966DEC23E83A5100FC8100 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3966DEB23E83A5100FC8100 /* MapView.swift */; };
 		B3970966238D1C3900190C53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3970965238D1C3900190C53 /* Constants.swift */; };
 		B3970968238D2B2700190C53 /* FeatureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3970967238D2B2700190C53 /* FeatureButton.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
@@ -137,6 +138,7 @@
 		B3966DD923E8143200FC8100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3966DE623E816FC00FC8100 /* CafeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeModel.swift; sourceTree = "<group>"; };
 		B3966DE923E8268100FC8100 /* CafeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetail.swift; sourceTree = "<group>"; };
+		B3966DEB23E83A5100FC8100 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B3970965238D1C3900190C53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B3970967238D2B2700190C53 /* FeatureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureButton.swift; sourceTree = "<group>"; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
@@ -306,6 +308,7 @@
 			children = (
 				B3966DE523E816E500FC8100 /* Model */,
 				B3966DCE23E8142F00FC8100 /* CafeList.swift */,
+				B3966DEB23E83A5100FC8100 /* MapView.swift */,
 				B3966DE923E8268100FC8100 /* CafeDetail.swift */,
 				B3966DD023E8142F00FC8100 /* HostingController.swift */,
 				B3966DD223E8142F00FC8100 /* ExtensionDelegate.swift */,
@@ -638,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3966DEA23E8268100FC8100 /* CafeDetail.swift in Sources */,
+				B3966DEC23E83A5100FC8100 /* MapView.swift in Sources */,
 				B3966DD123E8142F00FC8100 /* HostingController.swift in Sources */,
 				B3966DCF23E8142F00FC8100 /* CafeList.swift in Sources */,
 				B3966DE723E816FC00FC8100 /* CafeModel.swift in Sources */,
