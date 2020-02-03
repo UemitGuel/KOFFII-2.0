@@ -27,6 +27,17 @@
 		B38C41DB2387E43900C92E8D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C41DA2387E43900C92E8D /* Localized.swift */; };
 		B38C41DC2387E4AC00C92E8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B38C41DE2387E4AC00C92E8D /* Localizable.strings */; };
 		B38E8EBC2388191C00541A2E /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E8EBB2388191C00541A2E /* assets-images.swift */; };
+		B3966DC123E8142D00FC8100 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3966DBF23E8142D00FC8100 /* Interface.storyboard */; };
+		B3966DC323E8142F00FC8100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3966DC223E8142F00FC8100 /* Assets.xcassets */; };
+		B3966DCA23E8142F00FC8100 /* Watch KOFFII CGN Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B3966DC923E8142F00FC8100 /* Watch KOFFII CGN Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B3966DCF23E8142F00FC8100 /* CafeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3966DCE23E8142F00FC8100 /* CafeList.swift */; };
+		B3966DD123E8142F00FC8100 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3966DD023E8142F00FC8100 /* HostingController.swift */; };
+		B3966DD323E8142F00FC8100 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3966DD223E8142F00FC8100 /* ExtensionDelegate.swift */; };
+		B3966DD523E8143200FC8100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3966DD423E8143200FC8100 /* Assets.xcassets */; };
+		B3966DD823E8143200FC8100 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3966DD723E8143200FC8100 /* Preview Assets.xcassets */; };
+		B3966DDC23E8143200FC8100 /* Watch KOFFII CGN.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B3966DBD23E8142D00FC8100 /* Watch KOFFII CGN.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B3966DE723E816FC00FC8100 /* CafeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3966DE623E816FC00FC8100 /* CafeModel.swift */; };
+		B3966DEA23E8268100FC8100 /* CafeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3966DE923E8268100FC8100 /* CafeDetail.swift */; };
 		B3970966238D1C3900190C53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3970965238D1C3900190C53 /* Constants.swift */; };
 		B3970968238D2B2700190C53 /* FeatureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3970967238D2B2700190C53 /* FeatureButton.swift */; };
 		B399DB8F22CE0FFA003C5EDD /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399DB8E22CE0FFA003C5EDD /* Information.swift */; };
@@ -43,6 +54,48 @@
 		B3F62ED822D0CB37002DF68C /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F62ED622D0CB37002DF68C /* HeaderView.xib */; };
 		B3F62EDA22D0FFB6002DF68C /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F62ED922D0FFB6002DF68C /* Quicksand-Medium.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3966DCB23E8142F00FC8100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3AA7E4C22C4F38B005848DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3966DC823E8142F00FC8100;
+			remoteInfo = "Watch KOFFII CGN Extension";
+		};
+		B3966DDA23E8143200FC8100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3AA7E4C22C4F38B005848DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3966DBC23E8142D00FC8100;
+			remoteInfo = "Watch KOFFII CGN";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3966DDD23E8143200FC8100 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B3966DDC23E8143200FC8100 /* Watch KOFFII CGN.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3966DE023E8143200FC8100 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B3966DCA23E8142F00FC8100 /* Watch KOFFII CGN Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +124,19 @@
 		B38C41DD2387E4AC00C92E8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B38C41DF2387E4B000C92E8D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B38E8EBB2388191C00541A2E /* assets-images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assets-images.swift"; sourceTree = "<group>"; };
+		B3966DBD23E8142D00FC8100 /* Watch KOFFII CGN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch KOFFII CGN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3966DC023E8142D00FC8100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B3966DC223E8142F00FC8100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3966DC423E8142F00FC8100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3966DC923E8142F00FC8100 /* Watch KOFFII CGN Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch KOFFII CGN Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3966DCE23E8142F00FC8100 /* CafeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeList.swift; sourceTree = "<group>"; };
+		B3966DD023E8142F00FC8100 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		B3966DD223E8142F00FC8100 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B3966DD423E8143200FC8100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3966DD723E8143200FC8100 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B3966DD923E8143200FC8100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3966DE623E816FC00FC8100 /* CafeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeModel.swift; sourceTree = "<group>"; };
+		B3966DE923E8268100FC8100 /* CafeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetail.swift; sourceTree = "<group>"; };
 		B3970965238D1C3900190C53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B3970967238D2B2700190C53 /* FeatureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureButton.swift; sourceTree = "<group>"; };
 		B399DB8E22CE0FFA003C5EDD /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Information.swift; path = "KOFFII/Supporting Files/Information.swift"; sourceTree = SOURCE_ROOT; };
@@ -93,6 +159,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B3966DC623E8142F00FC8100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3AA7E5122C4F38B005848DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +291,47 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B3966DBE23E8142D00FC8100 /* Watch KOFFII CGN */ = {
+			isa = PBXGroup;
+			children = (
+				B3966DBF23E8142D00FC8100 /* Interface.storyboard */,
+				B3966DC223E8142F00FC8100 /* Assets.xcassets */,
+				B3966DC423E8142F00FC8100 /* Info.plist */,
+			);
+			path = "Watch KOFFII CGN";
+			sourceTree = "<group>";
+		};
+		B3966DCD23E8142F00FC8100 /* Watch KOFFII CGN Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B3966DE523E816E500FC8100 /* Model */,
+				B3966DCE23E8142F00FC8100 /* CafeList.swift */,
+				B3966DE923E8268100FC8100 /* CafeDetail.swift */,
+				B3966DD023E8142F00FC8100 /* HostingController.swift */,
+				B3966DD223E8142F00FC8100 /* ExtensionDelegate.swift */,
+				B3966DD423E8143200FC8100 /* Assets.xcassets */,
+				B3966DD923E8143200FC8100 /* Info.plist */,
+				B3966DD623E8143200FC8100 /* Preview Content */,
+			);
+			path = "Watch KOFFII CGN Extension";
+			sourceTree = "<group>";
+		};
+		B3966DD623E8143200FC8100 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B3966DD723E8143200FC8100 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B3966DE523E816E500FC8100 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3966DE623E816FC00FC8100 /* CafeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B3970969238D2B3400190C53 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +357,8 @@
 			children = (
 				B3AA7E5622C4F38B005848DA /* KOFFII */,
 				B32E9419236F34C7005E3603 /* KOFFII CologneUITests */,
+				B3966DBE23E8142D00FC8100 /* Watch KOFFII CGN */,
+				B3966DCD23E8142F00FC8100 /* Watch KOFFII CGN Extension */,
 				B3AA7E5522C4F38B005848DA /* Products */,
 				7DE5AA19BD4F92107B129CBD /* Pods */,
 				BAD448F2EC118B531A034562 /* Frameworks */,
@@ -253,6 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				B3AA7E5422C4F38B005848DA /* KOFFII Cologne.app */,
+				B3966DBD23E8142D00FC8100 /* Watch KOFFII CGN.app */,
+				B3966DC923E8142F00FC8100 /* Watch KOFFII CGN Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,6 +417,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B3966DBC23E8142D00FC8100 /* Watch KOFFII CGN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3966DE423E8143200FC8100 /* Build configuration list for PBXNativeTarget "Watch KOFFII CGN" */;
+			buildPhases = (
+				B3966DBB23E8142D00FC8100 /* Resources */,
+				B3966DE023E8143200FC8100 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3966DCC23E8142F00FC8100 /* PBXTargetDependency */,
+			);
+			name = "Watch KOFFII CGN";
+			productName = "Watch KOFFII CGN";
+			productReference = B3966DBD23E8142D00FC8100 /* Watch KOFFII CGN.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B3966DC823E8142F00FC8100 /* Watch KOFFII CGN Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3966DE323E8143200FC8100 /* Build configuration list for PBXNativeTarget "Watch KOFFII CGN Extension" */;
+			buildPhases = (
+				B3966DC523E8142F00FC8100 /* Sources */,
+				B3966DC623E8142F00FC8100 /* Frameworks */,
+				B3966DC723E8142F00FC8100 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watch KOFFII CGN Extension";
+			productName = "Watch KOFFII CGN Extension";
+			productReference = B3966DC923E8142F00FC8100 /* Watch KOFFII CGN Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		B3AA7E5322C4F38B005848DA /* KOFFII */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3AA7E6622C4F38C005848DA /* Build configuration list for PBXNativeTarget "KOFFII" */;
@@ -310,10 +462,12 @@
 				B3AA7E5122C4F38B005848DA /* Frameworks */,
 				B3AA7E5222C4F38B005848DA /* Resources */,
 				CC83AC63C17D3EBB4448172F /* [CP] Embed Pods Frameworks */,
+				B3966DDD23E8143200FC8100 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B3966DDB23E8143200FC8100 /* PBXTargetDependency */,
 			);
 			name = KOFFII;
 			productName = KOFFII;
@@ -326,10 +480,16 @@
 		B3AA7E4C22C4F38B005848DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Ümit Gül";
 				TargetAttributes = {
+					B3966DBC23E8142D00FC8100 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B3966DC823E8142F00FC8100 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					B3AA7E5322C4F38B005848DA = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -350,11 +510,31 @@
 			projectRoot = "";
 			targets = (
 				B3AA7E5322C4F38B005848DA /* KOFFII */,
+				B3966DBC23E8142D00FC8100 /* Watch KOFFII CGN */,
+				B3966DC823E8142F00FC8100 /* Watch KOFFII CGN Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B3966DBB23E8142D00FC8100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3966DC323E8142F00FC8100 /* Assets.xcassets in Resources */,
+				B3966DC123E8142D00FC8100 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3966DC723E8142F00FC8100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3966DD823E8143200FC8100 /* Preview Assets.xcassets in Resources */,
+				B3966DD523E8143200FC8100 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3AA7E5222C4F38B005848DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +633,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B3966DC523E8142F00FC8100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3966DEA23E8268100FC8100 /* CafeDetail.swift in Sources */,
+				B3966DD123E8142F00FC8100 /* HostingController.swift in Sources */,
+				B3966DCF23E8142F00FC8100 /* CafeList.swift in Sources */,
+				B3966DE723E816FC00FC8100 /* CafeModel.swift in Sources */,
+				B3966DD323E8142F00FC8100 /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3AA7E5022C4F38B005848DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,6 +678,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B3966DCC23E8142F00FC8100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3966DC823E8142F00FC8100 /* Watch KOFFII CGN Extension */;
+			targetProxy = B3966DCB23E8142F00FC8100 /* PBXContainerItemProxy */;
+		};
+		B3966DDB23E8143200FC8100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3966DBC23E8142D00FC8100 /* Watch KOFFII CGN */;
+			targetProxy = B3966DDA23E8143200FC8100 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B38C41DE2387E4AC00C92E8D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -494,6 +699,14 @@
 				B38C41DF2387E4B000C92E8D /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B3966DBF23E8142D00FC8100 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3966DC023E8142D00FC8100 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		B3AA7E5B22C4F38B005848DA /* Main.storyboard */ = {
@@ -517,6 +730,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B3966DDE23E8143200FC8100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YLGTKU7SLK;
+				IBSC_MODULE = Watch_KOFFII_CGN_Extension;
+				INFOPLIST_FILE = "Watch KOFFII CGN/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sketchup.PU-.a-simple-coffee-guide-endversion.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		B3966DDF23E8143200FC8100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YLGTKU7SLK;
+				IBSC_MODULE = Watch_KOFFII_CGN_Extension;
+				INFOPLIST_FILE = "Watch KOFFII CGN/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sketchup.PU-.a-simple-coffee-guide-endversion.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		B3966DE123E8143200FC8100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Watch KOFFII CGN Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = YLGTKU7SLK;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Watch KOFFII CGN Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sketchup.PU-.a-simple-coffee-guide-endversion.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		B3966DE223E8143200FC8100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Watch KOFFII CGN Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = YLGTKU7SLK;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Watch KOFFII CGN Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sketchup.PU-.a-simple-coffee-guide-endversion.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 		B3AA7E6422C4F38C005848DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -682,6 +981,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B3966DE323E8143200FC8100 /* Build configuration list for PBXNativeTarget "Watch KOFFII CGN Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3966DE123E8143200FC8100 /* Debug */,
+				B3966DE223E8143200FC8100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3966DE423E8143200FC8100 /* Build configuration list for PBXNativeTarget "Watch KOFFII CGN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3966DDE23E8143200FC8100 /* Debug */,
+				B3966DDF23E8143200FC8100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B3AA7E4F22C4F38B005848DA /* Build configuration list for PBXProject "KOFFII" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
