@@ -36,15 +36,13 @@ struct CafeCell: View {
     var cafe: Cafe
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(cafe.name)
-                    .font(.system(.headline, design: .rounded))
-                Text(cafe.neighborhood.rawValue)
-                    .font(.system(.caption, design: .rounded))
-                    .foregroundColor(.secondary)
-                FeatureImages(cafe: cafe)
-            }
+        VStack(alignment: .leading) {
+            Text(cafe.name)
+                .font(.system(.headline, design: .rounded))
+            Text(cafe.neighborhood.rawValue)
+                .font(.system(.caption, design: .rounded))
+                .foregroundColor(.secondary)
+            FeatureImages(cafe: cafe)
         }
     .padding()
     }

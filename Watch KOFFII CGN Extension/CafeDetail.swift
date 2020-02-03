@@ -4,10 +4,13 @@ struct CafeDetail: View {
     let cafe: Cafe
     
     var body: some View {
-        VStack {
-            WatchMapView(cafe: cafe)
-                .padding()
-            FeatureImages(cafe: cafe)
+        ScrollView {
+            VStack {
+                WatchMapView(cafe: cafe)
+                    .frame(height: 100)
+                CafeCell(cafe: cafe)
+            }
+            .padding()
         }
     }
 }
@@ -24,7 +27,7 @@ struct FeatureImage: View {
     
     var body: some View {
         Image(imageName)
-        .frame(width: 20, height: 20)
+            .frame(width: 20, height: 20)
             .padding(8)
             .background(Color.red)
             .cornerRadius(16)
@@ -46,6 +49,5 @@ struct FeatureImages: View {
                 FeatureImage(imageName: "PLUG")
             }
         }
-        .navigationBarTitle(Text(cafe.name))
     }
 }
