@@ -7,24 +7,7 @@ struct CafeDetail: View {
         VStack {
             WatchMapView(cafe: cafe)
                 .padding()
-            HStack {
-                if cafe.hasWifi {
-                    featureImage(imageName: "WIFI")
-                }
-                if cafe.hasFood {
-                    featureImage(imageName: "FOOD")
-                }
-                if cafe.hasVegan {
-                    featureImage(imageName: "VEGAN")
-                }
-                if cafe.hasCake {
-                    featureImage(imageName: "CAKE")
-                }
-                if cafe.hasPlug {
-                    featureImage(imageName: "PLUG")
-                }
-            }
-            .navigationBarTitle(Text(cafe.name))
+            FeatureImages(cafe: cafe)
         }
     }
 }
@@ -36,13 +19,33 @@ struct CafeDetail_Previews: PreviewProvider {
     }
 }
 
-struct featureImage: View {
+struct FeatureImage: View {
     var imageName: String
     
     var body: some View {
         Image(imageName)
-            .padding(12)
+        .frame(width: 20, height: 20)
+            .padding(8)
             .background(Color.red)
-            .clipShape(Circle())
+            .cornerRadius(16)
+    }
+}
+
+struct FeatureImages: View {
+    var cafe: Cafe
+    
+    var body: some View {
+        HStack {
+            if cafe.hasWifi {
+                FeatureImage(imageName: "WIFI")
+            }
+            if cafe.hasFood {
+                FeatureImage(imageName: "FOOD")
+            }
+            if cafe.hasPlug {
+                FeatureImage(imageName: "PLUG")
+            }
+        }
+        .navigationBarTitle(Text(cafe.name))
     }
 }
