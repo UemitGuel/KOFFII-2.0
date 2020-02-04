@@ -34,7 +34,7 @@ struct CafeList: View {
                 NavigationLink(destination: CafeDetail(cafe: cafe)) {
                     CafeCell(cafe: cafe)
                 }
-            }.animation(.default)
+            }
         }
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("KOFFII Cologne"))
