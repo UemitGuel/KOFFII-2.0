@@ -41,6 +41,7 @@ internal enum Asset {
   internal static let water = ImageAsset(name: "Water")
   internal static let coffeeIcon = ImageAsset(name: "coffee_icon")
   internal static let infoIcon = ImageAsset(name: "info_icon")
+  internal static let map = ImageAsset(name: "map")
   internal static let roasterIcon = ImageAsset(name: "roaster_icon")
   internal static let walknigIcon = ImageAsset(name: "walknig Icon")
 }

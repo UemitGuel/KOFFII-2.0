@@ -153,7 +153,6 @@ extension CafeViewController {
     
     func updateUI(animated: Bool = true) {
         let cafes = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.distanceUserToLocation < $1.distanceUserToLocation }
-        print(cafes)
         
         currentSnapshot = NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>()
         currentSnapshot.appendSections([.cafes])

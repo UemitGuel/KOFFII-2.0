@@ -374,48 +374,24 @@
             </objects>
             <point key="canvasLocation" x="6166.666666666667" y="-342.39130434782612"/>
         </scene>
-        <!--Roastery View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="Fzb-qa-ea8">
             <objects>
-                <viewController id="6Qx-ma-4pk" customClass="RoasteryViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Qx-ma-4pk" customClass="MapViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zxn-0z-Uc5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rjd-EJ-my9">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="25g-g8-49E">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="ris-Tj-6Kf">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where to buy beans" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-Pv-t0l">
-                                            <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                                            <fontDescription key="fontDescription" name="Staatliches-Regular" family="Staatliches" pointSize="40"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <constraints>
-                                        <constraint firstItem="tzw-Pv-t0l" firstAttribute="top" secondItem="ris-Tj-6Kf" secondAttribute="top" id="13G-Cb-nbJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="tzw-Pv-t0l" secondAttribute="trailing" constant="16" id="GOG-As-M4T"/>
-                                        <constraint firstAttribute="bottom" secondItem="tzw-Pv-t0l" secondAttribute="bottom" id="fSM-2J-utx"/>
-                                        <constraint firstItem="tzw-Pv-t0l" firstAttribute="leading" secondItem="ris-Tj-6Kf" secondAttribute="leading" constant="16" id="mgU-23-nSH"/>
-                                    </constraints>
-                                </view>
-                                <connections>
-                                    <outlet property="dataSource" destination="6Qx-ma-4pk" id="hUO-bv-GGW"/>
-                                    <outlet property="delegate" destination="6Qx-ma-4pk" id="8GN-fT-9iF"/>
-                                </connections>
-                            </tableView>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ZDr-Cw-9Pe" firstAttribute="trailing" secondItem="rjd-EJ-my9" secondAttribute="trailing" id="TGR-H2-EBY"/>
-                            <constraint firstItem="ZDr-Cw-9Pe" firstAttribute="bottom" secondItem="rjd-EJ-my9" secondAttribute="bottom" id="lOd-OL-pCA"/>
-                            <constraint firstItem="rjd-EJ-my9" firstAttribute="top" secondItem="ZDr-Cw-9Pe" secondAttribute="top" id="roO-Ap-KcK"/>
-                            <constraint firstItem="rjd-EJ-my9" firstAttribute="leading" secondItem="ZDr-Cw-9Pe" secondAttribute="leading" id="zh8-DD-jMB"/>
+                            <constraint firstItem="25g-g8-49E" firstAttribute="top" secondItem="ZDr-Cw-9Pe" secondAttribute="top" id="0Ca-A2-a5E"/>
+                            <constraint firstItem="ZDr-Cw-9Pe" firstAttribute="bottom" secondItem="25g-g8-49E" secondAttribute="bottom" id="CWz-Ym-iGj"/>
+                            <constraint firstItem="ZDr-Cw-9Pe" firstAttribute="trailing" secondItem="25g-g8-49E" secondAttribute="trailing" id="gRx-U5-83k"/>
+                            <constraint firstItem="25g-g8-49E" firstAttribute="leading" secondItem="ZDr-Cw-9Pe" secondAttribute="leading" id="s0H-gD-jOp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZDr-Cw-9Pe"/>
                     </view>
@@ -423,74 +399,12 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="rAz-1t-PvD"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="roasterTableView" destination="rjd-EJ-my9" id="Vht-kz-nmA"/>
-                        <segue destination="BX3-ye-0e3" kind="show" identifier="Roaster to Detail" id="xYp-Z2-2lg"/>
+                        <outlet property="mapView" destination="25g-g8-49E" id="OsN-Av-2Rs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ea7-N4-YD3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5267" y="-1021"/>
-        </scene>
-        <!--Roastery Detail View Controller-->
-        <scene sceneID="fFo-DA-oQ2">
-            <objects>
-                <viewController id="BX3-ye-0e3" customClass="RoasteryDetailViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GDA-3B-VMl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-e4-Lhf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="551"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyQ-9d-OQJ">
-                                <rect key="frame" x="16" y="567" width="382" height="60"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="aXb-HK-4Nv"/>
-                                </constraints>
-                                <state key="normal" title="Open in Apple/Google Maps">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="openMapsButtonTapped:" destination="BX3-ye-0e3" eventType="touchUpInside" id="c0P-rz-LRY"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-8E-lVx">
-                                <rect key="frame" x="197" y="266" width="20" height="19.333333333333343"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="hZr-dw-06A"/>
-                                    <constraint firstAttribute="height" constant="20" id="n6o-vI-NCM"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="oyQ-9d-OQJ" firstAttribute="top" secondItem="8ff-e4-Lhf" secondAttribute="bottom" constant="16" id="4pH-KT-cyW"/>
-                            <constraint firstItem="oyQ-9d-OQJ" firstAttribute="leading" secondItem="bet-Pu-NkN" secondAttribute="leading" constant="16" id="GEQ-TR-WWh"/>
-                            <constraint firstItem="Z3y-8E-lVx" firstAttribute="centerX" secondItem="8ff-e4-Lhf" secondAttribute="centerX" id="Z14-Wh-z3C"/>
-                            <constraint firstItem="bet-Pu-NkN" firstAttribute="trailing" secondItem="oyQ-9d-OQJ" secondAttribute="trailing" constant="16" id="fxO-XY-Ipz"/>
-                            <constraint firstItem="Z3y-8E-lVx" firstAttribute="centerY" secondItem="8ff-e4-Lhf" secondAttribute="centerY" id="hU3-WZ-390"/>
-                            <constraint firstItem="8ff-e4-Lhf" firstAttribute="leading" secondItem="bet-Pu-NkN" secondAttribute="leading" id="hyZ-40-cLN"/>
-                            <constraint firstItem="8ff-e4-Lhf" firstAttribute="trailing" secondItem="bet-Pu-NkN" secondAttribute="trailing" id="mNB-cl-y2y"/>
-                            <constraint firstItem="bet-Pu-NkN" firstAttribute="bottom" secondItem="oyQ-9d-OQJ" secondAttribute="bottom" constant="16" id="n6H-5f-a8b"/>
-                            <constraint firstItem="8ff-e4-Lhf" firstAttribute="top" secondItem="bet-Pu-NkN" secondAttribute="top" id="qV3-Cs-UDN"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="bet-Pu-NkN"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="31n-vW-Klf"/>
-                    <connections>
-                        <outlet property="map" destination="8ff-e4-Lhf" id="CWh-WY-oIs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8bH-1A-UyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6167" y="-1021"/>
         </scene>
         <!--Flashy Tab Bar Controller-->
         <scene sceneID="qOs-tT-nbc">
@@ -851,11 +765,11 @@
             </objects>
             <point key="canvasLocation" x="4361" y="-342"/>
         </scene>
-        <!--Roasteries-->
+        <!--Karte-->
         <scene sceneID="qk4-13-UhN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6nu-nx-eVI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Roasteries" image="roaster_icon" id="kNi-FI-VSX"/>
+                    <tabBarItem key="tabBarItem" title="Karte" image="map" id="kNi-FI-VSX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="KxO-6F-pwE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -882,8 +796,8 @@
         <image name="WIFI" width="22" height="16"/>
         <image name="coffee_icon" width="29" height="27"/>
         <image name="info_icon" width="29" height="29"/>
+        <image name="map" width="24" height="22"/>
         <image name="mappin" catalog="system" width="52" height="64"/>
-        <image name="roaster_icon" width="29" height="29"/>
     </resources>
     <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

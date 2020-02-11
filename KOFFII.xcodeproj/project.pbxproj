@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A4204AD85B4D3AC3588B652 /* Pods_KOFFII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0285450D2D979851A99E479 /* Pods_KOFFII.framework */; };
 		B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309008122D796CC00DE7662 /* CafeDetailViewController.swift */; };
-		B310BF9A2369D02B0065318C /* RoasteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF992369D02B0065318C /* RoasteryViewController.swift */; };
+		B310BF9A2369D02B0065318C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF992369D02B0065318C /* MapViewController.swift */; };
 		B310BF9C2369D1A20065318C /* Roastery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9B2369D1A20065318C /* Roastery.swift */; };
-		B310BFA02369DB460065318C /* RoasteryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310BF9F2369DB460065318C /* RoasteryDetailViewController.swift */; };
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
 		B34335C922C50509006CDBC1 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */; };
@@ -101,9 +100,8 @@
 /* Begin PBXFileReference section */
 		30FE85C24E46EE012AD52AF8 /* Pods-KOFFII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.debug.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.debug.xcconfig"; sourceTree = "<group>"; };
 		B309008122D796CC00DE7662 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = ../CafeDetailViewController.swift; sourceTree = "<group>"; };
-		B310BF992369D02B0065318C /* RoasteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasteryViewController.swift; sourceTree = "<group>"; };
+		B310BF992369D02B0065318C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B310BF9B2369D1A20065318C /* Roastery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roastery.swift; sourceTree = "<group>"; };
-		B310BF9F2369DB460065318C /* RoasteryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasteryDetailViewController.swift; sourceTree = "<group>"; };
 		B32E941A236F34C7005E3603 /* KOFFII_CologneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOFFII_CologneUITests.swift; sourceTree = "<group>"; };
 		B32E941C236F34C7005E3603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B32E9422236F3689005E3603 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
@@ -191,8 +189,7 @@
 		B310BFA12369DBEB0065318C /* Roasteries */ = {
 			isa = PBXGroup;
 			children = (
-				B310BF992369D02B0065318C /* RoasteryViewController.swift */,
-				B37759722370504C00D1D6B9 /* RoasteryDetail */,
+				B310BF992369D02B0065318C /* MapViewController.swift */,
 			);
 			path = Roasteries;
 			sourceTree = "<group>";
@@ -234,14 +231,6 @@
 				B3BCACD722D8D3F000A4FEDF /* CafeDetail */,
 			);
 			path = "Coffee Places";
-			sourceTree = "<group>";
-		};
-		B37759722370504C00D1D6B9 /* RoasteryDetail */ = {
-			isa = PBXGroup;
-			children = (
-				B310BF9F2369DB460065318C /* RoasteryDetailViewController.swift */,
-			);
-			path = RoasteryDetail;
 			sourceTree = "<group>";
 		};
 		B385DA5D22C4FDD600BD8C88 /* Model */ = {
@@ -654,7 +643,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */,
-				B310BFA02369DB460065318C /* RoasteryDetailViewController.swift in Sources */,
 				B34E50A32393FFE80043091B /* CafeController.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
@@ -667,7 +655,7 @@
 				B3F62ED322D0C8FF002DF68C /* BrewingDetailTableViewCell.swift in Sources */,
 				B310BF9C2369D1A20065318C /* Roastery.swift in Sources */,
 				B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */,
-				B310BF9A2369D02B0065318C /* RoasteryViewController.swift in Sources */,
+				B310BF9A2369D02B0065318C /* MapViewController.swift in Sources */,
 				B309008222D796CC00DE7662 /* CafeDetailViewController.swift in Sources */,
 				B3970968238D2B2700190C53 /* FeatureButton.swift in Sources */,
 				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,

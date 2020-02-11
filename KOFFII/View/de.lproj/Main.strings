@@ -38,8 +38,8 @@
 /* Class = "UILabel"; text = "VEGAN"; ObjectID = "eP3-8Y-ZVu"; */
 "eP3-8Y-ZVu.text" = "VEGAN";
 
-/* Class = "UITabBarItem"; title = "Roasteries"; ObjectID = "kNi-FI-VSX"; */
-"kNi-FI-VSX.title" = "Röstereien";
+/* Class = "UITabBarItem"; title = "Karte"; ObjectID = "kNi-FI-VSX"; */
+"kNi-FI-VSX.title" = "Karte";
 
 /* Class = "UILabel"; text = "CAKE"; ObjectID = "kWJ-cQ-qWK"; */
 "kWJ-cQ-qWK.text" = "KUCHEN";
@@ -47,17 +47,11 @@
 /* Class = "UILabel"; text = "PLUG"; ObjectID = "nsj-sj-GGu"; */
 "nsj-sj-GGu.text" = "STROM";
 
-/* Class = "UIButton"; normalTitle = "Open in Apple/Google Maps"; ObjectID = "oyQ-9d-OQJ"; */
-"oyQ-9d-OQJ.normalTitle" = "In Apple/Google Maps öffnen";
-
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "rAz-1t-PvD"; */
 "rAz-1t-PvD.title" = " ";
 
 /* Class = "UILabel"; text = "CAKE"; ObjectID = "rtz-Za-ccM"; */
 "rtz-Za-ccM.text" = "KUCHEN";
-
-/* Class = "UILabel"; text = "Where to buy beans"; ObjectID = "tzw-Pv-t0l"; */
-"tzw-Pv-t0l.text" = "Frische Bohnen kaufen";
 
 /* Class = "UIButton"; normalTitle = "right complain"; ObjectID = "uvi-fS-3NB"; */
 "uvi-fS-3NB.normalTitle" = "right complain";
