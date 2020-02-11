@@ -2,33 +2,44 @@ import UIKit
 
 class BrewingDetailViewController: UIViewController {
     @IBOutlet var headerImageView: UIImageView!
-
+    
     @IBOutlet var tableView: UITableView!
-
+    
     @IBOutlet var leftButton: UIButton!
     @IBOutlet var rightButton: UIButton!
-
+    
+    var buttons: [UIButton] {
+        return [leftButton,rightButton]
+    }
+    
     var complain: Complain?
-
+    
     var passedInformationBrewing: Information?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
         setupTableViewHeader()
         setupComplainButton()
     }
-
+    
     func setupViewController() {
         tabBarController?.tabBar.isHidden = true
         title = passedInformationBrewing?.name
     }
-
+    
     func setupTableViewHeader() {
         headerImageView.image = passedInformationBrewing?.image
     }
     
     func setupComplainButton() {
+        buttons.forEach { button in
+            let blur = Constants.getBlur(view: button)
+            button.insertSubview(blur, at: 0)
+            button.layer.cornerRadius = 16
+        }
+
+        
         if let passedCategory = passedInformationBrewing?.complainCategory {
             if passedCategory == .coffee {
                 rightButton.setTitle(L10n.coffeeTooSour, for: .normal)
@@ -42,7 +53,7 @@ class BrewingDetailViewController: UIViewController {
             leftButton.setTitle("", for: .normal)
         }
     }
-
+    
     @IBAction func complainButtonTapped(_ sender: UIButton) {
         let complainCategory = passedInformationBrewing?.complainCategory
         if complainCategory == .coffee && sender.tag == 0 {
@@ -55,9 +66,9 @@ class BrewingDetailViewController: UIViewController {
             complain = espressoTooSour
         }
         performSegue(withIdentifier: Constants.segues.detailToComplain, sender: self)
-
+        
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == Constants.segues.detailToComplain {
             let complainVC = segue.destination as! ComplainViewController
@@ -70,7 +81,7 @@ extension BrewingDetailViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return passedInformationBrewing!.tips.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
         cell.imageView?.image = UIImage(systemName: "\(indexPath.row + 1).square",withConfiguration: UIImage.SymbolConfiguration(scale: .large))
@@ -89,15 +100,15 @@ extension BrewingDetailViewController: UITableViewDelegate {
             return 0
         }
     }
-
+    
     func numberOfSections(in _: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_: UITableView, viewForHeaderInSection _: Int) -> UIView? {
         if passedInformationBrewing?.quan != nil {
             let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
-
+            
             headerView.quanLabel.text = passedInformationBrewing?.quan ?? ""
             headerView.tempLabel.text = passedInformationBrewing?.temp ?? ""
             headerView.timeLabel.text = passedInformationBrewing?.time ?? ""
