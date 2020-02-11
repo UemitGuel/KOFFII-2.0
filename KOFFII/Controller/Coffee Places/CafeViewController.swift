@@ -142,7 +142,7 @@ extension CafeViewController {
                 cell.selectionStyle = .none
                 cell.textLabel?.text = item.name
                 cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
-                cell.detailTextLabel?.text = item.neighborhood
+                cell.detailTextLabel?.text = item.distanceMappedForDisplay
                 cell.detailTextLabel?.textColor = .secondaryLabel
                 cell.detailTextLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
                 cell.imageView?.image = UIImage(asset: Asset.coffeeIcon)
@@ -152,7 +152,7 @@ extension CafeViewController {
     }
     
     func updateUI(animated: Bool = true) {
-        let cafes = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
+        let cafes = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.distanceUserToLocation < $1.distanceUserToLocation }
         print(cafes)
         
         currentSnapshot = NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>()
