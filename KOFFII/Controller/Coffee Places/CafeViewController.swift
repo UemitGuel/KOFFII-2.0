@@ -2,8 +2,16 @@ import FirebaseFirestore
 import UIKit
 import SwiftUI
 import SVProgressHUD
+import MapKit
+import CoreLocation
 
 class CafeViewController: UIViewController {
+    
+    let locationManager = CLLocationManager()
+    let regionInMeters: Double = 1000
+    let mapView = MKMapView()
+    let mapFunctions = MapFunctions()
+    var userLocationEnabled: Bool = false
     
     enum Section: CaseIterable {
         case cafes
@@ -20,7 +28,7 @@ class CafeViewController: UIViewController {
     }
     
     func dismiss(){
-      self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -47,6 +55,8 @@ class CafeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLocationServices()
+
         setupViewController()
         configureDataSource()
         SVProgressHUD.show()
@@ -142,7 +152,17 @@ extension CafeViewController {
                 cell.selectionStyle = .none
                 cell.textLabel?.text = item.name
                 cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
-                cell.detailTextLabel?.text = item.distanceMappedForDisplay
+                if self.userLocationEnabled {
+                    guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
+                    print(locValue)
+                    let userLocation = MKMapPoint(locValue)
+                    let cafeLocation = MKMapPoint(CLLocationCoordinate2DMake(item.latitude ?? 0, item.longitude ?? 0))
+                    let distance = userLocation.distance(to: cafeLocation)
+                    let distanceAsStringRounded = self.mapFunctions.self.mapDistanceForDisplay(distance)
+                    cell.detailTextLabel?.text = String(distanceAsStringRounded)
+                } else {
+                    cell.detailTextLabel?.text = item.neighborhood
+                }
                 cell.detailTextLabel?.textColor = .secondaryLabel
                 cell.detailTextLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
                 cell.imageView?.image = UIImage(asset: Asset.coffeeIcon)
@@ -152,12 +172,62 @@ extension CafeViewController {
     }
     
     func updateUI(animated: Bool = true) {
-        let cafes = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.distanceUserToLocation < $1.distanceUserToLocation }
-        
+        var cafes = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
+        if userLocationEnabled {
+            guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
+            let userLocation = MKMapPoint(locValue)
+            cafes = cafes.sorted {
+                userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($0.latitude ?? 0, $0.longitude ?? 0))) < userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($1.latitude ?? 0, $1.longitude ?? 0)))
+            }
+        }
         currentSnapshot = NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>()
         currentSnapshot.appendSections([.cafes])
         currentSnapshot.appendItems(cafes, toSection: .cafes)
         self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
     }
     
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            userLocationEnabled = false
+        }
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            userLocationEnabled = true
+            updateUI()
+            break
+        case .denied:
+            userLocationEnabled = false
+            //Show alert to turn on permission
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            //Show alert parents denied this permission
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            fatalError()
+        }
+    }
 }
+
+extension CafeViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
+}
+
+
