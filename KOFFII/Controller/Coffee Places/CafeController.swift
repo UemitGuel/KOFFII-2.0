@@ -46,35 +46,35 @@ class CafeController {
         
         func mapDistanceForDisplay(_ distance: CLLocationDistance) -> String {
             if distance < 100 {
-                return "< 100 m"
+                return "100 m"
             } else if distance < 200 {
-                return "< 200 m"
+                return "200 m"
             } else if distance < 300 {
-                return "< 300 m"
+                return "300 m"
             } else if distance < 400 {
-                return "< 400 m"
+                return "400 m"
             } else if distance < 500 {
-                return "< 500 m"
+                return "500 m"
             } else if distance < 600 {
-                return "< 600 m"
+                return "600 m"
             } else if distance < 700 {
-                return "< 700 m"
+                return "700 m"
             } else if distance < 800 {
-                return "< 800 m"
+                return "800 m"
             } else if distance < 900 {
-                return "< 900 m"
+                return "900 m"
             } else if distance < 1000 {
-                return "< 1 km"
+                return "1 km"
             } else if distance < 1200 {
-                return "< 1.2 km"
+                return "1.2 km"
             } else if distance < 1500 {
-                return "< 1.5 km"
+                return "1.5 km"
             } else if distance < 2000 {
-                return "< 2 km"
+                return "2 km"
             } else if distance < 5000 {
-                return "< 5km"
+                return "5km"
             } else if distance < 10000 {
-                return "< 10km"
+                return "10km"
             } else {
                 return "+10km"
             }
