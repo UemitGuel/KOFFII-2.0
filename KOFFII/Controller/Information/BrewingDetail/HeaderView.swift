@@ -5,7 +5,6 @@ class HeaderView: UITableViewCell {
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var brewingTime: UILabel!
     
-    
     @IBOutlet var quanLabel: UILabel!
     @IBOutlet var tempLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!

@@ -18,8 +18,6 @@ class ComplainViewController: UIViewController {
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
  
     }
-    
-
 }
 
 extension ComplainViewController: UITableViewDataSource {

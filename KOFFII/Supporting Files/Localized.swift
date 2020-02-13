@@ -261,6 +261,8 @@ internal enum L10n {
   internal static let newCoffeePlace = L10n.tr("Localizable", "New coffee place")
   /// No
   internal static let no = L10n.tr("Localizable", "No")
+  /// Overview
+  internal static let overview = L10n.tr("Localizable", "Overview")
   /// Pour Over
   internal static let pourOver = L10n.tr("Localizable", "Pour Over")
   /// Nothing fancy here — just a good, solid technique

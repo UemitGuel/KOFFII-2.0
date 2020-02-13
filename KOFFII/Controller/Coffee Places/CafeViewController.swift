@@ -31,7 +31,6 @@ class CafeViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var hoodPickerView: UIPickerView!
     
@@ -123,7 +122,6 @@ extension CafeViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return neighborhoods.count
     }
-    
 }
 
 extension CafeViewController: UIPickerViewDelegate {

@@ -10,18 +10,18 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
-
+        
+        navigationItem.title = L10n.overview
+        
         cafeController.fetchAndConfigureUnfilteredCafes {
             var cafeLocationArray: [CafeLocation] = []
             self.cafeController.cafes.forEach { cafe in
                 cafeLocationArray.append(CafeLocation(title: cafe.name, coordinate: CLLocationCoordinate2D(latitude: cafe.latitude ?? 0, longitude: cafe.longitude ?? 0)))
             }
             self.mapView.addAnnotations(cafeLocationArray)
-            
         }
     }
     
@@ -39,8 +39,6 @@ class MapViewController: UIViewController {
         mapView.setRegion(region, animated: true)
     }
 
-
-    
     func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -87,7 +85,6 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
-    
 }
 
 class CafeLocation: NSObject, MKAnnotation {
