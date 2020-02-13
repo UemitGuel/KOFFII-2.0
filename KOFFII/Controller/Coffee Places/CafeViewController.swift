@@ -204,7 +204,6 @@ extension CafeViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             userLocationEnabled = true
-            updateUI()
             break
         case .denied:
             userLocationEnabled = false
