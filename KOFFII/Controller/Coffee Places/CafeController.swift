@@ -3,16 +3,14 @@ import MapKit
 
 class CafeController {
         
-    var cafes = [Cafe]()
-    
-    func filteredCafes(userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
-        var filtered = cafes
+    func filteredCafes(cafeList: [Cafe],userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
+        var filteredCafeList = [Cafe]()
         for userRequestedFeature in userRequestedFeatures {
-            filtered = filtered.filter { $0.containsFeature(userRequestedFeature) }
+            filteredCafeList = cafeList.filter { $0.containsFeature(userRequestedFeature) }
         }
         for userChoosenNeighborhood in userChoosenNeighborhoods {
-            filtered = filtered.filter { $0.containsNeighborhood(userChoosenNeighborhood)}
+            filteredCafeList = cafeList.filter { $0.containsNeighborhood(userChoosenNeighborhood)}
         }
-        return filtered
+        return filteredCafeList
     }
 }

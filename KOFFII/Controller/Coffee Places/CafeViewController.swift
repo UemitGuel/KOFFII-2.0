@@ -172,18 +172,22 @@ extension CafeViewController {
     
     func updateUI(animated: Bool = true) {
         let cafes = realm.objects(Cafe.self)
-        var cafesList = [Cafe]()
-        cafesList.append(contentsOf: cafes)
+        var cafeList = [Cafe]()
+        cafeList.append(contentsOf: cafes)
+//        cafeList = cafeController.filteredCafes(cafeList: cafeList, userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
+        for cafe in cafeList {
+            print(cafe.features)
+        }
         if userLocationEnabled {
             guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
             let userLocation = MKMapPoint(locValue)
-            cafesList = cafesList.sorted {
+            cafeList = cafeList.sorted {
                 userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($0.latitude, $0.longitude))) < userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($1.latitude , $1.longitude )))
             }
         }
         currentSnapshot = NSDiffableDataSourceSnapshot<Section, Cafe>()
         currentSnapshot.appendSections([.cafes])
-        currentSnapshot.appendItems(cafesList, toSection: .cafes)
+        currentSnapshot.appendItems(cafeList, toSection: .cafes)
         self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
     }
     

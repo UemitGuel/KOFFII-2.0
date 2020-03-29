@@ -7,7 +7,7 @@ class Cafe: Object {
     @objc dynamic var latitude: Double = 0
     @objc dynamic var longitude: Double = 0
 
-    var features: [String: Bool]?
+    var features: [String: Bool] = ["":false]
     
     var neighborhood = Neighborhood.belgisches.rawValue
     var neighborhoodEnum: Neighborhood {
@@ -31,13 +31,13 @@ class Cafe: Object {
         self.locationURL = cafe["locationURL"] as! String
         self.latitude = cafe["latitude"] as! Double
         self.longitude = cafe["longitude"] as! Double
-        self.features = cafe["features"] as? [String: Bool]
+        self.features = cafe["features"] as! [String: Bool]
         self.neighborhood = cafe["hood"] as! String
     }
     
     func containsFeature(_ featureCase: Feature?) -> Bool {
         guard let featureCase = featureCase else { return true }
-        return features![featureCase.rawValue] == true
+        return features[featureCase.rawValue] == true
     }
     
     func containsNeighborhood(_ neighborhoodCase: Neighborhood?) -> Bool {
