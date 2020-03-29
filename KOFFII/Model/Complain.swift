@@ -40,3 +40,7 @@ let espressoTooSour = Complain(name: L10n.espressoTooSour,
                                 L10n.espressoTooSour4,
                                 L10n.espressoTooSour5,
                                 L10n.espressoTooSour6])
+
+
+// MARK: - Neighborhoods Init
+    var neighborhoods = [L10n.allNeighborhoods,"Deutz/Kalk","Lindenthal/Sülz", "Nippes", "Ehrenfeld","Südstadt","Innenstadt", "Belgisches Viertel", "Latin Quarter"]

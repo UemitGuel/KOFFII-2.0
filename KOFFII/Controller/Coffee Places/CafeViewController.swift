@@ -4,8 +4,11 @@ import SwiftUI
 import SVProgressHUD
 import MapKit
 import CoreLocation
+import RealmSwift
 
 class CafeViewController: UIViewController {
+    
+    let realm = try! Realm()
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
@@ -18,8 +21,8 @@ class CafeViewController: UIViewController {
     }
     
     let cafeController = CafeController()
-    var dataSource: UITableViewDiffableDataSource<Section, CafeController.Cafe>! = nil
-    var currentSnapshot: NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>! = nil
+    var dataSource: UITableViewDiffableDataSource<Section, Cafe>! = nil
+    var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Cafe>! = nil
     
     @IBOutlet weak var addCoffeePlace: UIBarButtonItem!
     @IBAction func addCoffeePlaceTapped(_ sender: UIBarButtonItem) {
@@ -54,15 +57,13 @@ class CafeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseService().fetchCafes()
+        
         checkLocationServices()
 
         setupViewController()
         configureDataSource()
-        SVProgressHUD.show()
-        cafeController.fetchAndConfigureUnfilteredCafes {
-            self.updateUI()
-            SVProgressHUD.dismiss()
-        }
+        updateUI()
     }
     
     func setupViewController() {
@@ -143,8 +144,8 @@ extension CafeViewController {
     func configureDataSource() {
         
         self.dataSource = UITableViewDiffableDataSource
-            <Section, CafeController.Cafe>(tableView: tableView) {
-                (tableView: UITableView, indexPath: IndexPath, item: CafeController.Cafe) -> UITableViewCell? in
+            <Section, Cafe>(tableView: tableView) {
+                (tableView: UITableView, indexPath: IndexPath, item: Cafe) -> UITableViewCell? in
                 let cell: UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "DefaultCell")
                 cell.accessoryType = .disclosureIndicator
                 cell.selectionStyle = .none
@@ -154,7 +155,7 @@ extension CafeViewController {
                     guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
                     print(locValue)
                     let userLocation = MKMapPoint(locValue)
-                    let cafeLocation = MKMapPoint(CLLocationCoordinate2DMake(item.latitude ?? 0, item.longitude ?? 0))
+                    let cafeLocation = MKMapPoint(CLLocationCoordinate2DMake(item.latitude, item.longitude))
                     let distance = userLocation.distance(to: cafeLocation)
                     let distanceAsStringRounded = self.mapFunctions.self.mapDistanceForDisplay(distance)
                     cell.detailTextLabel?.text = String(distanceAsStringRounded)
@@ -170,17 +171,19 @@ extension CafeViewController {
     }
     
     func updateUI(animated: Bool = true) {
-        var cafes = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
+        let cafes = realm.objects(Cafe.self)
+        var cafesList = [Cafe]()
+        cafesList.append(contentsOf: cafes)
         if userLocationEnabled {
             guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
             let userLocation = MKMapPoint(locValue)
-            cafes = cafes.sorted {
-                userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($0.latitude ?? 0, $0.longitude ?? 0))) < userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($1.latitude ?? 0, $1.longitude ?? 0)))
+            cafesList = cafesList.sorted {
+                userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($0.latitude, $0.longitude))) < userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($1.latitude , $1.longitude )))
             }
         }
-        currentSnapshot = NSDiffableDataSourceSnapshot<Section, CafeController.Cafe>()
+        currentSnapshot = NSDiffableDataSourceSnapshot<Section, Cafe>()
         currentSnapshot.appendSections([.cafes])
-        currentSnapshot.appendItems(cafes, toSection: .cafes)
+        currentSnapshot.appendItems(cafesList, toSection: .cafes)
         self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
     }
     

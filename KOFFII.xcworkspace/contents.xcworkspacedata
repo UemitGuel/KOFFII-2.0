@@ -4,6 +4,10 @@
    <FileRef
       location = "group:KOFFII.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:/Users/umitgul/Documents/GitHub/KOFFII/UnitTests"
+      name = "UnitTests">
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

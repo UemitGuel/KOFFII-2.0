@@ -2,8 +2,11 @@ import FirebaseFirestore
 import UIKit
 import MapKit
 import CoreLocation
+import RealmSwift
 
 class MapViewController: UIViewController {
+    
+    let realm = try! Realm()
     
     @IBOutlet weak var mapView: MKMapView!
     let cafeController = CafeController()
@@ -16,13 +19,15 @@ class MapViewController: UIViewController {
         
         navigationItem.title = L10n.overview
         
-        cafeController.fetchAndConfigureUnfilteredCafes {
-            var cafeLocationArray: [CafeLocation] = []
-            self.cafeController.cafes.forEach { cafe in
-                cafeLocationArray.append(CafeLocation(title: cafe.name, coordinate: CLLocationCoordinate2D(latitude: cafe.latitude ?? 0, longitude: cafe.longitude ?? 0)))
-            }
-            self.mapView.addAnnotations(cafeLocationArray)
+        let cafes = realm.objects(Cafe.self)
+        var cafeList = [Cafe]()
+        cafeList.append(contentsOf: cafes)
+        var cafeLocations: [CafeLocation] = []
+        for cafe in cafeList {
+            let cafeLocation = CafeLocation(title: cafe.name, coordinate: CLLocationCoordinate2D(latitude: cafe.latitude, longitude: cafe.longitude))
+            cafeLocations.append(cafeLocation)
         }
+        mapView.addAnnotations(cafeLocations)
     }
     
     func centerViewInUserLocation() {

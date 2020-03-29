@@ -21,7 +21,7 @@ class CafeDetailViewController: UIViewController {
     @IBOutlet var plugButton: FeatureButton!
     @IBOutlet var plugLabel: UILabel!
     
-    var passedCafe: CafeController.Cafe?
+    var passedCafe: Cafe?
     var features: [String:Bool] { return passedCafe?.features ?? [:] }
     var cafeName: String { return passedCafe?.name ?? "" }
     var location: CLLocation {

@@ -10,5 +10,6 @@ target 'KOFFII' do
     pod 'SVProgressHUD'
     pod 'Firebase/Firestore'
     pod 'CBFlashyTabBarController'
-    
+    pod 'RealmSwift'
+
 end
