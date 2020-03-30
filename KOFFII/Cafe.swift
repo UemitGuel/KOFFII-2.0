@@ -6,10 +6,19 @@ class Cafe: Object {
     @objc dynamic var locationURL: String = ""
     @objc dynamic var latitude: Double = 0
     @objc dynamic var longitude: Double = 0
-
-    var features: [String: Bool] = ["":false]
     
-    var neighborhood = Neighborhood.belgisches.rawValue
+    @objc dynamic var wifi: Bool = true
+    @objc dynamic var vegan: Bool = true
+    @objc dynamic var food: Bool = true
+    @objc dynamic var cake: Bool = true
+    @objc dynamic var plug: Bool = true
+
+
+    var features: [String: Bool] {
+        return ["wifi": wifi, "vegan": vegan, "food": food, "cake": cake, "plug": plug]
+    }
+    
+    @objc dynamic var neighborhood = Neighborhood.belgisches.rawValue
     var neighborhoodEnum: Neighborhood {
       get {
         return Neighborhood(rawValue: neighborhood)!
@@ -31,7 +40,12 @@ class Cafe: Object {
         self.locationURL = cafe["locationURL"] as! String
         self.latitude = cafe["latitude"] as! Double
         self.longitude = cafe["longitude"] as! Double
-        self.features = cafe["features"] as! [String: Bool]
+        let features = cafe["features"] as! [String: Bool]
+        self.wifi = features["wifi"]!
+        self.vegan = features["vegan"]!
+        self.food = features["food"]!
+        self.cake = features["cake"]!
+        self.plug = features["plugin"]!
         self.neighborhood = cafe["hood"] as! String
     }
     
@@ -49,6 +63,12 @@ class Cafe: Object {
         self.distanceUserToLocation = distanceUserToLocation
     }
 }
+
+class FeatureObject: Object {
+    dynamic var featureName = false
+}
+
+
 
 //struct Cafe: Hashable {
 //    let name: String
