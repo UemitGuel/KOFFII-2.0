@@ -176,7 +176,10 @@ extension CafeViewController {
         cafeList.append(contentsOf: cafes)
         cafeList = cafeController.filteredCafes(cafeList: cafeList, userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
 
-                
+        for cafe in cafeList {
+            print(cafe.features)
+        }
+        
         if userLocationEnabled {
             guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
             let userLocation = MKMapPoint(locValue)

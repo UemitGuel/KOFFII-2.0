@@ -15,7 +15,7 @@ class Cafe: Object {
 
 
     var features: [String: Bool] {
-        return ["wifi": wifi, "vegan": vegan, "food": food, "cake": cake, "plug": plug]
+        return ["wifi": wifi, "vegan": vegan, "food": food, "cake": cake, "plugin": plug]
     }
     
     @objc dynamic var neighborhood = Neighborhood.belgisches.rawValue
@@ -55,6 +55,7 @@ class Cafe: Object {
     }
     
     func containsNeighborhood(_ neighborhoodCase: Neighborhood?) -> Bool {
+        print(features)
         guard let neighborhoodCase = neighborhoodCase else { return true }
         return neighborhood == neighborhoodCase.rawValue
     }
@@ -67,23 +68,3 @@ class Cafe: Object {
 class FeatureObject: Object {
     dynamic var featureName = false
 }
-
-
-
-//struct Cafe: Hashable {
-//    let name: String
-//    let latitude: Double?
-//    let longitude: Double?
-//    let locationURL: String?
-//    let features: [String: Bool]?
-//    let neighborhood: String?
-//
-//    let mapView = MKMapView()
-//
-//    var distanceUserToLocation: CLLocationDistance = 0
-//
-//    mutating func changeUserDistanceToLocation(distanceUserToLocation: CLLocationDistance) {
-//        self.distanceUserToLocation = distanceUserToLocation
-//    }
-
-//}
