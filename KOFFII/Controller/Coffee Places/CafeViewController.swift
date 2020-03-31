@@ -171,14 +171,8 @@ extension CafeViewController {
     }
     
     func updateUI(animated: Bool = true) {
-        let cafes = realm.objects(Cafe.self).sorted(byKeyPath: "name")
-        var cafeList = [Cafe]()
-        cafeList.append(contentsOf: cafes)
-        cafeList = cafeController.filteredCafes(cafeList: cafeList, userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
 
-        for cafe in cafeList {
-            print(cafe.features)
-        }
+        var cafeList = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
         
         if userLocationEnabled {
             guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }

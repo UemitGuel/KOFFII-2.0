@@ -51,11 +51,11 @@ class Cafe: Object {
     
     func containsFeature(_ featureCase: Feature?) -> Bool {
         guard let featureCase = featureCase else { return true }
+        print(features[featureCase.rawValue] == true)
         return features[featureCase.rawValue] == true
     }
     
     func containsNeighborhood(_ neighborhoodCase: Neighborhood?) -> Bool {
-        print(features)
         guard let neighborhoodCase = neighborhoodCase else { return true }
         return neighborhood == neighborhoodCase.rawValue
     }

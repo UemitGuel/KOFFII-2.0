@@ -4,14 +4,16 @@ class CafeController {
         
     let realm = try! Realm()
     
-    func filteredCafes(cafeList: [Cafe],userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
-        var filteredCafeList = cafeList
+    func filteredCafes(userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
+        let cafes = realm.objects(Cafe.self).sorted(byKeyPath: "name")
+        var cafeList = [Cafe]()
+        cafeList.append(contentsOf: cafes)
         for userRequestedFeature in userRequestedFeatures {
-            filteredCafeList = cafeList.filter { $0.containsFeature(userRequestedFeature) }
+            cafeList = cafeList.filter { $0.containsFeature(userRequestedFeature) }
         }
         for userChoosenNeighborhood in userChoosenNeighborhoods {
-            filteredCafeList = cafeList.filter { $0.containsNeighborhood(userChoosenNeighborhood)}
+            cafeList = cafeList.filter { $0.containsNeighborhood(userChoosenNeighborhood)}
         }
-        return filteredCafeList
+        return cafeList
     }
 }
