@@ -1,7 +1,6 @@
 import FirebaseFirestore
 import UIKit
 import SwiftUI
-import SVProgressHUD
 import MapKit
 import CoreLocation
 import RealmSwift
@@ -57,13 +56,12 @@ class CafeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseService().fetchCafes()
-        
+        FirebaseService().fetchCafes {
+            self.updateUI()
+        }
         checkLocationServices()
-
         setupViewController()
         configureDataSource()
-        updateUI()
     }
     
     func setupViewController() {
@@ -171,9 +169,7 @@ extension CafeViewController {
     }
     
     func updateUI(animated: Bool = true) {
-
         var cafeList = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
-        
         if userLocationEnabled {
             guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
             let userLocation = MKMapPoint(locValue)
