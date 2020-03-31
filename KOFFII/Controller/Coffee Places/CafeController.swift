@@ -1,6 +1,0 @@
-import RealmSwift
-
-class CafeController {
-        
-
-}

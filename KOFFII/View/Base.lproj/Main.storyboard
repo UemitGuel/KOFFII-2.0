@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NHI-7U-5fT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NHI-7U-5fT">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -435,11 +435,11 @@
             <objects>
                 <viewController id="RTI-Y3-sc3" customClass="InformationViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jKH-26-qXm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f6c-NN-mvC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="informationCell" rowHeight="220" id="91H-8b-n6F" customClass="InformationTableViewCell" customModule="KOFFII_Cologne" customModuleProvider="target">
@@ -518,11 +518,11 @@
             <objects>
                 <viewController id="cYw-2b-ecy" customClass="BrewingDetailViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QhT-kO-kpM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="euN-X5-tWQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blob1" id="wrK-IO-10p">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
@@ -534,7 +534,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dTt-yZ-8lH">
-                                <rect key="frame" x="16" y="567" width="382" height="60"/>
+                                <rect key="frame" x="16" y="640" width="382" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1A-gl-GFq">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="60"/>
@@ -600,11 +600,11 @@
             <objects>
                 <viewController id="joA-mQ-Bkq" customClass="ComplainViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5L-rK-05u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZLX-MY-auM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="HDW-wr-w9p">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
@@ -671,23 +671,61 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="RTI-Y3-sc3" kind="relationship" relationship="rootViewController" id="pvd-4Y-rjN"/>
+                        <segue destination="n1d-7k-JEW" kind="relationship" relationship="rootViewController" id="9TU-vp-Skl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZT-7q-RF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4361" y="394"/>
+            <point key="canvasLocation" x="3422" y="434"/>
+        </scene>
+        <!--Information View Presenter-->
+        <scene sceneID="6fX-wf-gDm">
+            <objects>
+                <viewController id="n1d-7k-JEW" customClass="InformationViewPresenter" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wdf-7t-8BL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZS-jb-kFD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                                <connections>
+                                    <segue destination="C4A-7t-rNa" kind="embed" destinationCreationSelector="addSwiftUIView:" id="WjB-VL-9yG"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zZS-jb-kFD" firstAttribute="leading" secondItem="oah-mN-Ls7" secondAttribute="leading" id="Cwu-mt-Gy4"/>
+                            <constraint firstItem="oah-mN-Ls7" firstAttribute="trailing" secondItem="zZS-jb-kFD" secondAttribute="trailing" id="PxD-X6-vpc"/>
+                            <constraint firstItem="zZS-jb-kFD" firstAttribute="top" secondItem="oah-mN-Ls7" secondAttribute="top" id="S8A-nb-17S"/>
+                            <constraint firstItem="oah-mN-Ls7" firstAttribute="bottom" secondItem="zZS-jb-kFD" secondAttribute="bottom" id="nFV-8X-8wN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oah-mN-Ls7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="71p-ay-LH4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICG-5V-bc2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3809" y="1178"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="QKE-o7-8GE">
+            <objects>
+                <hostingController id="C4A-7t-rNa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTQ-ny-cXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4855" y="1150"/>
         </scene>
         <!--Knowledge Detail View Controller-->
         <scene sceneID="GGp-zf-gKg">
             <objects>
                 <viewController id="3Ty-ze-2xx" customClass="KnowledgeDetailViewController" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5MU-VP-s2M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xjJ-oF-b0v">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blob1" id="Yrg-rr-ALe">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
@@ -717,7 +755,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWV-JQ-M89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5267" y="1215"/>
+            <point key="canvasLocation" x="7397" y="1150"/>
         </scene>
         <!--places-->
         <scene sceneID="Ina-Sk-iRA">
@@ -762,6 +800,7 @@
             <point key="canvasLocation" x="4361" y="-1020"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="Blob1" width="418" height="428"/>
         <image name="CAKE" width="18" height="22"/>
@@ -772,7 +811,6 @@
         <image name="coffee_icon" width="29" height="27"/>
         <image name="info_icon" width="29" height="29"/>
         <image name="map" width="24" height="22"/>
-        <image name="mappin" catalog="system" width="52" height="64"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
     </resources>
-    <color key="tintColor" red="0.71764705880000002" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

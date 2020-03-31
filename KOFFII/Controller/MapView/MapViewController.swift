@@ -9,7 +9,6 @@ class MapViewController: UIViewController {
     let realm = try! Realm()
     
     @IBOutlet weak var mapView: MKMapView!
-    let cafeController = CafeController()
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
     
