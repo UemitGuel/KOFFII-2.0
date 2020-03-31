@@ -19,7 +19,6 @@ class CafeViewController: UIViewController {
         case cafes
     }
     
-    let cafeController = CafeController()
     var dataSource: UITableViewDiffableDataSource<Section, Cafe>! = nil
     var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Cafe>! = nil
     
@@ -91,6 +90,19 @@ class CafeViewController: UIViewController {
             break
         }
         updateUI()
+    }
+        
+    func filteredCafes(userRequestedFeatures: [Feature],userChoosenNeighborhoods: [Neighborhood],with filter: String?=nil) -> [Cafe] {
+        let cafes = realm.objects(Cafe.self).sorted(byKeyPath: "name")
+        var cafeList = [Cafe]()
+        cafeList.append(contentsOf: cafes)
+        for userRequestedFeature in userRequestedFeatures {
+            cafeList = cafeList.filter { $0.containsFeature(userRequestedFeature) }
+        }
+        for userChoosenNeighborhood in userChoosenNeighborhoods {
+            cafeList = cafeList.filter { $0.containsNeighborhood(userChoosenNeighborhood)}
+        }
+        return cafeList
     }
 }
 
@@ -169,7 +181,7 @@ extension CafeViewController {
     }
     
     func updateUI(animated: Bool = true) {
-        var cafeList = cafeController.filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
+        var cafeList = filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
         if userLocationEnabled {
             guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
             let userLocation = MKMapPoint(locValue)
