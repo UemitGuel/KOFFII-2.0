@@ -50,6 +50,7 @@
 		B3F62ED822D0CB37002DF68C /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F62ED622D0CB37002DF68C /* HeaderView.xib */; };
 		B3F62EDA22D0FFB6002DF68C /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F62ED922D0FFB6002DF68C /* Quicksand-Medium.ttf */; };
 		B6067E24243238A800BE4521 /* CafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6067E23243238A800BE4521 /* CafeDetailViewController.swift */; };
+		B652D7AA2435245700E51647 /* InformationViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652D7A92435245700E51647 /* InformationViewDetail.swift */; };
 		B6B3AD472430FCA900F71AF2 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3AD462430FCA900F71AF2 /* Cafe.swift */; };
 		B6B3AD49243100B700F71AF2 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3AD48243100B700F71AF2 /* FirebaseService.swift */; };
 		B6EEBB422433DA6700E367F1 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBB412433DA6700E367F1 /* InformationView.swift */; };
@@ -153,6 +154,7 @@
 		B3F62ED922D0FFB6002DF68C /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
 		B44913B6DE03803C9391F609 /* Pods-KOFFII.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.release.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.release.xcconfig"; sourceTree = "<group>"; };
 		B6067E23243238A800BE4521 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = "KOFFII/Controller/Coffee Places/CafeDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B652D7A92435245700E51647 /* InformationViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewDetail.swift; sourceTree = "<group>"; };
 		B6B3AD462430FCA900F71AF2 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cafe.swift; path = ../Cafe.swift; sourceTree = "<group>"; };
 		B6B3AD48243100B700F71AF2 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		B6EEBB412433DA6700E367F1 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
@@ -410,8 +412,9 @@
 		B6EEBB402433DA4C00E367F1 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				B6EEBB412433DA6700E367F1 /* InformationView.swift */,
 				B6EEBB452433DF1300E367F1 /* InformationViewPresenter.swift */,
+				B6EEBB412433DA6700E367F1 /* InformationView.swift */,
+				B652D7A92435245700E51647 /* InformationViewDetail.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */,
+				B652D7AA2435245700E51647 /* InformationViewDetail.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
 				B6EEBB422433DA6700E367F1 /* InformationView.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,

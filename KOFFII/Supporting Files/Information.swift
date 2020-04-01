@@ -1,6 +1,7 @@
 import UIKit
 
-struct Information {
+struct Information: Identifiable {
+    var id = UUID()
     let name: String
     let image: UIImage
     let quan: String?
