@@ -8,9 +8,6 @@
 /* Class = "UILabel"; text = "Complain"; ObjectID = "Cab-DX-tl4"; */
 "Cab-DX-tl4.text" = "Beschwerde";
 
-/* Class = "UITabBarItem"; title = "Info"; ObjectID = "Cgl-vu-7Xl"; */
-"Cgl-vu-7Xl.title" = "Info";
-
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "Dj6-Bn-kOp"; */
 "Dj6-Bn-kOp.title" = " ";
 
@@ -61,3 +58,6 @@
 
 /* Class = "UILabel"; text = "VEGAN"; ObjectID = "xc3-9M-kc8"; */
 "xc3-9M-kc8.text" = "VEGAN";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "LNJ-7h-EKY"; */
+"LNJ-7h-EKY.title" = "";

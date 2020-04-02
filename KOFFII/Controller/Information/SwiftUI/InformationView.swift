@@ -9,12 +9,11 @@ struct InformationView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            List {
                 Text("Brewing")
-                    .font(.headline)
-                    .padding(.leading, 15)
-                    .padding(.top, 5)
-                
+                    .font(.system(size: 30))
+                    .fontWeight(.heavy)
+                    .padding(.leading, 50)
                 ScrollView(.horizontal,showsIndicators: false) {
                     HStack(spacing: 20) {
                         ForEach(brewingMethodes) { method in
@@ -29,10 +28,28 @@ struct InformationView: View {
                             .frame(width: UIScreen.main.bounds.width * 0.7, height: 360)
                         }
                     }.padding(30)
-                    Spacer()
                 }
-                .frame(width: UIScreen.main.bounds.width, height: 480)
+                Text("Brewing")
+                    .font(.system(size: 30))
+                    .fontWeight(.heavy)
+                    .padding(.leading, 50)
+                ScrollView(.horizontal,showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(knowledge) { method in
+                            GeometryReader { geometry in
+                                NavigationLink(destination: InformationViewDetail(method: method)) {
+                                    CardView(method: method)
+                                        .rotation3DEffect(Angle(degrees: Double(
+                                            (geometry.frame(in: .global).minX - 30) / -30
+                                        )), axis: (x: 0, y: 10, z: 0))
+                                }
+                            }
+                            .frame(width: UIScreen.main.bounds.width * 0.7, height: 360)
+                        }
+                    }.padding(30)
+                }
             }
+            .navigationBarTitle("", displayMode: .inline)
         }
     }
 }
@@ -69,6 +86,6 @@ struct CardView : View {
                 .renderingMode(.original)
                 .scaledToFill())
             .cornerRadius(30)
-            .shadow(color: Color.orange, radius: 20, x: 0, y: 20)
+            .shadow(color: Color.gray,radius: 20, x: 0, y: 20)
     }
 }
