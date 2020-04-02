@@ -1,6 +1,6 @@
 struct Complain {
     let name: String
-    let complainCategory: Information.complainCategory
+    let complainCategory: BrewingMethod.complainCategory
     let improvements: [String]
 }
 
