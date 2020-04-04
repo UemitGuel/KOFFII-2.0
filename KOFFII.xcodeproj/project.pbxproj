@@ -49,9 +49,7 @@
 		B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62ED522D0CB37002DF68C /* HeaderView.swift */; };
 		B3F62ED822D0CB37002DF68C /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F62ED622D0CB37002DF68C /* HeaderView.xib */; };
 		B3F62EDA22D0FFB6002DF68C /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F62ED922D0FFB6002DF68C /* Quicksand-Medium.ttf */; };
-		B604870B24366F8C00E71DB1 /* BrewingMethodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604870A24366F8C00E71DB1 /* BrewingMethodRow.swift */; };
 		B604870D2436707500E71DB1 /* BrewingMethodeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604870C2436707500E71DB1 /* BrewingMethodeCard.swift */; };
-		B604870F2436713000E71DB1 /* CoffeeKnowledgeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604870E2436713000E71DB1 /* CoffeeKnowledgeRow.swift */; };
 		B60487112436718D00E71DB1 /* CoffeeKnowledgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60487102436718D00E71DB1 /* CoffeeKnowledgeDetailView.swift */; };
 		B60487132436723E00E71DB1 /* CoffeeKnowledgeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60487122436723E00E71DB1 /* CoffeeKnowledgeCard.swift */; };
 		B60487152436727300E71DB1 /* CoffeeKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60487142436727300E71DB1 /* CoffeeKnowledge.swift */; };
@@ -159,9 +157,7 @@
 		B3F62ED622D0CB37002DF68C /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		B3F62ED922D0FFB6002DF68C /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
 		B44913B6DE03803C9391F609 /* Pods-KOFFII.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KOFFII.release.xcconfig"; path = "Target Support Files/Pods-KOFFII/Pods-KOFFII.release.xcconfig"; sourceTree = "<group>"; };
-		B604870A24366F8C00E71DB1 /* BrewingMethodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingMethodRow.swift; sourceTree = "<group>"; };
 		B604870C2436707500E71DB1 /* BrewingMethodeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingMethodeCard.swift; sourceTree = "<group>"; };
-		B604870E2436713000E71DB1 /* CoffeeKnowledgeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeKnowledgeRow.swift; sourceTree = "<group>"; };
 		B60487102436718D00E71DB1 /* CoffeeKnowledgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeKnowledgeDetailView.swift; sourceTree = "<group>"; };
 		B60487122436723E00E71DB1 /* CoffeeKnowledgeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeKnowledgeCard.swift; sourceTree = "<group>"; };
 		B60487142436727300E71DB1 /* CoffeeKnowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeKnowledge.swift; sourceTree = "<group>"; };
@@ -427,11 +423,9 @@
 			children = (
 				B6EEBB452433DF1300E367F1 /* InformationViewPresenter.swift */,
 				B6EEBB412433DA6700E367F1 /* InformationView.swift */,
-				B604870A24366F8C00E71DB1 /* BrewingMethodRow.swift */,
 				B604870C2436707500E71DB1 /* BrewingMethodeCard.swift */,
-				B652D7A92435245700E51647 /* BrewingMethodeDetailView.swift */,
-				B604870E2436713000E71DB1 /* CoffeeKnowledgeRow.swift */,
 				B60487122436723E00E71DB1 /* CoffeeKnowledgeCard.swift */,
+				B652D7A92435245700E51647 /* BrewingMethodeDetailView.swift */,
 				B60487102436718D00E71DB1 /* CoffeeKnowledgeDetailView.swift */,
 			);
 			path = SwiftUI;
@@ -689,7 +683,6 @@
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
 				B38E8EBC2388191C00541A2E /* assets-images.swift in Sources */,
 				B367D58222D3A7250069F4D0 /* Complain.swift in Sources */,
-				B604870F2436713000E71DB1 /* CoffeeKnowledgeRow.swift in Sources */,
 				B3970966238D1C3900190C53 /* Constants.swift in Sources */,
 				B60487152436727300E71DB1 /* CoffeeKnowledge.swift in Sources */,
 				B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */,
@@ -698,7 +691,6 @@
 				B60487112436718D00E71DB1 /* CoffeeKnowledgeDetailView.swift in Sources */,
 				B3F62ED322D0C8FF002DF68C /* BrewingDetailTableViewCell.swift in Sources */,
 				B6EEBB462433DF1300E367F1 /* InformationViewPresenter.swift in Sources */,
-				B604870B24366F8C00E71DB1 /* BrewingMethodRow.swift in Sources */,
 				B6B3AD49243100B700F71AF2 /* FirebaseService.swift in Sources */,
 				B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */,
 				B310BF9A2369D02B0065318C /* MapViewController.swift in Sources */,

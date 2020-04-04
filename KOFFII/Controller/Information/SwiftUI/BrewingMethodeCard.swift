@@ -1,11 +1,3 @@
-//
-//  BrewingMethodeCard.swift
-//  KOFFII
-//
-//  Created by Ümit Gül on 02.04.20.
-//  Copyright © 2020 Ümit Gül. All rights reserved.
-//
-
 import SwiftUI
 
 struct BrewingMethodeCard : View {
@@ -17,23 +9,28 @@ struct BrewingMethodeCard : View {
     
     var body: some View {
         return VStack(alignment: .leading) {
-            Text(method.name)
-                .foregroundColor(.white)
-                .font(.title)
-                .fontWeight(.bold)
-                .lineSpacing(6)
-                .lineLimit(4)
-                .padding(30)
             Spacer()
+            ZStack {
+                VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(height: 70)
+                HStack {
+                    Text(method.name)
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .fontWeight(.heavy)
+                        .padding(.leading)
+                    Spacer()
+                }
+            }
         }
-        .frame(width: UIScreen.main.bounds.width * 0.7, height: 360)
+        .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.45)
         .background(
             Image(uiImage: method.image)
                 .resizable()
                 .renderingMode(.original)
                 .scaledToFill())
-            .cornerRadius(30)
-            .shadow(color: Color.gray,radius: 10, x: 0, y: 10)
+            .cornerRadius(20)
     }
 }
 
