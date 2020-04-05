@@ -33,14 +33,14 @@ class CafeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         highlightButtons()
-        MapFunctions().centerMapOnLocation(map: map, location: location)
+        MapHelper.centerMapOnLocation(map: map, location: location)
         title = cafeName
     }
         
     @IBAction func openMapsButtonTapped(_ sender: UIButton) {
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude
-        let actionsheet = MapFunctions().returnMapOptionsAlert(cafeName: cafeName,
+        let actionsheet = MapHelper.returnMapOptionsAlert(cafeName: cafeName,
                                                                    latitude: latitude,
                                                                    longitude: longitude)
         present(actionsheet, animated: true, completion: nil)

@@ -3,7 +3,6 @@ import FirebaseFirestore
 import SVProgressHUD
 
 struct AddCoffeePlaceView: View {
-    var dismiss: () -> Void
     @State private var name = ""
     
     let state = [L10n.yes,L10n.no]
@@ -62,7 +61,6 @@ struct AddCoffeePlaceView: View {
                 Button(action: {
                     self.addPlaceToFirebase()
                     SVProgressHUD.showSuccess(withStatus: L10n.coffeePlaceSentForReview)
-                    self.dismiss()
                 }) {
                     HStack {
                         Image(systemName: "paperplane")

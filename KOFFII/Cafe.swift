@@ -51,7 +51,6 @@ class Cafe: Object {
     
     func containsFeature(_ featureCase: Feature?) -> Bool {
         guard let featureCase = featureCase else { return true }
-        print(features[featureCase.rawValue] == true)
         return features[featureCase.rawValue] == true
     }
     

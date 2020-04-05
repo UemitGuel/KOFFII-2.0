@@ -170,7 +170,7 @@
                     <navigationItem key="navigationItem" id="5W2-QD-Jbg">
                         <barButtonItem key="rightBarButtonItem" title="Add Coffee Place" id="6Xs-RH-tzF">
                             <connections>
-                                <action selector="addCoffeePlaceTapped:" destination="8hJ-sQ-lT1" id="ADC-ed-Hq1"/>
+                                <segue destination="BUK-mV-wqb" kind="presentation" id="Ame-ws-zg6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -405,6 +405,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ea7-N4-YD3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5267" y="-1021"/>
+        </scene>
+        <!--Add Coffee Place View Presenter-->
+        <scene sceneID="adH-zh-trZ">
+            <objects>
+                <viewController id="BUK-mV-wqb" customClass="AddCoffeePlaceViewPresenter" customModule="KOFFII_Cologne" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="esg-UB-zmA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzS-jg-5RF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <connections>
+                                    <segue destination="fTd-bg-smH" kind="embed" destinationCreationSelector="addSwiftUIView:" id="cDb-BE-plQ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nzS-jg-5RF" firstAttribute="top" secondItem="v3F-OS-Con" secondAttribute="top" id="BX7-4j-CvG"/>
+                            <constraint firstItem="v3F-OS-Con" firstAttribute="bottom" secondItem="nzS-jg-5RF" secondAttribute="bottom" id="gaM-rg-Mk4"/>
+                            <constraint firstItem="v3F-OS-Con" firstAttribute="trailing" secondItem="nzS-jg-5RF" secondAttribute="trailing" id="gds-jG-l7J"/>
+                            <constraint firstItem="nzS-jg-5RF" firstAttribute="leading" secondItem="v3F-OS-Con" secondAttribute="leading" id="i2W-ZO-HYh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v3F-OS-Con"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGR-2W-lmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6129" y="-1022"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="lCC-dd-ajx">
+            <objects>
+                <hostingController id="fTd-bg-smH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKz-y3-j7O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6917" y="-1027"/>
         </scene>
         <!--Flashy Tab Bar Controller-->
         <scene sceneID="qOs-tT-nbc">

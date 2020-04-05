@@ -1,18 +1,15 @@
 import FirebaseFirestore
 import UIKit
 import SwiftUI
-import MapKit
 import CoreLocation
 import RealmSwift
 
 class CafeViewController: UIViewController {
     
     let realm = try! Realm()
-    
     let locationManager = CLLocationManager()
-    let regionInMeters: Double = 1000
-    let mapView = MKMapView()
-    let mapFunctions = MapFunctions()
+
+    let mapFunctions = MapHelper()
     var userLocationEnabled: Bool = false
     
     enum Section: CaseIterable {
@@ -23,14 +20,7 @@ class CafeViewController: UIViewController {
     var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Cafe>! = nil
     
     @IBOutlet weak var addCoffeePlace: UIBarButtonItem!
-    @IBAction func addCoffeePlaceTapped(_ sender: UIBarButtonItem) {
-        let hostView = UIHostingController(rootView: AddCoffeePlaceView(dismiss: dismiss))
-        navigationController?.present(hostView, animated: true)
-    }
     
-    func dismiss(){
-        self.dismiss(animated: true, completion: nil)
-    }
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var hoodPickerView: UIPickerView!
@@ -162,12 +152,7 @@ extension CafeViewController {
                 cell.textLabel?.text = item.name
                 cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
                 if self.userLocationEnabled {
-                    guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
-                    let userLocation = MKMapPoint(locValue)
-                    let cafeLocation = MKMapPoint(CLLocationCoordinate2DMake(item.latitude, item.longitude))
-                    let distance = userLocation.distance(to: cafeLocation)
-                    let distanceAsStringRounded = self.mapFunctions.self.mapDistanceForDisplay(distance)
-                    cell.detailTextLabel?.text = String(distanceAsStringRounded)
+                    cell.detailTextLabel?.text = MapHelper.getDistanceAsStringRounded(latitude: item.latitude, longitude: item.longitude)
                 } else {
                     cell.detailTextLabel?.text = item.neighborhood
                 }
@@ -182,16 +167,23 @@ extension CafeViewController {
     func updateUI(animated: Bool = true) {
         var cafeList = filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
         if userLocationEnabled {
-            guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
-            let userLocation = MKMapPoint(locValue)
-            cafeList = cafeList.sorted {
-                userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($0.latitude, $0.longitude))) < userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake($1.latitude , $1.longitude )))
+            cafeList = cafeList.sorted { MapHelper.getDistancefromUserToCafe(latitude: $0.latitude, longitude: $0.longitude)
+                    < MapHelper.getDistancefromUserToCafe(latitude: $1.latitude, longitude: $1.longitude)
             }
         }
         currentSnapshot = NSDiffableDataSourceSnapshot<Section, Cafe>()
         currentSnapshot.appendSections([.cafes])
         currentSnapshot.appendItems(cafeList, toSection: .cafes)
         self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
+    }
+}
+
+
+// MARK: LOCATIONMANAGER
+extension CafeViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
     
     func setupLocationManager() {
@@ -227,13 +219,6 @@ extension CafeViewController {
         @unknown default:
             fatalError()
         }
-    }
-}
-
-extension CafeViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        checkLocationAuthorization()
     }
 }
 

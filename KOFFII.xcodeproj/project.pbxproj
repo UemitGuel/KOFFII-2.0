@@ -18,7 +18,7 @@
 		B367D58222D3A7250069F4D0 /* Complain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58122D3A7250069F4D0 /* Complain.swift */; };
 		B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */; };
 		B367D58E22D502CD0069F4D0 /* CafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D58D22D502CD0069F4D0 /* CafeViewController.swift */; };
-		B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596C2370264500D1D6B9 /* MapFunctions.swift */; };
+		B377596D2370264500D1D6B9 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596C2370264500D1D6B9 /* MapHelper.swift */; };
 		B377596F2370336600D1D6B9 /* FeatureButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */; };
 		B38C41DB2387E43900C92E8D /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38C41DA2387E43900C92E8D /* Localized.swift */; };
 		B38C41DC2387E4AC00C92E8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B38C41DE2387E4AC00C92E8D /* Localizable.strings */; };
@@ -57,6 +57,7 @@
 		B652D7AA2435245700E51647 /* BrewingMethodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652D7A92435245700E51647 /* BrewingMethodeDetailView.swift */; };
 		B6B3AD472430FCA900F71AF2 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3AD462430FCA900F71AF2 /* Cafe.swift */; };
 		B6B3AD49243100B700F71AF2 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3AD48243100B700F71AF2 /* FirebaseService.swift */; };
+		B6C1A566243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1A565243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift */; };
 		B6EEBB422433DA6700E367F1 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBB412433DA6700E367F1 /* InformationView.swift */; };
 		B6EEBB462433DF1300E367F1 /* InformationViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBB452433DF1300E367F1 /* InformationViewPresenter.swift */; };
 /* End PBXBuildFile section */
@@ -118,7 +119,7 @@
 		B367D58122D3A7250069F4D0 /* Complain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complain.swift; sourceTree = "<group>"; };
 		B367D58322D4C5700069F4D0 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
 		B367D58D22D502CD0069F4D0 /* CafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeViewController.swift; sourceTree = "<group>"; };
-		B377596C2370264500D1D6B9 /* MapFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFunctions.swift; sourceTree = "<group>"; };
+		B377596C2370264500D1D6B9 /* MapHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		B377596E2370336600D1D6B9 /* FeatureButtonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureButtonFunctions.swift; sourceTree = "<group>"; };
 		B38C41522387E2B700C92E8D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B38C41532387E2B900C92E8D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 		B652D7A92435245700E51647 /* BrewingMethodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingMethodeDetailView.swift; sourceTree = "<group>"; };
 		B6B3AD462430FCA900F71AF2 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cafe.swift; path = ../Cafe.swift; sourceTree = "<group>"; };
 		B6B3AD48243100B700F71AF2 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		B6C1A565243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeePlaceViewPresenter.swift; sourceTree = "<group>"; };
 		B6EEBB412433DA6700E367F1 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		B6EEBB452433DF1300E367F1 /* InformationViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewPresenter.swift; sourceTree = "<group>"; };
 		E0285450D2D979851A99E479 /* Pods_KOFFII.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KOFFII.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				B367D58D22D502CD0069F4D0 /* CafeViewController.swift */,
+				B6C1A565243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift */,
 				B3BCACD722D8D3F000A4FEDF /* CafeDetail */,
 			);
 			path = "Coffee Places";
@@ -290,7 +293,7 @@
 				B3970969238D2B3400190C53 /* Buttons */,
 				B3AA7E5722C4F38B005848DA /* AppDelegate.swift */,
 				B3970965238D1C3900190C53 /* Constants.swift */,
-				B377596C2370264500D1D6B9 /* MapFunctions.swift */,
+				B377596C2370264500D1D6B9 /* MapHelper.swift */,
 				B3AA7E5E22C4F38C005848DA /* Assets.xcassets */,
 				B3AA7E6322C4F38C005848DA /* Info.plist */,
 				B3AA7E6922C4F877005848DA /* GoogleService-Info.plist */,
@@ -691,13 +694,14 @@
 				B60487112436718D00E71DB1 /* CoffeeKnowledgeDetailView.swift in Sources */,
 				B3F62ED322D0C8FF002DF68C /* BrewingDetailTableViewCell.swift in Sources */,
 				B6EEBB462433DF1300E367F1 /* InformationViewPresenter.swift in Sources */,
+				B6C1A566243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift in Sources */,
 				B6B3AD49243100B700F71AF2 /* FirebaseService.swift in Sources */,
 				B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */,
 				B310BF9A2369D02B0065318C /* MapViewController.swift in Sources */,
 				B6067E24243238A800BE4521 /* CafeDetailViewController.swift in Sources */,
 				B3970968238D2B2700190C53 /* FeatureButton.swift in Sources */,
 				B3F62ED722D0CB37002DF68C /* HeaderView.swift in Sources */,
-				B377596D2370264500D1D6B9 /* MapFunctions.swift in Sources */,
+				B377596D2370264500D1D6B9 /* MapHelper.swift in Sources */,
 				B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */,
 				B38C41DB2387E43900C92E8D /* Localized.swift in Sources */,
 				B6B3AD472430FCA900F71AF2 /* Cafe.swift in Sources */,

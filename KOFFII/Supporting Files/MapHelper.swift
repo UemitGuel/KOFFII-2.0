@@ -3,10 +3,12 @@ import Foundation
 import CoreLocation
 import MapKit
 
-class MapFunctions {
-    let regionRadius: CLLocationDistance = 1000
+class MapHelper {
+    static let regionRadius: CLLocationDistance = 1000
+    static let locationManager = CLLocationManager()
+
     
-    func returnMapOptionsAlert(cafeName: String, latitude: Double, longitude: Double) -> UIAlertController {
+    static func returnMapOptionsAlert(cafeName: String, latitude: Double, longitude: Double) -> UIAlertController {
         let coordinates = CLLocationCoordinate2D(latitude: latitude,
                                                  longitude: longitude)
         let actionSheet = UIAlertController(title: "Open Location",
@@ -36,6 +38,7 @@ class MapFunctions {
                 print("Can't use comgooglemaps://")
             }
         }
+        
         // Apple Maps
         let actionAppleMaps = UIAlertAction(title: "Apple Maps", style: .default) { _ in
             let coreUrl = "http://maps.apple.com/?"
@@ -55,14 +58,14 @@ class MapFunctions {
     }
     
     // Showing and handeling location
-    func centerMapOnLocation(map: MKMapView, location: CLLocation) {
+    static func centerMapOnLocation(map: MKMapView, location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         map.setRegion(coordinateRegion, animated: true)
     }
     
-    func mapDistanceForDisplay(_ distance: CLLocationDistance) -> String {
-        if distance < 100 {
+    static func mapDistanceForDisplay(_ distance: CLLocationDistance) -> String {
+        if distance < 100 { 
             return "100 m"
         } else if distance < 200 {
             return "200 m"
@@ -95,7 +98,24 @@ class MapFunctions {
         } else {
             return "+10km"
         }
-        
     }
     
+    static func getDistanceAsStringRounded(latitude: Double, longitude: Double) -> String {
+        let userLocation = MapHelper.getUserLocation()
+        let cafeLocation = MKMapPoint(CLLocationCoordinate2DMake(latitude, longitude))
+        let distance = userLocation.distance(to: cafeLocation)
+        let distanceAsStringRounded = mapDistanceForDisplay(distance)
+        return distanceAsStringRounded
+    }
+    
+    static func getUserLocation() -> MKMapPoint {
+        guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { fatalError() }
+        return MKMapPoint(locValue)
+    }
+    
+    static func getDistancefromUserToCafe(latitude: Double, longitude: Double) -> CLLocationDistance {
+        let userLocation = MapHelper.getUserLocation()
+        let distance = userLocation.distance(to: MKMapPoint(CLLocationCoordinate2DMake(latitude, longitude)))
+        return distance
+    }
 }
