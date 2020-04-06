@@ -1,6 +1,4 @@
-import FirebaseFirestore
 import UIKit
-import SwiftUI
 import CoreLocation
 import RealmSwift
 
@@ -8,7 +6,18 @@ class CafeViewController: UIViewController {
     
     let realm = try! Realm()
     let locationManager = CLLocationManager()
-
+    
+    var viewModel: CafeViewModel? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    init(viewModel: CafeViewModel) {
+        self.viewModel = viewModel
+        super.init()
+    }
+    
     let mapFunctions = MapHelper()
     var userLocationEnabled: Bool = false
     
@@ -20,7 +29,6 @@ class CafeViewController: UIViewController {
     var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Cafe>! = nil
     
     @IBOutlet weak var addCoffeePlace: UIBarButtonItem!
-    
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var hoodPickerView: UIPickerView!
@@ -45,9 +53,6 @@ class CafeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseService().fetchCafes {
-            self.updateUI()
-        }
         checkLocationServices()
         setupViewController()
         configureDataSource()
@@ -56,6 +61,7 @@ class CafeViewController: UIViewController {
     func setupViewController() {
         // eliminate 1pt line
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        print(viewModel?.title)
     }
     
     @IBAction func featureButtonTapped(_ sender: UIButton) {
@@ -115,6 +121,34 @@ extension CafeViewController: UITableViewDelegate {
     }
 }
 
+extension CafeViewController {
+    
+    func configureDataSource() {
+        
+        self.dataSource = UITableViewDiffableDataSource
+            <Section, Cafe>(tableView: tableView) {
+                (tableView: UITableView, indexPath: IndexPath, item: Cafe) -> UITableViewCell? in
+                let cell: UITableViewCell = CafeTableViewCell.getModifiedCell(item: item, userLocationEnabled: self.userLocationEnabled)
+                return cell
+        }
+        self.dataSource.defaultRowAnimation = .fade
+    }
+    
+    func updateUI(animated: Bool = true) {
+        var cafeList = filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
+        if userLocationEnabled {
+            cafeList = cafeList.sorted { MapHelper.getDistancefromUserToCafe(latitude: $0.latitude, longitude: $0.longitude)
+                    < MapHelper.getDistancefromUserToCafe(latitude: $1.latitude, longitude: $1.longitude)
+            }
+        }
+        currentSnapshot = NSDiffableDataSourceSnapshot<Section, Cafe>()
+        currentSnapshot.appendSections([.cafes])
+        currentSnapshot.appendItems(cafeList, toSection: .cafes)
+        self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
+    }
+}
+
+// MARK: PickerView - Hood
 extension CafeViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -136,48 +170,7 @@ extension CafeViewController: UIPickerViewDelegate {
         featureBF.filterForNeighborhoods(userChoosenNeighborhoods: &userChoosenNeighborhoods, selectedHood: neighborhoods[row])
         updateUI()
     }
-    
 }
-
-extension CafeViewController {
-    
-    func configureDataSource() {
-        
-        self.dataSource = UITableViewDiffableDataSource
-            <Section, Cafe>(tableView: tableView) {
-                (tableView: UITableView, indexPath: IndexPath, item: Cafe) -> UITableViewCell? in
-                let cell: UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "DefaultCell")
-                cell.accessoryType = .disclosureIndicator
-                cell.selectionStyle = .none
-                cell.textLabel?.text = item.name
-                cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
-                if self.userLocationEnabled {
-                    cell.detailTextLabel?.text = MapHelper.getDistanceAsStringRounded(latitude: item.latitude, longitude: item.longitude)
-                } else {
-                    cell.detailTextLabel?.text = item.neighborhood
-                }
-                cell.detailTextLabel?.textColor = .secondaryLabel
-                cell.detailTextLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
-                cell.imageView?.image = UIImage(asset: Asset.coffeeIcon)
-                return cell
-        }
-        self.dataSource.defaultRowAnimation = .fade
-    }
-    
-    func updateUI(animated: Bool = true) {
-        var cafeList = filteredCafes(userRequestedFeatures: userRequestedFeatures, userChoosenNeighborhoods: userChoosenNeighborhoods).sorted { $0.name < $1.name }
-        if userLocationEnabled {
-            cafeList = cafeList.sorted { MapHelper.getDistancefromUserToCafe(latitude: $0.latitude, longitude: $0.longitude)
-                    < MapHelper.getDistancefromUserToCafe(latitude: $1.latitude, longitude: $1.longitude)
-            }
-        }
-        currentSnapshot = NSDiffableDataSourceSnapshot<Section, Cafe>()
-        currentSnapshot.appendSections([.cafes])
-        currentSnapshot.appendItems(cafeList, toSection: .cafes)
-        self.dataSource.apply(currentSnapshot, animatingDifferences: animated)
-    }
-}
-
 
 // MARK: LOCATIONMANAGER
 extension CafeViewController: CLLocationManagerDelegate {
@@ -221,5 +214,3 @@ extension CafeViewController: CLLocationManagerDelegate {
         }
     }
 }
-
-
