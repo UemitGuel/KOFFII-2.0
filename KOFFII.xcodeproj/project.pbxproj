@@ -56,7 +56,6 @@
 		B6067E24243238A800BE4521 /* CafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6067E23243238A800BE4521 /* CafeDetailViewController.swift */; };
 		B652D7AA2435245700E51647 /* BrewingMethodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B652D7A92435245700E51647 /* BrewingMethodeDetailView.swift */; };
 		B6AEE347243B963300B6DF30 /* CafeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEE346243B963300B6DF30 /* CafeTableViewCell.swift */; };
-		B6AEE349243BB4AB00B6DF30 /* CafeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEE348243BB4AB00B6DF30 /* CafeViewModel.swift */; };
 		B6B3AD472430FCA900F71AF2 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3AD462430FCA900F71AF2 /* Cafe.swift */; };
 		B6B3AD49243100B700F71AF2 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3AD48243100B700F71AF2 /* FirebaseService.swift */; };
 		B6C1A566243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1A565243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift */; };
@@ -167,7 +166,6 @@
 		B6067E23243238A800BE4521 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = "KOFFII/Controller/Coffee Places/CafeDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B652D7A92435245700E51647 /* BrewingMethodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingMethodeDetailView.swift; sourceTree = "<group>"; };
 		B6AEE346243B963300B6DF30 /* CafeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeTableViewCell.swift; sourceTree = "<group>"; };
-		B6AEE348243BB4AB00B6DF30 /* CafeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeViewModel.swift; sourceTree = "<group>"; };
 		B6B3AD462430FCA900F71AF2 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cafe.swift; path = ../Cafe.swift; sourceTree = "<group>"; };
 		B6B3AD48243100B700F71AF2 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		B6C1A565243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeePlaceViewPresenter.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				B367D58D22D502CD0069F4D0 /* CafeViewController.swift */,
-				B6AEE348243BB4AB00B6DF30 /* CafeViewModel.swift */,
 				B6AEE346243B963300B6DF30 /* CafeTableViewCell.swift */,
 				B6C1A565243A729900CB02CD /* AddCoffeePlaceViewPresenter.swift */,
 				B3BCACD722D8D3F000A4FEDF /* CafeDetail */,
@@ -694,7 +691,6 @@
 				B367D58222D3A7250069F4D0 /* Complain.swift in Sources */,
 				B3970966238D1C3900190C53 /* Constants.swift in Sources */,
 				B60487152436727300E71DB1 /* CoffeeKnowledge.swift in Sources */,
-				B6AEE349243BB4AB00B6DF30 /* CafeViewModel.swift in Sources */,
 				B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */,
 				B377596F2370336600D1D6B9 /* FeatureButtonFunctions.swift in Sources */,
 				B604870D2436707500E71DB1 /* BrewingMethodeCard.swift in Sources */,

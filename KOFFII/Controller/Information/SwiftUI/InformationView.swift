@@ -7,7 +7,6 @@ struct InformationView: View {
     @State private var categoryIndex = 0
     var category = ["Brewing", "Knowledge"]
     
-    
     var brewingMethods : [BrewingMethod] = [aeropress,bialetti,chemex,espresso,frenchPress,pourOver,turkishMocha]
     var coffeeKnowledge : [CoffeeKnowledge] = [coffeeWater,health,history,fabrication,regions,storage]
     

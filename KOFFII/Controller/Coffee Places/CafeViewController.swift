@@ -6,18 +6,6 @@ class CafeViewController: UIViewController {
     
     let realm = try! Realm()
     let locationManager = CLLocationManager()
-    
-    var viewModel: CafeViewModel? {
-        didSet {
-            updateUI()
-        }
-    }
-    
-    init(viewModel: CafeViewModel) {
-        self.viewModel = viewModel
-        super.init()
-    }
-    
     let mapFunctions = MapHelper()
     var userLocationEnabled: Bool = false
     
@@ -61,7 +49,6 @@ class CafeViewController: UIViewController {
     func setupViewController() {
         // eliminate 1pt line
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-        print(viewModel?.title)
     }
     
     @IBAction func featureButtonTapped(_ sender: UIButton) {
