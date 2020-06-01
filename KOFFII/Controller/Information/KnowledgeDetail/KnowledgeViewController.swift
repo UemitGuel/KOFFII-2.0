@@ -4,7 +4,7 @@ class KnowledgeDetailViewController: UIViewController {
     @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var tableView: UITableView!
 
-    var passedInformationKnowledge: BrewingMethod?
+    var passedInformationKnowledge: Information?
 
     override func viewDidLoad() {
         super.viewDidLoad()

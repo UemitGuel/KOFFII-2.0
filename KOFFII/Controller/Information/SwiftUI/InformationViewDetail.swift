@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct BrewingMethodeDetailView: View {
-    var method: BrewingMethod
+struct InformationViewDetail: View {
+    var method: Information
     
     var body: some View {
         Text("Hello, World!")

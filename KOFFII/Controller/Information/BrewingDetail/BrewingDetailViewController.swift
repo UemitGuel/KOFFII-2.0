@@ -14,7 +14,7 @@ class BrewingDetailViewController: UIViewController {
     
     var complain: Complain?
     
-    var passedInformationBrewing: BrewingMethod?
+    var passedInformationBrewing: Information?
     
     override func viewDidLoad() {
         super.viewDidLoad()
