@@ -12,6 +12,7 @@
 		B3404A1622CD062200062B01 /* Staatliches-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */; };
 		B34335C722C50501006CDBC1 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */; };
 		B34335C922C50509006CDBC1 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */; };
+		B34E50A32393FFE80043091B /* CafeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34E50A22393FFE80043091B /* CafeController.swift */; };
 		B36572C622CD36AF00C618BD /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36572C522CD36AF00C618BD /* InformationViewController.swift */; };
 		B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */; };
 		B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367D57D22D39BFF0069F4D0 /* ComplainViewController.swift */; };
@@ -52,8 +53,6 @@
 		B6067E24243238A800BE4521 /* CafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6067E23243238A800BE4521 /* CafeDetailViewController.swift */; };
 		B6B3AD472430FCA900F71AF2 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3AD462430FCA900F71AF2 /* Cafe.swift */; };
 		B6B3AD49243100B700F71AF2 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3AD48243100B700F71AF2 /* FirebaseService.swift */; };
-		B6EEBB422433DA6700E367F1 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBB412433DA6700E367F1 /* InformationView.swift */; };
-		B6EEBB462433DF1300E367F1 /* InformationViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBB452433DF1300E367F1 /* InformationViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +106,7 @@
 		B3404A1522CD062100062B01 /* Staatliches-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Staatliches-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C622C50501006CDBC1 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		B34335C822C50509006CDBC1 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		B34E50A22393FFE80043091B /* CafeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeController.swift; sourceTree = "<group>"; };
 		B36572C522CD36AF00C618BD /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
 		B367D57D22D39BFF0069F4D0 /* ComplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainViewController.swift; sourceTree = "<group>"; };
@@ -155,8 +155,6 @@
 		B6067E23243238A800BE4521 /* CafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeDetailViewController.swift; path = "KOFFII/Controller/Coffee Places/CafeDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B6B3AD462430FCA900F71AF2 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cafe.swift; path = ../Cafe.swift; sourceTree = "<group>"; };
 		B6B3AD48243100B700F71AF2 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
-		B6EEBB412433DA6700E367F1 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
-		B6EEBB452433DF1300E367F1 /* InformationViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewPresenter.swift; sourceTree = "<group>"; };
 		E0285450D2D979851A99E479 /* Pods_KOFFII.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KOFFII.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				B367D58D22D502CD0069F4D0 /* CafeViewController.swift */,
+				B34E50A22393FFE80043091B /* CafeController.swift */,
 				B3BCACD722D8D3F000A4FEDF /* CafeDetail */,
 			);
 			path = "Coffee Places";
@@ -344,7 +343,6 @@
 		B399DB8B22CE081B003C5EDD /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				B6EEBB402433DA4C00E367F1 /* SwiftUI */,
 				B36572C522CD36AF00C618BD /* InformationViewController.swift */,
 				B36572C722CD3C4400C618BD /* InformationTableViewCell.swift */,
 				B3F62ED422D0CADB002DF68C /* BrewingDetail */,
@@ -405,15 +403,6 @@
 				B367D57D22D39BFF0069F4D0 /* ComplainViewController.swift */,
 			);
 			path = BrewingDetail;
-			sourceTree = "<group>";
-		};
-		B6EEBB402433DA4C00E367F1 /* SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				B6EEBB412433DA6700E367F1 /* InformationView.swift */,
-				B6EEBB452433DF1300E367F1 /* InformationViewPresenter.swift */,
-			);
-			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		BAD448F2EC118B531A034562 /* Frameworks */ = {
@@ -662,8 +651,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36572C822CD3C4400C618BD /* InformationTableViewCell.swift in Sources */,
+				B34E50A32393FFE80043091B /* CafeController.swift in Sources */,
 				B367D58422D4C5700069F4D0 /* KnowledgeViewController.swift in Sources */,
-				B6EEBB422433DA6700E367F1 /* InformationView.swift in Sources */,
 				B3AA7E5822C4F38B005848DA /* AppDelegate.swift in Sources */,
 				B38E8EBC2388191C00541A2E /* assets-images.swift in Sources */,
 				B367D58222D3A7250069F4D0 /* Complain.swift in Sources */,
@@ -671,7 +660,6 @@
 				B367D57E22D39BFF0069F4D0 /* ComplainViewController.swift in Sources */,
 				B377596F2370336600D1D6B9 /* FeatureButtonFunctions.swift in Sources */,
 				B3F62ED322D0C8FF002DF68C /* BrewingDetailTableViewCell.swift in Sources */,
-				B6EEBB462433DF1300E367F1 /* InformationViewPresenter.swift in Sources */,
 				B6B3AD49243100B700F71AF2 /* FirebaseService.swift in Sources */,
 				B3F62ECB22D0C371002DF68C /* BrewingDetailViewController.swift in Sources */,
 				B310BF9A2369D02B0065318C /* MapViewController.swift in Sources */,

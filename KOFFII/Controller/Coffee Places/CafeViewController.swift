@@ -163,6 +163,7 @@ extension CafeViewController {
                 cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
                 if self.userLocationEnabled {
                     guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { fatalError() }
+                    print(locValue)
                     let userLocation = MKMapPoint(locValue)
                     let cafeLocation = MKMapPoint(CLLocationCoordinate2DMake(item.latitude, item.longitude))
                     let distance = userLocation.distance(to: cafeLocation)
