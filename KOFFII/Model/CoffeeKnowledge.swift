@@ -1,15 +1,4 @@
-import UIKit
-
 // MARK: - Knowledge Init
-struct CoffeeKnowledge: Identifiable {
-    var id = UUID()
-    let name: String
-    let image: UIImage
-    let tips: [String]
-}
-
-var coffeeKnowledge : [CoffeeKnowledge] = [coffeeWater,health,history,fabrication,regions,storage]
-
 let coffeeWater = CoffeeKnowledge(name: L10n.coffeeWater, image: Asset.water.image,
                             tips: [
                                 L10n.coffeeWater1,

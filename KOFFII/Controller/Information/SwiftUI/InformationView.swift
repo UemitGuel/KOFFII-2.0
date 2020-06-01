@@ -3,11 +3,6 @@ import SwiftUI
 
 struct InformationView: View {
     
-    @State private var showKnowledge = false
-    @State private var categoryIndex = 0
-    var category = ["Brewing", "Knowledge"]
-    
-    
     var brewingMethods : [BrewingMethod] = [aeropress,bialetti,chemex,espresso,frenchPress,pourOver,turkishMocha]
     var coffeeKnowledge : [CoffeeKnowledge] = [coffeeWater,health,history,fabrication,regions,storage]
     
@@ -18,28 +13,14 @@ struct InformationView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                List {
-                    Picker(selection: $categoryIndex, label: Text("What is your favorite color?")) {
-                        ForEach(0..<category.count) { index in
-                            Text(self.category[index]).tag(index)
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                        .padding(.bottom)
-                    if categoryIndex == 0 {
-                        ForEach(brewingMethods) { method in
-                            BrewingMethodeCard(method: method)
-                                .padding(.bottom)
-                        }
-                    } else {
-                        ForEach(coffeeKnowledge) { knowledge in
-                            CoffeeKnowledgeCard(coffeeKnowledge: knowledge)
-                                .padding(.bottom)
-                        }
-                    }
-                }
+            List {
+                BrewingMethodRow(brewingMethods: brewingMethods)
+                Divider()
+                CoffeeKnowledgeRow(coffeeKnowledge: coffeeKnowledge)
+                Spacer()
             }
-            .navigationBarTitle("About Coffee")
+            .navigationBarTitle("HowTo", displayMode: .inline)
+            
         }
     }
 }

@@ -16,9 +16,14 @@ struct BrewingMethod: Identifiable {
     }
 }
 
-// MARK: - Brewing Methods Init
-var brewingMethods : [BrewingMethod] = [aeropress,bialetti,chemex,espresso,frenchPress,pourOver,turkishMocha]
+struct CoffeeKnowledge: Identifiable {
+    var id = UUID()
+    let name: String
+    let image: UIImage
+    let tips: [String]
+}
 
+// MARK: - Brewing Methods Init
 let pourOver = BrewingMethod(name: L10n.pourOver, image: Asset.handfilter.image,
                               quan: L10n.pourOverQuantity,
                               temp: L10n.pourOverTemperature,
