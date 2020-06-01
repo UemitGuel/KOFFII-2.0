@@ -64,3 +64,7 @@ class Cafe: Object {
         self.distanceUserToLocation = distanceUserToLocation
     }
 }
+
+class FeatureObject: Object {
+    dynamic var featureName = false
+}
