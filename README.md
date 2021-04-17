@@ -1,10 +1,15 @@
 # KOFFII Cologne (KOFFII 2.0)
 
+:warning: **This Project was developed in 2019 and is now deprecated**
+
 KOFFII Cologne is designed to help people finding a coffee place to study or work.
 
-☕️ | 🗿| 🌋
-:-------------------------:|:-------------------------:|:-------------------------:
-![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/ab/94/66/ab9466c2-6968-b7d0-4972-14d29abcc9b0/pr_source.png/0x0ss-P3.jpg) | ![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/4f/7c/b8/4f7cb8ad-ea86-100e-a07f-8f8deb9be673/pr_source.png/0x0ss-P3.jpg) | ![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/18/ff/fa/18fffa94-07f6-ae00-7e68-0eaa850a9edd/pr_source.png/0x0ss-P3.jpg)
+☕️ | 🗿| 🌋 | 🗿| ☕️
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![Simulator Screen Shot - iPhone 12 Pro - 2021-04-17 at 14 04 25](https://user-images.githubusercontent.com/47325422/115113545-30a01480-9f8b-11eb-8e7a-51ceb405774c.png)
+ | ![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/4f/7c/b8/4f7cb8ad-ea86-100e-a07f-8f8deb9be673/pr_source.png/0x0ss-P3.jpg) | ![Alt-Text](https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/18/ff/fa/18fffa94-07f6-ae00-7e68-0eaa850a9edd/pr_source.png/0x0ss-P3.jpg) |![Simulator Screen Shot - iPhone 12 Pro - 2021-04-17 at 14 04 59](https://user-images.githubusercontent.com/47325422/115113555-401f5d80-9f8b-11eb-9347-acb6d4212312.png) | ![Uploading Simulator Screen Shot - iPhone 12 Pro - 2021-04-17 at 14.05.21.png…]()
+
+
 
 ## Idea
 
