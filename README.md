@@ -1,6 +1,6 @@
 # KOFFII Cologne (KOFFII 2.0)
 
-:warning: **This Project was developed in 2019 and is now deprecated**
+:warning: **This Project was developed in 2020 and is now deprecated**
 
 KOFFII Cologne is designed to help people finding a coffee place to study or work.
 
