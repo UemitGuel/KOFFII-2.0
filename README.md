@@ -1,4 +1,4 @@
-# KOFFII Cologne
+# KOFFII Cologne (KOFFII 2.0)
 
 KOFFII Cologne is designed to help people finding a coffee place to study or work.
 
